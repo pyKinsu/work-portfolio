@@ -1,0 +1,27 @@
+// script.js
+
+// Loader
+window.addEventListener("load", () => {
+  const loader = document.querySelector(".loader-wrapper");
+  loader.style.opacity = 0;
+  setTimeout(() => loader.style.display = "none", 500);
+});
+
+// Dark mode toggle
+const toggle = document.getElementById('darkModeToggle');
+const body = document.body;
+const icon = toggle.querySelector('i');
+
+if (localStorage.getItem('theme') === 'light') {
+  body.classList.add('light-mode');
+  icon.classList.remove('fa-moon');
+  icon.classList.add('fa-sun');
+}
+
+toggle.addEventListener('click', () => {
+  body.classList.toggle('light-mode');
+  const isLight = body.classList.contains('light-mode');
+  icon.classList.toggle('fa-moon', !isLight);
+  icon.classList.toggle('fa-sun', isLight);
+  localStorage.setItem('theme', isLight ? 'light' : 'dark');
+});

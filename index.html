@@ -15,9 +15,9 @@
   <header class="site-header">
     <div class="logo">Kinsu</div>
     <nav class="top-nav">
-      <a href="/"> Home </a>
-      <a href="/about"> Github</a>
-      <a href="/contact"> Contact</a>
+      <a href="/">Home</a>
+      <a href="/about">Github</a>
+      <a href="/contact">Contact</a>
     </nav>
   </header>
 
@@ -31,11 +31,38 @@
   <footer class="site-footer">
     <nav class="footer-nav">
       <a href="/" class="nav-btn"><i class="fas fa-home"></i><span>Home</span></a>
-      <a href="/about" class="nav-btn"><i class="fas fa-star"></i><span> About</span></a>
+      <a href="/about" class="nav-btn"><i class="fas fa-star"></i><span>About</span></a>
       <a href="/hobby" class="nav-btn"><i class="fas fa-envelope"></i><span>Contact</span></a>
       <a href="/blog" class="nav-btn"><i class="fas fa-blog"></i><span>Blog</span></a>
     </nav>
   </footer>
+
+  <!-- Dark Mode Toggle Floating Button -->
+  <button id="darkModeToggle" class="dark-toggle" title="Toggle Theme">
+    <i class="fas fa-moon"></i>
+  </button>
+
+  <script>
+    // Dark Mode Toggle Logic
+    const toggle = document.getElementById('darkModeToggle');
+    const body = document.body;
+    const icon = toggle.querySelector('i');
+
+    // Apply saved theme if available
+    if (localStorage.getItem('theme') === 'light') {
+      body.classList.add('light-mode');
+      icon.classList.remove('fa-moon');
+      icon.classList.add('fa-sun');
+    }
+
+    toggle.addEventListener('click', () => {
+      body.classList.toggle('light-mode');
+      const isLight = body.classList.contains('light-mode');
+      icon.classList.toggle('fa-moon', !isLight);
+      icon.classList.toggle('fa-sun', isLight);
+      localStorage.setItem('theme', isLight ? 'light' : 'dark');
+    });
+  </script>
 
 </body>
 </html>

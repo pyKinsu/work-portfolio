@@ -12,14 +12,13 @@
   <style>
     body {
       margin: 0;
-      padding: 80px 0 80px 0;
+      padding: 80px 0;
       color: #fff;
       font-family: 'Orbitron', sans-serif;
       background: #000;
     }
 
-    header.site-header,
-    footer.site-footer {
+    header.site-header, footer.site-footer {
       position: fixed;
       left: 0;
       width: 100%;
@@ -84,23 +83,25 @@
       width: 150px;
       height: 150px;
       margin-bottom: 20px;
-      border: 2px solid transparent;
+      border: 3px solid transparent;
       background: linear-gradient(#000, #000) padding-box,
                   linear-gradient(135deg, #8e2de2, #4a00e0) border-box;
-      box-shadow:
-        0 0 8px #8e2de2,
-        0 0 12px #8e2de2,
-        0 0 16px #4a00e0;
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      box-shadow: 0 0 10px #8e2de2, 0 0 20px #8e2de2, 0 0 30px #4a00e0;
+      animation: pulseGlow 3s infinite;
+      transition: transform 0.3s ease;
     }
 
     .hero-img:hover {
       transform: scale(1.05);
-      box-shadow:
-        0 0 10px #a770ef,
-        0 0 18px #f957d7,
-        0 0 26px #8e2de2,
-        0 0 32px #4a00e0;
+    }
+
+    @keyframes pulseGlow {
+      0%, 100% {
+        box-shadow: 0 0 10px #8e2de2, 0 0 20px #8e2de2, 0 0 30px #4a00e0;
+      }
+      50% {
+        box-shadow: 0 0 20px #a770ef, 0 0 30px #f957d7, 0 0 40px #4a00e0;
+      }
     }
 
     .animated-name span {
@@ -109,39 +110,76 @@
       color: #00f2ff;
     }
 
-    .about,
-    .projects {
+    .about, .projects {
       padding: 40px 20px;
       max-width: 900px;
       margin: auto;
     }
 
-    .project-button {
-      display: inline-block;
-      margin: 10px;
-      padding: 15px 25px;
-      font-size: 14px;
-      font-weight: 500;
-      color: #a855f7;
-      background-color: transparent;
+    .project-card {
+      margin-bottom: 20px;
+    }
+
+    .card-wrapper {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background-color: #000;
       border: 1px solid #a855f7;
-      border-radius: 8px;
+      padding: 1rem 1.5rem;
+      border-radius: 10px;
+      box-shadow: 0 0 10px #a855f7;
+      transition: all 0.3s ease-in-out;
+    }
+
+    .card-wrapper:hover {
+      box-shadow: 0 0 20px #c084fc, 0 0 25px #7e22ce;
+    }
+
+    .card-inner {
+      flex-grow: 1;
+    }
+
+    .card-inner h3 {
+      margin: 0 0 5px;
+      font-size: 1.2rem;
+      color: #e9d5ff;
+    }
+
+    .card-inner p {
+      margin: 0;
+      font-size: 0.95rem;
+      color: #ccc;
+    }
+
+    .project-meta {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
+      gap: 5px;
+    }
+
+    .project-status {
+      font-size: 0.8rem;
+      font-weight: bold;
+      color: #a855f7;
+      background: rgba(168, 85, 247, 0.1);
+      padding: 4px 8px;
+      border-radius: 4px;
+    }
+
+    .project-meta a {
+      font-size: 0.9rem;
+      color: #d8b4fe;
       text-decoration: none;
-      transition: all 0.3s ease;
-      box-shadow: 0 0 6px #a855f7;
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
     }
 
-    .project-button:hover {
-      background-color: #9333ea;
-      color: #fff;
-      box-shadow: 0 0 12px #c084fc;
-    }
-
-    .project-button svg {
+    .project-meta a svg {
       width: 12px;
       height: 12px;
-      margin-left: 6px;
-      vertical-align: middle;
     }
 
     @media (max-width: 768px) {
@@ -163,6 +201,16 @@
 
       .menu-toggle {
         display: block;
+      }
+
+      .card-wrapper {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+      }
+
+      .project-meta {
+        align-items: flex-start;
       }
     }
   </style>
@@ -199,24 +247,42 @@
   <section class="projects" data-aos="fade-up">
     <h2>Projects</h2>
 
-    <a href="https://github.com/pykinsu" target="_blank" class="project-button">
-      AutoFilter Bot
-      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 10">
-        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-          d="M1 5h12m0 0L9 1m4 4L9 9" />
-      </svg>
-    </a>
+    <div class="project-card">
+      <div class="card-wrapper">
+        <div class="card-inner">
+          <h3>AutoFilter Bot</h3>
+          <p>A Telegram bot that auto filters and fetches content.</p>
+        </div>
+        <div class="project-meta">
+          <span class="project-status">✅ Completed</span>
+          <a href="https://github.com/pykinsu" target="_blank">GitHub Repo
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 10">
+              <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 5h12m0 0L9 1m4 4L9 9"/>
+            </svg>
+          </a>
+        </div>
+      </div>
+    </div>
 
-    <a href="https://github.com/pykinsu" target="_blank" class="project-button">
-      All Video Downloader
-      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 10">
-        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-          d="M1 5h12m0 0L9 1m4 4L9 9" />
-      </svg>
-    </a>
+    <div class="project-card">
+      <div class="card-wrapper">
+        <div class="card-inner">
+          <h3>All Video Downloader Bot</h3>
+          <p>A Telegram bot to download videos from various sources.</p>
+        </div>
+        <div class="project-meta">
+          <span class="project-status">🛠️ In Progress</span>
+          <a href="https://github.com/pykinsu" target="_blank">GitHub Repo
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 10">
+              <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 5h12m0 0L9 1m4 4L9 9"/>
+            </svg>
+          </a>
+        </div>
+      </div>
+    </div>
   </section>
 
-  <!-- FOOTER NAVIGATION -->
+  <!-- FOOTER -->
   <footer class="site-footer">
     <nav class="footer-nav">
       <a href="/" class="nav-btn"><i class="fas fa-home"></i><span>Home</span></a>

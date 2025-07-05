@@ -1,0 +1,68 @@
+/* Reset & Base Styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', sans-serif;
+  background: linear-gradient(to bottom, #0f0f0f, #1a1a1a);
+  color: #f0f0f0;
+  padding-bottom: 60px; /* Space for footer */
+}
+
+/* Header */
+.site-header {
+  background: #111;
+  padding: 20px;
+  text-align: center;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.5);
+}
+
+.site-header h1 {
+  font-size: 2em;
+  color: #00f2ff;
+  letter-spacing: 1px;
+}
+
+/* Main Content */
+.site-content {
+  padding: 30px 20px;
+}
+
+/* Footer Navigation */
+.site-footer {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  background: #121212;
+  box-shadow: 0 -2px 8px rgba(0,0,0,0.6);
+  z-index: 100;
+}
+
+.footer-nav {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding: 12px 0;
+}
+
+.nav-btn {
+  text-decoration: none;
+  color: #ccc;
+  text-align: center;
+  font-size: 0.9em;
+  transition: color 0.3s;
+}
+
+.nav-btn i {
+  font-size: 1.3em;
+  display: block;
+  margin-bottom: 5px;
+}
+
+.nav-btn:hover {
+  color: #00f2ff;
+}
+

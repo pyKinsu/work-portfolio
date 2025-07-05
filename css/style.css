@@ -1,4 +1,166 @@
-/* Dark Mode Toggle Button */
+/* style.css */
+
+/* Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', sans-serif;
+  background: linear-gradient(to bottom, #000000, #0f0f0f);
+  color: #f0f0f0;
+  padding-bottom: 80px;
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+/* Header */
+.site-header {
+  background: #111;
+  padding: 15px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.5);
+  position: sticky;
+  top: 0;
+  z-index: 999;
+}
+
+.logo {
+  font-family: 'Pacifico', cursive;
+  font-size: 1.8em;
+  color: #00ffff;
+}
+
+.top-nav a {
+  margin-left: 15px;
+  color: #ccc;
+  text-decoration: none;
+  font-size: 1em;
+}
+
+.top-nav a:hover {
+  color: #00f2ff;
+}
+
+/* Hero Section */
+.hero {
+  text-align: center;
+  padding: 60px 20px 40px;
+}
+
+.hero-img {
+  width: 120px;
+  border-radius: 50%;
+  border: 3px solid #00f2ff;
+  margin-bottom: 20px;
+}
+
+.animated-name {
+  font-size: 2em;
+  font-weight: bold;
+  color: white;
+}
+
+.neon-text {
+  color: #00f2ff;
+  text-shadow: 0 0 5px #00f2ff, 0 0 10px #00f2ff, 0 0 20px #00f2ff;
+}
+
+.typing-animation {
+  font-family: monospace;
+  font-size: 1.1em;
+  white-space: nowrap;
+  overflow: hidden;
+  border-right: 2px solid #00f2ff;
+  width: 0;
+  animation: typing 4s steps(40, end) forwards;
+  color: #ccc;
+  margin-top: 10px;
+}
+
+@keyframes typing {
+  from { width: 0 }
+  to { width: 100% }
+}
+
+/* About */
+.about, .projects {
+  padding: 40px 20px;
+  max-width: 800px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.about h2, .projects h2 {
+  font-size: 2em;
+  margin-bottom: 20px;
+  color: #00f2ff;
+}
+
+.project-card {
+  background: #1c1c1c;
+  padding: 20px;
+  margin-bottom: 20px;
+  border-radius: 12px;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.project-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 0 15px rgba(0, 242, 255, 0.4);
+}
+
+.project-card a {
+  color: #00f2ff;
+  text-decoration: none;
+  display: inline-block;
+  margin-top: 10px;
+}
+
+/* Footer */
+.site-footer {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  background: #121212;
+  z-index: 100;
+  box-shadow: 0 -2px 5px rgba(0,0,0,0.5);
+}
+
+.footer-nav {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+.nav-btn {
+  flex: 1;
+  text-align: center;
+  padding: 10px 0;
+  color: #aaa;
+  text-decoration: none;
+  transition: all 0.3s;
+}
+
+.nav-btn i {
+  font-size: 1.3em;
+  display: block;
+}
+
+.nav-btn span {
+  font-size: 0.75em;
+}
+
+.nav-btn:hover {
+  color: #00f2ff;
+  background: #1f1f1f;
+}
+
+/* Toggle Button */
 .dark-toggle {
   position: fixed;
   bottom: 85px;
@@ -12,36 +174,4 @@
   cursor: pointer;
   box-shadow: 0 4px 8px rgba(0,0,0,0.5);
   z-index: 999;
-  transition: all 0.3s;
-}
-
-.dark-toggle:hover {
-  background: #0ff;
-}
-
-/* Light Mode Styles */
-body.light-mode {
-  background: #f4f4f4;
-  color: #111;
-}
-
-body.light-mode .site-header,
-body.light-mode .site-footer {
-  background: #fff;
-  color: #111;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
-}
-
-body.light-mode .logo {
-  color: #0077cc;
-}
-
-body.light-mode .top-nav a,
-body.light-mode .nav-btn {
-  color: #222;
-}
-
-body.light-mode .nav-btn:hover {
-  background: #e0e0e0;
-  color: #0077cc;
 }

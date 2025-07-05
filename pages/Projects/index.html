@@ -4,10 +4,207 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Projects | Kinsu Rajput</title>
-  <link rel="stylesheet" href="/css/style.css" />
-  <link rel="stylesheet" href="/css/loader.css" />
+  <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css" />
   <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <style>
+    /* Reset */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Orbitron', sans-serif;
+      color: #fff;
+      background: linear-gradient(to right, #1D4ED8, #3B82F6);
+      padding: 80px 20px;
+    }
+
+    /* Header */
+    .site-header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      backdrop-filter: blur(10px);
+      background-color: rgba(0, 0, 0, 0.5);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+      z-index: 1000;
+      padding: 10px 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .logo {
+      font-family: 'Pacifico', cursive;
+      font-size: 1.8em;
+      color: #00ffff;
+    }
+
+    .top-nav {
+      display: flex;
+      gap: 20px;
+    }
+
+    .top-nav a {
+      color: #ccc;
+      text-decoration: none;
+      font-size: 1em;
+    }
+
+    .top-nav a:hover {
+      color: #00f2ff;
+    }
+
+    .menu-toggle {
+      display: none;
+      background: none;
+      border: none;
+      font-size: 24px;
+      color: #00f2ff;
+      cursor: pointer;
+    }
+
+    @media (max-width: 768px) {
+      .top-nav {
+        display: none;
+        flex-direction: column;
+        background-color: #111;
+        position: absolute;
+        top: 60px;
+        right: 20px;
+        padding: 10px;
+        border-radius: 10px;
+        z-index: 10;
+      }
+
+      .top-nav.active {
+        display: flex;
+      }
+
+      .menu-toggle {
+        display: block;
+      }
+    }
+
+    .projects-page {
+      max-width: 900px;
+      margin: auto;
+      text-align: center;
+    }
+
+    .projects-page h2 {
+      font-size: 2.2em;
+      color: #00f2ff;
+      margin-bottom: 30px;
+    }
+
+    .project-button {
+      background: rgba(255, 255, 255, 0.06);
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      backdrop-filter: blur(10px);
+      border-radius: 16px;
+      padding: 20px;
+      margin-bottom: 30px;
+      color: #fff;
+      transition: 0.4s ease;
+      box-shadow: 0 0 10px rgba(168, 85, 247, 0.2);
+    }
+
+    .project-button:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 0 20px rgba(168, 85, 247, 0.6);
+    }
+
+    .project-meta {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 16px;
+      margin-top: 10px;
+      flex-wrap: wrap;
+    }
+
+    .status-label {
+      font-size: 0.9em;
+      color: #bb86fc;
+      padding: 5px 12px;
+      border: 1px solid #a855f7;
+      border-radius: 20px;
+      background: rgba(138, 43, 226, 0.1);
+      backdrop-filter: blur(4px);
+    }
+
+    .github-link {
+      color: #a855f7;
+      font-weight: 500;
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+      text-decoration: none;
+      padding: 6px 14px;
+      border-radius: 50px;
+      border: 1px solid #a855f7;
+      background: rgba(168, 85, 247, 0.08);
+      transition: all 0.3s ease;
+    }
+
+    .github-link:hover {
+      background: rgba(168, 85, 247, 0.2);
+      color: #fff;
+      border-color: #fff;
+    }
+
+    .arrow-icon {
+      width: 16px;
+      height: 16px;
+      stroke: currentColor;
+      stroke-width: 2;
+    }
+
+    /* Footer */
+    .site-footer {
+      position: fixed;
+      bottom: 0;
+      width: 100%;
+      background: rgba(0, 0, 0, 0.5);
+      backdrop-filter: blur(10px);
+      border-top: 1px solid rgba(255, 255, 255, 0.1);
+      z-index: 1000;
+    }
+
+    .footer-nav {
+      display: flex;
+      justify-content: space-evenly;
+      align-items: center;
+      padding: 10px 0;
+    }
+
+    .nav-btn {
+      flex: 1;
+      text-align: center;
+      color: #aaa;
+      text-decoration: none;
+      transition: all 0.3s;
+    }
+
+    .nav-btn i {
+      font-size: 1.3em;
+      display: block;
+    }
+
+    .nav-btn span {
+      font-size: 0.75em;
+    }
+
+    .nav-btn:hover {
+      color: #00f2ff;
+      background: #1f1f1f;
+    }
+  </style>
 </head>
 <body>
   <header class="site-header">
@@ -22,17 +219,17 @@
     </nav>
   </header>
 
-  <main class="projects-page">
+  <main class="projects-page" data-aos="fade-up">
     <h2>My Projects</h2>
 
-    <div class="project-button">
+    <div class="project-button" data-aos="fade-up">
       <h3>AutoFilter Bot</h3>
       <p>A Telegram bot that auto filters and fetches content.</p>
       <div class="project-meta">
-        <span class="status-label">Completed</span>
+        <span class="status-label">✅ Completed</span>
         <a href="https://github.com/pyKinsu/Autofilter-Bot" target="_blank" class="github-link">
           GitHub Repo
-          <svg xmlns="http://www.w3.org/2000/svg" class="arrow-icon" fill="none" viewBox="0 0 14 10">
+          <svg class="arrow-icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 10">
             <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
               d="M1 5h12m0 0L9 1m4 4L9 9" />
           </svg>
@@ -40,14 +237,14 @@
       </div>
     </div>
 
-    <div class="project-button">
+    <div class="project-button" data-aos="fade-up">
       <h3>All Video Downloader Bot</h3>
       <p>Download videos from various platforms via Telegram.</p>
       <div class="project-meta">
-        <span class="status-label">Working</span>
+        <span class="status-label">⚙️ Working</span>
         <a href="https://github.com/pyKinsu/All-Video-Downloader-Bot" target="_blank" class="github-link">
           GitHub Repo
-          <svg xmlns="http://www.w3.org/2000/svg" class="arrow-icon" fill="none" viewBox="0 0 14 10">
+          <svg class="arrow-icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 10">
             <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
               d="M1 5h12m0 0L9 1m4 4L9 9" />
           </svg>
@@ -55,14 +252,14 @@
       </div>
     </div>
 
-    <div class="project-button">
+    <div class="project-button" data-aos="fade-up">
       <h3>Weather Info Web</h3>
       <p>Weather search by pincode with GitHub & 3D design.</p>
       <div class="project-meta">
-        <span class="status-label">Completed</span>
+        <span class="status-label">✅ Completed</span>
         <a href="https://github.com/pyKinsu/weather-info" target="_blank" class="github-link">
           GitHub Repo
-          <svg xmlns="http://www.w3.org/2000/svg" class="arrow-icon" fill="none" viewBox="0 0 14 10">
+          <svg class="arrow-icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 10">
             <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
               d="M1 5h12m0 0L9 1m4 4L9 9" />
           </svg>
@@ -71,7 +268,6 @@
     </div>
   </main>
 
-  <!-- FOOTER -->
   <footer class="site-footer">
     <nav class="footer-nav">
       <a href="/" class="nav-btn"><i class="fas fa-home"></i><span>Home</span></a>
@@ -81,6 +277,9 @@
     </nav>
   </footer>
 
-  <script src="/js/script.js"></script>
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script>
+    AOS.init({ duration: 800, once: true });
+  </script>
 </body>
 </html>

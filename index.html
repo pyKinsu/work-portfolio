@@ -120,8 +120,8 @@
       margin-top: 10px;
     }
 
-    /* About and Projects */
-    .about, .projects {
+    /* About and Projects Section Container */
+    .projects, .about {
       padding: 40px 20px;
       max-width: 900px;
       margin: auto;
@@ -133,7 +133,23 @@
       color: #00f2ff;
     }
 
-    /* Project Card Buttons */
+    .glass-box {
+      border: 1px solid #a855f7;
+      border-radius: 10px;
+      background: rgba(168, 85, 247, 0.05);
+      box-shadow: 0 0 15px #a855f73f;
+      backdrop-filter: blur(10px);
+      padding: 20px;
+      margin-bottom: 30px;
+      transition: all 0.3s ease;
+    }
+
+    .glass-box:hover {
+      background: rgba(168, 85, 247, 0.08);
+      box-shadow: 0 0 25px #a855f7a8;
+    }
+
+    /* Project Cards */
     .project-button {
       display: flex;
       justify-content: space-between;
@@ -265,7 +281,9 @@
   <!-- ABOUT SECTION -->
   <section class="about" data-aos="fade-up">
     <h2>About Me</h2>
-    <p>I’m a BCA student from Bihar, India. I recently passed 12th and started my programming journey. I love playing chess and building Telegram bots. Currently learning Python and HTML.</p>
+    <div class="glass-box">
+      <p>I’m a BCA student from Bihar, India. I recently passed 12th and started my programming journey. I love playing chess and building Telegram bots. Currently learning Python and HTML.</p>
+    </div>
   </section>
 
   <!-- PROJECTS SECTION -->

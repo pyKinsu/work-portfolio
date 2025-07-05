@@ -188,6 +188,7 @@
       flex-wrap: wrap;
     }
 
+  
     .project-status {
       font-size: 0.8rem;
       font-weight: bold;
@@ -217,7 +218,42 @@
       width: 12px;
       height: 12px;
     }
+.status-label {
+      font-size: 0.9em;
+      color: #bb86fc;
+      padding: 5px 12px;
+      border: 1px solid #a855f7;
+      border-radius: 20px;
+      background: rgba(138, 43, 226, 0.1);
+      backdrop-filter: blur(4px);
+    }
 
+    .github-link {
+      color: #a855f7;
+      font-weight: 500;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      text-decoration: none;
+      padding: 6px 14px;
+      border-radius: 50px;
+      border: 1px solid #a855f7;
+      background: rgba(168, 85, 247, 0.08);
+      transition: all 0.3s ease;
+    }
+
+    .github-link:hover {
+      background: rgba(168, 85, 247, 0.2);
+      color: #fff;
+      border-color: #fff;
+    }
+
+    .arrow-icon {
+      width: 16px;
+      height: 16px;
+      stroke: currentColor;
+      stroke-width: 2;
+    }
     @keyframes flicker {
       0% { opacity: 1; text-shadow: 0 0 5px #9333ea, 0 0 10px #7c3aed; }
       50% { opacity: 0.7; text-shadow: 0 0 10px #c084fc, 0 0 20px #9333ea; }
@@ -296,8 +332,8 @@
         <p>A Telegram bot that auto filters and fetches content.</p>
       </div>
       <div class="project-right">
-        <span class="project-status">✅ Completed</span>
-        <a href="https://github.com/pykinsu" target="_blank" class="project-link">
+        <span class="status-label">✅ Completed</span>
+        <a href="https://github.com/pykinsu" target="_blank" class="github-link">
           GitHub Repo
           <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 10">
             <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
@@ -313,8 +349,8 @@
         <p>A Telegram bot to download videos from various sources.</p>
       </div>
       <div class="project-right">
-        <span class="project-status">🛠️ In Progress</span>
-        <a href="https://github.com/pykinsu" target="_blank" class="project-link">
+        <span class="status-label">🛠️ In Progress</span>
+        <a href="https://github.com/pykinsu" target="_blank" class="github-link">
           GitHub Repo
           <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 10">
             <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"

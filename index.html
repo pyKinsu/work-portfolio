@@ -9,7 +9,6 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-
   <style>
     body {
       margin: 0;
@@ -42,6 +41,37 @@
       bottom: 0;
     }
 
+    .logo {
+      font-family: 'Pacifico', cursive;
+      font-size: 1.6em;
+      color: #00f2ff;
+    }
+
+    .top-nav {
+      display: flex;
+      gap: 20px;
+    }
+
+    .top-nav a {
+      color: #ccc;
+      text-decoration: none;
+      font-size: 1em;
+      transition: color 0.3s;
+    }
+
+    .top-nav a:hover {
+      color: #00f2ff;
+    }
+
+    .menu-toggle {
+      display: none;
+      background: none;
+      border: none;
+      font-size: 24px;
+      color: #00f2ff;
+      cursor: pointer;
+    }
+
     .footer-nav {
       display: flex;
       justify-content: space-around;
@@ -59,20 +89,6 @@
 
     .nav-btn span {
       font-size: 12px;
-    }
-
-    .top-nav {
-      display: flex;
-      gap: 20px;
-    }
-
-    .menu-toggle {
-      display: none;
-      background: none;
-      border: none;
-      font-size: 24px;
-      color: #00f2ff;
-      cursor: pointer;
     }
 
     /* Hero Section */
@@ -120,14 +136,14 @@
       margin-top: 10px;
     }
 
-    /* About and Projects Section Container */
-     .about {
+    /* About Section */
+    .about {
       padding: 40px 20px;
       max-width: 900px;
       margin: auto;
     }
 
-    .about h2,  h2 {
+    .about h2, .projects h2 {
       font-size: 2em;
       margin-bottom: 20px;
       color: #00f2ff;
@@ -149,18 +165,11 @@
       box-shadow: 0 0 25px #a855f7a8;
     }
 
-/* Projects Section */
-    .projects-page {
+    /* Projects Section */
+    .projects {
       max-width: 900px;
-      margin: 120px auto 40px;
-      padding: 0 20px;
-      text-align: center;
-    }
-
-    .projects-page h2 {
-      font-size: 2.2em;
-      color: #00f2ff;
-      margin-bottom: 30px;
+      margin: auto;
+      padding: 20px;
     }
 
     .project-button {
@@ -223,7 +232,8 @@
       height: 16px;
       stroke: currentColor;
       stroke-width: 2;
-    
+    }
+
     @keyframes flicker {
       0% { opacity: 1; text-shadow: 0 0 5px #9333ea, 0 0 10px #7c3aed; }
       50% { opacity: 0.7; text-shadow: 0 0 10px #c084fc, 0 0 20px #9333ea; }
@@ -234,30 +244,26 @@
       .top-nav {
         display: none;
         flex-direction: column;
-        background-color: #111;
+        background-color: rgba(0, 0, 0, 0.95);
         position: absolute;
         top: 60px;
         right: 20px;
-        padding: 10px;
+        padding: 12px;
         border-radius: 10px;
-        z-index: 10;
+        z-index: 999;
+        transition: 0.3s ease;
       }
 
       .top-nav.active {
         display: flex;
       }
 
+      .top-nav a {
+        margin: 8px 0;
+      }
+
       .menu-toggle {
         display: block;
-      }
-
-      .project-button {
-        flex-direction: column;
-        align-items: flex-start;
-      }
-
-      .project-right {
-        margin-top: 10px;
       }
     }
   </style>
@@ -267,13 +273,14 @@
   <!-- HEADER -->
   <header class="site-header">
     <div class="logo">Kinsu</div>
-    <button class="menu-toggle" onclick="document.querySelector('.top-nav').classList.toggle('active')">
+    <button class="menu-toggle" onclick="toggleMenu()">
       <i class="fas fa-bars"></i>
     </button>
-    <nav class="top-nav">
+    <nav class="top-nav" id="mainMenu">
       <a href="/">Home</a>
       <a href="/pages/Projects">Projects</a>
       <a href="/pages/Contact">Contact</a>
+      <a href="/pages/Blogs">Blogs</a>
     </nav>
   </header>
 
@@ -296,7 +303,6 @@
   <section class="projects" data-aos="fade-up">
     <h2>Projects</h2>
 
-    <!-- Project 1 -->
     <div class="project-button" data-aos="fade-up">
       <h3>AutoFilter Bot</h3>
       <p>A Telegram bot that auto filters and fetches content.</p>
@@ -305,14 +311,12 @@
         <a href="https://github.com/pyKinsu/Autofilter-Bot" target="_blank" class="github-link">
           GitHub Repo
           <svg class="arrow-icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 10">
-            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-              d="M1 5h12m0 0L9 1m4 4L9 9" />
+            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 5h12m0 0L9 1m4 4L9 9" />
           </svg>
         </a>
       </div>
     </div>
 
-    <!-- Project 2 -->
     <div class="project-button" data-aos="fade-up">
       <h3>All Video Downloader Bot</h3>
       <p>Download videos from various platforms via Telegram.</p>
@@ -321,8 +325,7 @@
         <a href="https://github.com/pyKinsu/All-Video-Downloader-Bot" target="_blank" class="github-link">
           GitHub Repo
           <svg class="arrow-icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 10">
-            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-              d="M1 5h12m0 0L9 1m4 4L9 9" />
+            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 5h12m0 0L9 1m4 4L9 9" />
           </svg>
         </a>
       </div>
@@ -339,8 +342,12 @@
     </nav>
   </footer>
 
-  <!-- AOS + Scripts -->
-  <script src="/js/script.js" defer></script>
+  <!-- JS -->
+  <script>
+    function toggleMenu() {
+      document.getElementById('mainMenu').classList.toggle('active');
+    }
+  </script>
   <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
   <script>AOS.init();</script>
 </body>

@@ -9,7 +9,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-     <style>
+  <style>
     body {
       margin: 0;
       padding: 80px 0 80px 0;
@@ -18,7 +18,8 @@
       background: #000;
     }
 
-    header.site-header, footer.site-footer {
+    header.site-header,
+    footer.site-footer {
       position: fixed;
       left: 0;
       width: 100%;
@@ -74,34 +75,33 @@
     }
 
     .hero {
-  text-align: center;
-  padding: 60px 20px;
-}
+      text-align: center;
+      padding: 60px 20px;
+    }
 
-.hero-img {
-  border-radius: 50%;
-  width: 150px;
-  height: 150px;
-  margin-bottom: 20px;
-  border: 3px solid transparent;
-  background: linear-gradient(#000, #000) padding-box,
-              linear-gradient(135deg, #8e2de2, #4a00e0) border-box;
-  box-shadow:
-    0 0 10px #8e2de2,
-    0 0 20px #8e2de2,
-    0 0 30px #4a00e0,
-    0 0 40px #4a00e0;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
+    .hero-img {
+      border-radius: 50%;
+      width: 150px;
+      height: 150px;
+      margin-bottom: 20px;
+      border: 2px solid transparent;
+      background: linear-gradient(#000, #000) padding-box,
+                  linear-gradient(135deg, #8e2de2, #4a00e0) border-box;
+      box-shadow:
+        0 0 8px #8e2de2,
+        0 0 12px #8e2de2,
+        0 0 16px #4a00e0;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
 
-.hero-img:hover {
-  transform: scale(1.05);
-  box-shadow:
-    0 0 15px #a770ef,
-    0 0 25px #f957d7,
-    0 0 35px #8e2de2,
-    0 0 45px #4a00e0;
-}
+    .hero-img:hover {
+      transform: scale(1.05);
+      box-shadow:
+        0 0 10px #a770ef,
+        0 0 18px #f957d7,
+        0 0 26px #8e2de2,
+        0 0 32px #4a00e0;
+    }
 
     .animated-name span {
       font-family: 'Pacifico', cursive;
@@ -109,7 +109,8 @@
       color: #00f2ff;
     }
 
-    .about, .projects {
+    .about,
+    .projects {
       padding: 40px 20px;
       max-width: 900px;
       margin: auto;
@@ -143,6 +144,13 @@
 
     .card-wrapper:hover .card-inner {
       background-color: transparent;
+    }
+
+    .card-inner a svg {
+      width: 12px;
+      height: 12px;
+      margin-left: 6px;
+      vertical-align: middle;
     }
 
     @media (max-width: 768px) {
@@ -205,9 +213,13 @@
         <span class="card-inner">
           <h3>AutoFilter Bot</h3>
           <p>A Telegram bot that auto filters and fetches content.</p>
-          <a href="https://github.com/pykinsu" target="_blank">GitHub Repo <svg class="rtl:rotate-180 w-3.5 h-3.5 ms-2" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 10">
-<path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 5h12m0 0L9 1m4 4L9 9"/>
-          </svg></a>
+          <a href="https://github.com/pykinsu" target="_blank">GitHub Repo
+            <svg class="rtl:rotate-180" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none"
+              viewBox="0 0 14 10">
+              <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                d="M1 5h12m0 0L9 1m4 4L9 9" />
+            </svg>
+          </a>
         </span>
       </div>
     </div>
@@ -217,9 +229,13 @@
         <span class="card-inner">
           <h3>All Video Downloader Bot</h3>
           <p>A Telegram bot to download videos from various sources.</p>
-          <a href="https://github.com/pykinsu" target="_blank">GitHub Repo <svg class="rtl:rotate-180 w-3.5 h-3.5 ms-2" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 10">
-<path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 5h12m0 0L9 1m4 4L9 9"/>
-          </svg></a>
+          <a href="https://github.com/pykinsu" target="_blank">GitHub Repo
+            <svg class="rtl:rotate-180" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none"
+              viewBox="0 0 14 10">
+              <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                d="M1 5h12m0 0L9 1m4 4L9 9" />
+            </svg>
+          </a>
         </span>
       </div>
     </div>

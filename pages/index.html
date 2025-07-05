@@ -1,110 +1,68 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>All Pages | Kinsu Rajput</title>
-  <link rel="stylesheet" href="/css/style.css">
-  <link rel="stylesheet" href="/css/loader.css">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-     <style>
-    .page-links {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 20px;
-      padding: 60px 20px;
-      max-width: 1000px;
-      margin: auto;
-    }
-
-    .page-link {
-      background: text-white bg-purple-700 hover:bg-purple-800 focus:outline-none focus:ring-4 focus:ring-purple-300 font-medium rounded-full text-sm px-5 py-2.5 text-center mb-2 dark:bg-purple-600 dark:hover:bg-purple-700 dark:focus:ring-purple-900;
-      border-radius: 12px;
-      padding: 30px;
-      text-align: center;
-      color: #00f2ff;
-      font-size: 1.2em;
-      text-decoration: none;
-      box-shadow: 0 0 12px rgba(0, 242, 255, 0.2);
-      transition: all 0.3s ease;
-    }
-
-    .page-link:hover {
-      transform: translateY(-5px) scale(1.05);
-      box-shadow: 0 0 20px rgba(0, 242, 255, 0.6);
-    }
-    
-    .top-nav {
-      display: flex;
-      gap: 20px;
-    }
-
-    .menu-toggle {
-      display: none;
-      background: none;
-      border: none;
-      font-size: 24px;
-      color: #00f2ff;
-      cursor: pointer;
-    }
-
-    @media (max-width: 768px) {
-      .top-nav {
-        display: none;
-        flex-direction: column;
-        background-color: #111;
-        position: absolute;
-        top: 60px;
-        right: 20px;
-        padding: 10px;
-        border-radius: 10px;
-        z-index: 10;
-      }
-
-      .top-nav.active {
-        display: flex;
-      }
-
-      .menu-toggle {
-        display: block;
-      }
-    }
-  </style>
+  <link rel="stylesheet" href="/css/style.css" />
+  <link rel="stylesheet" href="/css/loader.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css" />
 </head>
 <body>
 
-<!---
-  <div class="loader-wrapper">
-    <div class="neon-loader">Kinsu's Folio</div>
-  </div> --->
-
   <!-- HEADER -->
-  <header class="site-header">
+  <header class="site-header" data-aos="fade-down">
     <div class="logo">Kinsu</div>
     <button class="menu-toggle" onclick="document.querySelector('.top-nav').classList.toggle('active')">
       <i class="fas fa-bars"></i>
     </button>
     <nav class="top-nav">
       <a href="/">Home</a>
-      <a href="/projects">Projects</a>
-      <a href="/contact">Contact</a>
+      <a href="/pages/Projects/">Projects</a>
+      <a href="/pages/Contact/">Contact</a>
     </nav>
   </header>
 
+  <!-- PAGE LINKS -->
   <main>
     <section class="page-links">
-      <a href="/" class="page-link">🏠 Home</a>
-      <a href="/pages/Skills/" class="page-link">🛠️ Skills</a>
-      <a href="/pages/Hobbies/" class="page-link">🎯 Hobbies</a>
-      <a href="/pages/Project/" class="page-link">💡 Projects</a>
-      <a href="/pages/Contact/" class="page-link">📩 Contact</a>
-      <a href="/pages/index.html" class="page-link">🗂️ All Pages (This Page)</a>
+      <a href="/" class="page-link" data-aos="fade-up">
+        <img src="https://img.icons8.com/ios-filled/50/ffffff/home.png" alt="Home Icon" />
+        🏠 Home
+      </a>
+
+      <a href="/pages/Skills/" class="page-link" data-aos="fade-up" data-aos-delay="100">
+        <img src="https://img.icons8.com/ios-filled/50/ffffff/code.png" alt="Skills Icon" />
+        🛠️ Skills
+      </a>
+
+      <a href="/pages/Hobbies/" class="page-link" data-aos="fade-up" data-aos-delay="200">
+        <img src="https://img.icons8.com/ios-filled/50/ffffff/sport.png" alt="Hobbies Icon" />
+        🎯 Hobbies
+      </a>
+
+      <a href="/pages/Project/" class="page-link" data-aos="fade-up" data-aos-delay="300">
+        <img src="https://img.icons8.com/ios-filled/50/ffffff/light-on.png" alt="Projects Icon" />
+        💡 Projects
+      </a>
+
+      <a href="/pages/Contact/" class="page-link" data-aos="fade-up" data-aos-delay="400">
+        <img src="https://img.icons8.com/ios-filled/50/ffffff/filled-message.png" alt="Contact Icon" />
+        📩 Contact
+      </a>
+
+      <a href="/pages/index.html" class="page-link" data-aos="fade-up" data-aos-delay="500">
+        <img src="https://img.icons8.com/ios-filled/50/ffffff/folder-invoices.png" alt="All Pages Icon" />
+        🗂️ All Pages
+      </a>
     </section>
   </main>
 
-  <footer class="site-footer">
+  <!-- FOOTER -->
+  <footer class="site-footer" data-aos="fade-up">
     <nav class="footer-nav">
       <a href="/" class="nav-btn"><i class="fas fa-home"></i><span>Home</span></a>
       <a href="/pages/Project/" class="nav-btn"><i class="fas fa-code"></i><span>Projects</span></a>
@@ -113,10 +71,10 @@
     </nav>
   </footer>
 
- <!-- <button id="darkModeToggle" class="dark-toggle" title="Toggle Theme">
-    <i class="fas fa-moon"></i>
-  </button> -->
-
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script>
+    AOS.init({ duration: 800, once: true });
+  </script>
   <script src="/js/script.js" defer></script>
 </body>
 </html>

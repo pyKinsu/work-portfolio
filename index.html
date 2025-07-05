@@ -171,7 +171,7 @@
       box-shadow: 0 0 25px #a855f7a8;
     }
 
-    /* Projects */
+    /* Projects Section */
     .projects {
       max-width: 900px;
       margin: auto;
@@ -245,6 +245,37 @@
       height: 16px;
       stroke: currentColor;
       stroke-width: 2;
+    }
+
+    /* Explore Button */
+    .explore-projects {
+      display: flex;
+      justify-content: center;
+      margin-top: 20px;
+      margin-bottom: 40px;
+    }
+
+    .explore-projects a {
+      text-decoration: none;
+      font-size: 1rem;
+      font-weight: 500;
+      padding: 12px 20px;
+      border-radius: 40px;
+      color: #a855f7;
+      border: 1px solid #a855f7;
+      background: rgba(168, 85, 247, 0.08);
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      transition: all 0.4s ease;
+      box-shadow: 0 0 10px rgba(168, 85, 247, 0.2);
+    }
+
+    .explore-projects a:hover {
+      background: rgba(168, 85, 247, 0.2);
+      color: #fff;
+      border-color: #fff;
+      box-shadow: 0 0 20px rgba(168, 85, 247, 0.6);
     }
 
     /* Responsive */
@@ -343,10 +374,18 @@
       </div>
     </div>
   </section>
-<a href="/pages/Projects" class="github-link">Explore My Projects<svg class="arrow-icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 10">
-            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" d="M1 5h12m0 0L9 1m4 4L9 9"/>
-</svg>
-</a>
+
+  <!-- Explore Projects Button -->
+  <div class="explore-projects" data-aos="zoom-in">
+    <a href="/pages/Projects">
+      Explore All Projects
+      <svg class="arrow-icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 10">
+        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+              d="M1 5h12m0 0L9 1m4 4L9 9"/>
+      </svg>
+    </a>
+  </div>
+
   <!-- Footer -->
   <footer class="site-footer">
     <nav class="footer-nav">
@@ -357,8 +396,8 @@
     </nav>
   </footer>
 
-  <!-- Scripts -->
+  <!-- AOS Animation -->
   <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-  <script>AOS.init();</script>
+  <script>AOS.init({ duration: 1000, once: true });</script>
 </body>
 </html>

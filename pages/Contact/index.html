@@ -4,9 +4,12 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Contact | Kinsu Rajput</title>
-  <link rel="stylesheet" href="/css/style.css" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+
+  <!-- Fonts & Icons -->
   <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css"/>
+
   <style>
     * {
       margin: 0;
@@ -21,12 +24,13 @@
       padding-bottom: 100px;
     }
 
+    /* Header */
     .site-header {
       position: fixed;
       top: 0;
       width: 100%;
       padding: 10px 20px;
-      background: rgba(0, 0, 0, 0.4);
+      background: rgba(0, 0, 0, 0.3);
       backdrop-filter: blur(10px);
       display: flex;
       justify-content: space-between;
@@ -38,7 +42,7 @@
     .logo {
       font-family: 'Pacifico', cursive;
       font-size: 1.8em;
-      color: #00ffff;
+      color: #00f2ff;
     }
 
     .menu-toggle {
@@ -46,7 +50,7 @@
       background: none;
       border: none;
       font-size: 1.5rem;
-      color: #00ffff;
+      color: #00f2ff;
       cursor: pointer;
     }
 
@@ -71,7 +75,7 @@
         position: absolute;
         top: 60px;
         right: 20px;
-        background: rgba(0,0,0,0.9);
+        background: rgba(0,0,0,0.95);
         padding: 10px;
         border-radius: 10px;
       }
@@ -85,6 +89,7 @@
       }
     }
 
+    /* Main */
     main.contact-page {
       padding: 100px 20px 20px;
       max-width: 1000px;
@@ -104,20 +109,20 @@
     }
 
     .contact-card {
-      background: rgba(255,255,255,0.05);
-      border-left: 5px solid #00f2ff;
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid rgba(255, 255, 255, 0.08);
       border-radius: 16px;
       padding: 20px;
-      box-shadow: 0 4px 20px rgba(0,255,255,0.1);
+      box-shadow: 0 8px 24px rgba(0, 242, 255, 0.1);
       display: flex;
       flex-direction: column;
-      backdrop-filter: blur(6px);
-      transition: 0.3s ease;
+      backdrop-filter: blur(12px);
+      transition: 0.4s ease;
     }
 
     .contact-card:hover {
       transform: translateY(-5px);
-      box-shadow: 0 4px 25px rgba(0,255,255,0.4);
+      box-shadow: 0 12px 32px rgba(0, 242, 255, 0.4);
     }
 
     .contact-header {
@@ -133,7 +138,7 @@
       border-radius: 50%;
       background: #000;
       padding: 6px;
-      box-shadow: 0 0 10px rgba(0,255,255,0.3);
+      box-shadow: 0 0 12px rgba(0, 242, 255, 0.3);
     }
 
     .contact-info h3 {
@@ -181,7 +186,7 @@
     .reach-btn {
       align-self: flex-end;
       margin-top: 10px;
-      background: linear-gradient(145deg, #00f2ff, #6a00ff);
+      background: linear-gradient(135deg, #00f2ff, #6a00ff);
       color: #fff;
       padding: 8px 16px;
       border: none;
@@ -196,11 +201,12 @@
       transform: scale(1.05);
     }
 
+    /* Footer */
     .site-footer {
       position: fixed;
       bottom: 0;
       width: 100%;
-      background: rgba(0, 0, 0, 0.5);
+      background: rgba(0, 0, 0, 0.3);
       backdrop-filter: blur(10px);
       border-top: 1px solid rgba(255,255,255,0.1);
       z-index: 1000;
@@ -227,9 +233,33 @@
       display: block;
       font-size: 1.2em;
     }
+
+    /* Toast Notification */
+    .toast {
+      position: fixed;
+      bottom: 90px;
+      left: 50%;
+      transform: translateX(-50%);
+      background: #00f2ff;
+      color: #000;
+      padding: 10px 20px;
+      border-radius: 20px;
+      box-shadow: 0 4px 20px rgba(0, 242, 255, 0.4);
+      opacity: 0;
+      pointer-events: none;
+      transition: 0.3s ease;
+      z-index: 9999;
+      font-weight: 500;
+    }
+
+    .toast.show {
+      opacity: 1;
+      pointer-events: auto;
+    }
   </style>
 </head>
 <body>
+  <!-- Header -->
   <header class="site-header">
     <div class="logo">Kinsu</div>
     <button class="menu-toggle" onclick="document.querySelector('.top-nav').classList.toggle('active')">
@@ -242,12 +272,13 @@
     </nav>
   </header>
 
+  <!-- Main Content -->
   <main class="contact-page">
-    <h2>Get in Touch</h2>
+    <h2 data-aos="fade-up">Get in Touch</h2>
     <div class="contact-cards">
 
       <!-- Email -->
-      <div class="contact-card">
+      <div class="contact-card" data-aos="fade-up">
         <div class="contact-header">
           <img src="/assets/mail-reception-svgrepo-com.svg" alt="Email" class="contact-img" />
           <div class="contact-info">
@@ -259,10 +290,9 @@
           </div>
         </div>
       </div>
-        
 
       <!-- Telegram -->
-      <div class="contact-card">
+      <div class="contact-card" data-aos="fade-up">
         <div class="contact-header">
           <img src="/assets/telegram-svgrepo-com.svg" alt="Telegram" class="contact-img" />
           <div class="contact-info">
@@ -274,7 +304,7 @@
       </div>
 
       <!-- GitHub -->
-      <div class="contact-card">
+      <div class="contact-card" data-aos="fade-up">
         <div class="contact-header">
           <img src="/assets/github-repo-git-octocat-svgrepo-com.svg" alt="GitHub" class="contact-img" />
           <div class="contact-info">
@@ -286,7 +316,7 @@
       </div>
 
       <!-- LinkedIn -->
-      <div class="contact-card">
+      <div class="contact-card" data-aos="fade-up">
         <div class="contact-header">
           <img src="/assets/linkedin-icon-logo-svgrepo-com.svg" alt="LinkedIn" class="contact-img" />
           <div class="contact-info">
@@ -298,7 +328,7 @@
       </div>
 
       <!-- Instagram -->
-      <div class="contact-card">
+      <div class="contact-card" data-aos="fade-up">
         <div class="contact-header">
           <img src="/assets/instagram-svgrepo-com.svg" alt="Instagram" class="contact-img" />
           <div class="contact-info">
@@ -312,6 +342,7 @@
     </div>
   </main>
 
+  <!-- Footer -->
   <footer class="site-footer">
     <nav class="footer-nav">
       <a href="/"><i class="fas fa-home"></i><span>Home</span></a>
@@ -321,12 +352,25 @@
     </nav>
   </footer>
 
+  <!-- Toast -->
+  <div class="toast" id="toast">Email Copied!</div>
+
+  <!-- Scripts -->
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script>AOS.init();</script>
+
   <script>
     function copyEmail() {
       const emailText = document.getElementById("emailText");
       emailText.select();
-      document.execCommand("copy");
-      alert("Copied: " + emailText.value);
+      emailText.setSelectionRange(0, 99999);
+      navigator.clipboard.writeText(emailText.value);
+
+      const toast = document.getElementById("toast");
+      toast.classList.add("show");
+      setTimeout(() => {
+        toast.classList.remove("show");
+      }, 2000);
     }
   </script>
 </body>

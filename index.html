@@ -4,7 +4,6 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Kinsu Rajput | Portfolio</title>
-  <link rel="stylesheet" href="css/style.css" />
   <link rel="stylesheet" href="css/loader.css" />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
@@ -14,11 +13,12 @@
     body {
       margin: 0;
       padding: 80px 0 80px 0;
-      color: #fff;
       font-family: 'Orbitron', sans-serif;
       background: #000;
+      color: #fff;
     }
 
+    /* Header and Footer */
     header.site-header, footer.site-footer {
       position: fixed;
       left: 0;
@@ -74,6 +74,7 @@
       cursor: pointer;
     }
 
+    /* Hero Section */
     .hero {
       text-align: center;
       padding: 60px 20px;
@@ -108,22 +109,30 @@
       font-family: 'Pacifico', cursive;
       font-size: 2.5rem;
       color: #00f2ff;
+      animation: flicker 2s infinite alternate;
     }
 
     .typing-animation {
-      font-size: 1rem;
       font-family: monospace;
-      margin-top: 10px;
+      font-size: 1rem;
       color: #ccc;
+      margin-top: 10px;
     }
 
+    /* About and Projects */
     .about, .projects {
       padding: 40px 20px;
       max-width: 900px;
       margin: auto;
     }
 
-    /* --- Project Cards --- */
+    .about h2, .projects h2 {
+      font-size: 2em;
+      margin-bottom: 20px;
+      color: #00f2ff;
+    }
+
+    /* Project Card Buttons */
     .project-button {
       display: flex;
       justify-content: space-between;
@@ -131,32 +140,22 @@
       border: 1px solid #a855f7;
       border-radius: 8px;
       padding: 12px 20px;
-      background: rgba(168, 85, 247, 0.07);
+      background: rgba(168, 85, 247, 0.05);
       color: #d8b4fe;
       margin-bottom: 20px;
-      box-shadow: 0 0 10px #a855f7;
-      transition: all 0.3s ease-in-out;
+      box-shadow: 0 0 15px #a855f73f;
+      backdrop-filter: blur(8px);
+      transition: background 0.3s ease-in-out, box-shadow 0.3s ease;
     }
 
     .project-button:hover {
-      box-shadow: 0 0 20px #d946ef, 0 0 30px #9333ea;
-      transform: scale(1.01);
-    }
-
-    .project-left {
-      display: flex;
-      flex-direction: column;
+      background: rgba(168, 85, 247, 0.07);
     }
 
     .project-left h3 {
       margin: 0;
       font-size: 1.1rem;
       color: #e9d5ff;
-    }
-
-    .project-left h3 span {
-      display: inline-block;
-      animation: flicker 2s infinite alternate;
     }
 
     .project-left p {
@@ -167,9 +166,9 @@
 
     .project-right {
       display: flex;
-      flex-direction: row;
       align-items: center;
       gap: 12px;
+      flex-wrap: wrap;
     }
 
     .project-status {
@@ -202,6 +201,12 @@
       height: 12px;
     }
 
+    @keyframes flicker {
+      0% { opacity: 1; text-shadow: 0 0 5px #9333ea, 0 0 10px #7c3aed; }
+      50% { opacity: 0.7; text-shadow: 0 0 10px #c084fc, 0 0 20px #9333ea; }
+      100% { opacity: 1; text-shadow: 0 0 8px #9333ea, 0 0 15px #9333ea; }
+    }
+
     @media (max-width: 768px) {
       .top-nav {
         display: none;
@@ -226,19 +231,11 @@
       .project-button {
         flex-direction: column;
         align-items: flex-start;
-        gap: 10px;
       }
 
       .project-right {
-        flex-direction: column;
-        align-items: flex-start;
+        margin-top: 10px;
       }
-    }
-
-    @keyframes flicker {
-      0% { opacity: 1; text-shadow: 0 0 5px #9333ea, 0 0 10px #7c3aed; }
-      50% { opacity: 0.7; text-shadow: 0 0 10px #c084fc, 0 0 20px #9333ea; }
-      100% { opacity: 1; text-shadow: 0 0 8px #9333ea, 0 0 15px #9333ea; }
     }
   </style>
 </head>
@@ -309,7 +306,7 @@
     </div>
   </section>
 
-  <!-- FOOTER NAVIGATION -->
+  <!-- FOOTER -->
   <footer class="site-footer">
     <nav class="footer-nav">
       <a href="/" class="nav-btn"><i class="fas fa-home"></i><span>Home</span></a>
@@ -319,6 +316,7 @@
     </nav>
   </footer>
 
+  <!-- AOS + Scripts -->
   <script src="/js/script.js" defer></script>
   <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
   <script>AOS.init();</script>

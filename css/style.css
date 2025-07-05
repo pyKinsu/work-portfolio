@@ -8,9 +8,8 @@
 }
 
 body {
-  font-family: 'Segoe UI', sans-serif;
-  background: linear-gradient(135deg, #0f2027, #203a43, #2c5364); /* Deep dark premium gradient */
-  color: #f0f0f0;
+  font-family: 'Orbitron', sans-serif;
+  background: linear-gradient(to right, #1D4ED8, #3B82F6);
   padding-bottom: 80px;
   min-height: 100vh;
   overflow-x: hidden;

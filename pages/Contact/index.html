@@ -8,8 +8,13 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
   <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet" />
   <style>
-    body {
+    * {
       margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
       font-family: 'Segoe UI', sans-serif;
       background: #000;
       color: #fff;
@@ -21,7 +26,7 @@
       top: 0;
       width: 100%;
       padding: 10px 20px;
-      background: rgba(0, 0, 0, 0.5);
+      background: rgba(0, 0, 0, 0.4);
       backdrop-filter: blur(10px);
       display: flex;
       justify-content: space-between;
@@ -36,6 +41,15 @@
       color: #00ffff;
     }
 
+    .menu-toggle {
+      display: none;
+      background: none;
+      border: none;
+      font-size: 1.5rem;
+      color: #00ffff;
+      cursor: pointer;
+    }
+
     .top-nav {
       display: flex;
       gap: 20px;
@@ -48,6 +62,27 @@
 
     .top-nav a:hover {
       color: #00f2ff;
+    }
+
+    @media (max-width: 768px) {
+      .top-nav {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 60px;
+        right: 20px;
+        background: rgba(0,0,0,0.9);
+        padding: 10px;
+        border-radius: 10px;
+      }
+
+      .top-nav.active {
+        display: flex;
+      }
+
+      .menu-toggle {
+        display: block;
+      }
     }
 
     main.contact-page {
@@ -70,16 +105,14 @@
 
     .contact-card {
       background: rgba(255,255,255,0.05);
-      border: 1px solid rgba(255,255,255,0.1);
       border-left: 5px solid #00f2ff;
       border-radius: 16px;
       padding: 20px;
       box-shadow: 0 4px 20px rgba(0,255,255,0.1);
-      backdrop-filter: blur(8px);
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
       display: flex;
       flex-direction: column;
-      gap: 10px;
+      backdrop-filter: blur(6px);
+      transition: 0.3s ease;
     }
 
     .contact-card:hover {
@@ -90,25 +123,17 @@
     .contact-header {
       display: flex;
       align-items: center;
+      gap: 15px;
+      margin-bottom: 10px;
     }
-    .contact-header {
-  display: flex;
-  align-items: center;
-}
-
-.contact-img svg {
-  border-radius: 50%;
-  background: #000;
-  padding: 5px;
-  box-shadow: 0 0 10px rgba(0,255,255,0.3);
-}
 
     .contact-img {
       width: 48px;
       height: 48px;
       border-radius: 50%;
-      border: 2px solid #00f2ff;
-      margin-right: 15px;
+      background: #000;
+      padding: 6px;
+      box-shadow: 0 0 10px rgba(0,255,255,0.3);
     }
 
     .contact-info h3 {
@@ -117,7 +142,7 @@
     }
 
     .contact-info p {
-      margin: 4px 0;
+      margin: 5px 0;
     }
 
     .contact-info a {
@@ -127,10 +152,10 @@
 
     .copy-email {
       display: flex;
-      align-items: center;
       background: #111;
       padding: 6px 10px;
       border-radius: 8px;
+      margin-top: 5px;
     }
 
     .copy-email input {
@@ -155,6 +180,7 @@
 
     .reach-btn {
       align-self: flex-end;
+      margin-top: 10px;
       background: linear-gradient(145deg, #00f2ff, #6a00ff);
       color: #fff;
       padding: 8px 16px;
@@ -175,23 +201,22 @@
       bottom: 0;
       width: 100%;
       background: rgba(0, 0, 0, 0.5);
-      border-top: 1px solid rgba(255,255,255,0.1);
       backdrop-filter: blur(10px);
+      border-top: 1px solid rgba(255,255,255,0.1);
       z-index: 1000;
     }
 
     .footer-nav {
       display: flex;
       justify-content: space-evenly;
-      align-items: center;
       padding: 10px;
     }
 
     .footer-nav a {
       color: #aaa;
       text-align: center;
-      font-size: 0.8em;
       text-decoration: none;
+      font-size: 0.8em;
     }
 
     .footer-nav a:hover {
@@ -223,63 +248,74 @@
 
       <!-- Email -->
       <div class="contact-card">
-        <img src="/assets/mail-reception-svgrepo-com.svg" alt="Email" class="contact-img" />
-        <div class="contact-info">
-          <h3>Email</h3>
-          <div class="copy-email">
-            <input type="text" value="mail@kinsu.in" id="emailText" readonly />
-            <button onclick="copyEmail()">Copy</button>
+        <div class="contact-header">
+          <img src="/assets/gmail-svgrepo-com.svg" alt="Email" class="contact-img" />
+          <div class="contact-info">
+            <h3>Email</h3>
+            <div class="copy-email">
+              <input type="text" value="mail@kinsu.in" id="emailText" readonly />
+              <button onclick="copyEmail()">Copy</button>
+            </div>
           </div>
-          <button class="reach-btn" onclick="window.location.href='mailto:mail@kinsu.in'">Reach</button>
         </div>
+        <button class="reach-btn" onclick="window.location.href='mailto:mail@kinsu.in'">Reach</button>
       </div>
 
       <!-- Telegram -->
       <div class="contact-card">
-        <img src="/assets/telegram-svgrepo-com.svg" alt="Telegram" class="contact-img" />
-        <div class="contact-info">
-          <h3>Telegram</h3>
-          <p><a href="https://t.me/PyKinsu" target="_blank">@PyKinsu</a></p>
-          <button class="reach-btn" onclick="window.open('https://t.me/PyKinsu')">Reach</button>
+        <div class="contact-header">
+          <img src="/assets/telegram-fill-svgrepo-com.svg" alt="Telegram" class="contact-img" />
+          <div class="contact-info">
+            <h3>Telegram</h3>
+            <p><a href="https://t.me/PyKinsu" target="_blank">@PyKinsu</a></p>
+          </div>
         </div>
+        <button class="reach-btn" onclick="window.open('https://t.me/PyKinsu')">Reach</button>
       </div>
 
       <!-- GitHub -->
       <div class="contact-card">
-        <img src="/assets/github-repo-git-octocat-svgrepo-com.svg" alt="GitHub" class="contact-img" />
-        <div class="contact-info">
-          <h3>GitHub</h3>
-          <p><a href="https://github.com/pyKinsu" target="_blank">@pyKinsu</a></p>
-          <button class="reach-btn" onclick="window.open('https://github.com/pyKinsu')">Reach</button>
+        <div class="contact-header">
+          <img src="/assets/github-142-svgrepo-com.svg" alt="GitHub" class="contact-img" />
+          <div class="contact-info">
+            <h3>GitHub</h3>
+            <p><a href="https://github.com/pyKinsu" target="_blank">@pyKinsu</a></p>
+          </div>
         </div>
+        <button class="reach-btn" onclick="window.open('https://github.com/pyKinsu')">Reach</button>
       </div>
 
       <!-- LinkedIn -->
       <div class="contact-card">
-        <img src="/assets/linkedin-icon-logo-svgrepo-com.svg" alt="LinkedIn" class="contact-img" />
-        <div class="contact-info">
-          <h3>LinkedIn</h3>
-          <p><a href="https://www.linkedin.com/in/pykinsu" target="_blank">@pykinsu</a></p>
-          <button class="reach-btn" onclick="window.open('https://www.linkedin.com/in/pykinsu')">Reach</button>
+        <div class="contact-header">
+          <img src="/assets/linkedin-round-svgrepo-com.svg" alt="LinkedIn" class="contact-img" />
+          <div class="contact-info">
+            <h3>LinkedIn</h3>
+            <p><a href="https://www.linkedin.com/in/pykinsu" target="_blank">@pykinsu</a></p>
+          </div>
         </div>
+        <button class="reach-btn" onclick="window.open('https://www.linkedin.com/in/pykinsu')">Reach</button>
       </div>
 
       <!-- Instagram -->
       <div class="contact-card">
-        <img src="/assets/instagram-svgrepo-com.svg" alt="Instagram" class="contact-img" />
-        <div class="contact-info">
-          <h3>Instagram</h3>
-          <p><a href="https://instagram.com/pykinsu" target="_blank">@pykinsu</a></p>
-          <button class="reach-btn" onclick="window.open('https://instagram.com/pykinsu')">Reach</button>
+        <div class="contact-header">
+          <img src="/assets/instagram-svgrepo-com.svg" alt="Instagram" class="contact-img" />
+          <div class="contact-info">
+            <h3>Instagram</h3>
+            <p><a href="https://instagram.com/pykinsu" target="_blank">@pykinsu</a></p>
+          </div>
         </div>
+        <button class="reach-btn" onclick="window.open('https://instagram.com/pykinsu')">Reach</button>
       </div>
-      
+
+    </div>
   </main>
 
   <footer class="site-footer">
     <nav class="footer-nav">
       <a href="/"><i class="fas fa-home"></i><span>Home</span></a>
-      <a href="/pages/Project/"><i class="fas fa-code"></i><span>Projects</span></a>
+      <a href="/pages/Projects/"><i class="fas fa-code"></i><span>Projects</span></a>
       <a href="/pages/Contact/"><i class="fas fa-envelope"></i><span>Contact</span></a>
       <a href="/pages/Hobbies/"><i class="fas fa-heart"></i><span>Hobbies</span></a>
     </nav>
@@ -289,7 +325,6 @@
     function copyEmail() {
       const emailText = document.getElementById("emailText");
       emailText.select();
-      emailText.setSelectionRange(0, 99999);
       document.execCommand("copy");
       alert("Copied: " + emailText.value);
     }

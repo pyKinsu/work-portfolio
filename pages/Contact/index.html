@@ -1,61 +1,199 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Contact | Kinsu Rajput</title>
-  <link rel="stylesheet" href="/css/style.css">
-  <link rel="stylesheet" href="/css/loader.css">
-  <link rel="stylesheet" href="/css/contact.css">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-     <style>
+  <link rel="stylesheet" href="/css/style.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet" />
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background: #000;
+      color: #fff;
+      padding-bottom: 100px;
+    }
+
+    .site-header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      backdrop-filter: blur(10px);
+      background: rgba(0, 0, 0, 0.5);
+      border-bottom: 1px solid rgba(255,255,255,0.1);
+      z-index: 1000;
+      padding: 10px 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .logo {
+      font-family: 'Pacifico', cursive;
+      font-size: 1.8em;
+      color: #00ffff;
+    }
+
     .top-nav {
       display: flex;
       gap: 20px;
     }
 
-    .menu-toggle {
-      display: none;
-      background: none;
-      border: none;
-      font-size: 24px;
+    .top-nav a {
+      color: #ccc;
+      text-decoration: none;
+    }
+
+    .top-nav a:hover {
       color: #00f2ff;
+    }
+
+    main.contact-page {
+      padding: 100px 20px 20px;
+      max-width: 1000px;
+      margin: auto;
+    }
+
+    .contact-page h2 {
+      text-align: center;
+      color: #00f2ff;
+      margin-bottom: 40px;
+    }
+
+    .contact-cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 20px;
+    }
+
+    .contact-card {
+      display: flex;
+      align-items: center;
+      background: rgba(255,255,255,0.05);
+      border: 1px solid rgba(255,255,255,0.1);
+      border-radius: 16px;
+      backdrop-filter: blur(10px);
+      padding: 16px;
+      box-shadow: 0 4px 20px rgba(0,255,255,0.1);
+      transition: transform 0.3s ease;
+    }
+
+    .contact-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 4px 25px rgba(0,255,255,0.3);
+    }
+
+    .contact-img {
+      width: 60px;
+      height: 60px;
+      border-radius: 50%;
+      margin-right: 20px;
+      border: 2px solid #00f2ff;
+    }
+
+    .contact-info {
+      flex: 1;
+    }
+
+    .contact-info h3 {
+      margin: 0;
+      font-size: 1.2em;
+    }
+
+    .contact-info p {
+      margin: 5px 0;
+    }
+
+    .contact-info a {
+      color: #00f2ff;
+      text-decoration: none;
+    }
+
+    .copy-email {
+      display: flex;
+      align-items: center;
+      background: #111;
+      padding: 6px 10px;
+      border-radius: 8px;
+      margin-top: 5px;
+    }
+
+    .copy-email input {
+      background: transparent;
+      border: none;
+      color: #00f2ff;
+      font-size: 0.9em;
+      width: 100%;
+      outline: none;
+    }
+
+    .copy-email button {
+      background: #00f2ff;
+      color: #000;
+      border: none;
+      border-radius: 6px;
+      padding: 5px 10px;
       cursor: pointer;
+      font-size: 0.8em;
+      margin-left: 10px;
+      box-shadow: 0 2px 8px rgba(0,242,255,0.4);
     }
 
-    @media (max-width: 768px) {
-      .top-nav {
-        display: none;
-        flex-direction: column;
-        background-color: #111;
-        position: absolute;
-        top: 60px;
-        right: 20px;
-        padding: 10px;
-        border-radius: 10px;
-        z-index: 10;
-      }
-
-      .top-nav.active {
-        display: flex;
-      }
-
-      .menu-toggle {
-        display: block;
-      }
+    .reach-btn {
+      margin-top: 10px;
+      background: linear-gradient(145deg, #00f2ff, #6a00ff);
+      color: #fff;
+      padding: 8px 16px;
+      border: none;
+      border-radius: 30px;
+      box-shadow: 0 4px 15px rgba(0, 255, 255, 0.4);
+      cursor: pointer;
+      font-weight: bold;
+      transition: transform 0.2s ease;
     }
-     </style>
+
+    .reach-btn:hover {
+      transform: scale(1.05);
+    }
+
+    .site-footer {
+      position: fixed;
+      bottom: 0;
+      width: 100%;
+      background: rgba(0, 0, 0, 0.5);
+      border-top: 1px solid rgba(255,255,255,0.1);
+      backdrop-filter: blur(10px);
+      z-index: 1000;
+    }
+
+    .footer-nav {
+      display: flex;
+      justify-content: space-evenly;
+      align-items: center;
+      padding: 10px;
+    }
+
+    .footer-nav a {
+      color: #aaa;
+      text-align: center;
+      font-size: 0.8em;
+      text-decoration: none;
+    }
+
+    .footer-nav a:hover {
+      color: #00f2ff;
+    }
+
+    .footer-nav i {
+      display: block;
+      font-size: 1.2em;
+    }
+  </style>
 </head>
 <body>
-
-  <!-- Loader 
-  <div class="loader-wrapper">
-    <div class="neon-loader">Kinsu's Folio</div>
-  </div> -->
-
-  <!-- HEADER -->
   <header class="site-header">
     <div class="logo">Kinsu</div>
     <button class="menu-toggle" onclick="document.querySelector('.top-nav').classList.toggle('active')">
@@ -68,58 +206,83 @@
     </nav>
   </header>
 
-  <!-- Contact Cards -->
   <main class="contact-page">
     <h2>Get in Touch</h2>
     <div class="contact-cards">
+
+      <!-- Email -->
       <div class="contact-card">
-        <img src="https://github.com/pykinsu.png" alt="Kinsu" class="contact-img">
-        <h3>Email</h3>
-        <p><a href="mailto:mail@kinsu.in">mail@kinsu.in</a></p>
+        <img src="https://img.icons8.com/fluency/48/gmail.png" alt="Email" class="contact-img" />
+        <div class="contact-info">
+          <h3>Email</h3>
+          <div class="copy-email">
+            <input type="text" value="mail@kinsu.in" id="emailText" readonly />
+            <button onclick="copyEmail()">Copy</button>
+          </div>
+          <button class="reach-btn" onclick="window.location.href='mailto:mail@kinsu.in'">Reach</button>
+        </div>
       </div>
 
+      <!-- Telegram -->
       <div class="contact-card">
-        <img src="https://github.com/pykinsu.png" alt="Kinsu" class="contact-img">
-        <h3>Telegram</h3>
-        <p><a href="https://t.me/PyKinsu" target="_blank">@PyKinsu</a></p>
+        <img src="https://img.icons8.com/color/48/telegram-app--v1.png" alt="Telegram" class="contact-img" />
+        <div class="contact-info">
+          <h3>Telegram</h3>
+          <p><a href="https://t.me/PyKinsu" target="_blank">@PyKinsu</a></p>
+          <button class="reach-btn" onclick="window.open('https://t.me/PyKinsu')">Reach</button>
+        </div>
       </div>
 
+      <!-- GitHub -->
       <div class="contact-card">
-        <img src="https://github.com/pykinsu.png" alt="Kinsu" class="contact-img">
-        <h3>GitHub</h3>
-        <p><a href="https://github.com/pyKinsu" target="_blank">@pyKinsu</a></p>
+        <img src="https://img.icons8.com/glyph-neue/48/github.png" alt="GitHub" class="contact-img" />
+        <div class="contact-info">
+          <h3>GitHub</h3>
+          <p><a href="https://github.com/pyKinsu" target="_blank">@pyKinsu</a></p>
+          <button class="reach-btn" onclick="window.open('https://github.com/pyKinsu')">Reach</button>
+        </div>
       </div>
 
+      <!-- LinkedIn -->
       <div class="contact-card">
-        <img src="https://github.com/pykinsu.png" alt="Kinsu" class="contact-img">
-        <h3>LinkedIn</h3>
-        <p><a href="https://www.linkedin.com/in/pykinsu" target="_blank">@pykinsu</a></p>
+        <img src="https://img.icons8.com/fluency/48/linkedin.png" alt="LinkedIn" class="contact-img" />
+        <div class="contact-info">
+          <h3>LinkedIn</h3>
+          <p><a href="https://www.linkedin.com/in/pykinsu" target="_blank">@pykinsu</a></p>
+          <button class="reach-btn" onclick="window.open('https://www.linkedin.com/in/pykinsu')">Reach</button>
+        </div>
       </div>
 
+      <!-- Instagram -->
       <div class="contact-card">
-        <img src="https://github.com/pykinsu.png" alt="Kinsu" class="contact-img">
-        <h3>Instagram</h3>
-        <p><a href="https://instagram.com/pykinsu" target="_blank">@pykinsu</a></p>
+        <img src="https://img.icons8.com/fluency/48/instagram-new.png" alt="Instagram" class="contact-img" />
+        <div class="contact-info">
+          <h3>Instagram</h3>
+          <p><a href="https://instagram.com/pykinsu" target="_blank">@pykinsu</a></p>
+          <button class="reach-btn" onclick="window.open('https://instagram.com/pykinsu')">Reach</button>
+        </div>
       </div>
+
     </div>
   </main>
 
-  <!-- Footer -->
   <footer class="site-footer">
     <nav class="footer-nav">
-      <a href="/" class="nav-btn"><i class="fas fa-home"></i><span>Home</span></a>
-      <a href="/pages/Project/" class="nav-btn"><i class="fas fa-code"></i><span>Projects</span></a>
-      <a href="/pages/Contact/" class="nav-btn"><i class="fas fa-envelope"></i><span>Contact</span></a>
-      <a href="/pages/Hobbies/" class="nav-btn"><i class="fas fa-heart"></i><span>Hobbies</span></a>
+      <a href="/"><i class="fas fa-home"></i><span>Home</span></a>
+      <a href="/pages/Project/"><i class="fas fa-code"></i><span>Projects</span></a>
+      <a href="/pages/Contact/"><i class="fas fa-envelope"></i><span>Contact</span></a>
+      <a href="/pages/Hobbies/"><i class="fas fa-heart"></i><span>Hobbies</span></a>
     </nav>
   </footer>
 
-  <!-- Dark Toggle 
-  <button id="darkModeToggle" class="dark-toggle" title="Toggle Theme">
-    <i class="fas fa-moon"></i>
-  </button> -->
-
-  <script src="/js/script.js"></script>
+  <script>
+    function copyEmail() {
+      const emailText = document.getElementById("emailText");
+      emailText.select();
+      emailText.setSelectionRange(0, 99999);
+      document.execCommand("copy");
+      alert("Copied: " + emailText.value);
+    }
+  </script>
 </body>
 </html>
-

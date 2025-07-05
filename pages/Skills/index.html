@@ -1,1 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Skills | Kinsu Rajput</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/loader.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <style>
+    .skills-page {
+      max-width: 1000px;
+      margin: auto;
+      padding: 60px 20px;
+      text-align: center;
+    }
+
+    .skills-page h2 {
+      font-size: 2.2em;
+      color: #00f2ff;
+      margin-bottom: 30px;
+    }
+
+    .skill {
+      margin-bottom: 20px;
+      text-align: left;
+    }
+
+    .skill-title {
+      font-weight: bold;
+      color: #ccc;
+      margin-bottom: 5px;
+    }
+
+    .skill-bar {
+      height: 10px;
+      background: #333;
+      border-radius: 5px;
+      overflow: hidden;
+    }
+
+    .skill-bar-fill {
+      height: 100%;
+      background: #00f2ff;
+      width: 0;
+      border-radius: 5px;
+      animation: fillBar 2s forwards;
+    }
+
+    @keyframes fillBar {
+      from { width: 0; }
+      to { width: var(--width); }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="loader-wrapper">
+    <div class="neon-loader">Kinsu's Folio</div>
+  </div>
+
+  <header class="site-header">
+    <div class="logo">Kinsu</div>
+    <nav class="top-nav">
+      <a href="/">Home</a>
+      <a href="/pages/Project/">Projects</a>
+      <a href="/pages/Contact/">Contact</a>
+    </nav>
+  </header>
+
+  <main class="skills-page">
+    <h2>My Skills</h2>
+
+    <div class="skill">
+      <div class="skill-title">Python</div>
+      <div class="skill-bar">
+        <div class="skill-bar-fill" style="--width: 70%;"></div>
+      </div>
+    </div>
+
+    <div class="skill">
+      <div class="skill-title">HTML</div>
+      <div class="skill-bar">
+        <div class="skill-bar-fill" style="--width: 80%;"></div>
+      </div>
+    </div>
+
+    <div class="skill">
+      <div class="skill-title">CSS</div>
+      <div class="skill-bar">
+        <div class="skill-bar-fill" style="--width: 75%;"></div>
+      </div>
+    </div>
+
+    <div class="skill">
+      <div class="skill-title">Telegram Bots</div>
+      <div class="skill-bar">
+        <div class="skill-bar-fill" style="--width: 85%;"></div>
+      </div>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <nav class="footer-nav">
+      <a href="/" class="nav-btn"><i class="fas fa-home"></i><span>Home</span></a>
+      <a href="/pages/Project/" class="nav-btn"><i class="fas fa-code"></i><span>Projects</span></a>
+      <a href="/pages/Contact/" class="nav-btn"><i class="fas fa-envelope"></i><span>Contact</span></a>
+      <a href="/pages/Hobbies/" class="nav-btn"><i class="fas fa-heart"></i><span>Hobbies</span></a>
+    </nav>
+  </footer>
+
+  <button id="darkModeToggle" class="dark-toggle" title="Toggle Theme">
+    <i class="fas fa-moon"></i>
+  </button>
+
+  <script src="js/script.js"></script>
+</body>
+</html>
 

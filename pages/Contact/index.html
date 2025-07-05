@@ -6,8 +6,8 @@
   <title>Contact | Kinsu Rajput</title>
 
   <!-- Fonts & Icons -->
-  <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
   <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css"/>
 
   <style>
@@ -17,11 +17,26 @@
       box-sizing: border-box;
     }
 
+    html {
+      scroll-behavior: smooth;
+    }
+
     body {
       font-family: 'Segoe UI', sans-serif;
       background: #000;
       color: #fff;
       padding-bottom: 100px;
+    }
+
+    /* Scroll Progress Bar */
+    #scroll-progress {
+      position: fixed;
+      top: 0;
+      left: 0;
+      height: 4px;
+      background: #00f2ff;
+      z-index: 9999;
+      width: 0%;
     }
 
     /* Header */
@@ -35,7 +50,7 @@
       display: flex;
       justify-content: space-between;
       align-items: center;
-      z-index: 999;
+      z-index: 1000;
       border-bottom: 1px solid rgba(255,255,255,0.1);
     }
 
@@ -62,6 +77,7 @@
     .top-nav a {
       color: #ccc;
       text-decoration: none;
+      transition: color 0.3s;
     }
 
     .top-nav a:hover {
@@ -75,7 +91,7 @@
         position: absolute;
         top: 60px;
         right: 20px;
-        background: rgba(0,0,0,0.95);
+        background: rgba(0,0,0,0.9);
         padding: 10px;
         border-radius: 10px;
       }
@@ -89,7 +105,7 @@
       }
     }
 
-    /* Main */
+    /* Main Content */
     main.contact-page {
       padding: 100px 20px 20px;
       max-width: 1000px;
@@ -109,27 +125,26 @@
     }
 
     .contact-card {
-      background: rgba(255, 255, 255, 0.05);
-      border: 1px solid rgba(255, 255, 255, 0.08);
+      background: rgba(255,255,255,0.05);
       border-radius: 16px;
       padding: 20px;
-      box-shadow: 0 8px 24px rgba(0, 242, 255, 0.1);
-      display: flex;
-      flex-direction: column;
-      backdrop-filter: blur(12px);
-      transition: 0.4s ease;
+      box-shadow: 0 4px 20px rgba(0,255,255,0.1);
+      backdrop-filter: blur(10px);
+      transition: 0.3s ease;
+      border-left: 5px solid #00f2ff;
     }
 
     .contact-card:hover {
       transform: translateY(-5px);
-      box-shadow: 0 12px 32px rgba(0, 242, 255, 0.4);
+      box-shadow: 0 4px 25px rgba(0,255,255,0.4);
     }
 
     .contact-header {
       display: flex;
       align-items: center;
       gap: 15px;
-      margin-bottom: 10px;
+      justify-content: space-between;
+      flex-wrap: wrap;
     }
 
     .contact-img {
@@ -138,25 +153,28 @@
       border-radius: 50%;
       background: #000;
       padding: 6px;
-      box-shadow: 0 0 12px rgba(0, 242, 255, 0.3);
+      box-shadow: 0 0 10px rgba(0,255,255,0.3);
     }
 
     .contact-info h3 {
-      margin: 0;
-      font-size: 1.2em;
+      margin: 0 0 5px;
+      font-size: 1.1em;
     }
 
-    .contact-info p {
-      margin: 5px 0;
-    }
-
+    .contact-info p,
     .contact-info a {
-      color: #00f2ff;
+      font-size: 0.95em;
+      color: #ccc;
       text-decoration: none;
+    }
+
+    .contact-info a:hover {
+      color: #00f2ff;
     }
 
     .copy-email {
       display: flex;
+      align-items: center;
       background: #111;
       padding: 6px 10px;
       border-radius: 8px;
@@ -184,15 +202,14 @@
     }
 
     .reach-btn {
-      align-self: flex-end;
-      margin-top: 10px;
-      background: linear-gradient(135deg, #00f2ff, #6a00ff);
+      background: linear-gradient(145deg, #00f2ff, #6a00ff);
       color: #fff;
-      padding: 8px 16px;
+      padding: 6px 12px;
       border: none;
       border-radius: 30px;
       box-shadow: 0 4px 15px rgba(0, 255, 255, 0.3);
       cursor: pointer;
+      font-size: 0.8em;
       font-weight: bold;
       transition: transform 0.2s ease;
     }
@@ -201,12 +218,35 @@
       transform: scale(1.05);
     }
 
+    /* Toast */
+    .toast {
+      position: fixed;
+      bottom: 20px;
+      left: 50%;
+      transform: translateX(-50%);
+      background: #00f2ff;
+      color: #000;
+      padding: 12px 20px;
+      border-radius: 30px;
+      font-size: 0.9em;
+      font-weight: bold;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.4s ease;
+      z-index: 9999;
+    }
+
+    .toast.show {
+      opacity: 1;
+      pointer-events: all;
+    }
+
     /* Footer */
     .site-footer {
       position: fixed;
       bottom: 0;
       width: 100%;
-      background: rgba(0, 0, 0, 0.3);
+      background: rgba(0, 0, 0, 0.4);
       backdrop-filter: blur(10px);
       border-top: 1px solid rgba(255,255,255,0.1);
       z-index: 1000;
@@ -233,32 +273,13 @@
       display: block;
       font-size: 1.2em;
     }
-
-    /* Toast Notification */
-    .toast {
-      position: fixed;
-      bottom: 90px;
-      left: 50%;
-      transform: translateX(-50%);
-      background: #00f2ff;
-      color: #000;
-      padding: 10px 20px;
-      border-radius: 20px;
-      box-shadow: 0 4px 20px rgba(0, 242, 255, 0.4);
-      opacity: 0;
-      pointer-events: none;
-      transition: 0.3s ease;
-      z-index: 9999;
-      font-weight: 500;
-    }
-
-    .toast.show {
-      opacity: 1;
-      pointer-events: auto;
-    }
   </style>
 </head>
 <body>
+
+  <!-- Scroll Progress -->
+  <div id="scroll-progress"></div>
+
   <!-- Header -->
   <header class="site-header">
     <div class="logo">Kinsu</div>
@@ -272,7 +293,7 @@
     </nav>
   </header>
 
-  <!-- Main Content -->
+  <!-- Main Contact -->
   <main class="contact-page">
     <h2 data-aos="fade-up">Get in Touch</h2>
     <div class="contact-cards">
@@ -299,8 +320,8 @@
             <h3>Telegram</h3>
             <p><a href="https://t.me/PyKinsu" target="_blank">@PyKinsu</a></p>
           </div>
+          <button class="reach-btn" onclick="window.open('https://t.me/PyKinsu')">Reach</button>
         </div>
-        <button class="reach-btn" onclick="window.open('https://t.me/PyKinsu')">Reach</button>
       </div>
 
       <!-- GitHub -->
@@ -311,8 +332,8 @@
             <h3>GitHub</h3>
             <p><a href="https://github.com/pyKinsu" target="_blank">@pyKinsu</a></p>
           </div>
+          <button class="reach-btn" onclick="window.open('https://github.com/pyKinsu')">Reach</button>
         </div>
-        <button class="reach-btn" onclick="window.open('https://github.com/pyKinsu')">Reach</button>
       </div>
 
       <!-- LinkedIn -->
@@ -323,8 +344,8 @@
             <h3>LinkedIn</h3>
             <p><a href="https://www.linkedin.com/in/pykinsu" target="_blank">@pykinsu</a></p>
           </div>
+          <button class="reach-btn" onclick="window.open('https://www.linkedin.com/in/pykinsu')">Reach</button>
         </div>
-        <button class="reach-btn" onclick="window.open('https://www.linkedin.com/in/pykinsu')">Reach</button>
       </div>
 
       <!-- Instagram -->
@@ -335,43 +356,46 @@
             <h3>Instagram</h3>
             <p><a href="https://instagram.com/pykinsu" target="_blank">@pykinsu</a></p>
           </div>
+          <button class="reach-btn" onclick="window.open('https://instagram.com/pykinsu')">Reach</button>
         </div>
-        <button class="reach-btn" onclick="window.open('https://instagram.com/pykinsu')">Reach</button>
       </div>
 
     </div>
   </main>
 
+  <!-- Toast -->
+  <div class="toast" id="toast">Email copied!</div>
+
   <!-- Footer -->
   <footer class="site-footer">
     <nav class="footer-nav">
       <a href="/"><i class="fas fa-home"></i><span>Home</span></a>
-      <a href="/pages/Projects/"><i class="fas fa-code"></i><span>Projects</span></a>
-      <a href="/pages/Contact/"><i class="fas fa-envelope"></i><span>Contact</span></a>
-      <a href="/pages/Hobbies/"><i class="fas fa-heart"></i><span>Hobbies</span></a>
+      <a href="/pages/Projects"><i class="fas fa-code"></i><span>Projects</span></a>
+      <a href="/pages/Contact"><i class="fas fa-envelope"></i><span>Contact</span></a>
+      <a href="/pages/Hobbies"><i class="fas fa-heart"></i><span>Hobbies</span></a>
     </nav>
   </footer>
 
-  <!-- Toast -->
-  <div class="toast" id="toast">Email Copied!</div>
-
   <!-- Scripts -->
   <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-  <script>AOS.init();</script>
-
   <script>
+    AOS.init();
+
     function copyEmail() {
       const emailText = document.getElementById("emailText");
       emailText.select();
-      emailText.setSelectionRange(0, 99999);
-      navigator.clipboard.writeText(emailText.value);
-
+      document.execCommand("copy");
       const toast = document.getElementById("toast");
       toast.classList.add("show");
-      setTimeout(() => {
-        toast.classList.remove("show");
-      }, 2000);
+      setTimeout(() => toast.classList.remove("show"), 2000);
     }
+
+    window.onscroll = function () {
+      const winScroll = document.documentElement.scrollTop || document.body.scrollTop;
+      const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+      const scrolled = (winScroll / height) * 100;
+      document.getElementById("scroll-progress").style.width = scrolled + "%";
+    };
   </script>
 </body>
 </html>

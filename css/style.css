@@ -9,12 +9,16 @@
 
 body {
   font-family: 'Segoe UI', sans-serif;
-  background: linear-gradient(to bottom, #000000, #0f0f0f);
+  background: linear-gradient(90deg, hsla(252, 40%, 29%, 1) 0%, hsla(270, 77%, 71%, 1) 100%);
+  background: -moz-linear-gradient(90deg, hsla(252, 40%, 29%, 1) 0%, hsla(270, 77%, 71%, 1) 100%);
+  background: -webkit-linear-gradient(90deg, hsla(252, 40%, 29%, 1) 0%, hsla(270, 77%, 71%, 1) 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#392D69", endColorstr="#B57BEE", GradientType=1);
   color: #f0f0f0;
   padding-bottom: 80px;
   min-height: 100vh;
   overflow-x: hidden;
 }
+
 
 /* Header */
 .site-header {

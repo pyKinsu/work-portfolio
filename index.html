@@ -3,66 +3,73 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Kinsu's Portfolio</title>
-  <link rel="stylesheet" href="css/style.css" />
+  <title>Kinsu Rajput | Portfolio</title>
+  <link rel="stylesheet" href="/css/style.css" />
+  <link rel="stylesheet" href="/css/loader.css" />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
 </head>
 <body>
 
+  <!-- Loader Screen -->
+  <div class="loader-wrapper">
+    <div class="neon-loader">Kinsu's Folio</div>
+  </div>
+
   <!-- HEADER -->
   <header class="site-header">
     <div class="logo">Kinsu</div>
     <nav class="top-nav">
       <a href="/">Home</a>
-      <a href="/about">Github</a>
+      <a href="/projects">Projects</a>
       <a href="/contact">Contact</a>
     </nav>
   </header>
 
-  <!-- MAIN CONTENT -->
-  <main class="site-content">
-    <p>Welcome to my portfolio! This site is still under development.</p>
-    <p style="margin-top: 1000px;">(Scroll down to test sticky footer!)</p>
-  </main>
+  <!-- HERO SECTION -->
+  <section class="hero">
+    <img src="https://github.com/pykinsu.png" alt="Kinsu Rajput" class="hero-img" />
+    <h1 class="animated-name">Hi, I'm <span class="neon-text">Kinsu Rajput</span></h1>
+    <p class="typing-animation">BCA Student | Python Learner | Telegram Bot Developer</p>
+  </section>
 
-  <!-- FIXED BOTTOM NAVIGATION -->
+  <!-- ABOUT SECTION -->
+  <section class="about">
+    <h2>About Me</h2>
+    <p>I’m a BCA student from Bihar, India. I recently passed 12th and started my programming journey. I love playing chess and building Telegram bots. Currently learning Python and HTML.</p>
+  </section>
+
+  <!-- PROJECTS SECTION -->
+  <section class="projects">
+    <h2>Projects</h2>
+    <div class="project-card">
+      <h3>AutoFilter Bot</h3>
+      <p>A Telegram bot that auto filters and fetches content.</p>
+      <a href="https://github.com/pykinsu" target="_blank">GitHub Repo</a>
+    </div>
+    <div class="project-card">
+      <h3>All Video Downloader Bot</h3>
+      <p>A Telegram bot to download videos from various sources.</p>
+      <a href="https://github.com/pykinsu" target="_blank">GitHub Repo</a>
+    </div>
+  </section>
+
+  <!-- FOOTER NAVIGATION -->
   <footer class="site-footer">
     <nav class="footer-nav">
       <a href="/" class="nav-btn"><i class="fas fa-home"></i><span>Home</span></a>
-      <a href="/about" class="nav-btn"><i class="fas fa-star"></i><span>About</span></a>
-      <a href="/hobby" class="nav-btn"><i class="fas fa-envelope"></i><span>Contact</span></a>
+      <a href="/projects" class="nav-btn"><i class="fas fa-code"></i><span>Projects</span></a>
+      <a href="/contact" class="nav-btn"><i class="fas fa-envelope"></i><span>Contact</span></a>
       <a href="/blog" class="nav-btn"><i class="fas fa-blog"></i><span>Blog</span></a>
     </nav>
   </footer>
 
-  <!-- Dark Mode Toggle Floating Button -->
+  <!-- DARK MODE TOGGLE -->
   <button id="darkModeToggle" class="dark-toggle" title="Toggle Theme">
     <i class="fas fa-moon"></i>
   </button>
 
-  <script>
-    // Dark Mode Toggle Logic
-    const toggle = document.getElementById('darkModeToggle');
-    const body = document.body;
-    const icon = toggle.querySelector('i');
-
-    // Apply saved theme if available
-    if (localStorage.getItem('theme') === 'light') {
-      body.classList.add('light-mode');
-      icon.classList.remove('fa-moon');
-      icon.classList.add('fa-sun');
-    }
-
-    toggle.addEventListener('click', () => {
-      body.classList.toggle('light-mode');
-      const isLight = body.classList.contains('light-mode');
-      icon.classList.toggle('fa-moon', !isLight);
-      icon.classList.toggle('fa-sun', isLight);
-      localStorage.setItem('theme', isLight ? 'light' : 'dark');
-    });
-  </script>
-
+  <script src="/js/script.js"></script>
 </body>
 </html>

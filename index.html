@@ -14,7 +14,7 @@
   <style>
     body {
       margin: 0;
-      padding: 0 0 80px 0; /* bottom padding for footer visibility */
+      padding: 80px 0 80px 0; /* top and bottom padding for fixed header/footer */
       color: #fff;
       font-family: 'Orbitron', sans-serif;
       position: relative;
@@ -31,12 +31,18 @@
     }
 
     header.site-header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
       backdrop-filter: blur(10px);
       background-color: rgba(0, 0, 0, 0.5);
       border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-      position: relative;
-      z-index: 2;
+      z-index: 1000;
       padding: 10px 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
     }
 
     footer.site-footer {

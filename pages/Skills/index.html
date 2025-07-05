@@ -57,16 +57,20 @@
 </head>
 <body>
 
-  <div class="loader-wrapper">
+  <!-- <div class="loader-wrapper">
     <div class="neon-loader">Kinsu's Folio</div>
-  </div>
+  </div> -->
 
+  <!-- HEADER -->
   <header class="site-header">
     <div class="logo">Kinsu</div>
+    <button class="menu-toggle" onclick="document.querySelector('.top-nav').classList.toggle('active')">
+      <i class="fas fa-bars"></i>
+    </button>
     <nav class="top-nav">
       <a href="/">Home</a>
-      <a href="/pages/Project/">Projects</a>
-      <a href="/pages/Contact/">Contact</a>
+      <a href="/projects">Projects</a>
+      <a href="/contact">Contact</a>
     </nav>
   </header>
 

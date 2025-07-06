@@ -4,54 +4,46 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Skills | Kinsu Rajput</title>
-  
+
   <link rel="stylesheet" href="/css/style.css">
   <link rel="stylesheet" href="/css/loader.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-  <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css"/>
 
   <style>
-    body {
+    * {
       margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
       font-family: 'Segoe UI', sans-serif;
       background: #000;
       color: #fff;
       padding-top: 80px;
-      padding-bottom: 80px;
-      position: relative;
-      overflow-x: hidden;
-    }
-
-    .site-header,
-    .site-footer {
-      position: fixed;
-      width: 100%;
-      left: 0;
-      backdrop-filter: blur(12px);
-      background: rgba(0, 0, 0, 0.35);
-      border: 1px solid rgba(255,255,255,0.08);
-      z-index: 1000;
+      padding-bottom: 100px;
     }
 
     .site-header {
+      position: fixed;
       top: 0;
-      padding: 12px 20px;
+      width: 100%;
+      padding: 10px 20px;
+      background: rgba(0, 0, 0, 0.4);
+      backdrop-filter: blur(10px);
       display: flex;
       justify-content: space-between;
       align-items: center;
-    }
-
-    .site-footer {
-      bottom: 0;
-      padding: 14px 0;
+      z-index: 999;
+      border-bottom: 1px solid rgba(255,255,255,0.1);
     }
 
     .logo {
       font-family: 'Pacifico', cursive;
       font-size: 1.8em;
-      color: #00f2ff;
+      color: #00ffff;
     }
 
     .top-nav {
@@ -63,7 +55,7 @@
       color: #ccc;
       text-decoration: none;
       font-size: 1em;
-      transition: color 0.3s;
+      transition: 0.3s;
     }
 
     .top-nav a:hover {
@@ -72,10 +64,10 @@
 
     .menu-toggle {
       display: none;
-      font-size: 24px;
-      color: #00f2ff;
       background: none;
       border: none;
+      font-size: 24px;
+      color: #00f2ff;
       cursor: pointer;
     }
 
@@ -83,12 +75,13 @@
       .top-nav {
         display: none;
         flex-direction: column;
-        background: #111;
+        background-color: #111;
         position: absolute;
         top: 60px;
         right: 20px;
         padding: 10px;
         border-radius: 10px;
+        z-index: 10;
       }
 
       .top-nav.active {
@@ -100,82 +93,43 @@
       }
     }
 
+    /* Skills section */
     .skills-page {
-      max-width: 900px;
+      max-width: 1000px;
       margin: auto;
-      padding: 40px 20px;
-      position: relative;
-      z-index: 1;
+      padding: 60px 20px;
+      text-align: center;
     }
 
     .skills-page h2 {
       font-size: 2.2em;
       color: #00f2ff;
-      text-align: center;
-      margin-bottom: 40px;
+      margin-bottom: 30px;
     }
 
-    .skills-container {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-      gap: 20px;
-    }
-
-    .skill-card {
-      background: rgba(255, 255, 255, 0.05);
-      border: 1px solid rgba(255,255,255,0.07);
-      border-radius: 16px;
-      padding: 20px;
-      box-shadow: 0 0 15px rgba(0, 242, 255, 0.15);
-      backdrop-filter: blur(8px);
-      position: relative;
-      overflow: hidden;
-      transition: transform 0.3s ease;
-    }
-
-    .skill-card:hover {
-      transform: translateY(-6px);
-      box-shadow: 0 0 25px rgba(0, 242, 255, 0.3);
-    }
-
-    .skill-card::before {
-      content: '';
-      position: absolute;
-      top: 0; left: 0;
-      width: 100%; height: 100%;
-      background: linear-gradient(120deg, #a855f7 0%, #00f2ff 100%);
-      transform: translateX(-100%);
-      opacity: 0.08;
-      transition: 0.4s ease;
-      z-index: 0;
-    }
-
-    .skill-card:hover::before {
-      transform: translateX(0);
+    .skill {
+      margin-bottom: 25px;
+      text-align: left;
     }
 
     .skill-title {
       font-weight: bold;
-      color: #00f2ff;
-      margin-bottom: 12px;
-      position: relative;
-      z-index: 1;
+      color: #ccc;
+      margin-bottom: 6px;
     }
 
     .skill-bar {
-      height: 10px;
-      background: #333;
-      border-radius: 5px;
+      height: 12px;
+      background: #222;
+      border-radius: 6px;
       overflow: hidden;
-      position: relative;
-      z-index: 1;
     }
 
     .skill-bar-fill {
       height: 100%;
-      background: #00f2ff;
+      background: linear-gradient(90deg, #00f2ff, #a855f7);
       width: 0;
-      border-radius: 5px;
+      border-radius: 6px;
       animation: fillBar 2s forwards;
     }
 
@@ -184,45 +138,52 @@
       to { width: var(--width); }
     }
 
+    /* Footer exactly like Home */
+    .site-footer {
+      position: fixed;
+      bottom: 0;
+      width: 100%;
+      background: rgba(0, 0, 0, 0.4);
+      backdrop-filter: blur(10px);
+      border-top: 1px solid rgba(255,255,255,0.1);
+      z-index: 999;
+      box-shadow: 0 0 20px rgba(168, 85, 247, 0.25);
+    }
+
     .footer-nav {
       display: flex;
       justify-content: space-around;
       align-items: center;
-      padding: 0 10px;
+      padding: 12px 0;
     }
 
     .nav-btn {
       display: flex;
       flex-direction: column;
       align-items: center;
-      color: #00f2ff;
       text-decoration: none;
-      font-size: 0.85em;
+      color: #00f2ff;
+      font-size: 0.9em;
+      transition: color 0.3s ease;
     }
 
     .nav-btn i {
-      font-size: 1.2em;
-      margin-bottom: 3px;
+      font-size: 1.4em;
+      margin-bottom: 4px;
     }
 
-    /* Purple vertical sideline */
-    .skills-page::before {
-      content: '';
-      position: absolute;
-      left: 0;
-      top: 80px;
-      width: 4px;
-      height: calc(100% - 160px);
-      background: rgba(168, 85, 247, 0.6);
-      border-radius: 10px;
-      filter: blur(2px);
-      z-index: 0;
+    .nav-btn span {
+      font-size: 0.75em;
+    }
+
+    .nav-btn:hover {
+      color: #fff;
     }
   </style>
 </head>
 <body>
 
-  <!-- Header -->
+  <!-- HEADER -->
   <header class="site-header">
     <div class="logo">Kinsu</div>
     <button class="menu-toggle" onclick="document.querySelector('.top-nav').classList.toggle('active')">
@@ -235,40 +196,40 @@
     </nav>
   </header>
 
-  <!-- Main -->
+  <!-- MAIN -->
   <main class="skills-page">
-    <h2 data-aos="fade-up">My Skills</h2>
-    <div class="skills-container">
+    <h2>My Skills</h2>
 
-      <div class="skill-card" data-aos="fade-up">
-        <div class="skill-title">Python</div>
-        <div class="skill-bar"><div class="skill-bar-fill" style="--width: 70%;"></div></div>
+    <div class="skill">
+      <div class="skill-title">Python</div>
+      <div class="skill-bar">
+        <div class="skill-bar-fill" style="--width: 70%;"></div>
       </div>
+    </div>
 
-      <div class="skill-card" data-aos="fade-up" data-aos-delay="100">
-        <div class="skill-title">HTML</div>
-        <div class="skill-bar"><div class="skill-bar-fill" style="--width: 80%;"></div></div>
+    <div class="skill">
+      <div class="skill-title">HTML</div>
+      <div class="skill-bar">
+        <div class="skill-bar-fill" style="--width: 80%;"></div>
       </div>
+    </div>
 
-      <div class="skill-card" data-aos="fade-up" data-aos-delay="200">
-        <div class="skill-title">CSS</div>
-        <div class="skill-bar"><div class="skill-bar-fill" style="--width: 75%;"></div></div>
+    <div class="skill">
+      <div class="skill-title">CSS</div>
+      <div class="skill-bar">
+        <div class="skill-bar-fill" style="--width: 75%;"></div>
       </div>
+    </div>
 
-      <div class="skill-card" data-aos="fade-up" data-aos-delay="300">
-        <div class="skill-title">Telegram Bots</div>
-        <div class="skill-bar"><div class="skill-bar-fill" style="--width: 85%;"></div></div>
+    <div class="skill">
+      <div class="skill-title">Telegram Bots</div>
+      <div class="skill-bar">
+        <div class="skill-bar-fill" style="--width: 85%;"></div>
       </div>
-
-      <div class="skill-card" data-aos="fade-up" data-aos-delay="400">
-        <div class="skill-title">Using ChatGPT</div>
-        <div class="skill-bar"><div class="skill-bar-fill" style="--width: 90%;"></div></div>
-      </div>
-
     </div>
   </main>
 
-  <!-- Footer -->
+  <!-- FOOTER (EXACT COPY FROM HOME) -->
   <footer class="site-footer">
     <nav class="footer-nav">
       <a href="/" class="nav-btn"><i class="fas fa-home"></i><span>Home</span></a>
@@ -278,8 +239,6 @@
     </nav>
   </footer>
 
-  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-  <script>AOS.init({ duration: 800, once: true });</script>
   <script src="/js/script.js"></script>
 </body>
 </html>

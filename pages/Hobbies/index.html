@@ -1,20 +1,35 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Hobbies | Kinsu Rajput</title>
+
   <link rel="stylesheet" href="/css/style.css">
   <link rel="stylesheet" href="/css/loader.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-     <style>
-       
+  <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css" />
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background: #000;
+      color: #fff;
+      padding-bottom: 100px;
+    }
+
     .hobbies-page {
       max-width: 1000px;
       margin: auto;
-      padding: 60px 20px;
+      padding: 100px 20px 20px;
       text-align: center;
     }
 
@@ -25,18 +40,54 @@
     }
 
     .hobby {
-      background: #1f1f1f;
-      border-radius: 12px;
+      background: rgba(255, 255, 255, 0.05);
+      border-radius: 16px;
       padding: 20px;
       margin-bottom: 20px;
-      box-shadow: 0 0 10px rgba(0, 242, 255, 0.3);
-      transition: 0.3s;
+      box-shadow: 0 0 12px #00f2ff, 0 0 25px rgba(0, 255, 255, 0.2);
+      transition: 0.3s ease;
+      backdrop-filter: blur(8px);
     }
 
     .hobby:hover {
       transform: translateY(-5px);
-      box-shadow: 0 0 20px rgba(0, 242, 255, 0.6);
+      box-shadow: 0 0 16px #00f2ff, 0 0 30px rgba(0, 255, 255, 0.4);
     }
+
+    .play-chess {
+      background: rgba(0, 0, 0, 0.5);
+      border: 2px solid #00f2ff;
+      border-radius: 16px;
+      padding: 20px;
+      margin-top: 40px;
+      box-shadow: 0 0 15px #00f2ff66;
+      backdrop-filter: blur(12px);
+      transition: 0.3s;
+    }
+
+    .play-chess:hover {
+      transform: scale(1.02);
+      box-shadow: 0 0 25px #00f2ffb0;
+    }
+
+    .play-chess a {
+      color: #00f2ff;
+      font-weight: bold;
+      font-size: 1.1em;
+      text-decoration: none;
+      display: inline-block;
+      margin-top: 10px;
+      border: 1px solid #00f2ff;
+      padding: 8px 16px;
+      border-radius: 30px;
+      transition: 0.3s;
+    }
+
+    .play-chess a:hover {
+      background: #00f2ff;
+      color: #000;
+    }
+
     .top-nav {
       display: flex;
       gap: 20px;
@@ -72,60 +123,111 @@
         display: block;
       }
     }
- </style>
+
+    .site-header {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      padding: 10px 20px;
+      background: rgba(0, 0, 0, 0.4);
+      backdrop-filter: blur(10px);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      z-index: 999;
+      border-bottom: 1px solid rgba(255,255,255,0.1);
+    }
+
+    .logo {
+      font-family: 'Pacifico', cursive;
+      font-size: 1.8em;
+      color: #00ffff;
+    }
+
+    .site-footer {
+      position: fixed;
+      bottom: 0;
+      width: 100%;
+      background: rgba(0, 0, 0, 0.4);
+      backdrop-filter: blur(10px);
+      border-top: 1px solid rgba(255,255,255,0.1);
+      z-index: 999;
+    }
+
+    .footer-nav {
+      display: flex;
+      justify-content: space-evenly;
+      padding: 10px;
+    }
+
+    .footer-nav a {
+      color: #aaa;
+      text-align: center;
+      text-decoration: none;
+      font-size: 0.8em;
+    }
+
+    .footer-nav a:hover {
+      color: #00f2ff;
+    }
+
+    .footer-nav i {
+      display: block;
+      font-size: 1.2em;
+    }
+  </style>
 </head>
 <body>
 
-  <!-- <div class="loader-wrapper">
-    <div class="neon-loader">Kinsu's Folio</div>
-  </div> -->
-
 <!-- HEADER -->
-  <header class="site-header">
-    <div class="logo">Kinsu</div>
-    <button class="menu-toggle" onclick="document.querySelector('.top-nav').classList.toggle('active')">
-      <i class="fas fa-bars"></i>
-    </button>
-    <nav class="top-nav">
-      <a href="/">Home</a>
-      <a href="/pages/projects">Projects</a>
-      <a href="/pages/contact">Contact</a>
-    </nav>
-  </header>
+<header class="site-header">
+  <div class="logo">Kinsu</div>
+  <button class="menu-toggle" onclick="document.querySelector('.top-nav').classList.toggle('active')">
+    <i class="fas fa-bars"></i>
+  </button>
+  <nav class="top-nav">
+    <a href="/">Home</a>
+    <a href="/pages/projects">Projects</a>
+    <a href="/pages/contact">Contact</a>
+  </nav>
+</header>
 
-  <main class="hobbies-page">
-    <h2>My Hobbies</h2>
+<main class="hobbies-page">
+  <h2 data-aos="zoom-in">My Hobbies</h2>
 
-    <div class="hobby">
-      <h3>♟️ Playing Chess</h3>
-      <p>I enjoy strategic thinking and improving my decision-making skills through chess.</p>
-    </div>
+  <div class="hobby" data-aos="fade-up">
+    <h3>♟️ Playing Chess</h3>
+    <p>I enjoy strategic thinking and improving my decision-making skills through chess.</p>
+  </div>
 
-    <div class="hobby">
-      <h3>🤖 Building Telegram Bots</h3>
-      <p>Creating useful automation bots for Telegram is my favorite hobby. I've built filter bots and video downloaders!</p>
-    </div>
+  <div class="hobby" data-aos="fade-up" data-aos-delay="100">
+    <h3>🤖 Building Telegram Bots</h3>
+    <p>Creating useful automation bots for Telegram is my favorite hobby. I've built filter bots and video downloaders!</p>
+  </div>
 
-    <div class="hobby">
-      <h3>💻 Exploring Tech</h3>
-      <p>I love exploring new technologies, AI tools, and useful open-source projects on GitHub.</p>
-    </div>
-  </main>
+  <div class="hobby" data-aos="fade-up" data-aos-delay="200">
+    <h3>💻 Exploring Tech</h3>
+    <p>I love exploring new technologies, AI tools, and useful open-source projects on GitHub.</p>
+  </div>
 
-  <footer class="site-footer">
-    <nav class="footer-nav">
-      <a href="/" class="nav-btn"><i class="fas fa-home"></i><span>Home</span></a>
-      <a href="/pages/Project/" class="nav-btn"><i class="fas fa-code"></i><span>Projects</span></a>
-      <a href="/pages/Contact/" class="nav-btn"><i class="fas fa-envelope"></i><span>Contact</span></a>
-      <a href="/pages/Hobbies/" class="nav-btn"><i class="fas fa-heart"></i><span>Hobbies</span></a>
-    </nav>
-  </footer>
+  <div class="play-chess" data-aos="fade-up" data-aos-delay="300">
+    <h3>♟️ Play Chess with Me</h3>
+    <p>Challenge me on <strong>chess.com</strong> and let's play!</p>
+    <a href="https://www.chess.com/member/pykinsu" target="_blank">@pykinsu</a>
+  </div>
+</main>
 
-<!--   <button id="darkModeToggle" class="dark-toggle" title="Toggle Theme">
-    <i class="fas fa-moon"></i>
-  </button> -->
+<footer class="site-footer">
+  <nav class="footer-nav">
+    <a href="/" class="nav-btn"><i class="fas fa-home"></i><span>Home</span></a>
+    <a href="/pages/Project/" class="nav-btn"><i class="fas fa-code"></i><span>Projects</span></a>
+    <a href="/pages/Contact/" class="nav-btn"><i class="fas fa-envelope"></i><span>Contact</span></a>
+    <a href="/pages/Hobbies/" class="nav-btn"><i class="fas fa-heart"></i><span>Hobbies</span></a>
+  </nav>
+</footer>
 
-  <script src="/js/script.js"></script>
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script>AOS.init();</script>
+<script src="/js/script.js"></script>
 </body>
 </html>
-

@@ -11,7 +11,12 @@
   <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css"/>
 
   <style>
-    * { margin: 0; padding: 0; box-sizing: border-box; }
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
     body {
       font-family: 'Segoe UI', sans-serif;
       background: #000;
@@ -81,12 +86,12 @@
       .top-nav {
         display: none;
         flex-direction: column;
+        background-color: #111;
         position: absolute;
         top: 60px;
         right: 20px;
-        background-color: #111;
-        border-radius: 10px;
         padding: 10px;
+        border-radius: 10px;
         z-index: 10;
       }
 
@@ -99,7 +104,7 @@
       }
     }
 
-    /* Footer Nav */
+    /* Footer Navigation */
     .footer-nav {
       display: flex;
       justify-content: space-around;
@@ -117,17 +122,18 @@
 
     .nav-btn i {
       font-size: 1.3em;
+      display: block;
     }
 
     .nav-btn span {
       font-size: 0.75em;
     }
 
-    /* Contact Section */
+    /* Main Content */
     main.contact-page {
+      padding: 60px 20px 20px;
       max-width: 1000px;
       margin: auto;
-      padding: 100px 20px 40px;
     }
 
     .contact-page h2 {
@@ -143,44 +149,45 @@
     }
 
     .contact-card {
-      background: rgba(255, 255, 255, 0.05);
+      background: rgba(255, 255, 255, 0.06);
+      border: 1px solid rgba(255, 255, 255, 0.1);
       border-radius: 16px;
-      padding: 20px;
-      box-shadow: 0 4px 20px rgba(0,255,255,0.1);
+      padding: 16px;
       backdrop-filter: blur(10px);
+      box-shadow: 0 0 12px rgba(168, 85, 247, 0.2);
       transition: 0.3s ease;
-      border-left: 5px solid #00f2ff;
     }
 
     .contact-card:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 4px 25px rgba(0,255,255,0.4);
+      transform: translateY(-4px);
+      box-shadow: 0 0 24px rgba(168, 85, 247, 0.4);
     }
 
     .contact-header {
       display: flex;
       align-items: center;
-      gap: 15px;
-      justify-content: space-between;
-      flex-wrap: wrap;
+      gap: 12px;
+      margin-bottom: 10px;
     }
 
     .contact-img {
-      width: 48px;
-      height: 48px;
+      width: 42px;
+      height: 42px;
       border-radius: 50%;
-      background: #000;
-      padding: 6px;
-      box-shadow: 0 0 10px rgba(0,255,255,0.3);
+      padding: 4px;
+      background: #111;
+      box-shadow: 0 0 8px rgba(0, 255, 255, 0.3);
     }
 
     .contact-info h3 {
-      margin: 0 0 5px;
-      font-size: 1.1em;
+      margin: 0;
+      font-size: 1em;
+      color: #00f2ff;
     }
 
-    .contact-info p, .contact-info a {
-      font-size: 0.95em;
+    .contact-info p,
+    .contact-info a {
+      font-size: 0.9em;
       color: #ccc;
       text-decoration: none;
     }
@@ -189,23 +196,22 @@
       color: #00f2ff;
     }
 
-    /* GitHub-style Arrow Link */
-    .arrow-link {
+    .github-link {
+      margin-top: 10px;
+      color: #a855f7;
+      font-weight: 500;
       display: inline-flex;
       align-items: center;
       gap: 6px;
-      margin-top: 10px;
-      padding: 6px 14px;
-      color: #a855f7;
-      background: rgba(168, 85, 247, 0.08);
-      border: 1px solid #a855f7;
-      border-radius: 50px;
-      font-weight: 500;
       text-decoration: none;
+      padding: 6px 14px;
+      border-radius: 50px;
+      border: 1px solid #a855f7;
+      background: rgba(168, 85, 247, 0.08);
       transition: all 0.3s ease;
     }
 
-    .arrow-link:hover {
+    .github-link:hover {
       background: rgba(168, 85, 247, 0.2);
       color: #fff;
       border-color: #fff;
@@ -218,35 +224,35 @@
       stroke-width: 2;
     }
 
-    /* Email Field */
     .copy-email {
       display: flex;
-      margin-top: 10px;
-      gap: 10px;
+      align-items: center;
+      margin-top: 8px;
+      background: #111;
+      border-radius: 8px;
+      padding: 5px 10px;
     }
 
     .copy-email input {
-      flex: 1;
-      background: #111;
       border: none;
+      background: transparent;
       color: #00f2ff;
+      width: 100%;
       font-size: 0.9em;
-      padding: 6px 12px;
-      border-radius: 8px;
       outline: none;
     }
 
     .copy-email button {
+      margin-left: 10px;
+      padding: 4px 10px;
+      border: none;
+      border-radius: 6px;
       background: #00f2ff;
       color: #000;
-      border: none;
-      padding: 6px 14px;
-      border-radius: 6px;
       cursor: pointer;
-      font-size: 0.8em;
+      font-size: 0.75em;
     }
 
-    /* Toast */
     .toast {
       position: fixed;
       bottom: 20px;
@@ -266,7 +272,7 @@
 
     .toast.show {
       opacity: 1;
-      pointer-events: auto;
+      pointer-events: all;
     }
   </style>
 </head>
@@ -285,7 +291,7 @@
     </nav>
   </header>
 
-  <!-- Contact Main -->
+  <!-- Main -->
   <main class="contact-page">
     <h2 data-aos="fade-up">Get in Touch</h2>
     <div class="contact-cards">
@@ -296,7 +302,6 @@
           <img src="/assets/mail-reception-svgrepo-com.svg" alt="Email" class="contact-img" />
           <div class="contact-info">
             <h3>Email</h3>
-            <p>mail@kinsu.in</p>
             <div class="copy-email">
               <input type="text" value="mail@kinsu.in" id="emailText" readonly />
               <button onclick="copyEmail()">Copy</button>
@@ -311,9 +316,9 @@
           <img src="/assets/telegram-svgrepo-com.svg" alt="Telegram" class="contact-img" />
           <div class="contact-info">
             <h3>Telegram</h3>
-            <p><a href="https://t.me/PyKinsu" target="_blank">@PyKinsu</a></p>
-            <a href="https://t.me/PyKinsu" class="arrow-link" target="_blank">
-              Open Telegram
+            <p>@PyKinsu</p>
+            <a href="https://t.me/PyKinsu" class="github-link" target="_blank">
+              Visit
               <svg class="arrow-icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 10">
                 <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" d="M1 5h12m0 0L9 1m4 4L9 9"/>
               </svg>
@@ -328,9 +333,9 @@
           <img src="/assets/github-repo-git-octocat-svgrepo-com.svg" alt="GitHub" class="contact-img" />
           <div class="contact-info">
             <h3>GitHub</h3>
-            <p><a href="https://github.com/pyKinsu" target="_blank">@pyKinsu</a></p>
-            <a href="https://github.com/pyKinsu" class="arrow-link" target="_blank">
-              Visit GitHub
+            <p>@pyKinsu</p>
+            <a href="https://github.com/pyKinsu" class="github-link" target="_blank">
+              GitHub
               <svg class="arrow-icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 10">
                 <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" d="M1 5h12m0 0L9 1m4 4L9 9"/>
               </svg>
@@ -345,9 +350,9 @@
           <img src="/assets/linkedin-icon-logo-svgrepo-com.svg" alt="LinkedIn" class="contact-img" />
           <div class="contact-info">
             <h3>LinkedIn</h3>
-            <p><a href="https://www.linkedin.com/in/pykinsu" target="_blank">@pykinsu</a></p>
-            <a href="https://www.linkedin.com/in/pykinsu" class="arrow-link" target="_blank">
-              View Profile
+            <p>@pykinsu</p>
+            <a href="https://www.linkedin.com/in/pykinsu" class="github-link" target="_blank">
+              Connect
               <svg class="arrow-icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 10">
                 <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" d="M1 5h12m0 0L9 1m4 4L9 9"/>
               </svg>
@@ -362,9 +367,9 @@
           <img src="/assets/instagram-svgrepo-com.svg" alt="Instagram" class="contact-img" />
           <div class="contact-info">
             <h3>Instagram</h3>
-            <p><a href="https://instagram.com/pykinsu" target="_blank">@pykinsu</a></p>
-            <a href="https://instagram.com/pykinsu" class="arrow-link" target="_blank">
-              View Profile
+            <p>@pykinsu</p>
+            <a href="https://instagram.com/pykinsu" class="github-link" target="_blank">
+              Follow
               <svg class="arrow-icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 10">
                 <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" d="M1 5h12m0 0L9 1m4 4L9 9"/>
               </svg>
@@ -375,6 +380,9 @@
 
     </div>
   </main>
+
+  <!-- Toast -->
+  <div class="toast" id="toast">Email copied!</div>
 
   <!-- Footer -->
   <footer class="site-footer">
@@ -400,7 +408,5 @@
       setTimeout(() => toast.classList.remove("show"), 2000);
     }
   </script>
-
-  <div class="toast" id="toast">Email copied!</div>
 </body>
 </html>

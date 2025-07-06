@@ -6,7 +6,6 @@
   <title>Hobbies | Kinsu Rajput</title>
 
   <!-- Fonts & Icons -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
   <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css"/>
@@ -24,9 +23,10 @@
       color: #fff;
       padding-top: 80px;
       padding-bottom: 80px;
+      overflow-x: hidden;
     }
 
-    /* Header/Footer (exactly like Home) */
+    /* Header & Footer */
     header.site-header,
     footer.site-footer {
       position: fixed;
@@ -83,6 +83,28 @@
       cursor: pointer;
     }
 
+    @media (max-width: 768px) {
+      .top-nav {
+        display: none;
+        flex-direction: column;
+        background-color: #111;
+        position: absolute;
+        top: 60px;
+        right: 20px;
+        padding: 10px;
+        border-radius: 10px;
+        z-index: 10;
+      }
+
+      .top-nav.active {
+        display: flex;
+      }
+
+      .menu-toggle {
+        display: block;
+      }
+    }
+
     .footer-nav {
       display: flex;
       justify-content: space-around;
@@ -107,136 +129,116 @@
       font-size: 0.75em;
     }
 
-    @media (max-width: 768px) {
-      .top-nav {
-        display: none;
-        flex-direction: column;
-        background-color: #111;
-        position: absolute;
-        top: 60px;
-        right: 20px;
-        padding: 10px;
-        border-radius: 10px;
-        z-index: 10;
-      }
-
-      .top-nav.active {
-        display: flex;
-      }
-
-      .menu-toggle {
-        display: block;
-      }
-    }
-
-    /* Main Content */
+    /* Hobbies Section */
     .hobbies-page {
       max-width: 1000px;
       margin: auto;
-      padding: 100px 20px 20px;
+      padding: 40px 20px;
       position: relative;
-    }
-
-    .hobbies-page::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 6px;
-      height: 100%;
-      background: rgba(168, 85, 247, 0.4);
-      filter: blur(8px);
-      border-radius: 10px;
-      z-index: 1;
     }
 
     .hobbies-page h2 {
       font-size: 2.2em;
       color: #00f2ff;
-      margin-bottom: 40px;
+      margin-bottom: 30px;
       text-align: center;
-      z-index: 2;
-      position: relative;
     }
 
-    .hobby {
-      position: relative;
+    .hobby-box {
       background: rgba(255, 255, 255, 0.05);
-      border: 1px solid rgba(255, 255, 255, 0.08);
+      border: 1px solid rgba(255, 255, 255, 0.1);
       border-radius: 16px;
       padding: 20px;
-      margin-bottom: 20px;
+      margin-bottom: 25px;
+      box-shadow: 0 0 12px #a855f73f;
       backdrop-filter: blur(10px);
-      overflow: hidden;
-      z-index: 2;
-      animation: flicker 3s infinite ease-in-out;
-    }
-
-    .hobby h3, .hobby p {
-      color: #00f2ff;
       position: relative;
-      z-index: 2;
+      overflow: hidden;
+      transition: 0.3s ease;
     }
 
-    .hobby::before {
-      content: '';
+    .hobby-box::before {
+      content: "";
       position: absolute;
-      top: -50%;
-      left: -50%;
-      width: 200%;
-      height: 200%;
-      background: radial-gradient(circle, rgba(168, 85, 247, 0.12) 0%, transparent 80%);
-      animation: flicker 5s infinite;
-      z-index: 1;
+      top: 0;
+      left: -100%;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(120deg, transparent, rgba(0, 242, 255, 0.3), transparent);
+      transition: 0.5s;
     }
 
-    @keyframes flicker {
-      0%, 100% {
-        opacity: 0.15;
-      }
-      50% {
-        opacity: 0.4;
-      }
+    .hobby-box:hover::before {
+      left: 100%;
     }
 
-    .play-chess {
-      background: rgba(0, 0, 0, 0.4);
+    .hobby-box:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 0 25px #00f2ff77;
+    }
+
+    .hobby-box h3 {
+      font-size: 1.4em;
+      margin-bottom: 10px;
+      color: #00f2ff;
+    }
+
+    .hobby-box p {
+      color: #ccc;
+      font-size: 0.95em;
+      line-height: 1.5;
+    }
+
+    .sideline {
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 4px;
+      height: 100%;
+      background: linear-gradient(to bottom, #a855f7, #00f2ff);
+    }
+
+    .chess-card {
+      text-align: center;
+      background: rgba(0, 0, 0, 0.5);
       border: 2px solid #00f2ff;
       border-radius: 16px;
       padding: 20px;
       margin-top: 40px;
-      box-shadow: 0 0 15px #00f2ff66;
       backdrop-filter: blur(12px);
-      transition: 0.3s;
-      z-index: 2;
+      box-shadow: 0 0 15px #00f2ff66;
     }
 
-    .play-chess h3,
-    .play-chess p {
+    .chess-card h3 {
       color: #00f2ff;
+      margin-bottom: 10px;
     }
 
-    .play-chess:hover {
-      transform: scale(1.02);
-      box-shadow: 0 0 25px #00f2ffb0;
-    }
-
-    .play-chess a {
-      color: #00f2ff;
-      font-weight: bold;
-      font-size: 1.1em;
-      text-decoration: none;
-      display: inline-block;
-      margin-top: 10px;
-      border: 1px solid #00f2ff;
+    .chess-link {
+      margin-top: 15px;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
       padding: 8px 16px;
-      border-radius: 30px;
-      transition: 0.3s;
+      border: 1px solid #a855f7;
+      color: #a855f7;
+      background: rgba(168, 85, 247, 0.08);
+      text-decoration: none;
+      border-radius: 40px;
+      transition: 0.3s ease;
     }
 
-    .play-chess a:hover {
-      background: #00f2ff;
-      color: #000;
+    .chess-link:hover {
+      background: rgba(168, 85, 247, 0.2);
+      color: #fff;
+      border-color: #fff;
+    }
+
+    .arrow-icon {
+      width: 16px;
+      height: 16px;
+      stroke: currentColor;
+      stroke-width: 2;
     }
   </style>
 </head>
@@ -255,29 +257,35 @@
   </nav>
 </header>
 
-<!-- MAIN -->
+<!-- HOBBIES SECTION -->
 <main class="hobbies-page">
+  <div class="sideline"></div>
   <h2 data-aos="zoom-in">My Hobbies</h2>
 
-  <div class="hobby" data-aos="fade-up">
+  <div class="hobby-box" data-aos="fade-up">
     <h3>♟️ Playing Chess</h3>
-    <p>I enjoy strategic thinking and improving my decision-making skills through chess.</p>
+    <p>Chess is not just a game—it's a mental workout. I enjoy strategic thinking and sharpening my focus through regular chess matches.</p>
   </div>
 
-  <div class="hobby" data-aos="fade-up" data-aos-delay="100">
+  <div class="hobby-box" data-aos="fade-up" data-aos-delay="100">
     <h3>🤖 Building Telegram Bots</h3>
-    <p>Creating useful automation bots for Telegram is my favorite hobby. I've built filter bots and video downloaders!</p>
+    <p>I build bots that automate tasks, fetch media, and improve productivity. I’ve made filter bots, downloaders, and more!</p>
   </div>
 
-  <div class="hobby" data-aos="fade-up" data-aos-delay="200">
-    <h3>💻 Exploring Tech</h3>
-    <p>I love exploring new technologies, AI tools, and useful open-source projects on GitHub.</p>
+  <div class="hobby-box" data-aos="fade-up" data-aos-delay="200">
+    <h3>💻 Exploring New Tech</h3>
+    <p>I'm constantly learning about AI tools, open-source GitHub projects, and the latest advancements in web and bot development.</p>
   </div>
 
-  <div class="play-chess" data-aos="fade-up" data-aos-delay="300">
-    <h3>♟️ Play Chess with Me</h3>
-    <p>Challenge me on <strong>chess.com</strong> and let's play!</p>
-    <a href="https://www.chess.com/member/pykinsu" target="_blank">@pykinsu</a>
+  <div class="chess-card" data-aos="zoom-in-up" data-aos-delay="300">
+    <h3>♟️ Play Chess With Me</h3>
+    <p>Let’s challenge each other on <strong>chess.com</strong>!</p>
+    <a class="chess-link" href="https://www.chess.com/member/pykinsu" target="_blank">
+      @pykinsu
+      <svg class="arrow-icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 10">
+        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" d="M1 5h12m0 0L9 1m4 4L9 9"/>
+      </svg>
+    </a>
   </div>
 </main>
 
@@ -291,8 +299,9 @@
   </nav>
 </footer>
 
-<!-- AOS -->
+<!-- Scripts -->
 <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 <script>AOS.init({ duration: 1000, once: true });</script>
+
 </body>
 </html>

@@ -5,44 +5,93 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Contact | Kinsu Rajput</title>
 
-  <!-- Fonts, Icons & AOS -->
+  <!-- Fonts & Icons -->
   <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
   <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css"/>
 
   <style>
-    * { margin: 0; padding: 0; box-sizing: border-box; }
-    html { scroll-behavior: smooth; }
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
     body {
       font-family: 'Segoe UI', sans-serif;
       background: #000;
       color: #fff;
-      padding-bottom: 100px;
+      padding-bottom: 120px;
     }
 
-    /* Header & Footer */
-    header.site-header, footer.site-footer {
-      position: fixed; left: 0; width: 100%;
+    /* Header */
+    .site-header {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      padding: 10px 20px;
+      background: rgba(0, 0, 0, 0.3);
       backdrop-filter: blur(10px);
-      background-color: rgba(0, 0, 0, 0.3);
-      border: 1px solid rgba(255,255,255,0.08);
-      box-shadow: 0 0 20px rgba(168,85,247,0.25);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
       z-index: 1000;
+      border-bottom: 1px solid rgba(255,255,255,0.1);
     }
 
-    header.site-header { top: 0; padding: 10px 20px; display: flex; justify-content: space-between; align-items: center; }
-    footer.site-footer { bottom: 0; padding: 10px 0; }
+    .logo {
+      font-family: 'Pacifico', cursive;
+      font-size: 1.8em;
+      color: #00f2ff;
+    }
 
-    .logo { font-family: 'Pacifico', cursive; font-size: 1.8em; color: #00f2ff; }
-    .top-nav { display: flex; gap: 20px; }
-    .top-nav a { color: #ccc; text-decoration: none; font-size: 1em; transition: color 0.3s; }
-    .top-nav a:hover { color: #00f2ff; }
-    .menu-toggle { display: none; font-size: 24px; color: #00f2ff; background: none; border: none; cursor: pointer; }
+    .menu-toggle {
+      display: none;
+      background: none;
+      border: none;
+      font-size: 1.5rem;
+      color: #00f2ff;
+      cursor: pointer;
+    }
+
+    .top-nav {
+      display: flex;
+      gap: 20px;
+    }
+
+    .top-nav a {
+      color: #ccc;
+      text-decoration: none;
+      transition: color 0.3s;
+    }
+
+    .top-nav a:hover {
+      color: #00f2ff;
+    }
 
     @media (max-width: 768px) {
-      .top-nav { display: none; flex-direction: column; position: absolute; top: 60px; right: 20px; background-color: #111; padding: 10px; border-radius: 10px; }
-      .top-nav.active { display: flex; }
-      .menu-toggle { display: block; }
+      .top-nav {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 60px;
+        right: 20px;
+        background: rgba(0,0,0,0.9);
+        padding: 10px;
+        border-radius: 10px;
+      }
+
+      .top-nav.active {
+        display: flex;
+      }
+
+      .menu-toggle {
+        display: block;
+      }
     }
 
     /* Main Content */
@@ -51,13 +100,16 @@
       max-width: 1000px;
       margin: auto;
     }
+
     .contact-page h2 {
-      text-align: center; color: #00f2ff; margin-bottom: 40px;
+      text-align: center;
+      color: #00f2ff;
+      margin-bottom: 40px;
     }
 
     .contact-cards {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px,1fr));
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
       gap: 20px;
     }
 
@@ -65,84 +117,157 @@
       background: rgba(255,255,255,0.05);
       border-radius: 16px;
       padding: 20px;
-      box-shadow: 0 4px 20px rgba(0,242,255,0.3);
+      box-shadow: 0 4px 20px rgba(0,255,255,0.1);
       backdrop-filter: blur(10px);
-      border-left: 5px solid #a855f7;
-      transition: transform .3s ease, box-shadow .3s ease;
+      transition: 0.3s ease;
+      border-left: 5px solid #00f2ff;
     }
+
     .contact-card:hover {
       transform: translateY(-5px);
-      box-shadow: 0 4px 25px rgba(168,85,247,0.5);
+      box-shadow: 0 4px 25px rgba(0,255,255,0.4);
     }
 
     .contact-header {
-      display: flex; align-items: center; justify-content: space-between;
+      display: flex;
+      align-items: center;
+      gap: 15px;
+      justify-content: space-between;
+      flex-wrap: wrap;
     }
+
     .contact-img {
-      width: 48px; height: 48px;
+      width: 48px;
+      height: 48px;
       border-radius: 50%;
       background: #000;
       padding: 6px;
-      box-shadow: 0 0 10px rgba(168,85,247,0.3);
+      box-shadow: 0 0 10px rgba(0,255,255,0.3);
     }
 
-    .contact-info h3 { font-size: 1.1em; }
-    .contact-info p, .contact-info a {
-      font-size: .95em;
-      color: #ccc; text-decoration: none;
+    .contact-info h3 {
+      margin: 0 0 5px;
+      font-size: 1.1em;
     }
-    .contact-info a:hover { color: #00f2ff; }
+
+    .contact-info p,
+    .contact-info a {
+      font-size: 0.95em;
+      color: #ccc;
+      text-decoration: none;
+    }
+
+    .contact-info a:hover {
+      color: #00f2ff;
+    }
 
     .copy-email {
-      display: flex; align-items: center; background: #111; padding: 6px 10px; border-radius: 8px; margin-top: 10px;
+      display: flex;
+      align-items: center;
+      background: #111;
+      padding: 6px 10px;
+      border-radius: 8px;
+      margin-top: 5px;
     }
+
     .copy-email input {
-      background: transparent; border: none;
-      color: #00f2ff; font-size: .9em; width: 100%; outline: none;
+      background: transparent;
+      border: none;
+      color: #00f2ff;
+      font-size: 0.9em;
+      width: 100%;
+      outline: none;
     }
+
     .copy-email button {
-      background: #00f2ff; color: #000;
-      border: none; border-radius: 6px;
-      padding: 5px 10px; cursor: pointer; font-size: .8em;
+      background: #00f2ff;
+      color: #000;
+      border: none;
+      border-radius: 6px;
+      padding: 5px 10px;
+      cursor: pointer;
+      font-size: 0.8em;
       margin-left: 10px;
     }
 
     .reach-btn {
-      background: linear-gradient(145deg,#00f2ff,#6a00ff);
-      color: #fff; padding: 6px 14px; border-radius: 30px;
-      box-shadow: 0 4px 15px rgba(0,242,255,0.3);
-      border: none; cursor: pointer; font-size: .9em;
-      transition: transform .2s ease;
-    }
-    .reach-btn:hover { transform: scale(1.05); }
-
-    .toast {
-      position: fixed; bottom: 20px; left: 50%;
-      transform: translateX(-50%);
-      background: #00f2ff; color: #000;
-      padding: 12px 20px;
+      background: linear-gradient(145deg, #00f2ff, #6a00ff);
+      color: #fff;
+      padding: 6px 12px;
+      border: none;
       border-radius: 30px;
-      font-size: .9em;
+      box-shadow: 0 4px 15px rgba(0, 255, 255, 0.3);
+      cursor: pointer;
+      font-size: 0.8em;
       font-weight: bold;
-      opacity: 0; pointer-events: none;
-      transition: opacity .4s ease;
-      z-index: 9999;
+      transition: transform 0.2s ease;
     }
-    .toast.show { opacity: 1; pointer-events: auto; }
+
+    .reach-btn:hover {
+      transform: scale(1.05);
+    }
+
+    /* Footer - Matching Home Page */
+    .site-footer {
+      position: fixed;
+      bottom: 0;
+      width: 100%;
+      background: rgba(0, 0, 0, 0.3);
+      backdrop-filter: blur(10px);
+      border-top: 1px solid rgba(255, 255, 255, 0.08);
+      box-shadow: 0 0 20px rgba(168, 85, 247, 0.25);
+      z-index: 999;
+    }
 
     .footer-nav {
-      display: flex; justify-content: space-evenly; align-items: center;
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+      padding: 10px 0;
     }
-    .footer-nav a {
-      display: flex; flex-direction: column; align-items: center;
-      color: #00f2ff; text-decoration: none; font-size: .8em;
-      transition: color .3s ease;
+
+    .nav-btn {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-decoration: none;
+      color: #00f2ff;
     }
-    .footer-nav a:hover {
+
+    .nav-btn span {
+      font-size: 12px;
+    }
+
+    .nav-btn:hover {
       color: #fff;
-      transform: scale(1.1);
     }
-    .footer-nav i { font-size: 1.3em; }
+
+    .nav-btn i {
+      font-size: 1.3em;
+    }
+
+    /* Toast */
+    .toast {
+      position: fixed;
+      bottom: 80px;
+      left: 50%;
+      transform: translateX(-50%);
+      background: #00f2ff;
+      color: #000;
+      padding: 12px 20px;
+      border-radius: 30px;
+      font-size: 0.9em;
+      font-weight: bold;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.4s ease;
+      z-index: 9999;
+    }
+
+    .toast.show {
+      opacity: 1;
+      pointer-events: all;
+    }
   </style>
 </head>
 <body>
@@ -160,19 +285,19 @@
     </nav>
   </header>
 
-  <!-- Contact Section -->
-  <main class="contact-page" data-aos="fade-up">
-    <h2 data-aos="fade-down">Get in Touch</h2>
+  <!-- Main Contact -->
+  <main class="contact-page">
+    <h2 data-aos="fade-up">Get in Touch</h2>
     <div class="contact-cards">
 
       <!-- Email -->
       <div class="contact-card" data-aos="fade-up">
         <div class="contact-header">
-          <img src="/assets/mail-reception-svgrepo-com.svg" alt="Email" class="contact-img">
+          <img src="/assets/mail-reception-svgrepo-com.svg" alt="Email" class="contact-img" />
           <div class="contact-info">
             <h3>Email</h3>
             <div class="copy-email">
-              <input type="text" readonly value="mail@kinsu.in" id="emailText">
+              <input type="text" value="mail@kinsu.in" id="emailText" readonly />
               <button onclick="copyEmail()">Copy</button>
             </div>
           </div>
@@ -182,7 +307,7 @@
       <!-- Telegram -->
       <div class="contact-card" data-aos="fade-up">
         <div class="contact-header">
-          <img src="/assets/telegram-svgrepo-com.svg" alt="Telegram" class="contact-img">
+          <img src="/assets/telegram-svgrepo-com.svg" alt="Telegram" class="contact-img" />
           <div class="contact-info">
             <h3>Telegram</h3>
             <p><a href="https://t.me/PyKinsu" target="_blank">@PyKinsu</a></p>
@@ -194,7 +319,7 @@
       <!-- GitHub -->
       <div class="contact-card" data-aos="fade-up">
         <div class="contact-header">
-          <img src="/assets/github-repo-git-octocat-svgrepo-com.svg" alt="GitHub" class="contact-img">
+          <img src="/assets/github-repo-git-octocat-svgrepo-com.svg" alt="GitHub" class="contact-img" />
           <div class="contact-info">
             <h3>GitHub</h3>
             <p><a href="https://github.com/pyKinsu" target="_blank">@pyKinsu</a></p>
@@ -206,22 +331,22 @@
       <!-- LinkedIn -->
       <div class="contact-card" data-aos="fade-up">
         <div class="contact-header">
-          <img src="/assets/linkedin-icon-logo-svgrepo-com.svg" alt="LinkedIn" class="contact-img">
+          <img src="/assets/linkedin-icon-logo-svgrepo-com.svg" alt="LinkedIn" class="contact-img" />
           <div class="contact-info">
             <h3>LinkedIn</h3>
-            <p><a href="https://linkedin.com/in/pykinsu" target="_blank">@pyKinsu</a></p>
+            <p><a href="https://www.linkedin.com/in/pykinsu" target="_blank">@pykinsu</a></p>
           </div>
-          <button class="reach-btn" onclick="window.open('https://linkedin.com/in/pykinsu')">Reach</button>
+          <button class="reach-btn" onclick="window.open('https://www.linkedin.com/in/pykinsu')">Reach</button>
         </div>
       </div>
 
       <!-- Instagram -->
       <div class="contact-card" data-aos="fade-up">
         <div class="contact-header">
-          <img src="/assets/instagram-svgrepo-com.svg" alt="Instagram" class="contact-img">
+          <img src="/assets/instagram-svgrepo-com.svg" alt="Instagram" class="contact-img" />
           <div class="contact-info">
             <h3>Instagram</h3>
-            <p><a href="https://instagram.com/pykinsu" target="_blank">@pyKinsu</a></p>
+            <p><a href="https://instagram.com/pykinsu" target="_blank">@pykinsu</a></p>
           </div>
           <button class="reach-btn" onclick="window.open('https://instagram.com/pykinsu')">Reach</button>
         </div>
@@ -236,25 +361,25 @@
   <!-- Footer -->
   <footer class="site-footer">
     <nav class="footer-nav">
-      <a href="/"><i class="fas fa-home"></i><span>Home</span></a>
-      <a href="/pages/Projects"><i class="fas fa-code"></i><span>Projects</span></a>
-      <a href="/pages/Contact"><i class="fas fa-envelope"></i><span>Contact</span></a>
-      <a href="/pages/Hobbies"><i class="fas fa-heart"></i><span>Hobbies</span></a>
+      <a href="/" class="nav-btn"><i class="fas fa-home"></i><span>Home</span></a>
+      <a href="/pages/Projects" class="nav-btn"><i class="fas fa-code"></i><span>Projects</span></a>
+      <a href="/pages/Contact" class="nav-btn"><i class="fas fa-envelope"></i><span>Contact</span></a>
+      <a href="/pages/Hobbies" class="nav-btn"><i class="fas fa-heart"></i><span>Hobbies</span></a>
     </nav>
   </footer>
 
   <!-- Scripts -->
   <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
   <script>
-    AOS.init({ duration: 800, once: true });
+    AOS.init();
 
     function copyEmail() {
-      const emailEl = document.getElementById('emailText');
-      emailEl.select();
-      document.execCommand('copy');
-      const toast = document.getElementById('toast');
-      toast.classList.add('show');
-      setTimeout(() => toast.classList.remove('show'), 2000);
+      const emailText = document.getElementById("emailText");
+      emailText.select();
+      document.execCommand("copy");
+      const toast = document.getElementById("toast");
+      toast.classList.add("show");
+      setTimeout(() => toast.classList.remove("show"), 2000);
     }
   </script>
 </body>

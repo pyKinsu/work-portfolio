@@ -5,13 +5,19 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Kinsu Rajput | Portfolio</title>
 
-  <!-- Fonts & Icons -->
-  <link href="https://fonts.googleapis.com/css2?family=Orbitron&family=Pacifico&display=swap" rel="stylesheet"/>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+    <!-- Fonts & Icons -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
   <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css"/>
 
   <style>
-    * { margin: 0; padding: 0; box-sizing: border-box; }
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
     body {
       font-family: 'Orbitron', sans-serif;
       background: #000;
@@ -21,7 +27,8 @@
     }
 
     /* Header & Footer */
-    header.site-header, footer.site-footer {
+    header.site-header,
+    footer.site-footer {
       position: fixed;
       left: 0;
       width: 100%;
@@ -37,6 +44,12 @@
       display: flex;
       justify-content: space-between;
       align-items: center;
+    }
+
+    footer.site-footer {
+      bottom: 0;
+      padding: 20px 0;
+      box-shadow: 0 0 20px rgba(168, 85, 247, 0.25);
     }
 
     .logo {
@@ -74,7 +87,6 @@
       display: flex;
       justify-content: space-around;
       align-items: center;
-      padding: 10px 0;
     }
 
     .nav-btn {
@@ -87,7 +99,6 @@
 
     .nav-btn i {
       font-size: 1.3em;
-      display: block;
     }
 
     .nav-btn span {
@@ -96,48 +107,52 @@
 
     /* Hero Section */
     .hero {
-      padding: 60px 20px;
-      text-align: center;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 80px 20px 40px;
     }
 
-    .hero-container {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      gap: 16px;
-      margin-bottom: 40px;
-      padding: 0 15px;
+    .hero-card {
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      backdrop-filter: blur(12px);
+      padding: 30px;
+      border-radius: 20px;
+      box-shadow: 0 0 25px rgba(0, 242, 255, 0.15);
+      max-width: 600px;
+      text-align: center;
+      position: relative;
     }
 
     .hero-img {
-      width: 160px;
-      height: 160px;
+      width: 130px;
+      height: 130px;
       border-radius: 50%;
       object-fit: cover;
-      border: 3px solid #2d2d2d;
-      background-color: #111;
+      margin-bottom: 16px;
+      border: 3px solid #00f2ff;
+      box-shadow: 0 0 15px rgba(0, 242, 255, 0.4);
       transition: transform 0.3s ease;
     }
 
     .hero-img:hover {
-      transform: scale(1.05);
+      transform: scale(1.06);
     }
 
     .hero-name {
-      font-size: 2.4rem;
+      font-size: 2.2rem;
       font-weight: 600;
       letter-spacing: 1px;
-      color: #f0f0f0;
-      font-family: 'Pacifico', cursive;
+      color: #00f2ff;
+      margin-bottom: 8px;
     }
 
     .hero-title {
       font-size: 1rem;
-      color: #aaa;
+      color: #ccc;
       max-width: 90%;
-      line-height: 1.5;
-      word-break: break-word;
-      font-family: 'Orbitron', sans-serif;
+      margin: auto;
     }
 
     /* About Section */
@@ -151,16 +166,20 @@
       font-size: 2em;
       margin-bottom: 20px;
       color: #00f2ff;
+      text-align: center;
     }
 
     .glass-box {
       border: 1px solid #a855f7;
-      border-radius: 10px;
+      border-radius: 12px;
       background: rgba(168, 85, 247, 0.05);
       box-shadow: 0 0 15px #a855f73f;
       backdrop-filter: blur(10px);
       padding: 20px;
-      margin-bottom: 30px;
+      text-align: center;
+      font-size: 1rem;
+      line-height: 1.6;
+      color: #ccc;
       transition: all 0.3s ease;
     }
 
@@ -168,8 +187,7 @@
       background: rgba(168, 85, 247, 0.08);
       box-shadow: 0 0 25px #a855f7a8;
     }
-
-    /* Projects Section */
+/* Projects Section */
     .projects {
       max-width: 900px;
       margin: auto;
@@ -245,6 +263,7 @@
       stroke-width: 2;
     }
 
+    /* Explore Button */
     .explore-projects {
       display: flex;
       justify-content: center;
@@ -274,7 +293,8 @@
       border-color: #fff;
       box-shadow: 0 0 20px rgba(168, 85, 247, 0.6);
     }
-
+    
+    /* Responsive */
     @media (max-width: 768px) {
       .top-nav {
         display: none;
@@ -285,10 +305,23 @@
         right: 20px;
         padding: 10px;
         border-radius: 10px;
-        z-index: 10;
       }
-      .top-nav.active { display: flex; }
-      .menu-toggle { display: block; }
+
+      .top-nav.active {
+        display: flex;
+      }
+
+      .menu-toggle {
+        display: block;
+      }
+
+      .hero-name {
+        font-size: 1.8rem;
+      }
+
+      .hero-title {
+        font-size: 0.9rem;
+      }
     }
   </style>
 </head>
@@ -309,18 +342,10 @@
 
   <!-- Hero Section -->
   <section class="hero" data-aos="zoom-in">
-    <div class="hero-container">
-      <img src="https://github.com/pykinsu.png" alt="Kinsu Rajput" class="hero-img"/>
+    <div class="hero-card">
+      <img src="https://github.com/pykinsu.png" alt="Kinsu Rajput" class="hero-img" />
       <h1 class="hero-name">Kinsu Rajput</h1>
       <p class="hero-title">BCA Student • Python & C Learner • Telegram Bot Developer</p>
-    </div>
-  </section>
-
-  <!-- About Section -->
-  <section class="about" data-aos="fade-up">
-    <h2>About Me</h2>
-    <div class="glass-box">
-      <p>I’m a BCA student from Bihar, India. I recently passed 12th and started my programming journey. I love playing chess and building Telegram bots. Currently learning Python and HTML.</p>
     </div>
   </section>
 
@@ -367,6 +392,14 @@
       </svg>
     </a>
   </div>
+  <!-- About Section -->
+  <section class="about" data-aos="fade-up">
+    <h2>About Me</h2>
+    <div class="glass-box">
+      I’m a BCA student from Bihar, India. I recently passed 12th and started my programming journey.
+      I love playing chess and building Telegram bots. Currently learning Python and HTML.
+    </div>
+  </section>
 
   <!-- Footer -->
   <footer class="site-footer">
@@ -378,10 +411,9 @@
     </nav>
   </footer>
 
-  <!-- AOS Animation -->
+  <!-- AOS -->
   <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-  <script>
-    AOS.init({ duration: 1000, once: true });
-  </script>
+  <script>AOS.init({ duration: 1000, once: true });</script>
+
 </body>
 </html>

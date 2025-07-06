@@ -27,7 +27,7 @@
       overflow-x: hidden;
     }
 
-    /* Header & Footer */
+    /* Header & Footer - Home Page Style */
     header.site-header,
     footer.site-footer {
       position: fixed;
@@ -37,6 +37,7 @@
       background-color: rgba(0, 0, 0, 0.3);
       border: 1px solid rgba(255, 255, 255, 0.08);
       z-index: 1000;
+      box-shadow: 0 0 20px rgba(168, 85, 247, 0.25);
     }
 
     header.site-header {
@@ -47,12 +48,11 @@
       align-items: center;
     }
 
-    footer.site-footer {
-      bottom: 0;
-      padding: 20px 0;
-      box-shadow: 0 0 20px rgba(168, 85, 247, 0.25);
+    .logo {
+      font-family: 'Pacifico', cursive;
+      font-size: 1.8em;
+      color: #00f2ff;
     }
-
 
     .top-nav {
       display: flex;
@@ -178,14 +178,9 @@
     }
 
     /* Footer */
-    .site-footer {
-      position: fixed;
+    footer.site-footer {
       bottom: 0;
-      width: 100%;
-      background: rgba(0, 0, 0, 0.5);
-      backdrop-filter: blur(10px);
-      border-top: 1px solid rgba(255, 255, 255, 0.1);
-      z-index: 1000;
+      padding: 20px 0;
     }
 
     .footer-nav {
@@ -196,9 +191,10 @@
     }
 
     .nav-btn {
-      flex: 1;
-      text-align: center;
-      color: #aaa;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      color: #00f2ff;
       text-decoration: none;
       transition: 0.3s;
     }
@@ -213,8 +209,8 @@
     }
 
     .nav-btn:hover {
-      color: #00f2ff;
-      background: #1f1f1f;
+      color: #fff;
+      transform: scale(1.1);
     }
   </style>
 </head>

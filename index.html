@@ -22,12 +22,13 @@
       font-family: 'Orbitron', sans-serif;
       background: #000;
       color: #fff;
-      padding: 80px 0;
+      padding-top: 80px;
+      padding-bottom: 80px;
     }
 
-       
-    /* Header and Footer */
-    header.site-header, footer.site-footer {
+    /* Header & Footer */
+    header.site-header,
+    footer.site-footer {
       position: fixed;
       left: 0;
       width: 100%;
@@ -47,6 +48,39 @@
 
     footer.site-footer {
       bottom: 0;
+      padding: 20px 0;
+      box-shadow: 0 0 20px rgba(168, 85, 247, 0.25);
+    }
+
+    .logo {
+      font-family: 'Pacifico', cursive;
+      font-size: 1.8em;
+      color: #00f2ff;
+    }
+
+    .top-nav {
+      display: flex;
+      gap: 20px;
+    }
+
+    .top-nav a {
+      color: #ccc;
+      text-decoration: none;
+      font-size: 1em;
+      transition: color 0.3s;
+    }
+
+    .top-nav a:hover {
+      color: #00f2ff;
+    }
+
+    .menu-toggle {
+      display: none;
+      font-size: 24px;
+      color: #00f2ff;
+      background: none;
+      border: none;
+      cursor: pointer;
     }
 
     .footer-nav {
@@ -68,19 +102,6 @@
       font-size: 12px;
     }
 
-    .top-nav {
-      display: flex;
-      gap: 20px;
-    }
-
-    .menu-toggle {
-      display: none;
-      background: none;
-      border: none;
-      font-size: 24px;
-      color: #00f2ff;
-      cursor: pointer;
-    }
     /* Hero Section */
     .hero {
       padding: 60px 20px;
@@ -381,6 +402,9 @@
 
   <!-- AOS Animation -->
   <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-  <script>AOS.init({ duration: 1000, once: true });</script>
+  <script>
+    AOS.init({ duration: 1000, once: true });
+  </script>
+
 </body>
 </html>

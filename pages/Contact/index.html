@@ -28,34 +28,31 @@
       padding-bottom: 120px;
     }
 
-    /* Header */
-    .site-header {
+    /* Header & Footer - Home Page Style */
+    header.site-header,
+    footer.site-footer {
       position: fixed;
-      top: 0;
+      left: 0;
       width: 100%;
-      padding: 10px 20px;
-      background: rgba(0, 0, 0, 0.3);
       backdrop-filter: blur(10px);
+      background-color: rgba(0, 0, 0, 0.3);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      z-index: 1000;
+      box-shadow: 0 0 20px rgba(168, 85, 247, 0.25);
+    }
+
+    header.site-header {
+      top: 0;
+      padding: 10px 20px;
       display: flex;
       justify-content: space-between;
       align-items: center;
-      z-index: 1000;
-      border-bottom: 1px solid rgba(255,255,255,0.1);
     }
 
     .logo {
       font-family: 'Pacifico', cursive;
       font-size: 1.8em;
       color: #00f2ff;
-    }
-
-    .menu-toggle {
-      display: none;
-      background: none;
-      border: none;
-      font-size: 1.5rem;
-      color: #00f2ff;
-      cursor: pointer;
     }
 
     .top-nav {
@@ -66,11 +63,21 @@
     .top-nav a {
       color: #ccc;
       text-decoration: none;
+      font-size: 1em;
       transition: color 0.3s;
     }
 
     .top-nav a:hover {
       color: #00f2ff;
+    }
+
+    .menu-toggle {
+      display: none;
+      font-size: 24px;
+      color: #00f2ff;
+      background: none;
+      border: none;
+      cursor: pointer;
     }
 
     @media (max-width: 768px) {
@@ -80,9 +87,10 @@
         position: absolute;
         top: 60px;
         right: 20px;
-        background: rgba(0,0,0,0.9);
-        padding: 10px;
+        background-color: #111;
         border-radius: 10px;
+        padding: 10px;
+        z-index: 10;
       }
 
       .top-nav.active {
@@ -93,7 +101,6 @@
         display: block;
       }
     }
-
     /* Main Content */
     main.contact-page {
       padding: 100px 20px 20px;
@@ -293,11 +300,11 @@
       <!-- Email -->
       <div class="contact-card" data-aos="fade-up">
         <div class="contact-header">
-          <img src="/assets/mail-reception-svgrepo-com.svg" alt="Email" class="contact-img" />
+          <img src="/assets/mail-reception-svgrepo-com.svg" alt="Email" class="contact-img">
           <div class="contact-info">
             <h3>Email</h3>
             <div class="copy-email">
-              <input type="text" value="mail@kinsu.in" id="emailText" readonly />
+              <input type="text" readonly value="mail@kinsu.in" id="emailText">
               <button onclick="copyEmail()">Copy</button>
             </div>
           </div>

@@ -2,11 +2,10 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Kinsu Rajput | Portfolio</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Contact | Kinsu Rajput</title>
 
   <!-- Fonts & Icons -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
   <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css"/>
@@ -19,14 +18,13 @@
     }
 
     body {
-      font-family: 'Orbitron', sans-serif;
+      font-family: 'Segoe UI', sans-serif;
       background: #000;
       color: #fff;
       padding-top: 80px;
       padding-bottom: 80px;
     }
 
-    /* Header & Footer */
     header.site-header,
     footer.site-footer {
       position: fixed;
@@ -83,211 +81,6 @@
       cursor: pointer;
     }
 
-    .footer-nav {
-      display: flex;
-      justify-content: space-around;
-      align-items: center;
-      padding: 10px 0;
-    }
-
-    .nav-btn {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      text-decoration: none;
-      color: #00f2ff;
-    }
-
-    
-     .nav-btn i {
-      font-size: 1.3em;
-      display: block;
-    }
-
-    .nav-btn span {
-      font-size: 0.75em;
-    }
-    /* Hero Section */
-    .hero {
-      padding: 60px 20px;
-      text-align: center;
-    }
-
-    .hero-container {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      gap: 16px;
-      margin-bottom: 40px;
-      padding: 0 15px;
-    }
-
-    .hero-img {
-      width: 160px;
-      height: 160px;
-      border-radius: 50%;
-      object-fit: cover;
-      border: 3px solid #2d2d2d;
-      background-color: #111;
-      transition: transform 0.3s ease;
-    }
-
-    .hero-img:hover {
-      transform: scale(1.05);
-    }
-
-    .hero-name {
-      font-size: 2.4rem;
-      font-weight: 600;
-      letter-spacing: 1px;
-      color: #f0f0f0;
-    }
-
-    .hero-title {
-      font-size: 1rem;
-      color: #aaa;
-      max-width: 90%;
-      line-height: 1.5;
-      word-break: break-word;
-    }
-
-    /* About Section */
-    .about {
-      padding: 40px 20px;
-      max-width: 900px;
-      margin: auto;
-    }
-
-    .about h2 {
-      font-size: 2em;
-      margin-bottom: 20px;
-      color: #00f2ff;
-    }
-
-    .glass-box {
-      border: 1px solid #a855f7;
-      border-radius: 10px;
-      background: rgba(168, 85, 247, 0.05);
-      box-shadow: 0 0 15px #a855f73f;
-      backdrop-filter: blur(10px);
-      padding: 20px;
-      margin-bottom: 30px;
-      transition: all 0.3s ease;
-    }
-
-    .glass-box:hover {
-      background: rgba(168, 85, 247, 0.08);
-      box-shadow: 0 0 25px #a855f7a8;
-    }
-
-    /* Projects Section */
-    .projects {
-      max-width: 900px;
-      margin: auto;
-      padding: 40px 20px;
-    }
-
-    .projects h2 {
-      font-size: 2em;
-      color: #00f2ff;
-      margin-bottom: 30px;
-      text-align: center;
-    }
-
-    .project-button {
-      background: rgba(255, 255, 255, 0.06);
-      border: 1px solid rgba(255, 255, 255, 0.12);
-      backdrop-filter: blur(10px);
-      border-radius: 16px;
-      padding: 20px;
-      margin-bottom: 30px;
-      box-shadow: 0 0 10px rgba(168, 85, 247, 0.2);
-      transition: 0.4s ease;
-    }
-
-    .project-button:hover {
-      transform: translateY(-4px);
-      box-shadow: 0 0 20px rgba(168, 85, 247, 0.6);
-    }
-
-    .project-meta {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      gap: 16px;
-      margin-top: 10px;
-      flex-wrap: wrap;
-    }
-
-    .status-label {
-      font-size: 0.9em;
-      color: #bb86fc;
-      padding: 5px 12px;
-      border: 1px solid #a855f7;
-      border-radius: 20px;
-      background: rgba(138, 43, 226, 0.1);
-      backdrop-filter: blur(4px);
-    }
-
-    .github-link {
-      color: #a855f7;
-      font-weight: 500;
-      display: inline-flex;
-      align-items: center;
-      gap: 6px;
-      text-decoration: none;
-      padding: 6px 14px;
-      border-radius: 50px;
-      border: 1px solid #a855f7;
-      background: rgba(168, 85, 247, 0.08);
-      transition: all 0.3s ease;
-    }
-
-    .github-link:hover {
-      background: rgba(168, 85, 247, 0.2);
-      color: #fff;
-      border-color: #fff;
-    }
-
-    .arrow-icon {
-      width: 16px;
-      height: 16px;
-      stroke: currentColor;
-      stroke-width: 2;
-    }
-
-    /* Explore Button */
-    .explore-projects {
-      display: flex;
-      justify-content: center;
-      margin-top: 20px;
-      margin-bottom: 40px;
-    }
-
-    .explore-projects a {
-      text-decoration: none;
-      font-size: 1rem;
-      font-weight: 500;
-      padding: 12px 20px;
-      border-radius: 40px;
-      color: #a855f7;
-      border: 1px solid #a855f7;
-      background: rgba(168, 85, 247, 0.08);
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      transition: all 0.4s ease;
-      box-shadow: 0 0 10px rgba(168, 85, 247, 0.2);
-    }
-
-    .explore-projects a:hover {
-      background: rgba(168, 85, 247, 0.2);
-      color: #fff;
-      border-color: #fff;
-      box-shadow: 0 0 20px rgba(168, 85, 247, 0.6);
-    }
-
-    /* Responsive */
     @media (max-width: 768px) {
       .top-nav {
         display: none;
@@ -308,15 +101,154 @@
       .menu-toggle {
         display: block;
       }
-
-      .hero-name {
-        font-size: 1.8rem;
-      }
-
-      .hero-title {
-        font-size: 0.9rem;
-      }
     }
+
+    /* Contact Page */
+    main.contact-page {
+      padding: 40px 20px;
+      max-width: 1000px;
+      margin: auto;
+    }
+
+    .contact-page h2 {
+      text-align: center;
+      color: #00f2ff;
+      margin-bottom: 40px;
+    }
+
+    .contact-cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 20px;
+    }
+
+    .contact-card {
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      border-radius: 16px;
+      padding: 16px;
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      backdrop-filter: blur(10px);
+      transition: 0.3s ease;
+    }
+
+    .contact-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 0 15px rgba(0, 242, 255, 0.4);
+    }
+
+    .contact-img {
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      background: #000;
+      padding: 5px;
+      box-shadow: 0 0 10px rgba(0, 255, 255, 0.3);
+    }
+
+    .contact-info {
+      flex-grow: 1;
+    }
+
+    .contact-info h3 {
+      font-size: 1em;
+      color: #00f2ff;
+    }
+
+    .contact-info p,
+    .contact-info a {
+      font-size: 0.9em;
+      color: #ccc;
+      text-decoration: none;
+    }
+
+    .contact-info a:hover {
+      color: #00f2ff;
+    }
+
+    .copy-email {
+      display: flex;
+      background: #111;
+      padding: 6px 10px;
+      border-radius: 8px;
+      margin-top: 5px;
+      align-items: center;
+    }
+
+    .copy-email input {
+      background: transparent;
+      border: none;
+      color: #00f2ff;
+      font-size: 0.9em;
+      width: 100%;
+      outline: none;
+    }
+
+    .copy-email button {
+      background: #00f2ff;
+      color: #000;
+      border: none;
+      border-radius: 6px;
+      padding: 4px 8px;
+      cursor: pointer;
+      font-size: 0.8em;
+      margin-left: 10px;
+    }
+
+    .github-link {
+      color: #a855f7;
+      font-weight: 500;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      text-decoration: none;
+      padding: 6px 14px;
+      border-radius: 50px;
+      border: 1px solid #a855f7;
+      background: rgba(168, 85, 247, 0.08);
+      transition: all 0.3s ease;
+      margin-left: auto;
+    }
+
+    .github-link:hover {
+      background: rgba(168, 85, 247, 0.2);
+      color: #fff;
+      border-color: #fff;
+    }
+
+    .arrow-icon {
+      width: 16px;
+      height: 16px;
+      stroke: currentColor;
+      stroke-width: 2;
+    }
+
+    .footer-nav {
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+      padding: 10px 0;
+    }
+
+    .nav-btn {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-decoration: none;
+      color: #00f2ff;
+    }
+
+    .nav-btn i {
+      font-size: 1.3em;
+      display: block;
+    }
+
+    .nav-btn span {
+      font-size: 0.75em;
+    }
+
   </style>
 </head>
 <body>
@@ -334,66 +266,85 @@
     </nav>
   </header>
 
-  <!-- Hero Section -->
-  <section class="hero" data-aos="zoom-in">
-    <div class="hero-container">
-      <img src="https://github.com/pykinsu.png" alt="Kinsu Rajput" class="hero-img" />
-      <h1 class="hero-name">Kinsu Rajput</h1>
-      <p class="hero-title">BCA Student • Python & C Learner • Telegram Bot Developer</p>
-    </div>
-  </section>
+  <!-- Main Contact -->
+  <main class="contact-page">
+    <h2 data-aos="fade-up">Get in Touch</h2>
+    <div class="contact-cards">
 
-  <!-- About Section -->
-  <section class="about" data-aos="fade-up">
-    <h2>About Me</h2>
-    <div class="glass-box">
-      <p>I’m a BCA student from Bihar, India. I recently passed 12th and started my programming journey. I love playing chess and building Telegram bots. Currently learning Python and HTML.</p>
-    </div>
-  </section>
+      <!-- Email -->
+      <div class="contact-card" data-aos="fade-up">
+        <img src="/assets/mail-reception-svgrepo-com.svg" alt="Email" class="contact-img" />
+        <div class="contact-info">
+          <h3>Email</h3>
+          <div class="copy-email">
+            <input type="text" value="mail@kinsu.in" id="emailText" readonly />
+            <button onclick="copyEmail()">Copy</button>
+          </div>
+        </div>
+      </div>
 
-  <!-- Projects Section -->
-  <section class="projects" data-aos="fade-up">
-    <h2>Projects</h2>
-
-    <div class="project-button" data-aos="fade-up">
-      <h3>AutoFilter Bot</h3>
-      <p>A Telegram bot that auto filters and fetches content.</p>
-      <div class="project-meta">
-        <span class="status-label">✅ Completed</span>
-        <a href="https://github.com/pyKinsu/Autofilter-Bot" target="_blank" class="github-link">
-          GitHub Repo
+      <!-- Telegram -->
+      <div class="contact-card" data-aos="fade-up">
+        <img src="/assets/telegram-svgrepo-com.svg" alt="Telegram" class="contact-img" />
+        <div class="contact-info">
+          <h3>Telegram</h3>
+          <p>@PyKinsu</p>
+        </div>
+        <a href="https://t.me/PyKinsu" target="_blank" class="github-link">
+          Visit
           <svg class="arrow-icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 10">
             <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" d="M1 5h12m0 0L9 1m4 4L9 9"/>
           </svg>
         </a>
       </div>
-    </div>
 
-    <div class="project-button" data-aos="fade-up">
-      <h3>All Video Downloader Bot</h3>
-      <p>Download videos from various platforms via Telegram.</p>
-      <div class="project-meta">
-        <span class="status-label">⚙️ Working</span>
-        <a href="https://github.com/pyKinsu/All-Video-Downloader-Bot" target="_blank" class="github-link">
-          GitHub Repo
+      <!-- GitHub -->
+      <div class="contact-card" data-aos="fade-up">
+        <img src="/assets/github-repo-git-octocat-svgrepo-com.svg" alt="GitHub" class="contact-img" />
+        <div class="contact-info">
+          <h3>GitHub</h3>
+          <p>@pyKinsu</p>
+        </div>
+        <a href="https://github.com/pyKinsu" target="_blank" class="github-link">
+          Visit
           <svg class="arrow-icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 10">
             <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" d="M1 5h12m0 0L9 1m4 4L9 9"/>
           </svg>
         </a>
       </div>
-    </div>
-  </section>
 
-  <!-- Explore Projects Button -->
-  <div class="explore-projects" data-aos="zoom-in">
-    <a href="/pages/Projects">
-      Explore All Projects
-      <svg class="arrow-icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 10">
-        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-              d="M1 5h12m0 0L9 1m4 4L9 9"/>
-      </svg>
-    </a>
-  </div>
+      <!-- LinkedIn -->
+      <div class="contact-card" data-aos="fade-up">
+        <img src="/assets/linkedin-icon-logo-svgrepo-com.svg" alt="LinkedIn" class="contact-img" />
+        <div class="contact-info">
+          <h3>LinkedIn</h3>
+          <p>@pykinsu</p>
+        </div>
+        <a href="https://www.linkedin.com/in/pykinsu" target="_blank" class="github-link">
+          Visit
+          <svg class="arrow-icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 10">
+            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" d="M1 5h12m0 0L9 1m4 4L9 9"/>
+          </svg>
+        </a>
+      </div>
+
+      <!-- Instagram -->
+      <div class="contact-card" data-aos="fade-up">
+        <img src="/assets/instagram-svgrepo-com.svg" alt="Instagram" class="contact-img" />
+        <div class="contact-info">
+          <h3>Instagram</h3>
+          <p>@pykinsu</p>
+        </div>
+        <a href="https://instagram.com/pykinsu" target="_blank" class="github-link">
+          Visit
+          <svg class="arrow-icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 10">
+            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" d="M1 5h12m0 0L9 1m4 4L9 9"/>
+          </svg>
+        </a>
+      </div>
+
+    </div>
+  </main>
 
   <!-- Footer -->
   <footer class="site-footer">
@@ -405,10 +356,17 @@
     </nav>
   </footer>
 
-  <!-- AOS Animation -->
+  <!-- Scripts -->
   <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
   <script>
-    AOS.init({ duration: 1000, once: true });
+    AOS.init({ duration: 800, once: true });
+
+    function copyEmail() {
+      const emailText = document.getElementById("emailText");
+      emailText.select();
+      document.execCommand("copy");
+      alert("Email copied to clipboard!");
+    }
   </script>
 
 </body>

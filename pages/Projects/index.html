@@ -27,26 +27,32 @@
       overflow-x: hidden;
     }
 
-    /* Header */
-    .site-header {
+    /* Header & Footer */
+    header.site-header,
+    footer.site-footer {
       position: fixed;
-      top: 0;
+      left: 0;
       width: 100%;
-      padding: 12px 20px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
       backdrop-filter: blur(10px);
-      background-color: rgba(0, 0, 0, 0.5);
-      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+      background-color: rgba(0, 0, 0, 0.3);
+      border: 1px solid rgba(255, 255, 255, 0.08);
       z-index: 1000;
     }
 
-    .logo {
-      font-family: 'Pacifico', cursive;
-      font-size: 1.8em;
-      color: #00ffff;
+    header.site-header {
+      top: 0;
+      padding: 10px 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
     }
+
+    footer.site-footer {
+      bottom: 0;
+      padding: 20px 0;
+      box-shadow: 0 0 20px rgba(168, 85, 247, 0.25);
+    }
+
 
     .top-nav {
       display: flex;

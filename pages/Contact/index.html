@@ -23,6 +23,7 @@
       color: #fff;
       padding-top: 80px;
       padding-bottom: 80px;
+      overflow-x: hidden;
     }
 
     header.site-header,
@@ -103,17 +104,31 @@
       }
     }
 
-    /* Main Contact */
+    /* Vertical Sideline */
+    .vertical-line {
+      position: fixed;
+      left: 0;
+      top: 0;
+      width: 4px;
+      height: 100%;
+      background: rgba(168, 85, 247, 0.6);
+      filter: blur(6px);
+      z-index: 0;
+    }
+
     main.contact-page {
       padding: 40px 20px;
       max-width: 1000px;
       margin: auto;
+      position: relative;
+      z-index: 1;
     }
 
     .contact-page h2 {
       text-align: center;
       color: #00f2ff;
       margin-bottom: 40px;
+      font-size: 2em;
     }
 
     .contact-cards {
@@ -134,27 +149,30 @@
       transition: transform 0.3s ease;
       position: relative;
       overflow: hidden;
+      z-index: 1;
     }
 
     .contact-card::before {
       content: "";
       position: absolute;
-      width: 100%;
-      height: 100%;
+      width: 150%;
+      height: 200%;
       background: linear-gradient(120deg, #a855f7 0%, #00f2ff 100%);
-      transform: translateX(-100%);
-      transition: 0.4s ease;
+      top: -50%;
+      left: -50%;
+      animation: flicker 4s linear infinite;
+      opacity: 0.07;
       z-index: 0;
-      opacity: 0.08;
     }
 
-    .contact-card:hover::before {
-      transform: translateX(0);
+    @keyframes flicker {
+      0% { transform: translateX(-100%); }
+      100% { transform: translateX(100%); }
     }
 
     .contact-card:hover {
       transform: translateY(-5px);
-      box-shadow: 0 0 15px rgba(0, 242, 255, 0.4);
+      box-shadow: 0 0 18px rgba(0, 242, 255, 0.4);
     }
 
     .contact-img {
@@ -180,12 +198,8 @@
     .contact-info p,
     .contact-info a {
       font-size: 0.9em;
-      color: #ccc;
+      color: #82d4ff;
       text-decoration: none;
-    }
-
-    .contact-info a:hover {
-      color: #00f2ff;
     }
 
     .copy-email {
@@ -246,7 +260,6 @@
       stroke-width: 2;
     }
 
-    /* Footer */
     .footer-nav {
       display: flex;
       justify-content: space-around;
@@ -264,14 +277,13 @@
 
     .nav-btn i {
       font-size: 1.3em;
-      display: block;
     }
 
     .nav-btn span {
       font-size: 0.75em;
     }
 
-    /* Toast Notification */
+    /* Toast */
     #toast {
       position: fixed;
       bottom: 90px;
@@ -295,6 +307,8 @@
 </head>
 <body>
 
+  <div class="vertical-line"></div>
+
   <!-- Header -->
   <header class="site-header">
     <div class="logo">Kinsu</div>
@@ -308,7 +322,7 @@
     </nav>
   </header>
 
-  <!-- Main Contact -->
+  <!-- Main -->
   <main class="contact-page">
     <h2 data-aos="fade-up">Get in Touch</h2>
     <div class="contact-cards">
@@ -332,10 +346,10 @@
           <h3>Telegram</h3>
           <p>@PyKinsu</p>
         </div>
-        <a href="https://t.me/PyKinsu" target="_blank" class="github-link">
+        <a href="https://t.me/PyKinsu" class="github-link" target="_blank">
           Visit
-          <svg class="arrow-icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 10">
-            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" d="M1 5h12m0 0L9 1m4 4L9 9"/>
+          <svg class="arrow-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 14 10">
+            <path d="M1 5h12m0 0L9 1m4 4L9 9" stroke-linecap="round" stroke-linejoin="round"/>
           </svg>
         </a>
       </div>
@@ -347,10 +361,10 @@
           <h3>GitHub</h3>
           <p>@pyKinsu</p>
         </div>
-        <a href="https://github.com/pyKinsu" target="_blank" class="github-link">
+        <a href="https://github.com/pyKinsu" class="github-link" target="_blank">
           Visit
-          <svg class="arrow-icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 10">
-            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" d="M1 5h12m0 0L9 1m4 4L9 9"/>
+          <svg class="arrow-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 14 10">
+            <path d="M1 5h12m0 0L9 1m4 4L9 9" stroke-linecap="round" stroke-linejoin="round"/>
           </svg>
         </a>
       </div>
@@ -362,10 +376,10 @@
           <h3>LinkedIn</h3>
           <p>@pykinsu</p>
         </div>
-        <a href="https://www.linkedin.com/in/pykinsu" target="_blank" class="github-link">
+        <a href="https://linkedin.com/in/pykinsu" class="github-link" target="_blank">
           Visit
-          <svg class="arrow-icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 10">
-            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" d="M1 5h12m0 0L9 1m4 4L9 9"/>
+          <svg class="arrow-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 14 10">
+            <path d="M1 5h12m0 0L9 1m4 4L9 9" stroke-linecap="round" stroke-linejoin="round"/>
           </svg>
         </a>
       </div>
@@ -377,10 +391,10 @@
           <h3>Instagram</h3>
           <p>@pykinsu</p>
         </div>
-        <a href="https://instagram.com/pykinsu" target="_blank" class="github-link">
+        <a href="https://instagram.com/pykinsu" class="github-link" target="_blank">
           Visit
-          <svg class="arrow-icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 10">
-            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" d="M1 5h12m0 0L9 1m4 4L9 9"/>
+          <svg class="arrow-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 14 10">
+            <path d="M1 5h12m0 0L9 1m4 4L9 9" stroke-linecap="round" stroke-linejoin="round"/>
           </svg>
         </a>
       </div>
@@ -398,10 +412,8 @@
     </nav>
   </footer>
 
-  <!-- Toast Notification -->
   <div id="toast">Email copied to clipboard!</div>
 
-  <!-- Scripts -->
   <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
   <script>
     AOS.init({ duration: 800, once: true });

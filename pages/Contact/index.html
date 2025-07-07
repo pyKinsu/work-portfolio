@@ -6,24 +6,20 @@
   <title>Contact | Kinsu Rajput</title>
 
   <!-- Favicons -->
-<link rel="icon" type="image/png" href="/Favicon/favicon-96x96.png" sizes="96x96" />
-<link rel="icon" type="image/svg+xml" href="/Favicon/favicon.svg" />
-<link rel="shortcut icon" href="/Favicon/favicon.ico" />
-<link rel="apple-touch-icon" sizes="180x180" href="/Favicon/apple-touch-icon.png" />
-<meta name="apple-mobile-web-app-title" content="Kinsu Rajput Portfolio" />
-<link rel="manifest" href="/Favicon/site.webmanifest" />
-  
+  <link rel="icon" type="image/png" href="/Favicon/favicon-96x96.png" sizes="96x96" />
+  <link rel="icon" type="image/svg+xml" href="/Favicon/favicon.svg" />
+  <link rel="shortcut icon" href="/Favicon/favicon.ico" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/Favicon/apple-touch-icon.png" />
+  <meta name="apple-mobile-web-app-title" content="Kinsu Rajput Portfolio" />
+  <link rel="manifest" href="/Favicon/site.webmanifest" />
+
   <!-- Fonts & Icons -->
   <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
   <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css"/>
 
   <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
 
     body {
       font-family: 'Segoe UI', sans-serif;
@@ -68,39 +64,59 @@
     .top-nav {
       display: flex;
       gap: 20px;
+      transition: all 0.3s ease;
     }
 
     .top-nav a {
       color: #ccc;
       text-decoration: none;
       font-size: 1em;
-      transition: color 0.3s;
+      transition: color 0.3s ease;
+      padding: 8px 14px;
+      border-radius: 12px;
+      backdrop-filter: blur(6px);
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid rgba(255, 255, 255, 0.1);
     }
 
     .top-nav a:hover {
       color: #00f2ff;
+      background: rgba(0, 242, 255, 0.1);
+      box-shadow: 0 0 10px rgba(0, 242, 255, 0.2);
     }
 
     .menu-toggle {
       display: none;
       font-size: 24px;
       color: #00f2ff;
-      background: none;
-      border: none;
-      cursor: pointer;
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      border-radius: 12px;
+      padding: 6px 10px;
+      backdrop-filter: blur(6px);
+      transition: all 0.3s ease;
+    }
+
+    .menu-toggle:hover {
+      background: rgba(0, 242, 255, 0.1);
+      box-shadow: 0 0 8px rgba(0, 242, 255, 0.2);
     }
 
     @media (max-width: 768px) {
       .top-nav {
         display: none;
         flex-direction: column;
-        background-color: #111;
+        gap: 12px;
+        background: rgba(255, 255, 255, 0.03);
         position: absolute;
         top: 60px;
         right: 20px;
-        padding: 10px;
-        border-radius: 10px;
-        z-index: 10;
+        padding: 14px;
+        border-radius: 16px;
+        box-shadow: 0 0 20px rgba(168, 85, 247, 0.25);
+        backdrop-filter: blur(12px);
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        z-index: 999;
       }
 
       .top-nav.active {
@@ -111,9 +127,7 @@
         display: block;
       }
     }
-     .menu-toggle img {
-  filter: brightness(10);
-     }
+
     /* Vertical Sideline */
     .vertical-line {
       position: fixed;
@@ -320,121 +334,29 @@
   <div class="vertical-line"></div>
 
   <!-- Header -->
-<header class="site-header">
-  <div class="logo">Kinsu</div>
-
-  <div style="display: flex; align-items: center; gap: 20px;">
-    <nav class="top-nav">
-      <!-- GitHub Follow -->
-      <a href="https://github.com/pyKinsu" target="_blank" title="Follow me on GitHub">
-        <i class="fab fa-github"></i> Follow Me
-      </a>
-
-      <!-- Star Repo -->
-      <a href="https://github.com/pyKinsu/MyPortFolio/stargazers" target="_blank" title="Star this repo">
-        <i class="fas fa-star"></i> Give Star
-      </a>
-
-      <!-- Fork Repo -->
-      <a href="https://github.com/pyKinsu/MyPortFolio/fork" target="_blank" title="Fork this repo">
-        <i class="fas fa-code-branch"></i> Fork Repo
-      </a>
-
-      <!-- Contact Page -->
-      <a href="/pages/Contact" title="Contact Me">
-        <i class="fas fa-paper-plane"></i> Contact
-      </a>
-    </nav>
-
-    <!-- GitHub Icon Shortcut -->
-    <a href="https://github.com/pyKinsu" target="_blank" style="color: white; font-size: 1.5em;" title="GitHub Profile">
-      <i class="fab fa-github"></i>
-    </a>
-
-    <!-- FontAwesome Hamburger Menu Icon -->
-    <button class="menu-toggle" onclick="document.querySelector('.top-nav').classList.toggle('active')">
-      <i class="fas fa-bars"></i>
-    </button>
-  </div>
-</header>
+  <header class="site-header">
+    <div class="logo">Kinsu</div>
+    <div style="display: flex; align-items: center; gap: 24px;">
+      <nav class="top-nav">
+        <a href="https://github.com/pyKinsu" target="_blank" title="Follow me"><i class="fab fa-github"></i> Follow Me</a>
+        <a href="https://github.com/pyKinsu/MyPortFolio/stargazers" target="_blank" title="Star me"><i class="fas fa-star"></i> Give Star</a>
+        <a href="https://github.com/pyKinsu/MyPortFolio/fork" target="_blank" title="Fork repo"><i class="fas fa-code-branch"></i> Fork Repo</a>
+        <a href="/pages/Contact"><i class="fas fa-paper-plane"></i> Contact</a>
+      </nav>
+      <a href="https://github.com/pyKinsu" target="_blank" style="font-size: 1.4em; color: white;" title="GitHub Profile"><i class="fab fa-github"></i></a>
+      <button class="menu-toggle" onclick="document.querySelector('.top-nav').classList.toggle('active')">
+        <i class="fas fa-bars"></i>
+      </button>
+    </div>
+  </header>
 
   <!-- Main -->
   <main class="contact-page">
     <h2 data-aos="fade-up">Get in Touch</h2>
     <div class="contact-cards">
-
-      <!-- Email -->
-      <div class="contact-card" data-aos="fade-up">
-        <img src="https://img.icons8.com/?size=100&id=35084&format=png&color=000000" alt="Email" class="contact-img" />
-        <div class="contact-info">
-          <h3>Email</h3>
-          <div class="copy-email">
-            <input type="text" value="mail@kinsu.in" id="emailText" readonly />
-            <button onclick="copyEmail()">Copy</button>
-          </div>
-        </div>
-      </div>
-
-      <!-- Telegram -->
-      <div class="contact-card" data-aos="fade-up">
-        <img src="https://img.icons8.com/?size=100&id=114954&format=png&color=000000" alt="Telegram" class="contact-img" />
-        <div class="contact-info">
-          <h3>Telegram</h3>
-          <p>@PyKinsu</p>
-        </div>
-        <a href="https://t.me/PyKinsu" class="github-link" target="_blank">
-          Visit
-          <svg class="arrow-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 14 10">
-            <path d="M1 5h12m0 0L9 1m4 4L9 9" stroke-linecap="round" stroke-linejoin="round"/>
-          </svg>
-        </a>
-      </div>
-
-      <!-- GitHub -->
-      <div class="contact-card" data-aos="fade-up">
-        <img src="/assets/social.png" alt="GitHub" class="contact-img" />
-        <div class="contact-info">
-          <h3>GitHub</h3>
-          <p>@pyKinsu</p>
-        </div>
-        <a href="https://github.com/pyKinsu" class="github-link" target="_blank">
-          Visit
-          <svg class="arrow-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 14 10">
-            <path d="M1 5h12m0 0L9 1m4 4L9 9" stroke-linecap="round" stroke-linejoin="round"/>
-          </svg>
-        </a>
-      </div>
-
-      <!-- LinkedIn -->
-      <div class="contact-card" data-aos="fade-up">
-        <img src="https://img.icons8.com/?size=100&id=MR3dZdlA53te&format=png&color=000000" alt="LinkedIn" class="contact-img" />
-        <div class="contact-info">
-          <h3>LinkedIn</h3>
-          <p>@pykinsu</p>
-        </div>
-        <a href="https://linkedin.com/in/pykinsu" class="github-link" target="_blank">
-          Visit
-          <svg class="arrow-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 14 10">
-            <path d="M1 5h12m0 0L9 1m4 4L9 9" stroke-linecap="round" stroke-linejoin="round"/>
-          </svg>
-        </a>
-      </div>
-
-      <!-- Instagram -->
-      <div class="contact-card" data-aos="fade-up">
-        <img src="https://img.icons8.com/?size=100&id=32323&format=png&color=000000" alt="Instagram" class="contact-img" />
-        <div class="contact-info">
-          <h3>Instagram</h3>
-          <p>@pykinsu</p>
-        </div>
-        <a href="https://instagram.com/pykinsu" class="github-link" target="_blank">
-          Visit
-          <svg class="arrow-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 14 10">
-            <path d="M1 5h12m0 0L9 1m4 4L9 9" stroke-linecap="round" stroke-linejoin="round"/>
-          </svg>
-        </a>
-      </div>
-
+      <!-- Contact cards same as before... -->
+      <!-- Email, Telegram, GitHub, LinkedIn, Instagram -->
+      <!-- (You already have this section, keep it unchanged) -->
     </div>
   </main>
 
@@ -443,7 +365,7 @@
     <nav class="footer-nav">
       <a href="/" class="nav-btn"><i class="fas fa-home"></i><span>Home</span></a>
       <a href="/pages/Projects" class="nav-btn"><i class="fas fa-code"></i><span>Projects</span></a>
-      <a href="/pages/Hobbies" class="nav-btn"><i class="fas fa-heart"></i><span>Contact</span></a>
+      <a href="/pages/Contact" class="nav-btn"><i class="fas fa-paper-plane"></i><span>Contact</span></a>
       <a href="/Blogs" class="nav-btn"><i class="fas fa-blog"></i><span>Blogs</span></a>
     </nav>
   </footer>
@@ -458,12 +380,10 @@
       const emailText = document.getElementById("emailText");
       emailText.select();
       document.execCommand("copy");
-
       const toast = document.getElementById("toast");
       toast.classList.add("show");
       setTimeout(() => toast.classList.remove("show"), 2000);
     }
   </script>
-
 </body>
 </html>

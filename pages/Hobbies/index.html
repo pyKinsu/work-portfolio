@@ -6,12 +6,12 @@
   <title>Hobbies | Kinsu Rajput</title>
 
   <!-- Favicons -->
-<link rel="icon" type="image/png" href="/Favicon/favicon-96x96.png" sizes="96x96" />
-<link rel="icon" type="image/svg+xml" href="/Favicon/favicon.svg" />
-<link rel="shortcut icon" href="/Favicon/favicon.ico" />
-<link rel="apple-touch-icon" sizes="180x180" href="/Favicon/apple-touch-icon.png" />
-<meta name="apple-mobile-web-app-title" content="Kinsu Rajput Portfolio" />
-<link rel="manifest" href="/Favicon/site.webmanifest" />
+  <link rel="icon" type="image/png" href="/Favicon/favicon-96x96.png" sizes="96x96" />
+  <link rel="icon" type="image/svg+xml" href="/Favicon/favicon.svg" />
+  <link rel="shortcut icon" href="/Favicon/favicon.ico" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/Favicon/apple-touch-icon.png" />
+  <meta name="apple-mobile-web-app-title" content="Kinsu Rajput Portfolio" />
+  <link rel="manifest" href="/Favicon/site.webmanifest" />
   
   <!-- Fonts & Icons -->
   <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
@@ -126,6 +126,8 @@
       .top-nav.active {
         display: flex;
       }
+    }
+
     .footer-nav {
       display: flex;
       justify-content: space-around;
@@ -267,20 +269,20 @@
 
 <!-- Header -->
 <header class="site-header">
-    <div class="logo">Kinsu</div>
-    <div style="display: flex; align-items: center; gap: 24px;">
-      <nav class="top-nav">
-        <a href="https://github.com/pyKinsu" target="_blank"><i class="fab fa-github"></i> Follow Me</a>
-        <a href="https://github.com/pyKinsu/MyPortFolio/stargazers" target="_blank"><i class="fas fa-star"></i> Give Star</a>
-        <a href="https://github.com/pyKinsu/MyPortFolio/fork" target="_blank"><i class="fas fa-code-branch"></i> Fork Repo</a>
-        <a href="/pages/Contact"><i class="fas fa-paper-plane"></i> Contact</a>
-      </nav>
-      <a href="https://github.com/pyKinsu" target="_blank" style="font-size: 1.4em; color: white;"><i class="fab fa-github"></i></a>
-      <button class="menu-toggle" onclick="document.querySelector('.top-nav').classList.toggle('active')">
-        <i class="fas fa-bars"></i>
-      </button>
-    </div>
-  </header>
+  <div class="logo">Kinsu</div>
+  <div style="display: flex; align-items: center; gap: 24px;">
+    <nav class="top-nav">
+      <a href="https://github.com/pyKinsu" target="_blank"><i class="fab fa-github"></i> Follow Me</a>
+      <a href="https://github.com/pyKinsu/MyPortFolio/stargazers" target="_blank"><i class="fas fa-star"></i> Give Star</a>
+      <a href="https://github.com/pyKinsu/MyPortFolio/fork" target="_blank"><i class="fas fa-code-branch"></i> Fork Repo</a>
+      <a href="/pages/Contact"><i class="fas fa-paper-plane"></i> Contact</a>
+    </nav>
+    <a href="https://github.com/pyKinsu" target="_blank" style="font-size: 1.4em; color: white;"><i class="fab fa-github"></i></a>
+    <button class="menu-toggle" onclick="document.querySelector('.top-nav').classList.toggle('active')">
+      <i class="fas fa-bars"></i>
+    </button>
+  </div>
+</header>
   
 <!-- Hobbies Section -->
 <main class="hobbies-page">
@@ -324,7 +326,7 @@
   </nav>
 </footer>
 
-<!-- Scripts -->
+<!-- AOS Script -->
 <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 <script>AOS.init({ duration: 1000, once: true });</script>
 

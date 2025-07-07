@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>My First Telegram Bot | Blog</title>
+  <link rel="stylesheet" href="/css/style.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+  <style>
+    body {
+      font-family: 'Orbitron', sans-serif;
+      background: #000;
+      color: #eee;
+      padding: 100px 20px 80px;
+    }
+
+    .blog-post {
+      max-width: 900px;
+      margin: auto;
+      background: rgba(255, 255, 255, 0.03);
+      padding: 30px;
+      border-radius: 16px;
+      border: 1px solid #a855f7;
+      box-shadow: 0 0 20px rgba(168, 85, 247, 0.2);
+    }
+
+    .blog-post h1 {
+      font-size: 2em;
+      color: #00f2ff;
+      margin-bottom: 10px;
+    }
+
+    .blog-post .meta {
+      font-size: 0.8rem;
+      color: #aaa;
+      margin-bottom: 30px;
+    }
+
+    .blog-post p {
+      line-height: 1.8;
+      color: #ccc;
+      margin-bottom: 20px;
+    }
+
+    .back-btn {
+      margin-top: 30px;
+      display: inline-block;
+      color: #a855f7;
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="blog-post">
+    <h1>My First Telegram Bot</h1>
+    <div class="meta">Published: July 2025 | By Kinsu Rajput</div>
+    <p>Creating my first Telegram bot was an exciting journey. I started by learning Python basics and gradually explored the Telegram Bot API using the <code>pyrogram</code> and <code>telethon</code> libraries...</p>
+    <p>I hosted the bot using PythonAnywhere and even integrated a MongoDB backend for storing user sessions. Stay tuned for more guides on deploying bots and building smart features!</p>
+    <a href="/Blogs/" class="back-btn">← Back to Blogs</a>
+  </div>
+
+</body>
+</html>

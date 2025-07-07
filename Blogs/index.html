@@ -4,175 +4,105 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Blogs | Kinsu Rajput</title>
-
   <link rel="stylesheet" href="/css/style.css" />
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
-  <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css"/>
-
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+  <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css" />
   <style>
-    * { margin: 0; padding: 0; box-sizing: border-box; }
-
     body {
-      font-family: 'Orbitron', sans-serif;
       background: #000;
       color: #fff;
+      font-family: 'Orbitron', sans-serif;
       padding-top: 80px;
       padding-bottom: 80px;
-      overflow-x: hidden;
     }
 
-    header.site-header, footer.site-footer {
-      position: fixed;
-      width: 100%;
-      left: 0;
-      backdrop-filter: blur(12px);
-      background-color: rgba(0, 0, 0, 0.3);
-      border: 1px solid rgba(255, 255, 255, 0.08);
-      z-index: 1000;
+    .blog-container {
+      max-width: 1000px;
+      margin: auto;
+      padding: 40px 20px;
     }
 
-    header.site-header {
-      top: 0;
-      padding: 12px 20px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-    }
-
-    .logo {
-      font-family: 'Pacifico', cursive;
-      font-size: 1.8em;
-      color: #00f2ff;
-    }
-
-    .top-nav {
-      display: flex;
-      gap: 20px;
-    }
-
-    .top-nav a {
-      color: #ccc;
-      text-decoration: none;
-      font-size: 1em;
-      transition: color 0.3s;
-    }
-
-    .top-nav a:hover {
-      color: #00f2ff;
-    }
-
-    .menu-toggle {
-      display: none;
-      font-size: 24px;
-      color: #00f2ff;
-      background: none;
-      border: none;
-      cursor: pointer;
-    }
-
-    @media (max-width: 768px) {
-      .top-nav {
-        display: none;
-        flex-direction: column;
-        background-color: #111;
-        position: absolute;
-        top: 60px;
-        right: 20px;
-        padding: 10px;
-        border-radius: 10px;
-        z-index: 10;
-      }
-
-      .top-nav.active { display: flex; }
-      .menu-toggle { display: block; }
-    }
-
-    main {
-      min-height: 80vh;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      padding: 30px 20px;
-      flex-direction: column;
-    }
-
-    .glass-hero {
-      max-width: 800px;
-      padding: 50px 30px;
-      border-radius: 16px;
-      border: 2px solid rgba(168, 85, 247, 0.5);
-      background: rgba(255, 255, 255, 0.03);
-      box-shadow: 0 0 30px rgba(168, 85, 247, 0.1);
-      backdrop-filter: blur(14px);
+    .blog-title {
       text-align: center;
-      animation: fadeUp 1.2s ease;
-    }
-
-    .glass-hero h1 {
-      font-size: 2.8rem;
+      font-size: 2.5em;
       color: #00f2ff;
-      margin-bottom: 20px;
-      animation: flicker 2s infinite alternate;
+      margin-bottom: 40px;
     }
 
-    .glass-hero p {
-      font-size: 1.1rem;
-      color: #aaa;
-      line-height: 1.6;
+    .blog-card {
+      background: rgba(168, 85, 247, 0.08);
+      border: 1px solid #a855f7;
+      backdrop-filter: blur(10px);
+      padding: 20px;
+      border-radius: 15px;
+      margin-bottom: 30px;
+      box-shadow: 0 0 15px #a855f73b;
+      transition: transform 0.3s, box-shadow 0.3s;
     }
 
-    @keyframes flicker {
-      0% { opacity: 0.9; text-shadow: 0 0 5px #00f2ff, 0 0 15px #00f2ff; }
-      100% { opacity: 1; text-shadow: 0 0 12px #a855f7, 0 0 20px #00f2ff; }
+    .blog-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 0 25px #a855f7b0;
     }
 
-    @keyframes fadeUp {
-      from { opacity: 0; transform: translateY(40px); }
-      to { opacity: 1; transform: translateY(0); }
+    .blog-card h3 {
+      color: #fff;
+      font-size: 1.4rem;
+    }
+
+    .blog-card p {
+      color: #ccc;
+      font-size: 0.9rem;
+      margin: 10px 0;
+    }
+
+    .coming-soon {
+      text-align: center;
+      font-size: 1.2rem;
+      color: #999;
+      padding: 40px 20px;
+      border-radius: 12px;
+      background: rgba(255, 255, 255, 0.04);
+      border: 1px dashed #888;
+      margin-top: 30px;
     }
 
     /* Footer */
     footer.site-footer {
+      position: fixed;
       bottom: 0;
+      left: 0;
+      width: 100%;
       padding: 20px 0;
-      box-shadow: 0 0 20px rgba(168, 85, 247, 0.25);
+      backdrop-filter: blur(10px);
+      background: rgba(0, 0, 0, 0.3);
+      border-top: 1px solid rgba(255, 255, 255, 0.1);
+      box-shadow: 0 0 20px rgba(168, 85, 247, 0.3);
+      z-index: 999;
     }
 
     .footer-nav {
       display: flex;
       justify-content: space-around;
-      align-items: center;
-      padding: 10px 0;
     }
 
-    .nav-btn {
+    .footer-nav a {
+      text-decoration: none;
+      color: #00f2ff;
+      font-size: 0.9em;
       display: flex;
       flex-direction: column;
       align-items: center;
-      text-decoration: none;
-      color: #00f2ff;
-      transition: all 0.3s;
     }
 
-    .nav-btn:hover {
-      color: #fff;
-      transform: scale(1.1);
-    }
-
-    .nav-btn i {
-      font-size: 1.3em;
-    }
-
-    .nav-btn span {
-      font-size: 0.75em;
+    .footer-nav i {
+      font-size: 1.4em;
+      margin-bottom: 4px;
     }
   </style>
 </head>
 <body>
 
-  <!-- Header -->
   <header class="site-header">
     <div class="logo">Kinsu</div>
     <button class="menu-toggle" onclick="document.querySelector('.top-nav').classList.toggle('active')">
@@ -185,29 +115,33 @@
     </nav>
   </header>
 
-  <!-- Main Blog Hero Section -->
-  <main>
-    <div class="glass-hero" data-aos="zoom-in">
-      <h1>📚 Blogs Coming Soon</h1>
-      <p>Exciting content is on the way!<br>
-      I'm working on insightful blogs that will be live here shortly. Stay tuned ✨</p>
+  <main class="blog-container">
+    <h1 class="blog-title">📚 My Blogs</h1>
+
+    <div class="coming-soon" data-aos="fade-up">
+      🚧 Coming Soon: Blogs are in progress. Stay tuned!
     </div>
+
+    <!-- Example blog card when live -->
+    <!--
+    <div class="blog-card" data-aos="fade-up">
+      <h3>How I Built My First Telegram Bot</h3>
+      <p>A beginner’s guide to creating your first Telegram bot using Python and PHP...</p>
+      <a href="/Blogs/page1.html" style="color:#a855f7;text-decoration:underline;">Read More →</a>
+    </div>
+    -->
   </main>
 
-  <!-- Footer -->
   <footer class="site-footer">
     <nav class="footer-nav">
-      <a href="/" class="nav-btn"><i class="fas fa-home"></i><span>Home</span></a>
-      <a href="/pages/Projects" class="nav-btn"><i class="fas fa-code"></i><span>Projects</span></a>
-      <a href="/pages/Contact" class="nav-btn"><i class="fas fa-envelope"></i><span>Contact</span></a>
-      <a href="/pages/Hobbies" class="nav-btn"><i class="fas fa-heart"></i><span>Hobbies</span></a>
+      <a href="/"><i class="fas fa-home"></i><span>Home</span></a>
+      <a href="/pages/Projects"><i class="fas fa-code"></i><span>Projects</span></a>
+      <a href="/pages/Contact"><i class="fas fa-envelope"></i><span>Contact</span></a>
+      <a href="/Blogs"><i class="fas fa-blog"></i><span>Blogs</span></a>
     </nav>
   </footer>
 
-  <!-- AOS -->
   <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-  <script>
-    AOS.init({ duration: 1000, once: true });
-  </script>
+  <script>AOS.init({ once: true, duration: 1000 });</script>
 </body>
 </html>

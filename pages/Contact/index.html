@@ -319,16 +319,25 @@
 
   <!-- Header -->
   <header class="site-header">
-    <div class="logo">Kinsu</div>
-    <button class="menu-toggle" onclick="document.querySelector('.top-nav').classList.toggle('active')">
-      <i class="fas fa-bars"></i>
-    </button>
+  <div class="logo">Kinsu</div>
+  
+  <div style="display: flex; align-items: center; gap: 20px;">
     <nav class="top-nav">
       <a href="/">Home</a>
       <a href="/pages/Projects">Projects</a>
       <a href="/pages/Contact">Contact</a>
     </nav>
-  </header>
+    
+    <!-- GitHub Icon Link -->
+    <a href="https://github.com/pyKinsu" target="_blank" style="color: white; font-size: 1.5em;" title="Visit my GitHub">
+      <i class="fab fa-github"></i>
+    </a>
+    
+    <button class="menu-toggle" onclick="document.querySelector('.top-nav').classList.toggle('active')">
+      <i class="fas fa-bars"></i>
+    </button>
+  </div>
+</header>
 
   <!-- Main -->
   <main class="contact-page">

@@ -4,13 +4,16 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Blogs | Kinsu Rajput</title>
+
   <link rel="stylesheet" href="/css/style.css" />
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet"/>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
   <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css"/>
 
   <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
     body {
       font-family: 'Orbitron', sans-serif;
       background: #000;
@@ -20,12 +23,11 @@
       overflow-x: hidden;
     }
 
-    header.site-header,
-    footer.site-footer {
+    header.site-header, footer.site-footer {
       position: fixed;
-      left: 0;
       width: 100%;
-      backdrop-filter: blur(10px);
+      left: 0;
+      backdrop-filter: blur(12px);
       background-color: rgba(0, 0, 0, 0.3);
       border: 1px solid rgba(255, 255, 255, 0.08);
       z-index: 1000;
@@ -33,7 +35,7 @@
 
     header.site-header {
       top: 0;
-      padding: 10px 20px;
+      padding: 12px 20px;
       display: flex;
       justify-content: space-between;
       align-items: center;
@@ -83,60 +85,55 @@
         z-index: 10;
       }
 
-      .top-nav.active {
-        display: flex;
-      }
-
-      .menu-toggle {
-        display: block;
-      }
+      .top-nav.active { display: flex; }
+      .menu-toggle { display: block; }
     }
 
     main {
+      min-height: 80vh;
       display: flex;
       justify-content: center;
       align-items: center;
+      padding: 30px 20px;
       flex-direction: column;
-      min-height: 80vh;
-      padding: 20px;
+    }
+
+    .glass-hero {
+      max-width: 800px;
+      padding: 50px 30px;
+      border-radius: 16px;
+      border: 2px solid rgba(168, 85, 247, 0.5);
+      background: rgba(255, 255, 255, 0.03);
+      box-shadow: 0 0 30px rgba(168, 85, 247, 0.1);
+      backdrop-filter: blur(14px);
       text-align: center;
+      animation: fadeUp 1.2s ease;
     }
 
-    .coming-soon-box {
-      border: 1px solid #a855f7;
-      border-radius: 12px;
-      background: rgba(168, 85, 247, 0.05);
-      box-shadow: 0 0 15px #a855f73f;
-      backdrop-filter: blur(10px);
-      padding: 40px 30px;
-      max-width: 700px;
-      margin-top: 50px;
-      transition: 0.3s;
-      animation: fadeIn 1.2s ease-in-out;
-    }
-
-    .coming-soon-box:hover {
-      background: rgba(168, 85, 247, 0.08);
-      box-shadow: 0 0 25px #a855f7a8;
-    }
-
-    .coming-soon-box h1 {
-      font-size: 2.5rem;
+    .glass-hero h1 {
+      font-size: 2.8rem;
       color: #00f2ff;
       margin-bottom: 20px;
+      animation: flicker 2s infinite alternate;
     }
 
-    .coming-soon-box p {
+    .glass-hero p {
       font-size: 1.1rem;
       color: #aaa;
       line-height: 1.6;
     }
 
-    @keyframes fadeIn {
-      from { opacity: 0; transform: translateY(20px); }
+    @keyframes flicker {
+      0% { opacity: 0.9; text-shadow: 0 0 5px #00f2ff, 0 0 15px #00f2ff; }
+      100% { opacity: 1; text-shadow: 0 0 12px #a855f7, 0 0 20px #00f2ff; }
+    }
+
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(40px); }
       to { opacity: 1; transform: translateY(0); }
     }
 
+    /* Footer */
     footer.site-footer {
       bottom: 0;
       padding: 20px 0;
@@ -156,11 +153,16 @@
       align-items: center;
       text-decoration: none;
       color: #00f2ff;
+      transition: all 0.3s;
+    }
+
+    .nav-btn:hover {
+      color: #fff;
+      transform: scale(1.1);
     }
 
     .nav-btn i {
       font-size: 1.3em;
-      display: block;
     }
 
     .nav-btn span {
@@ -183,11 +185,12 @@
     </nav>
   </header>
 
-  <!-- Blog Main Section -->
+  <!-- Main Blog Hero Section -->
   <main>
-    <div class="coming-soon-box" data-aos="fade-up">
+    <div class="glass-hero" data-aos="zoom-in">
       <h1>📚 Blogs Coming Soon</h1>
-      <p>I'm working on something awesome!<br/>Stay tuned — blog system is under progress and will be live here soon.</p>
+      <p>Exciting content is on the way!<br>
+      I'm working on insightful blogs that will be live here shortly. Stay tuned ✨</p>
     </div>
   </main>
 
@@ -201,8 +204,10 @@
     </nav>
   </footer>
 
-  <!-- AOS Script -->
+  <!-- AOS -->
   <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-  <script>AOS.init({ duration: 1000, once: true });</script>
+  <script>
+    AOS.init({ duration: 1000, once: true });
+  </script>
 </body>
 </html>

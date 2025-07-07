@@ -5,6 +5,14 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Projects | Kinsu Rajput</title>
 
+  <!-- Favicons -->
+<link rel="icon" type="image/png" href="/Favicon/favicon-96x96.png" sizes="96x96" />
+<link rel="icon" type="image/svg+xml" href="/Favicon/favicon.svg" />
+<link rel="shortcut icon" href="/Favicon/favicon.ico" />
+<link rel="apple-touch-icon" sizes="180x180" href="/Favicon/apple-touch-icon.png" />
+<meta name="apple-mobile-web-app-title" content="Kinsu Rajput Portfolio" />
+<link rel="manifest" href="/Favicon/site.webmanifest" />
+  
   <!-- Fonts and Icons -->
   <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
@@ -217,16 +225,25 @@
 <body>
   <!-- Header -->
   <header class="site-header">
-    <div class="logo">Kinsu</div>
-    <button class="menu-toggle" onclick="document.querySelector('.top-nav').classList.toggle('active')">
-      <i class="fas fa-bars"></i>
-    </button>
+  <div class="logo">Kinsu</div>
+  
+  <div style="display: flex; align-items: center; gap: 20px;">
     <nav class="top-nav">
       <a href="/">Home</a>
       <a href="/pages/Projects">Projects</a>
       <a href="/pages/Contact">Contact</a>
     </nav>
-  </header>
+    
+    <!-- GitHub Icon Link -->
+    <a href="https://github.com/pyKinsu" target="_blank" style="color: white; font-size: 1.5em;" title="Visit my GitHub">
+      <i class="fab fa-github"></i>
+    </a>
+    
+    <button class="menu-toggle" onclick="document.querySelector('.top-nav').classList.toggle('active')">
+      <i class="fas fa-bars"></i>
+    </button>
+  </div>
+</header>
 
   <!-- Main Content -->
   <main class="projects-page" data-aos="fade-up">
@@ -250,11 +267,11 @@
 
     <!-- Project 2 -->
     <div class="project-button" data-aos="fade-up">
-      <h3>All Video Downloader Bot</h3>
-      <p>Download videos from various platforms via Telegram.</p>
+      <h3> Social Video Downloader</h3>
+      <p>Download videos from various platforms via Our Website.</p>
       <div class="project-meta">
         <span class="status-label">⚙️ Working</span>
-        <a href="https://github.com/pyKinsu/All-Video-Downloader-Bot" target="_blank" class="github-link">
+        <a href="https://github.com/pyKinsu/Video-Downloader" target="_blank" class="github-link">
           GitHub Repo
           <svg class="arrow-icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 10">
             <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
@@ -267,7 +284,7 @@
     <!-- Project 3 -->
     <div class="project-button" data-aos="fade-up">
       <h3>Weather Info Web</h3>
-      <p>Weather search by pincode with GitHub & 3D design.</p>
+      <p>Weather search by pincode with Geolocation & 3D design.</p>
       <div class="project-meta">
         <span class="status-label">✅ Completed</span>
         <a href="https://github.com/pyKinsu/weather-info" target="_blank" class="github-link">

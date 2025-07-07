@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Contact | Kinsu Rajput</title>
+  <title>All Pages | Kinsu Rajput</title>
 
   <!-- Favicons -->
   <link rel="icon" type="image/png" href="/Favicon/favicon-96x96.png" sizes="96x96" />
@@ -19,7 +19,6 @@
   <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css"/>
 
   <style>
-    /* RESET & BASE */
     * {
       margin: 0;
       padding: 0;
@@ -35,19 +34,7 @@
       overflow-x: hidden;
     }
 
-    /* SIDELINE */
-    .vertical-line {
-      position: fixed;
-      left: 0;
-      top: 0;
-      width: 4px;
-      height: 100%;
-      background: rgba(168, 85, 247, 0.6);
-      filter: blur(6px);
-      z-index: 0;
-    }
-
-    /* ========== HEADER STYLE ========== */
+    /* Header */
     header.site-header {
       position: fixed;
       top: 0;
@@ -75,36 +62,53 @@
     }
 
     .top-nav a {
-      color: #ccc;
+      color: #ffff00;
       text-decoration: none;
       font-size: 1em;
-      transition: color 0.3s;
+      padding: 8px 14px;
+      border-radius: 12px;
+      background: rgba(0, 0, 0, 0.8);
+      border: 1.5px solid #a855f7;
+      box-shadow: 0 0 8px rgba(168, 85, 247, 0.15);
+      transition: all 0.3s ease;
     }
 
     .top-nav a:hover {
-      color: #00f2ff;
+      background: #000;
+      color: #000;
+      box-shadow: 0 0 12px rgba(0, 242, 255, 0.5);
     }
 
     .menu-toggle {
       display: none;
       font-size: 24px;
-      color: #00f2ff;
-      background: none;
-      border: none;
-      cursor: pointer;
+      color: #ffff00;
+      background: rgba(0, 0, 0, 0.8);
+      border: 1.5px solid #a855f7;
+      border-radius: 12px;
+      padding: 6px 10px;
+      backdrop-filter: blur(6px);
+      transition: all 0.3s ease;
+    }
+
+    .menu-toggle:hover {
+      background: #000;
     }
 
     @media (max-width: 768px) {
       .top-nav {
         display: none;
         flex-direction: column;
-        background-color: #111;
+        gap: 12px;
+        background: rgba(0, 0, 0, 0.9);
         position: absolute;
         top: 60px;
         right: 20px;
-        padding: 10px;
-        border-radius: 10px;
-        z-index: 10;
+        padding: 14px;
+        border-radius: 16px;
+        box-shadow: 0 0 20px rgba(168, 85, 247, 0.25);
+        border: 1.5px solid rgba(168, 85, 247, 0.3);
+        z-index: 999;
       }
 
       .top-nav.active {
@@ -116,8 +120,20 @@
       }
     }
 
-    /* ========== MAIN SECTION ========== */
-    main.contact-page {
+    /* Vertical Sideline */
+    .vertical-line {
+      position: fixed;
+      left: 0;
+      top: 0;
+      width: 4px;
+      height: 100%;
+      background: linear-gradient(to bottom, #a855f7, #00f2ff);
+      filter: blur(6px);
+      z-index: 0;
+    }
+
+    /* Main Content */
+    main.index-page {
       padding: 40px 20px;
       max-width: 1000px;
       margin: auto;
@@ -125,7 +141,7 @@
       z-index: 1;
     }
 
-    .contact-page h2 {
+    .index-page h2 {
       text-align: center;
       color: #00f2ff;
       margin-bottom: 40px;
@@ -177,12 +193,8 @@
     }
 
     .contact-img {
-      width: 44px;
-      height: 44px;
-      border-radius: 50%;
-      background: #000;
-      padding: 5px;
-      box-shadow: 0 0 10px rgba(0, 255, 255, 0.3);
+      font-size: 1.8em;
+      color: #ffff00;
       z-index: 1;
     }
 
@@ -194,42 +206,6 @@
     .contact-info h3 {
       font-size: 1em;
       color: #00f2ff;
-    }
-
-    .contact-info p,
-    .contact-info a {
-      font-size: 0.9em;
-      color: #82d4ff;
-      text-decoration: none;
-    }
-
-    .copy-email {
-      display: flex;
-      background: #111;
-      padding: 6px 10px;
-      border-radius: 8px;
-      margin-top: 5px;
-      align-items: center;
-    }
-
-    .copy-email input {
-      background: transparent;
-      border: none;
-      color: #00f2ff;
-      font-size: 0.9em;
-      width: 100%;
-      outline: none;
-    }
-
-    .copy-email button {
-      background: #00f2ff;
-      color: #000;
-      border: none;
-      border-radius: 6px;
-      padding: 4px 8px;
-      cursor: pointer;
-      font-size: 0.8em;
-      margin-left: 10px;
     }
 
     .github-link {
@@ -261,7 +237,7 @@
       stroke-width: 2;
     }
 
-    /* ========== FOOTER STYLE ========== */
+    /* Footer */
     footer.site-footer {
       position: fixed;
       bottom: 0;
@@ -279,15 +255,14 @@
       display: flex;
       justify-content: space-around;
       align-items: center;
-      padding: 10px 0;
     }
 
     .nav-btn {
       display: flex;
       flex-direction: column;
       align-items: center;
-      text-decoration: none;
       color: #00f2ff;
+      text-decoration: none;
     }
 
     .nav-btn i {
@@ -297,132 +272,64 @@
     .nav-btn span {
       font-size: 0.75em;
     }
-
-    /* ========== TOAST STYLE ========== */
-    #toast {
-      position: fixed;
-      bottom: 90px;
-      left: 50%;
-      transform: translateX(-50%);
-      background: rgba(0, 242, 255, 0.9);
-      color: #000;
-      padding: 10px 20px;
-      border-radius: 30px;
-      font-size: 0.9em;
-      opacity: 0;
-      transition: all 0.4s ease;
-      z-index: 9999;
-    }
-
-    #toast.show {
-      opacity: 1;
-      bottom: 100px;
-    }
   </style>
 </head>
-
 <body>
 
   <div class="vertical-line"></div>
 
   <!-- Header -->
   <header class="site-header">
-  <div class="logo">Kinsu</div>
+    <div class="logo">Kinsu</div>
+    <div style="display: flex; align-items: center; gap: 24px;">
+      <nav class="top-nav">
+        <a href="https://github.com/pyKinsu" target="_blank"><i class="fab fa-github"></i> Follow Me</a>
+        <a href="https://github.com/pyKinsu/MyPortFolio/stargazers" target="_blank"><i class="fas fa-star"></i> Give Star</a>
+        <a href="https://github.com/pyKinsu/MyPortFolio/fork" target="_blank"><i class="fas fa-code-branch"></i> Fork Repo</a>
+        <a href="/pages/Contact"><i class="fas fa-paper-plane"></i> Contact</a>
+      </nav>
+      <a href="https://github.com/pyKinsu" target="_blank" style="font-size: 1.4em; color: white;"><i class="fab fa-github"></i></a>
+      <button class="menu-toggle" onclick="document.querySelector('.top-nav').classList.toggle('active')">
+        <i class="fas fa-bars"></i>
+      </button>
+    </div>
+  </header>
   
-  <div style="display: flex; align-items: center; gap: 20px;">
-    <nav class="top-nav">
-      <a href="/">Home</a>
-      <a href="/pages/Projects">Projects</a>
-      <a href="/pages/Contact">Contact</a>
-    </nav>
-    
-    <!-- GitHub Icon Link -->
-    <a href="https://github.com/pyKinsu" target="_blank" style="color: white; font-size: 1.5em;" title="Visit my GitHub">
-      <i class="fab fa-github"></i>
-    </a>
-    
-    <button class="menu-toggle" onclick="document.querySelector('.top-nav').classList.toggle('active')">
-      <i class="fas fa-bars"></i>
-    </button>
-  </div>
-</header>
-
   <!-- Main -->
-  <main class="contact-page">
-    <h2 data-aos="fade-up">Get in Touch</h2>
+  <main class="index-page">
+    <h2 data-aos="fade-up">Explore All Pages</h2>
     <div class="contact-cards">
 
-      
-      <!-- Home -->
       <div class="contact-card" data-aos="fade-up">
-        <img src="https://img.icons8.com/ios-filled/50/ffffff/home.png" alt="Home" class="contact-img" />
-        <div class="contact-info">
-          <h3>Home</h3>
-        </div>
-        <a href="/" class="github-link" target="_blank">
-          Visit
-          <svg class="arrow-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 14 10">
-            <path d="M1 5h12m0 0L9 1m4 4L9 9" stroke-linecap="round" stroke-linejoin="round"/>
-          </svg>
-        </a>
+        <div class="contact-img"><i class="fas fa-home"></i></div>
+        <div class="contact-info"><h3>Home</h3></div>
+        <a href="/" class="github-link" target="_blank">Visit <svg class="arrow-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 14 10"><path d="M1 5h12m0 0L9 1m4 4L9 9" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
       </div>
 
-      <!-- Skills -->
       <div class="contact-card" data-aos="fade-up">
-        <img src="https://img.icons8.com/ios-filled/50/ffffff/code.png" alt="Skills" class="contact-img" />
-        <div class="contact-info">
-          <h3>Skills</h3>
-        </div>
-        <a href="/pages/Skills/" class="github-link" target="_blank">
-          Visit
-          <svg class="arrow-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 14 10">
-            <path d="M1 5h12m0 0L9 1m4 4L9 9" stroke-linecap="round" stroke-linejoin="round"/>
-          </svg>
-        </a>
+        <div class="contact-img"><i class="fas fa-code"></i></div>
+        <div class="contact-info"><h3>Skills</h3></div>
+        <a href="/pages/Skills/" class="github-link" target="_blank">Visit <svg class="arrow-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 14 10"><path d="M1 5h12m0 0L9 1m4 4L9 9" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
       </div>
 
-      <!-- Hobbies -->
       <div class="contact-card" data-aos="fade-up">
-        <img src="https://img.icons8.com/ios-filled/50/ffffff/sport.png" alt="Hobbies" class="contact-img" />
-        <div class="contact-info">
-          <h3>Hobbies</h3>
-        </div>
-        <a href="/pages/Hobbies/" class="github-link" target="_blank">
-          Visit
-          <svg class="arrow-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 14 10">
-            <path d="M1 5h12m0 0L9 1m4 4L9 9" stroke-linecap="round" stroke-linejoin="round"/>
-          </svg>
-        </a>
+        <div class="contact-img"><i class="fas fa-heart"></i></div>
+        <div class="contact-info"><h3>Hobbies</h3></div>
+        <a href="/pages/Hobbies/" class="github-link" target="_blank">Visit <svg class="arrow-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 14 10"><path d="M1 5h12m0 0L9 1m4 4L9 9" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
       </div>
 
-      <!-- Project -->
       <div class="contact-card" data-aos="fade-up">
-        <img src="https://img.icons8.com/ios-filled/50/ffffff/light-on.png" alt="Projects" class="contact-img" />
-        <div class="contact-info">
-          <h3>Projects </h3>
-        </div>
-        <a href="/pages/Projects/" class="github-link" target="_blank">
-          Visit
-          <svg class="arrow-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 14 10">
-            <path d="M1 5h12m0 0L9 1m4 4L9 9" stroke-linecap="round" stroke-linejoin="round"/>
-          </svg>
-        </a>
+        <div class="contact-img"><i class="fas fa-lightbulb"></i></div>
+        <div class="contact-info"><h3>Projects</h3></div>
+        <a href="/pages/Projects/" class="github-link" target="_blank">Visit <svg class="arrow-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 14 10"><path d="M1 5h12m0 0L9 1m4 4L9 9" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
       </div>
 
-            <!-- Contact -->
       <div class="contact-card" data-aos="fade-up">
-        <img src="https://img.icons8.com/ios-filled/50/ffffff/filled-message.png" alt="Contact" class="contact-img" />
-        <div class="contact-info">
-          <h3>Contact 💌</h3>
-        </div>
-        <a href="/pages/Contact/" class="github-link" target="_blank">
-          Visit
-          <svg class="arrow-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 14 10">
-            <path d="M1 5h12m0 0L9 1m4 4L9 9" stroke-linecap="round" stroke-linejoin="round"/>
-          </svg>
-        </a>
+        <div class="contact-img"><i class="fas fa-envelope"></i></div>
+        <div class="contact-info"><h3>Contact</h3></div>
+        <a href="/pages/Contact/" class="github-link" target="_blank">Visit <svg class="arrow-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 14 10"><path d="M1 5h12m0 0L9 1m4 4L9 9" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
       </div>
-      
+
     </div>
   </main>
 
@@ -432,16 +339,13 @@
       <a href="/" class="nav-btn"><i class="fas fa-home"></i><span>Home</span></a>
       <a href="/pages/Projects" class="nav-btn"><i class="fas fa-code"></i><span>Projects</span></a>
       <a href="/pages/Contact" class="nav-btn"><i class="fas fa-envelope"></i><span>Contact</span></a>
-      <a href="/pages/Blogs" class="nav-btn"><i class="fas fa-blog"></i><span>Blogs</span></a>
+      <a href="/Blogs/" class="nav-btn"><i class="fas fa-blog"></i><span>Blogs</span></a>
     </nav>
   </footer>
 
-
   <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
   <script>
-    AOS.init({ duration: 800, once: true });
-
+    AOS.init({ duration: 1000, once: true });
   </script>
-
 </body>
 </html>

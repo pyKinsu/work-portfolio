@@ -68,51 +68,79 @@
     .top-nav {
       display: flex;
       gap: 20px;
+      transition: all 0.3s ease;
     }
 
     .top-nav a {
-      color: #ccc;
+      color: #00f2ff;
       text-decoration: none;
       font-size: 1em;
       padding: 8px 14px;
-      border-radius: 10px;
-      border: 1px solid rgba(168, 85, 247, 0.6);
-      background: rgba(0, 0, 0, 0.3);
+      border-radius: 12px;
+      background: rgba(0, 0, 0, 0.8);
+      border: 1.5px solid #a855f7;
+      box-shadow: 0 0 8px rgba(168, 85, 247, 0.15);
       transition: all 0.3s ease;
     }
 
     .top-nav a:hover {
-      color: #00f2ff;
-      background: rgba(168, 85, 247, 0.1);
+      background: #00f2ff;
+      color: #000;
+      box-shadow: 0 0 12px rgba(0, 242, 255, 0.5);
     }
 
     .menu-toggle {
       display: none;
       font-size: 24px;
       color: #00f2ff;
-      background: none;
-      border: none;
-      cursor: pointer;
+      background: rgba(0, 0, 0, 0.8);
+      border: 1.5px solid #a855f7;
+      border-radius: 12px;
+      padding: 6px 10px;
+      backdrop-filter: blur(6px);
+      transition: all 0.3s ease;
     }
 
-    /* Responsive Menu */
+    .menu-toggle:hover {
+      background: #00f2ff;
+      color: #000;
+    }
+
     @media (max-width: 768px) {
       .top-nav {
         display: none;
         flex-direction: column;
+        gap: 12px;
+        background: rgba(0, 0, 0, 0.9);
         position: absolute;
         top: 60px;
         right: 20px;
-        background: rgba(0, 0, 0, 0.8);
-        padding: 10px;
-        border-radius: 12px;
-        box-shadow: 0 0 15px rgba(168, 85, 247, 0.4);
+        padding: 14px;
+        border-radius: 16px;
+        box-shadow: 0 0 20px rgba(168, 85, 247, 0.25);
+        border: 1.5px solid rgba(168, 85, 247, 0.3);
+        z-index: 999;
       }
 
       .top-nav.active {
         display: flex;
       }
 
+      .menu-toggle {
+        display: block;
+      }
+    }
+
+    .vertical-line {
+      position: fixed;
+      left: 0;
+      top: 0;
+      width: 4px;
+      height: 100%;
+      background: rgba(168, 85, 247, 0.6);
+      filter: blur(6px);
+      z-index: 0;
+      
       .menu-toggle {
         display: block;
       }
@@ -356,24 +384,20 @@
 
 <!-- Header -->
 <header class="site-header">
-  <div class="logo">Kinsu</div>
-
-  <div style="display: flex; align-items: center; gap: 20px;">
-    <nav class="top-nav">
-      <a href="/">Home</a>
-      <a href="/pages/Projects">Projects</a>
-      <a href="/pages/Contact">Contact</a>
-    </nav>
-    
-    <a href="https://github.com/pyKinsu" target="_blank" style="color: white; font-size: 1.5em;" title="GitHub Profile">
-      <i class="fab fa-github"></i>
-    </a>
-
-    <button class="menu-toggle" onclick="document.querySelector('.top-nav').classList.toggle('active')">
-      <i class="fas fa-bars"></i>
-    </button>
-  </div>
-</header>
+    <div class="logo">Kinsu</div>
+    <div style="display: flex; align-items: center; gap: 24px;">
+      <nav class="top-nav">
+        <a href="https://github.com/pyKinsu" target="_blank"><i class="fab fa-github"></i> Follow Me</a>
+        <a href="https://github.com/pyKinsu/MyPortFolio/stargazers" target="_blank"><i class="fas fa-star"></i> Give Star</a>
+        <a href="https://github.com/pyKinsu/MyPortFolio/fork" target="_blank"><i class="fas fa-code-branch"></i> Fork Repo</a>
+        <a href="/pages/Contact"><i class="fas fa-paper-plane"></i> Contact</a>
+      </nav>
+      <a href="https://github.com/pyKinsu" target="_blank" style="font-size: 1.4em; color: white;"><i class="fab fa-github"></i></a>
+      <button class="menu-toggle" onclick="document.querySelector('.top-nav').classList.toggle('active')">
+        <i class="fas fa-bars"></i>
+      </button>
+    </div>
+  </header>
 
 <!-- Hero Section -->
 <section class="hero" data-aos="zoom-in">

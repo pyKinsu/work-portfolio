@@ -5,104 +5,151 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Blogs | Kinsu Rajput</title>
   <link rel="stylesheet" href="/css/style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet"/>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
-  <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css" />
+  <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css"/>
   <style>
     body {
+      margin: 0;
+      font-family: 'Orbitron', sans-serif;
       background: #000;
       color: #fff;
-      font-family: 'Orbitron', sans-serif;
       padding-top: 80px;
       padding-bottom: 80px;
     }
 
-    .blog-container {
-      max-width: 1000px;
-      margin: auto;
-      padding: 40px 20px;
-    }
-
-    .blog-title {
-      text-align: center;
-      font-size: 2.5em;
+    .logo {
+      font-family: 'Pacifico', cursive;
+      font-size: 1.8em;
       color: #00f2ff;
-      margin-bottom: 40px;
     }
 
-    .blog-card {
-      background: rgba(168, 85, 247, 0.08);
-      border: 1px solid #a855f7;
+    header.site-header, footer.site-footer {
+      position: fixed;
+      width: 100%;
+      left: 0;
       backdrop-filter: blur(10px);
-      padding: 20px;
-      border-radius: 15px;
-      margin-bottom: 30px;
-      box-shadow: 0 0 15px #a855f73b;
-      transition: transform 0.3s, box-shadow 0.3s;
+      background: rgba(0, 0, 0, 0.4);
+      z-index: 1000;
+      border-bottom: 1px solid rgba(255,255,255,0.05);
     }
 
-    .blog-card:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 0 25px #a855f7b0;
+    header.site-header {
+      top: 0;
+      padding: 10px 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
     }
 
-    .blog-card h3 {
-      color: #fff;
-      font-size: 1.4rem;
+    .top-nav {
+      display: flex;
+      gap: 20px;
     }
 
-    .blog-card p {
+    .top-nav a {
       color: #ccc;
-      font-size: 0.9rem;
-      margin: 10px 0;
+      text-decoration: none;
+      font-size: 1em;
+      transition: 0.3s;
     }
 
-    .coming-soon {
+    .top-nav a:hover {
+      color: #00f2ff;
+    }
+
+    .menu-toggle {
+      display: none;
+      font-size: 24px;
+      color: #00f2ff;
+      background: none;
+      border: none;
+      cursor: pointer;
+    }
+
+    @media (max-width: 768px) {
+      .top-nav {
+        display: none;
+        flex-direction: column;
+        background: #111;
+        position: absolute;
+        top: 60px;
+        right: 20px;
+        padding: 10px;
+        border-radius: 10px;
+        z-index: 10;
+      }
+
+      .top-nav.active {
+        display: flex;
+      }
+
+      .menu-toggle {
+        display: block;
+      }
+    }
+
+    .blogs-coming {
       text-align: center;
-      font-size: 1.2rem;
-      color: #999;
-      padding: 40px 20px;
-      border-radius: 12px;
-      background: rgba(255, 255, 255, 0.04);
-      border: 1px dashed #888;
+      padding: 60px 20px;
+      margin-top: 50px;
+    }
+
+    .blogs-coming img {
+      max-width: 300px;
+      margin: 20px auto;
+      display: block;
+      border-radius: 16px;
+      box-shadow: 0 0 20px rgba(255, 255, 255, 0.2);
+    }
+
+    .blogs-coming h1 {
+      font-family: 'Pacifico', cursive;
+      font-size: 2.5rem;
+      color: #111;
+      background: #f7e200;
+      display: inline-block;
+      padding: 16px 30px;
+      border-radius: 16px;
+      box-shadow: 0 0 20px #f7e20085;
       margin-top: 30px;
     }
 
-    /* Footer */
     footer.site-footer {
-      position: fixed;
       bottom: 0;
-      left: 0;
-      width: 100%;
-      padding: 20px 0;
-      backdrop-filter: blur(10px);
-      background: rgba(0, 0, 0, 0.3);
-      border-top: 1px solid rgba(255, 255, 255, 0.1);
+      padding: 15px 0;
       box-shadow: 0 0 20px rgba(168, 85, 247, 0.3);
-      z-index: 999;
     }
 
     .footer-nav {
       display: flex;
       justify-content: space-around;
-    }
-
-    .footer-nav a {
-      text-decoration: none;
-      color: #00f2ff;
-      font-size: 0.9em;
-      display: flex;
-      flex-direction: column;
       align-items: center;
     }
 
-    .footer-nav i {
-      font-size: 1.4em;
-      margin-bottom: 4px;
+    .nav-btn {
+      color: #00f2ff;
+      text-decoration: none;
+      font-size: 0.9rem;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 4px;
+    }
+
+    .nav-btn i {
+      font-size: 1.2rem;
+    }
+
+    .nav-btn span {
+      font-size: 0.75rem;
     }
   </style>
 </head>
 <body>
 
+  <!-- Header -->
   <header class="site-header">
     <div class="logo">Kinsu</div>
     <button class="menu-toggle" onclick="document.querySelector('.top-nav').classList.toggle('active')">
@@ -115,33 +162,23 @@
     </nav>
   </header>
 
-  <main class="blog-container">
-    <h1 class="blog-title">📚 My Blogs</h1>
+  <!-- Main Section -->
+  <section class="blogs-coming" data-aos="zoom-in">
+    <img src="/assets/27282-min.jpg" alt="Coming Soon" />
+    <h1>Coming Soon</h1>
+  </section>
 
-    <div class="coming-soon" data-aos="fade-up">
-      🚧 Coming Soon: Blogs are in progress. Stay tuned!
-    </div>
-
-    <!-- Example blog card when live -->
-    <!--
-    <div class="blog-card" data-aos="fade-up">
-      <h3>How I Built My First Telegram Bot</h3>
-      <p>A beginner’s guide to creating your first Telegram bot using Python and PHP...</p>
-      <a href="/Blogs/page1.html" style="color:#a855f7;text-decoration:underline;">Read More →</a>
-    </div>
-    -->
-  </main>
-
+  <!-- Footer -->
   <footer class="site-footer">
     <nav class="footer-nav">
-      <a href="/"><i class="fas fa-home"></i><span>Home</span></a>
-      <a href="/pages/Projects"><i class="fas fa-code"></i><span>Projects</span></a>
-      <a href="/pages/Contact"><i class="fas fa-envelope"></i><span>Contact</span></a>
-      <a href="/Blogs"><i class="fas fa-blog"></i><span>Blogs</span></a>
+      <a href="/" class="nav-btn"><i class="fas fa-home"></i><span>Home</span></a>
+      <a href="/pages/Projects" class="nav-btn"><i class="fas fa-code"></i><span>Projects</span></a>
+      <a href="/pages/Contact" class="nav-btn"><i class="fas fa-envelope"></i><span>Contact</span></a>
+      <a href="/Blogs" class="nav-btn"><i class="fas fa-blog"></i><span>Blogs</span></a>
     </nav>
   </footer>
 
   <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-  <script>AOS.init({ once: true, duration: 1000 });</script>
+  <script>AOS.init({ duration: 1000, once: true });</script>
 </body>
 </html>

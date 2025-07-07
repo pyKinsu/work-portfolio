@@ -111,7 +111,9 @@
         display: block;
       }
     }
-
+     .menu-toggle img {
+  filter: brightness(10);
+     }
     /* Vertical Sideline */
     .vertical-line {
       position: fixed;
@@ -320,21 +322,42 @@
   <!-- Header -->
   <header class="site-header">
   <div class="logo">Kinsu</div>
-  
+
   <div style="display: flex; align-items: center; gap: 20px;">
     <nav class="top-nav">
       <a href="/">Home</a>
       <a href="/pages/Projects">Projects</a>
       <a href="/pages/Contact">Contact</a>
+
+      <!-- Follow Me (GitHub) -->
+      <a href="https://github.com/pyKinsu" target="_blank" title="Follow me on GitHub">
+        <i class="fab fa-github"></i> Follow Me
+      </a>
+
+      <!-- Give Star -->
+      <a href="https://github.com/pyKinsu/MyPortFolio/stargazers" target="_blank" title="Give this repo a star">
+        <img src="https://img.icons8.com/?size=100&id=pEBu0baGIuu5&format=png&color=ffffff" alt="star" style="width: 20px; height: 20px;"> Give Star
+      </a>
+
+      <!-- Fork Repo -->
+      <a href="https://github.com/pyKinsu/MyPortFolio/fork" target="_blank" title="Fork this portfolio repo">
+        <img src="https://img.icons8.com/?size=100&id=Yl9ip6CjqAEI&format=png&color=ffffff" alt="fork" style="width: 20px; height: 20px;"> Fork Repo
+      </a>
+
+      <!-- Contact -->
+      <a href="/pages/Contact" title="Contact Me">
+        <i class="fas fa-paper-plane"></i> Contact
+      </a>
     </nav>
-    
-    <!-- GitHub Icon Link -->
-    <a href="https://github.com/pyKinsu" target="_blank" style="color: white; font-size: 1.5em;" title="Visit my GitHub">
+
+    <!-- GitHub Icon Shortcut -->
+    <a href="https://github.com/pyKinsu" target="_blank" style="color: white; font-size: 1.5em;" title="GitHub Profile">
       <i class="fab fa-github"></i>
     </a>
-    
-    <button class="menu-toggle" onclick="document.querySelector('.top-nav').classList.toggle('active')">
-      <i class="fas fa-bars"></i>
+
+    <!-- Custom Hamburger Icon (Menu Toggle) -->
+    <button class="menu-toggle" onclick="document.querySelector('.top-nav').classList.toggle('active')" style="background: none; border: none; cursor: pointer;">
+      <img src="https://img.icons8.com/?size=100&id=44024&format=png&color=ffffff" alt="Menu" style="width: 28px; height: 28px;" title="Toggle Menu" />
     </button>
   </div>
 </header>

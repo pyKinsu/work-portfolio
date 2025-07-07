@@ -5,6 +5,14 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Skills | Kinsu Rajput</title>
 
+  <!-- Favicons -->
+<link rel="icon" type="image/png" href="/Favicon/favicon-96x96.png" sizes="96x96" />
+<link rel="icon" type="image/svg+xml" href="/Favicon/favicon.svg" />
+<link rel="shortcut icon" href="/Favicon/favicon.ico" />
+<link rel="apple-touch-icon" sizes="180x180" href="/Favicon/apple-touch-icon.png" />
+<meta name="apple-mobile-web-app-title" content="Kinsu Rajput Portfolio" />
+<link rel="manifest" href="/Favicon/site.webmanifest" />
+  
   <link rel="stylesheet" href="/css/style.css">
   <link rel="stylesheet" href="/css/loader.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -183,20 +191,29 @@
 </head>
 <body>
 
-  <!-- HEADER -->
+  <!-- header -->
   <header class="site-header">
-    <div class="logo">Kinsu</div>
-    <button class="menu-toggle" onclick="document.querySelector('.top-nav').classList.toggle('active')">
-      <i class="fas fa-bars"></i>
-    </button>
+  <div class="logo">Kinsu</div>
+  
+  <div style="display: flex; align-items: center; gap: 20px;">
     <nav class="top-nav">
       <a href="/">Home</a>
       <a href="/pages/Projects">Projects</a>
       <a href="/pages/Contact">Contact</a>
     </nav>
-  </header>
+    
+    <!-- GitHub Icon Link -->
+    <a href="https://github.com/pyKinsu" target="_blank" style="color: white; font-size: 1.5em;" title="Visit my GitHub">
+      <i class="fab fa-github"></i>
+    </a>
+    
+    <button class="menu-toggle" onclick="document.querySelector('.top-nav').classList.toggle('active')">
+      <i class="fas fa-bars"></i>
+    </button>
+  </div>
+</header>
 
-  <!-- MAIN -->
+  <!-- main -->
   <main class="skills-page">
     <h2>My Skills</h2>
 
@@ -229,7 +246,7 @@
     </div>
   </main>
 
-  <!-- FOOTER (EXACT COPY FROM HOME) -->
+  <!-- footer -->
   <footer class="site-footer">
     <nav class="footer-nav">
       <a href="/" class="nav-btn"><i class="fas fa-home"></i><span>Home</span></a>

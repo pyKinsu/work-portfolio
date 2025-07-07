@@ -2,18 +2,20 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Kinsu Rajput | BCA Student & Python Developer</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Kinsu Rajput | Portfolio</title>
 
-  <!-- SEO Meta Tags -->
-  <meta name="description" content="Kinsu Rajput | BCA Student, Python & C Learner, Telegram Bot Developer. Explore my portfolio, projects, and social links." />
-  <meta name="keywords" content="Kinsu Rajput, pyKinsu, Portfolio, GitHub, Telegram Bots, Python Developer, Bihar" />
-  <meta name="author" content="Kinsu Rajput" />
-  <meta property="og:title" content="Kinsu Rajput | Portfolio" />
-  <meta property="og:description" content="Explore Kinsu Rajput's developer portfolio, projects, and social links." />
-  <meta property="og:image" content="https://github.com/pyKinsu.png" />
-  <meta property="og:url" content="https://github.com/pyKinsu" />
-  <meta name="robots" content="index, follow" />
+  <!-- SEO Meta -->
+  <meta name="title" content="Kinsu Rajput | Developer Portfolio">
+  <meta name="description" content="Kinsu Rajput - BCA student, Python & C developer, Telegram bot creator. Explore my portfolio, projects, and contact info.">
+  <meta name="keywords" content="Kinsu Rajput, pyKinsu, Telegram bots, Python developer, GitHub, Portfolio, Bihar, BCA Student, HTML CSS">
+  <meta name="author" content="Kinsu Rajput">
+  <meta property="og:title" content="Kinsu Rajput | Portfolio">
+  <meta property="og:description" content="Explore projects by Kinsu Rajput, a BCA student and developer from India. Python, Telegram bots, and more.">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="https://github.com/pyKinsu.png">
+  <meta property="og:url" content="https://pykinsu.github.io/MyPortFolio/">
+  <meta name="robots" content="index, follow"/>
 
   <!-- Favicons -->
   <link rel="icon" type="image/png" href="/Favicon/favicon-96x96.png" sizes="96x96" />
@@ -24,225 +26,405 @@
   <link rel="manifest" href="/Favicon/site.webmanifest" />
 
   <!-- Fonts & Icons -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-  <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css" />
+  <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css"/>
 
   <style>
-    * { margin:0; padding:0; box-sizing:border-box; }
+    /* RESET */
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
     body {
-      font-family:'Orbitron',sans-serif;
-      background:#000;
-      color:#fff;
-      padding-top:80px; padding-bottom:80px;
+      font-family: 'Orbitron', sans-serif;
+      background: #000;
+      color: #fff;
+      padding-top: 80px;
+      padding-bottom: 80px;
     }
 
-    /* Header & Footer */
-    header.site-header, footer.site-footer {
-      position:fixed; left:0; width:100%;
-      backdrop-filter:blur(10px);
-      background-color:rgba(0,0,0,0.3);
-      border:1px solid rgba(255,255,255,0.08);
-      z-index:1000;
-    }
+    /* Header */
     header.site-header {
-      top:0; padding:10px 20px;
-      display:flex; justify-content:space-between; align-items:center;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      backdrop-filter: blur(10px);
+      background-color: rgba(0, 0, 0, 0.3);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      z-index: 1000;
+      padding: 10px 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
     }
+
     .logo {
-      font-family:'Pacifico',cursive;
-      font-size:1.8em; color:#00f2ff;
+      font-family: 'Pacifico', cursive;
+      font-size: 1.8em;
+      color: #00f2ff;
     }
 
-    .menu-group {
-      display:flex; align-items:center; gap:20px;
-    }
     .top-nav {
-      display:flex; gap:10px;
-      background:rgba(255,255,255,0.04);
-      border:1px solid rgba(168,85,247,0.5);
-      border-radius:12px;
-      padding:8px 14px;
-      backdrop-filter:blur(12px);
+      display: flex;
+      gap: 20px;
     }
+
     .top-nav a {
-      color:#ccc; text-decoration:none;
-      font-size:0.95em;
-      padding:6px 10px;
-      border:1px solid rgba(168,85,247,0.5);
-      border-radius:8px;
-      transition:all .3s;
+      color: #ccc;
+      text-decoration: none;
+      font-size: 1em;
+      padding: 8px 14px;
+      border-radius: 10px;
+      border: 1px solid rgba(168, 85, 247, 0.6);
+      background: rgba(0, 0, 0, 0.3);
+      transition: all 0.3s ease;
     }
+
     .top-nav a:hover {
-      color:#00f2ff;
-      background:rgba(168,85,247,0.2);
+      color: #00f2ff;
+      background: rgba(168, 85, 247, 0.1);
     }
+
     .menu-toggle {
-      display:none;
-      font-size:24px;
-      color:#00f2ff;
-      background:none; border:none; cursor:pointer;
-    }
-    .menu-toggle:active { color:#00f2ff !important; }
-
-    footer.site-footer {
-      bottom:0; padding:20px 0;
-      box-shadow:0 0 20px rgba(168,85,247,0.25);
-    }
-    .footer-nav {
-      display:flex; justify-content:space-around; align-items:center;
-    }
-    .nav-btn {
-      display:flex; flex-direction:column; align-items:center;
-      text-decoration:none; color:#00f2ff;
-    }
-    .nav-btn i { font-size:1.3em; }
-    .nav-btn span { font-size:0.75em; }
-
-    /* Hero & About */
-    .hero {
-      display:flex; justify-content:center; align-items:center;
-      padding:80px 20px 40px;
-    }
-    .hero-card {
-      border:1px solid #a855f7;
-      border-radius:20px;
-      background:rgba(168,85,247,0.05);
-      box-shadow:0 0 15px rgba(168,85,247,0.25);
-      backdrop-filter:blur(12px);
-      padding:30px; max-width:600px; text-align:center;
-    }
-    .hero-img {
-      width:130px; height:130px;
-      border-radius:50%; object-fit:cover;
-      margin-bottom:16px;
-      border:3px solid #00f2ff;
-      box-shadow:0 0 15px rgba(0,242,255,0.4);
-      transition:transform .3s;
-    }
-    .hero-img:hover { transform:scale(1.06); }
-    .hero-name {
-      font-size:2.4rem; font-weight:600;
-      color:#f0f0f0; font-family:'Pacifico',cursive;
-    }
-    .hero-title {
-      font-size:1rem; color:#ccc;
-      max-width:90%; margin:auto;
+      display: none;
+      font-size: 24px;
+      color: #00f2ff;
+      background: none;
+      border: none;
+      cursor: pointer;
     }
 
-    .about {
-      padding:40px 20px; max-width:900px; margin:auto;
-    }
-    .about h2 {
-      font-size:2em; margin-bottom:20px;
-      color:#00f2ff; text-align:center;
-    }
-    .glass-box {
-      border:1px solid #a855f7;
-      border-radius:12px;
-      background:rgba(168,85,247,0.05);
-      box-shadow:0 0 15px rgba(168,85,247,0.25);
-      backdrop-filter:blur(10px);
-      padding:20px;
-      text-align:center;
-      font-size:1rem; line-height:1.6;
-      color:#ccc;
-    }
-    .glass-box:hover {
-      background:rgba(168,85,247,0.08);
-      box-shadow:0 0 25px rgba(168,85,247,0.45);
-    }
-
-    @media (max-width:768px) {
+    /* Responsive Menu */
+    @media (max-width: 768px) {
       .top-nav {
-        display:none;
-        flex-direction:column;
-        background:rgba(0,0,0,0.9);
-        position:absolute;
-        top:60px; right:20px;
-        border:1px solid rgba(168,85,247,0.4);
-        border-radius:12px;
-        padding:12px;
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 60px;
+        right: 20px;
+        background: rgba(0, 0, 0, 0.8);
+        padding: 10px;
+        border-radius: 12px;
+        box-shadow: 0 0 15px rgba(168, 85, 247, 0.4);
       }
-      .top-nav.active { display:flex; }
-      .menu-toggle { display:block; }
-      .hero-name { font-size:1.8rem; }
-      .hero-title { font-size:0.9rem; }
+
+      .top-nav.active {
+        display: flex;
+      }
+
+      .menu-toggle {
+        display: block;
+      }
+
+      .hero-name {
+        font-size: 1.8rem;
+      }
+
+      .hero-title {
+        font-size: 0.9rem;
+      }
+    }
+
+    /* Footer */
+    footer.site-footer {
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      padding: 20px 0;
+      box-shadow: 0 0 20px rgba(168, 85, 247, 0.25);
+      background-color: rgba(0, 0, 0, 0.3);
+      backdrop-filter: blur(10px);
+      border-top: 1px solid rgba(255, 255, 255, 0.08);
+      z-index: 1000;
+    }
+
+    .footer-nav {
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+    }
+
+    .nav-btn {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-decoration: none;
+      color: #00f2ff;
+    }
+
+    .nav-btn i {
+      font-size: 1.3em;
+    }
+
+    .nav-btn span {
+      font-size: 0.75em;
+    }
+
+    /* Hero Section */
+    .hero {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 80px 20px 40px;
+    }
+
+    .hero-card {
+      border: 1px solid #a855f7;
+      border-radius: 20px;
+      background: rgba(168, 85, 247, 0.05);
+      box-shadow: 0 0 15px #a855f73f;
+      backdrop-filter: blur(12px);
+      padding: 30px;
+      max-width: 600px;
+      text-align: center;
+      position: relative;
+    }
+
+    .hero-img {
+      width: 130px;
+      height: 130px;
+      border-radius: 50%;
+      object-fit: cover;
+      margin-bottom: 16px;
+      border: 3px solid #00f2ff;
+      box-shadow: 0 0 15px rgba(0, 242, 255, 0.4);
+      transition: transform 0.3s ease;
+    }
+
+    .hero-img:hover {
+      transform: scale(1.06);
+    }
+
+    .hero-name {
+      font-size: 2.4rem;
+      font-weight: 600;
+      letter-spacing: 1px;
+      color: #f0f0f0;
+      font-family: 'Pacifico', cursive;
+    }
+
+    .hero-title {
+      font-size: 1rem;
+      color: #ccc;
+      max-width: 90%;
+      margin: auto;
+    }
+
+    /* About Section */
+    .about {
+      padding: 40px 20px;
+      max-width: 900px;
+      margin: auto;
+    }
+
+    .about h2 {
+      font-size: 2em;
+      margin-bottom: 20px;
+      color: #00f2ff;
+      text-align: center;
+    }
+
+    .glass-box {
+      border: 1px solid #a855f7;
+      border-radius: 12px;
+      background: rgba(168, 85, 247, 0.05);
+      box-shadow: 0 0 15px #a855f73f;
+      backdrop-filter: blur(10px);
+      padding: 20px;
+      text-align: center;
+      font-size: 1rem;
+      line-height: 1.6;
+      color: #ccc;
+      transition: all 0.3s ease;
+    }
+
+    .glass-box:hover {
+      background: rgba(168, 85, 247, 0.08);
+      box-shadow: 0 0 25px #a855f7a8;
+    }
+
+    /* Projects Section */
+    .projects {
+      max-width: 900px;
+      margin: auto;
+      padding: 40px 20px;
+    }
+
+    .projects h2 {
+      font-size: 2em;
+      color: #00f2ff;
+      margin-bottom: 30px;
+      text-align: center;
+    }
+
+    .project-button {
+      background: rgba(255, 255, 255, 0.06);
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      backdrop-filter: blur(10px);
+      border-radius: 16px;
+      padding: 20px;
+      margin-bottom: 30px;
+      box-shadow: 0 0 10px rgba(168, 85, 247, 0.2);
+      transition: 0.4s ease;
+    }
+
+    .project-button:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 0 20px rgba(168, 85, 247, 0.6);
+    }
+
+    .project-meta {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 16px;
+      margin-top: 10px;
+      flex-wrap: wrap;
+    }
+
+    .status-label {
+      font-size: 0.9em;
+      color: #bb86fc;
+      padding: 5px 12px;
+      border: 1px solid #a855f7;
+      border-radius: 20px;
+      background: rgba(138, 43, 226, 0.1);
+      backdrop-filter: blur(4px);
+    }
+
+    .github-link {
+      color: #a855f7;
+      font-weight: 500;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      text-decoration: none;
+      padding: 6px 14px;
+      border-radius: 50px;
+      border: 1px solid #a855f7;
+      background: rgba(168, 85, 247, 0.08);
+      transition: all 0.3s ease;
+    }
+
+    .github-link:hover {
+      background: rgba(168, 85, 247, 0.2);
+      color: #fff;
+      border-color: #fff;
+    }
+
+    .arrow-icon {
+      width: 16px;
+      height: 16px;
+      stroke: currentColor;
+      stroke-width: 2;
+    }
+
+    /* Explore Buttons */
+    .explore-projects {
+      display: flex;
+      justify-content: center;
+      margin: 20px 0 40px;
+    }
+
+    .explore-projects a {
+      text-decoration: none;
+      font-size: 1rem;
+      font-weight: 500;
+      padding: 12px 20px;
+      border-radius: 40px;
+      color: #a855f7;
+      border: 1px solid #a855f7;
+      background: rgba(168, 85, 247, 0.08);
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      transition: all 0.4s ease;
+      box-shadow: 0 0 10px rgba(168, 85, 247, 0.2);
+    }
+
+    .explore-projects a:hover {
+      background: rgba(168, 85, 247, 0.2);
+      color: #fff;
+      border-color: #fff;
+      box-shadow: 0 0 20px rgba(168, 85, 247, 0.6);
     }
   </style>
 </head>
-
 <body>
-  <!-- Header -->
-  <header class="site-header">
-    <div class="logo">Kinsu</div>
-    <div class="menu-group">
-      <nav class="top-nav">
-        <a href="/">Home</a>
-        <a href="/pages/Projects">Projects</a>
-        <a href="/pages/Contact">Contact</a>
-        <a href="https://github.com/pyKinsu" target="_blank"><i class="fab fa-github"></i> Follow</a>
-        <a href="https://github.com/pyKinsu/MyPortFolio/stargazers" target="_blank"><i class="fas fa-star"></i> Star</a>
-        <a href="https://github.com/pyKinsu/MyPortFolio/fork" target="_blank"><i class="fas fa-code-branch"></i> Fork</a>
-      </nav>
-      <button class="menu-toggle" onclick="document.querySelector('.top-nav').classList.toggle('active')">
-        <i class="fas fa-bars"></i>
-      </button>
-    </div>
-  </header>
 
-  <!-- Hero Section -->
-  <section class="hero" data-aos="zoom-in">
-    <div class="hero-card">
-      <img src="https://github.com/pykinsu.png" alt="Kinsu Rajput" class="hero-img" />
-      <h1 class="hero-name">Kinsu Rajput</h1>
-      <p class="hero-title">BCA Student • Python & C Learner • Telegram Bot Developer</p>
-    </div>
-  </section>
+<!-- Header -->
+<header class="site-header">
+  <div class="logo">Kinsu</div>
 
-  
+  <div style="display: flex; align-items: center; gap: 20px;">
+    <nav class="top-nav">
+      <a href="/">Home</a>
+      <a href="/pages/Projects">Projects</a>
+      <a href="/pages/Contact">Contact</a>
+    </nav>
+    
+    <a href="https://github.com/pyKinsu" target="_blank" style="color: white; font-size: 1.5em;" title="GitHub Profile">
+      <i class="fab fa-github"></i>
+    </a>
+
+    <button class="menu-toggle" onclick="document.querySelector('.top-nav').classList.toggle('active')">
+      <i class="fas fa-bars"></i>
+    </button>
+  </div>
+</header>
+
+<!-- Hero Section -->
+<section class="hero" data-aos="zoom-in">
+  <div class="hero-card">
+    <img src="https://github.com/pykinsu.png" alt="Kinsu Rajput" class="hero-img" />
+    <h1 class="hero-name">Kinsu Rajput</h1>
+    <p class="hero-title">BCA Student • Python & C Learner • Telegram Bot Developer</p>
+  </div>
+</section>
+
 <!-- About Section -->
-  <section class="about" data-aos="fade-up">
-    <h2>About Me</h2>
-    <div class="glass-box">
-      I’m a BCA student from Bihar, India. I recently passed 12th and started my programming journey.
-      I love playing chess and building Telegram bots. Currently learning Python and HTML.
-    </div>
-  </section>
-  
-  <!-- Projects Section -->
-  <section class="projects" data-aos="fade-up">
-    <h2>Projects</h2>
+<section class="about" data-aos="fade-up">
+  <h2>About Me</h2>
+  <div class="glass-box">
+    I’m a BCA student from Bihar, India. I recently passed 12th and started my programming journey.
+    I love playing chess and building Telegram bots. Currently learning Python and HTML.
+  </div>
+</section>
 
-    <div class="project-button" data-aos="fade-up">
-      <h3>AutoFilter Bot</h3>
-      <p>A Telegram bot that auto filters and fetches content.</p>
-      <div class="project-meta">
-        <span class="status-label">✅ Completed</span>
-        <a href="https://github.com/pyKinsu/Autofilter-Bot" target="_blank" class="github-link">
-          GitHub Repo
-          <svg class="arrow-icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 10">
-            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" d="M1 5h12m0 0L9 1m4 4L9 9"/>
-          </svg>
-        </a>
-      </div>
-    </div>
+<!-- Projects Section -->
+<section class="projects" data-aos="fade-up">
+  <h2>Projects</h2>
 
-    <div class="project-button" data-aos="fade-up">
-      <h3>All Video Downloader Bot</h3>
-      <p>Download videos from various platforms via Telegram.</p>
-      <div class="project-meta">
-        <span class="status-label">⚙️ Working</span>
-        <a href="https://github.com/pyKinsu/All-Video-Downloader-Bot" target="_blank" class="github-link">
-          GitHub Repo
-          <svg class="arrow-icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 10">
-            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" d="M1 5h12m0 0L9 1m4 4L9 9"/>
-          </svg>
-        </a>
-      </div>
+  <div class="project-button" data-aos="fade-up">
+    <h3>AutoFilter Bot</h3>
+    <p>A Telegram bot that auto filters and fetches content.</p>
+    <div class="project-meta">
+      <span class="status-label">✅ Completed</span>
+      <a href="https://github.com/pyKinsu/Autofilter-Bot" target="_blank" class="github-link">
+        GitHub Repo
+        <svg class="arrow-icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 10">
+          <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" d="M1 5h12m0 0L9 1m4 4L9 9"/>
+        </svg>
+      </a>
     </div>
+  </div>
 
-  <!-- Explore Projects Button -->
+  <div class="project-button" data-aos="fade-up">
+    <h3>All Video Downloader Bot</h3>
+    <p>Download videos from various platforms via Telegram.</p>
+    <div class="project-meta">
+      <span class="status-label">⚙️ Working</span>
+      <a href="https://github.com/pyKinsu/All-Video-Downloader-Bot" target="_blank" class="github-link">
+        GitHub Repo
+        <svg class="arrow-icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 10">
+          <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" d="M1 5h12m0 0L9 1m4 4L9 9"/>
+        </svg>
+      </a>
+    </div>
+  </div>
+
   <div class="explore-projects" data-aos="zoom-in">
     <a href="/pages/Projects">
       Explore All Projects
@@ -253,7 +435,6 @@
     </a>
   </div>
 
-      <!-- Watch All Pages Button -->
   <div class="explore-projects" data-aos="zoom-in">
     <a href="/pages/">
       Explore All Pages
@@ -263,24 +444,21 @@
       </svg>
     </a>
   </div>
-  </section>
+</section>
 
-  <!-- Footer -->
-  <footer class="site-footer">
-    <nav class="footer-nav">
-      <a href="/" class="nav-btn"><i class="fas fa-home"></i><span>Home</span></a>
-      <a href="/pages/Projects" class="nav-btn"><i class="fas fa-code"></i><span>Projects</span></a>
-      <a href="/pages/Contact" class="nav-btn"><i class="fas fa-envelope"></i><span>Contact</span></a>
-      <a href="/Blogs/" class="nav-btn"><i class="fas fa-blog"></i><span>Blogs</span></a>
-    </nav>
-  </footer>
+<!-- Footer -->
+<footer class="site-footer">
+  <nav class="footer-nav">
+    <a href="/" class="nav-btn"><i class="fas fa-home"></i><span>Home</span></a>
+    <a href="/pages/Projects" class="nav-btn"><i class="fas fa-code"></i><span>Projects</span></a>
+    <a href="/pages/Contact" class="nav-btn"><i class="fas fa-envelope"></i><span>Contact</span></a>
+    <a href="/Blogs/" class="nav-btn"><i class="fas fa-blog"></i><span>Blogs</span></a>
+  </nav>
+</footer>
 
-  
+<!-- AOS -->
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script>AOS.init({ duration: 1000, once: true });</script>
 
-  <!-- AOS Animation -->
-  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-  <script>
-    AOS.init({ duration: 1000, once: true });
-  </script>
 </body>
 </html>

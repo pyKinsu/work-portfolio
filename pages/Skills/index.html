@@ -6,12 +6,12 @@
   <title>Skills | Kinsu Rajput</title>
 
   <!-- Favicons -->
-<link rel="icon" type="image/png" href="/Favicon/favicon-96x96.png" sizes="96x96" />
-<link rel="icon" type="image/svg+xml" href="/Favicon/favicon.svg" />
-<link rel="shortcut icon" href="/Favicon/favicon.ico" />
-<link rel="apple-touch-icon" sizes="180x180" href="/Favicon/apple-touch-icon.png" />
-<meta name="apple-mobile-web-app-title" content="Kinsu Rajput Portfolio" />
-<link rel="manifest" href="/Favicon/site.webmanifest" />
+  <link rel="icon" type="image/png" href="/Favicon/favicon-96x96.png" sizes="96x96" />
+  <link rel="icon" type="image/svg+xml" href="/Favicon/favicon.svg" />
+  <link rel="shortcut icon" href="/Favicon/favicon.ico" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/Favicon/apple-touch-icon.png" />
+  <meta name="apple-mobile-web-app-title" content="Kinsu Rajput Portfolio" />
+  <link rel="manifest" href="/Favicon/site.webmanifest" />
   
   <link rel="stylesheet" href="/css/style.css">
   <link rel="stylesheet" href="/css/loader.css">
@@ -57,39 +57,58 @@
     .top-nav {
       display: flex;
       gap: 20px;
+      transition: all 0.3s ease;
     }
 
     .top-nav a {
-      color: #ccc;
+      color: #ffff00;
       text-decoration: none;
       font-size: 1em;
-      transition: 0.3s;
+      padding: 8px 14px;
+      border-radius: 12px;
+      background: rgba(0, 0, 0, 0.8);
+      border: 1.5px solid #a855f7;
+      box-shadow: 0 0 8px rgba(168, 85, 247, 0.15);
+      transition: all 0.3s ease;
     }
 
     .top-nav a:hover {
-      color: #00f2ff;
+      background: #000;
+      color: #000;
+      box-shadow: 0 0 12px rgba(0, 242, 255, 0.5);
     }
 
     .menu-toggle {
       display: none;
-      background: none;
-      border: none;
       font-size: 24px;
-      color: #00f2ff;
-      cursor: pointer;
+      color: #ffff00;
+      background: rgba(0, 0, 0, 0.8);
+      border: 1.5px solid #a855f7;
+      border-radius: 12px;
+      padding: 6px 10px;
+      backdrop-filter: blur(6px);
+      transition: all 0.3s ease;
+    }
+
+    .menu-toggle:hover {
+      background: #000;
+      color: #ffff00;
     }
 
     @media (max-width: 768px) {
       .top-nav {
         display: none;
         flex-direction: column;
-        background-color: #111;
+        gap: 12px;
+        background: rgba(0, 0, 0, 0.9);
         position: absolute;
         top: 60px;
         right: 20px;
-        padding: 10px;
-        border-radius: 10px;
-        z-index: 10;
+        padding: 14px;
+        border-radius: 16px;
+        box-shadow: 0 0 20px rgba(168, 85, 247, 0.25);
+        border: 1.5px solid rgba(168, 85, 247, 0.3);
+        z-index: 999;
       }
 
       .top-nav.active {
@@ -100,6 +119,20 @@
         display: block;
       }
     }
+
+    .vertical-line {
+      position: fixed;
+      left: 0;
+      top: 0;
+      width: 4px;
+      height: 100%;
+      background: rgba(168, 85, 247, 0.6);
+      filter: blur(6px);
+      z-index: 0;
+      
+      .menu-toggle {
+        display: block;
+      }
 
     /* Skills section */
     .skills-page {
@@ -191,29 +224,24 @@
 </head>
 <body>
 
-  <!-- header -->
+  <!-- Header -->
   <header class="site-header">
-  <div class="logo">Kinsu</div>
-  
-  <div style="display: flex; align-items: center; gap: 20px;">
-    <nav class="top-nav">
-      <a href="/">Home</a>
-      <a href="/pages/Projects">Projects</a>
-      <a href="/pages/Contact">Contact</a>
-    </nav>
-    
-    <!-- GitHub Icon Link -->
-    <a href="https://github.com/pyKinsu" target="_blank" style="color: white; font-size: 1.5em;" title="Visit my GitHub">
-      <i class="fab fa-github"></i>
-    </a>
-    
-    <button class="menu-toggle" onclick="document.querySelector('.top-nav').classList.toggle('active')">
-      <i class="fas fa-bars"></i>
-    </button>
-  </div>
-</header>
+    <div class="logo">Kinsu</div>
+    <div style="display: flex; align-items: center; gap: 24px;">
+      <nav class="top-nav">
+        <a href="https://github.com/pyKinsu" target="_blank"><i class="fab fa-github"></i> Follow Me</a>
+        <a href="https://github.com/pyKinsu/MyPortFolio/stargazers" target="_blank"><i class="fas fa-star"></i> Give Star</a>
+        <a href="https://github.com/pyKinsu/MyPortFolio/fork" target="_blank"><i class="fas fa-code-branch"></i> Fork Repo</a>
+        <a href="/pages/Contact"><i class="fas fa-paper-plane"></i> Contact</a>
+      </nav>
+      <a href="https://github.com/pyKinsu" target="_blank" style="font-size: 1.4em; color: white;"><i class="fab fa-github"></i></a>
+      <button class="menu-toggle" onclick="document.querySelector('.top-nav').classList.toggle('active')">
+        <i class="fas fa-bars"></i>
+      </button>
+    </div>
+  </header>
 
-  <!-- main -->
+  <!-- Main Skills Section -->
   <main class="skills-page">
     <h2>My Skills</h2>
 
@@ -246,7 +274,7 @@
     </div>
   </main>
 
-  <!-- footer -->
+  <!-- Footer -->
   <footer class="site-footer">
     <nav class="footer-nav">
       <a href="/" class="nav-btn"><i class="fas fa-home"></i><span>Home</span></a>

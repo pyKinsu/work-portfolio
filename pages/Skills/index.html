@@ -19,44 +19,42 @@
   <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
-  <!-- ✅ Only showing fixed part of CSS block -->
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
 
-<style>
-  * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-  }
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background: #000;
+      color: #fff;
+      padding-top: 80px;
+      padding-bottom: 100px;
+    }
 
-  body {
-    font-family: 'Segoe UI', sans-serif;
-    background: #000;
-    color: #fff;
-    padding-top: 80px;
-    padding-bottom: 100px;
-  }
+    .site-header {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      padding: 10px 20px;
+      background: rgba(0, 0, 0, 0.4);
+      backdrop-filter: blur(10px);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      z-index: 999;
+      border-bottom: 1px solid rgba(255,255,255,0.1);
+    }
 
-  .site-header {
-    position: fixed;
-    top: 0;
-    width: 100%;
-    padding: 10px 20px;
-    background: rgba(0, 0, 0, 0.4);
-    backdrop-filter: blur(10px);
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    z-index: 999;
-    border-bottom: 1px solid rgba(255,255,255,0.1);
-  }
+    .logo {
+      font-family: 'Pacifico', cursive;
+      font-size: 1.8em;
+      color: #00ffff;
+    }
 
-  .logo {
-    font-family: 'Pacifico', cursive;
-    font-size: 1.8em;
-    color: #00ffff;
-  }
-
-  .top-nav {
+    .top-nav {
       display: flex;
       gap: 20px;
       transition: all 0.3s ease;
@@ -131,98 +129,95 @@
       background: rgba(168, 85, 247, 0.6);
       filter: blur(6px);
       z-index: 0;
-      
-      .menu-toggle {
-        display: block;
-      }
-  /* Skills section */
-  .skills-page {
-    max-width: 1000px;
-    margin: auto;
-    padding: 60px 20px;
-    text-align: center;
-  }
+    }
 
-  .skills-page h2 {
-    font-size: 2.2em;
-    color: #00f2ff;
-    margin-bottom: 30px;
-  }
+    /* Skills section */
+    .skills-page {
+      max-width: 1000px;
+      margin: auto;
+      padding: 60px 20px;
+      text-align: center;
+    }
 
-  .skill {
-    margin-bottom: 25px;
-    text-align: left;
-  }
+    .skills-page h2 {
+      font-size: 2.2em;
+      color: #00f2ff;
+      margin-bottom: 30px;
+    }
 
-  .skill-title {
-    font-weight: bold;
-    color: #ccc;
-    margin-bottom: 6px;
-  }
+    .skill {
+      margin-bottom: 25px;
+      text-align: left;
+    }
 
-  .skill-bar {
-    height: 12px;
-    background: #222;
-    border-radius: 6px;
-    overflow: hidden;
-  }
+    .skill-title {
+      font-weight: bold;
+      color: #ccc;
+      margin-bottom: 6px;
+    }
 
-  .skill-bar-fill {
-    height: 100%;
-    background: linear-gradient(90deg, #00f2ff, #a855f7);
-    width: 0;
-    border-radius: 6px;
-    animation: fillBar 2s forwards;
-  }
+    .skill-bar {
+      height: 12px;
+      background: #222;
+      border-radius: 6px;
+      overflow: hidden;
+    }
 
-  @keyframes fillBar {
-    from { width: 0; }
-    to { width: var(--width); }
-  }
+    .skill-bar-fill {
+      height: 100%;
+      background: linear-gradient(90deg, #00f2ff, #a855f7);
+      width: 0;
+      border-radius: 6px;
+      animation: fillBar 2s forwards;
+    }
 
-  /* Footer exactly like Home */
-  .site-footer {
-    position: fixed;
-    bottom: 0;
-    width: 100%;
-    background: rgba(0, 0, 0, 0.4);
-    backdrop-filter: blur(10px);
-    border-top: 1px solid rgba(255,255,255,0.1);
-    z-index: 999;
-    box-shadow: 0 0 20px rgba(168, 85, 247, 0.25);
-  }
+    @keyframes fillBar {
+      from { width: 0; }
+      to { width: var(--width); }
+    }
 
-  .footer-nav {
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    padding: 12px 0;
-  }
+    /* Footer exactly like Home */
+    .site-footer {
+      position: fixed;
+      bottom: 0;
+      width: 100%;
+      background: rgba(0, 0, 0, 0.4);
+      backdrop-filter: blur(10px);
+      border-top: 1px solid rgba(255,255,255,0.1);
+      z-index: 999;
+      box-shadow: 0 0 20px rgba(168, 85, 247, 0.25);
+    }
 
-  .nav-btn {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-decoration: none;
-    color: #00f2ff;
-    font-size: 0.9em;
-    transition: color 0.3s ease;
-  }
+    .footer-nav {
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+      padding: 12px 0;
+    }
 
-  .nav-btn i {
-    font-size: 1.4em;
-    margin-bottom: 4px;
-  }
+    .nav-btn {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-decoration: none;
+      color: #00f2ff;
+      font-size: 0.9em;
+      transition: color 0.3s ease;
+    }
 
-  .nav-btn span {
-    font-size: 0.75em;
-  }
+    .nav-btn i {
+      font-size: 1.4em;
+      margin-bottom: 4px;
+    }
 
-  .nav-btn:hover {
-    color: #fff;
-  }
-</style>
+    .nav-btn span {
+      font-size: 0.75em;
+    }
 
+    .nav-btn:hover {
+      color: #fff;
+    }
+  </style>
 </head>
 <body>
 
@@ -287,5 +282,13 @@
   </footer>
 
   <script src="/js/script.js"></script>
+  <script>
+    // ✅ Auto-close menu on mobile when a link is clicked
+    document.querySelectorAll('.top-nav a').forEach(link => {
+      link.addEventListener('click', () => {
+        document.querySelector('.top-nav').classList.remove('active');
+      });
+    });
+  </script>
 </body>
 </html>

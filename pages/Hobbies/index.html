@@ -31,8 +31,246 @@
 
   <!-- Your Custom CSS (no change made here) -->
   <style>
-    /* Your original CSS (unchanged) */
-    /* ... [KEEP ALL YOUR CSS AS IS] ... */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background: #000;
+      color: #fff;
+      padding-top: 80px;
+      padding-bottom: 80px;
+      overflow-x: hidden;
+    }
+
+    header.site-header,
+    footer.site-footer {
+      position: fixed;
+      left: 0;
+      width: 100%;
+      backdrop-filter: blur(10px);
+      background-color: rgba(0, 0, 0, 0.3);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      z-index: 1000;
+    }
+
+    header.site-header {
+      top: 0;
+      padding: 10px 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    footer.site-footer {
+      bottom: 0;
+      padding: 10px 0;
+      box-shadow: 0 0 20px rgba(168, 85, 247, 0.25);
+    }
+
+    .logo {
+      font-family: 'Pacifico', cursive;
+      font-size: 1.8em;
+      color: #00f2ff;
+    }
+
+    .top-nav {
+      display: flex;
+      gap: 20px;
+    }
+
+    .top-nav a {
+      color: #ffff00;
+      text-decoration: none;
+      font-size: 1em;
+      padding: 8px 14px;
+      border-radius: 12px;
+      background: rgba(0, 0, 0, 0.8);
+      border: 1.5px solid #a855f7;
+      box-shadow: 0 0 8px rgba(168, 85, 247, 0.15);
+      transition: all 0.3s ease;
+    }
+
+    .top-nav a:hover {
+      background: #000;
+      color: #000;
+      box-shadow: 0 0 12px rgba(0, 242, 255, 0.5);
+    }
+
+    .menu-toggle {
+      display: none;
+      font-size: 24px;
+      color: #ffff00;
+      background: rgba(0, 0, 0, 0.8);
+      border: 1.5px solid #a855f7;
+      border-radius: 12px;
+      padding: 6px 10px;
+      backdrop-filter: blur(6px);
+      transition: all 0.3s ease;
+    }
+
+    @media (max-width: 768px) {
+      .menu-toggle {
+        display: block;
+      }
+
+      .top-nav {
+        display: none;
+        flex-direction: column;
+        gap: 12px;
+        background: rgba(0, 0, 0, 0.9);
+        position: absolute;
+        top: 60px;
+        right: 20px;
+        padding: 14px;
+        border-radius: 16px;
+        box-shadow: 0 0 20px rgba(168, 85, 247, 0.25);
+        border: 1.5px solid rgba(168, 85, 247, 0.3);
+        z-index: 999;
+      }
+
+      .top-nav.active {
+        display: flex;
+      }
+    }
+
+    .footer-nav {
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+      padding: 10px 0;
+    }
+
+    .nav-btn {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-decoration: none;
+      color: #00f2ff;
+    }
+
+    .nav-btn i {
+      font-size: 1.3em;
+    }
+
+    .nav-btn span {
+      font-size: 0.75em;
+    }
+
+    /* Hobbies Section */
+    .hobbies-page {
+      max-width: 1000px;
+      margin: auto;
+      padding: 40px 20px;
+      position: relative;
+    }
+
+    .hobbies-page h2 {
+      font-size: 2.2em;
+      color: #00f2ff;
+      margin-bottom: 30px;
+      text-align: center;
+    }
+
+    .hobby-box {
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      border-radius: 16px;
+      padding: 20px;
+      margin-bottom: 25px;
+      box-shadow: 0 0 12px #a855f73f;
+      backdrop-filter: blur(10px);
+      position: relative;
+      overflow: hidden;
+      transition: 0.3s ease;
+    }
+
+    .hobby-box::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(120deg, transparent, rgba(0, 242, 255, 0.3), transparent);
+      transition: 0.5s;
+    }
+
+    .hobby-box:hover::before {
+      left: 100%;
+    }
+
+    .hobby-box:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 0 25px #00f2ff77;
+    }
+
+    .hobby-box h3 {
+      font-size: 1.4em;
+      margin-bottom: 10px;
+      color: #00f2ff;
+    }
+
+    .hobby-box p {
+      color: #ccc;
+      font-size: 0.95em;
+      line-height: 1.5;
+    }
+
+    .sideline {
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 4px;
+      height: 100%;
+      background: linear-gradient(to bottom, #a855f7, #00f2ff);
+    }
+
+    .chess-card {
+      text-align: center;
+      background: rgba(0, 0, 0, 0.5);
+      border: 2px solid #00f2ff;
+      border-radius: 16px;
+      padding: 20px;
+      margin-top: 40px;
+      backdrop-filter: blur(12px);
+      box-shadow: 0 0 15px #00f2ff66;
+    }
+
+    .chess-card h3 {
+      color: #00f2ff;
+      margin-bottom: 10px;
+    }
+
+    .chess-link {
+      margin-top: 15px;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 8px 16px;
+      border: 1px solid #a855f7;
+      color: #a855f7;
+      background: rgba(168, 85, 247, 0.08);
+      text-decoration: none;
+      border-radius: 40px;
+      transition: 0.3s ease;
+    }
+
+    .chess-link:hover {
+      background: rgba(168, 85, 247, 0.2);
+      color: #fff;
+      border-color: #fff;
+    }
+
+    .arrow-icon {
+      width: 16px;
+      height: 16px;
+      stroke: currentColor;
+      stroke-width: 2;
+    }
   </style>
 </head>
 <body>

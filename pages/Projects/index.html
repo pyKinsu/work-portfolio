@@ -1,9 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <!-- Basic Meta -->
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Projects | Kinsu Rajput</title>
+
+  <!-- SEO Meta -->
   <meta name="description" content="Explore projects by Kinsu Rajput – including Telegram bots, weather apps, and automation tools.">
   <meta name="keywords" content="Kinsu Rajput, pyKinsu, Portfolio, GitHub, Projects, Telegram Bot, Weather App, Web Projects">
   <meta name="author" content="Kinsu Rajput">
@@ -14,7 +17,6 @@
   <link rel="icon" type="image/svg+xml" href="/Favicon/favicon.svg" />
   <link rel="shortcut icon" href="/Favicon/favicon.ico" />
   <link rel="apple-touch-icon" sizes="180x180" href="/Favicon/apple-touch-icon.png" />
-  <meta name="apple-mobile-web-app-title" content="Kinsu Rajput Portfolio" />
   <link rel="manifest" href="/Favicon/site.webmanifest" />
 
   <!-- Fonts & Icons -->
@@ -22,27 +24,25 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
   <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css"/>
 
+  <!-- Internal Styles -->
   <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
 
     body {
       font-family: 'Segoe UI', sans-serif;
-      background-color: #000;
+      background: #000;
       color: #fff;
       padding-top: 80px;
       padding-bottom: 80px;
       overflow-x: hidden;
     }
 
+    /* Header + Footer Base */
     header.site-header,
     footer.site-footer {
       position: fixed;
-      left: 0;
       width: 100%;
+      left: 0;
       backdrop-filter: blur(10px);
       background-color: rgba(0, 0, 0, 0.3);
       border: 1px solid rgba(255, 255, 255, 0.08);
@@ -59,7 +59,7 @@
 
     footer.site-footer {
       bottom: 0;
-      padding: 20px 0;
+      padding: 10px 0;
       box-shadow: 0 0 20px rgba(168, 85, 247, 0.25);
     }
 
@@ -72,7 +72,6 @@
     .top-nav {
       display: flex;
       gap: 20px;
-      transition: all 0.3s ease;
     }
 
     .top-nav a {
@@ -106,6 +105,10 @@
     }
 
     @media (max-width: 768px) {
+      .menu-toggle {
+        display: block;
+      }
+
       .top-nav {
         display: none;
         flex-direction: column;
@@ -124,10 +127,6 @@
       .top-nav.active {
         display: flex;
       }
-
-      .menu-toggle {
-        display: block;
-      }
     }
 
     .footer-nav {
@@ -144,15 +143,10 @@
       color: #00f2ff;
     }
 
-    .nav-btn i {
-      font-size: 1.3em;
-    }
+    .nav-btn i { font-size: 1.3em; }
+    .nav-btn span { font-size: 0.75em; }
 
-    .nav-btn span {
-      font-size: 0.75em;
-    }
-
-    /* Projects Section */
+    /* Project Section */
     .projects-page {
       max-width: 900px;
       margin: 120px auto 40px;
@@ -230,7 +224,7 @@
 </head>
 <body>
 
-<!-- Header -->
+<!-- ==================== HEADER ==================== -->
 <header class="site-header">
   <div class="logo">Kinsu</div>
   <div style="display: flex; align-items: center; gap: 24px;">
@@ -247,10 +241,11 @@
   </div>
 </header>
 
-<!-- Main Projects Section -->
+<!-- ==================== PROJECTS CONTENT ==================== -->
 <main class="projects-page" data-aos="fade-up">
   <h2>My Projects</h2>
 
+  <!-- Project 1 -->
   <div class="project-button" data-aos="fade-up">
     <h3>AutoFilter Bot</h3>
     <p>A Telegram bot that auto filters and fetches content.</p>
@@ -265,6 +260,7 @@
     </div>
   </div>
 
+  <!-- Project 2 -->
   <div class="project-button" data-aos="fade-up">
     <h3>Social Video Downloader</h3>
     <p>Download videos from various platforms via our website.</p>
@@ -279,6 +275,7 @@
     </div>
   </div>
 
+  <!-- Project 3 -->
   <div class="project-button" data-aos="fade-up">
     <h3>Weather Info Web</h3>
     <p>Weather search by pincode with geolocation & 3D design.</p>
@@ -294,7 +291,7 @@
   </div>
 </main>
 
-<!-- Footer -->
+<!-- ==================== FOOTER ==================== -->
 <footer class="site-footer">
   <nav class="footer-nav">
     <a href="/" class="nav-btn"><i class="fas fa-home"></i><span>Home</span></a>
@@ -304,8 +301,20 @@
   </nav>
 </footer>
 
-<!-- AOS Script -->
+<!-- ==================== SCRIPTS ==================== -->
 <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-<script>AOS.init({ duration: 1000, once: true });</script>
+<script>
+  AOS.init({ duration: 1000, once: true });
+
+  // Tap outside to close mobile menu
+  document.addEventListener('click', function(event) {
+    const nav = document.querySelector('.top-nav');
+    const toggle = document.querySelector('.menu-toggle');
+    if (!nav.contains(event.target) && !toggle.contains(event.target)) {
+      nav.classList.remove('active');
+    }
+  });
+</script>
+
 </body>
 </html>

@@ -29,7 +29,6 @@
       box-sizing: border-box;
     }
 
-    /* ==== Body Styling ==== */
     body {
       font-family: 'Segoe UI', sans-serif;
       background: #000;
@@ -57,6 +56,14 @@
       font-family: 'Pacifico', cursive;
       font-size: 1.8em;
       color: #00ffff;
+    }
+
+    .menu-container {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      position: relative;
+      width: auto;
     }
 
     .top-nav {
@@ -108,8 +115,8 @@
         background: rgba(0, 0, 0, 0.95);
         position: absolute;
         top: 60px;
-        right: 20px;
-        min-width: 220px;
+        right: 0;
+        min-width: 210px;
         padding: 14px;
         border-radius: 16px;
         box-shadow: 0 0 20px rgba(168, 85, 247, 0.25);
@@ -133,7 +140,7 @@
       }
     }
 
-    /* ==== Left Vertical Line ==== */
+    /* ==== Vertical Purple Sideline ==== */
     .vertical-line {
       position: fixed;
       left: 0;
@@ -238,7 +245,7 @@
   <!-- ========== HEADER ========== -->
   <header class="site-header">
     <div class="logo">Kinsu</div>
-    <div style="display: flex; align-items: center; gap: 16px; position: relative;">
+    <div class="menu-container">
       <nav class="top-nav">
         <a href="https://github.com/pyKinsu" target="_blank"><i class="fab fa-github"></i> Follow Me</a>
         <a href="https://github.com/pyKinsu/MyPortFolio/stargazers" target="_blank"><i class="fas fa-star"></i> Give Star</a>
@@ -246,7 +253,7 @@
         <a href="/pages/Contact"><i class="fas fa-paper-plane"></i> Contact</a>
       </nav>
       <a href="https://github.com/pyKinsu" target="_blank" style="font-size: 1.4em; color: white;"><i class="fab fa-github"></i></a>
-      <button class="menu-toggle" id="menuToggle"><i class="fas fa-bars"></i></button>
+      <button class="menu-toggle"><i class="fas fa-bars"></i></button>
     </div>
   </header>
 
@@ -294,24 +301,23 @@
   </footer>
 
   <!-- ========== SCRIPT ========== -->
-  <script src="/js/script.js"></script>
   <script>
-    const toggleButton = document.querySelector('.menu-toggle');
-    const navMenu = document.querySelector('.top-nav');
+    const toggleBtn = document.querySelector('.menu-toggle');
+    const nav = document.querySelector('.top-nav');
 
-    toggleButton.addEventListener('click', () => {
-      navMenu.classList.toggle('active');
+    toggleBtn.addEventListener('click', () => {
+      nav.classList.toggle('active');
     });
 
-    document.addEventListener('click', (event) => {
-      if (!toggleButton.contains(event.target) && !navMenu.contains(event.target)) {
-        navMenu.classList.remove('active');
+    document.addEventListener('click', (e) => {
+      if (!nav.contains(e.target) && !toggleBtn.contains(e.target)) {
+        nav.classList.remove('active');
       }
     });
 
     document.querySelectorAll('.top-nav a').forEach(link => {
       link.addEventListener('click', () => {
-        navMenu.classList.remove('active');
+        nav.classList.remove('active');
       });
     });
   </script>

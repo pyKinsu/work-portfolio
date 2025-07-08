@@ -18,13 +18,11 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
   <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css"/>
 
-  <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
+  <!-- Central Common Styles -->
+  <link rel="stylesheet" href="/css/stylus.css" />
 
+  <!-- Page-specific Styles -->
+  <style>
     body {
       font-family: 'Segoe UI', sans-serif;
       background: #000;
@@ -34,106 +32,6 @@
       overflow-x: hidden;
     }
 
-    /* Header Styles */
-    header.site-header {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      padding: 10px 20px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      backdrop-filter: blur(10px);
-      background-color: rgba(0, 0, 0, 0.3);
-      border: 1px solid rgba(255, 255, 255, 0.08);
-      z-index: 1000;
-    }
-
-    .logo {
-      font-family: 'Pacifico', cursive;
-      font-size: 1.8em;
-      color: #00f2ff;
-    }
-
-    .top-nav {
-      display: flex;
-      gap: 20px;
-      transition: all 0.3s ease;
-    }
-
-    .top-nav a {
-      color: #ffff00;
-      text-decoration: none;
-      font-size: 1em;
-      padding: 8px 14px;
-      border-radius: 12px;
-      background: rgba(0, 0, 0, 0.8);
-      border: 1.5px solid #a855f7;
-      box-shadow: 0 0 8px rgba(168, 85, 247, 0.15);
-      transition: all 0.3s ease;
-    }
-
-    .top-nav a:hover {
-      background: #000;
-      color: #000;
-      box-shadow: 0 0 12px rgba(0, 242, 255, 0.5);
-    }
-
-    .menu-toggle {
-      display: none;
-      font-size: 24px;
-      color: #ffff00;
-      background: rgba(0, 0, 0, 0.8);
-      border: 1.5px solid #a855f7;
-      border-radius: 12px;
-      padding: 6px 10px;
-      backdrop-filter: blur(6px);
-      transition: all 0.3s ease;
-    }
-
-    .menu-toggle:hover {
-      background: #000;
-    }
-
-    @media (max-width: 768px) {
-      .top-nav {
-        display: none;
-        flex-direction: column;
-        gap: 12px;
-        background: rgba(0, 0, 0, 0.9);
-        position: absolute;
-        top: 60px;
-        right: 20px;
-        padding: 14px;
-        border-radius: 16px;
-        box-shadow: 0 0 20px rgba(168, 85, 247, 0.25);
-        border: 1.5px solid rgba(168, 85, 247, 0.3);
-        z-index: 999;
-      }
-
-      .top-nav.active {
-        display: flex;
-      }
-
-      .menu-toggle {
-        display: block;
-      }
-    }
-
-    /* Vertical Sideline */
-    .vertical-line {
-      position: fixed;
-      left: 0;
-      top: 0;
-      width: 4px;
-      height: 100%;
-      background: linear-gradient(to bottom, #a855f7, #00f2ff);
-      filter: blur(6px);
-      z-index: 0;
-    }
-
-    /* Main Section */
     main.index-page {
       padding: 40px 20px;
       max-width: 1000px;
@@ -237,58 +135,22 @@
       stroke: currentColor;
       stroke-width: 2;
     }
-
-    /* Footer */
-    footer.site-footer {
-      position: fixed;
-      bottom: 0;
-      left: 0;
-      width: 100%;
-      background: rgba(0, 0, 0, 0.3);
-      backdrop-filter: blur(10px);
-      border: 1px solid rgba(255, 255, 255, 0.08);
-      padding: 20px 0;
-      box-shadow: 0 0 20px rgba(168, 85, 247, 0.25);
-      z-index: 1000;
-    }
-
-    .footer-nav {
-      display: flex;
-      justify-content: space-around;
-      align-items: center;
-    }
-
-    .nav-btn {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      color: #00f2ff;
-      text-decoration: none;
-    }
-
-    .nav-btn i {
-      font-size: 1.3em;
-    }
-
-    .nav-btn span {
-      font-size: 0.75em;
-    }
   </style>
 </head>
 <body>
 
-  <!-- Vertical Line for Style -->
+  <!-- Vertical Line -->
   <div class="vertical-line"></div>
 
-  <!-- Header Navigation -->
+  <!-- Header -->
   <header class="site-header">
     <div class="logo">Kinsu</div>
     <div style="display: flex; align-items: center; gap: 24px;">
       <nav class="top-nav">
-        <a href="https://github.com/pyKinsu" target="_blank"><i class="fab fa-github"></i> Follow Me</a>
-        <a href="https://github.com/pyKinsu/MyPortFolio/stargazers" target="_blank"><i class="fas fa-star"></i> Give Star</a>
-        <a href="https://github.com/pyKinsu/MyPortFolio/fork" target="_blank"><i class="fas fa-code-branch"></i> Fork Repo</a>
-        <a href="/pages/Contact"><i class="fas fa-paper-plane"></i> Contact</a>
+        <a href="https://github.com/pyKinsu" target="_blank" class="github-btn"><i class="fab fa-github"></i> Follow Me</a>
+        <a href="https://github.com/pyKinsu/MyPortFolio/stargazers" target="_blank" class="github-btn"><i class="fas fa-star"></i> Give Star</a>
+        <a href="https://github.com/pyKinsu/MyPortFolio/fork" target="_blank" class="github-btn"><i class="fas fa-code-branch"></i> Fork Repo</a>
+        <a href="/pages/Contact" class="github-btn"><i class="fas fa-paper-plane"></i> Contact</a>
       </nav>
       <a href="https://github.com/pyKinsu" target="_blank" style="font-size: 1.4em; color: white;"><i class="fab fa-github"></i></a>
       <button class="menu-toggle" onclick="document.querySelector('.top-nav').classList.toggle('active')">
@@ -297,12 +159,12 @@
     </div>
   </header>
 
-  <!-- Main Content -->
+  <!-- Main Section -->
   <main class="index-page">
     <h2 data-aos="fade-up">Explore All Pages</h2>
     <div class="contact-cards">
 
-      <!-- Home -->
+      <!-- Cards -->
       <div class="contact-card" data-aos="fade-up">
         <div class="contact-img"><i class="fas fa-home"></i></div>
         <div class="contact-info"><h3>Home</h3></div>
@@ -313,7 +175,6 @@
         </a>
       </div>
 
-      <!-- Skills -->
       <div class="contact-card" data-aos="fade-up">
         <div class="contact-img"><i class="fas fa-code"></i></div>
         <div class="contact-info"><h3>Skills</h3></div>
@@ -324,7 +185,6 @@
         </a>
       </div>
 
-      <!-- Hobbies -->
       <div class="contact-card" data-aos="fade-up">
         <div class="contact-img"><i class="fas fa-heart"></i></div>
         <div class="contact-info"><h3>Hobbies</h3></div>
@@ -335,7 +195,6 @@
         </a>
       </div>
 
-      <!-- Projects -->
       <div class="contact-card" data-aos="fade-up">
         <div class="contact-img"><i class="fas fa-lightbulb"></i></div>
         <div class="contact-info"><h3>Projects</h3></div>
@@ -346,7 +205,6 @@
         </a>
       </div>
 
-      <!-- Contact -->
       <div class="contact-card" data-aos="fade-up">
         <div class="contact-img"><i class="fas fa-envelope"></i></div>
         <div class="contact-info"><h3>Contact</h3></div>
@@ -370,19 +228,22 @@
     </nav>
   </footer>
 
-  <!-- Scripts -->
+  <!-- AOS + Menu Script -->
   <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
   <script>
-    // Initialize AOS (scroll animation)
     AOS.init({ duration: 1000, once: true });
 
-    // Close header menu when clicked outside
+    const nav = document.querySelector('.top-nav');
+    const toggle = document.querySelector('.menu-toggle');
+
     document.addEventListener('click', function(event) {
-      const nav = document.querySelector('.top-nav');
-      const toggle = document.querySelector('.menu-toggle');
       if (!nav.contains(event.target) && !toggle.contains(event.target)) {
         nav.classList.remove('active');
       }
+    });
+
+    document.querySelectorAll('.top-nav a').forEach(link => {
+      link.addEventListener('click', () => nav.classList.remove('active'));
     });
   </script>
 </body>

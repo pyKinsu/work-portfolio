@@ -5,372 +5,131 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Hobbies | Kinsu Rajput</title>
 
-  <!-- SEO -->
-  <meta name="description" content="Explore the hobbies of Kinsu Rajput - including chess, bot development, and new tech exploration.">
-  <meta name="author" content="Kinsu Rajput">
-  <meta name="keywords" content="Kinsu Rajput, pyKinsu, Kinsu Portfolio, Telegram Bots, Chess, GitHub, Portfolio, Web Developer, Bot Developer">
-  <meta name="robots" content="index, follow" />
-  <meta property="og:title" content="Kinsu Rajput | My Hobbies" />
-  <meta property="og:description" content="Check out Kinsu Rajput's hobbies and projects on his developer portfolio." />
-  <meta property="og:url" content="https://pykinsu.github.io/MyPortFolio/" />
-  <meta property="og:type" content="website" />
-  <meta name="google-site-verification" content="YOUR_VERIFICATION_CODE_HERE" />
-
   <!-- Favicons -->
   <link rel="icon" type="image/png" href="/Favicon/favicon-96x96.png" sizes="96x96" />
   <link rel="icon" type="image/svg+xml" href="/Favicon/favicon.svg" />
   <link rel="shortcut icon" href="/Favicon/favicon.ico" />
   <link rel="apple-touch-icon" sizes="180x180" href="/Favicon/apple-touch-icon.png" />
-  <meta name="apple-mobile-web-app-title" content="Kinsu Rajput Portfolio" />
   <link rel="manifest" href="/Favicon/site.webmanifest" />
 
   <!-- Fonts & Icons -->
-  <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
   <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css"/>
 
-  <!-- Your Custom CSS (no change made here) -->
-  <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
+  <!-- Shared Styles -->
+  <link rel="stylesheet" href="/css/stylus.css" />
 
+  <!-- Page-specific Styles -->
+  <style>
     body {
-      font-family: 'Segoe UI', sans-serif;
       background: #000;
       color: #fff;
+      font-family: 'Segoe UI', sans-serif;
       padding-top: 80px;
-      padding-bottom: 80px;
-      overflow-x: hidden;
+      padding-bottom: 100px;
     }
 
-    header.site-header,
-    footer.site-footer {
-      position: fixed;
-      left: 0;
-      width: 100%;
-      backdrop-filter: blur(10px);
-      background-color: rgba(0, 0, 0, 0.3);
-      border: 1px solid rgba(255, 255, 255, 0.08);
-      z-index: 1000;
-    }
-
-    header.site-header {
-      top: 0;
-      padding: 10px 20px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-    }
-
-    footer.site-footer {
-      bottom: 0;
-      padding: 10px 0;
-      box-shadow: 0 0 20px rgba(168, 85, 247, 0.25);
-    }
-
-    .logo {
-      font-family: 'Pacifico', cursive;
-      font-size: 1.8em;
-      color: #00f2ff;
-    }
-
-    .top-nav {
-      display: flex;
-      gap: 20px;
-    }
-
-    .top-nav a {
-      color: #ffff00;
-      text-decoration: none;
-      font-size: 1em;
-      padding: 8px 14px;
-      border-radius: 12px;
-      background: rgba(0, 0, 0, 0.8);
-      border: 1.5px solid #a855f7;
-      box-shadow: 0 0 8px rgba(168, 85, 247, 0.15);
-      transition: all 0.3s ease;
-    }
-
-    .top-nav a:hover {
-      background: #000;
-      color: #000;
-      box-shadow: 0 0 12px rgba(0, 242, 255, 0.5);
-    }
-
-    .menu-toggle {
-      display: none;
-      font-size: 24px;
-      color: #ffff00;
-      background: rgba(0, 0, 0, 0.8);
-      border: 1.5px solid #a855f7;
-      border-radius: 12px;
-      padding: 6px 10px;
-      backdrop-filter: blur(6px);
-      transition: all 0.3s ease;
-    }
-
-    @media (max-width: 768px) {
-      .menu-toggle {
-        display: block;
-      }
-
-      .top-nav {
-        display: none;
-        flex-direction: column;
-        gap: 12px;
-        background: rgba(0, 0, 0, 0.9);
-        position: absolute;
-        top: 60px;
-        right: 20px;
-        padding: 14px;
-        border-radius: 16px;
-        box-shadow: 0 0 20px rgba(168, 85, 247, 0.25);
-        border: 1.5px solid rgba(168, 85, 247, 0.3);
-        z-index: 999;
-      }
-
-      .top-nav.active {
-        display: flex;
-      }
-    }
-
-    .footer-nav {
-      display: flex;
-      justify-content: space-around;
-      align-items: center;
-      padding: 10px 0;
-    }
-
-    .nav-btn {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      text-decoration: none;
-      color: #00f2ff;
-    }
-
-    .nav-btn i {
-      font-size: 1.3em;
-    }
-
-    .nav-btn span {
-      font-size: 0.75em;
-    }
-
-    /* Hobbies Section */
-    .hobbies-page {
+    .hobbies-section {
       max-width: 1000px;
       margin: auto;
-      padding: 40px 20px;
+      padding: 60px 20px;
       position: relative;
+      z-index: 1;
     }
 
-    .hobbies-page h2 {
+    .hobbies-section h2 {
       font-size: 2.2em;
-      color: #00f2ff;
-      margin-bottom: 30px;
       text-align: center;
+      color: #00f2ff;
+      margin-bottom: 40px;
     }
 
-    .hobby-box {
-      background: rgba(255, 255, 255, 0.05);
-      border: 1px solid rgba(255, 255, 255, 0.1);
-      border-radius: 16px;
-      padding: 20px;
-      margin-bottom: 25px;
-      box-shadow: 0 0 12px #a855f73f;
-      backdrop-filter: blur(10px);
-      position: relative;
-      overflow: hidden;
-      transition: 0.3s ease;
+    .hobby-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+      justify-content: center;
     }
 
-    .hobby-box::before {
-      content: "";
-      position: absolute;
-      top: 0;
-      left: -100%;
-      width: 100%;
-      height: 100%;
-      background: linear-gradient(120deg, transparent, rgba(0, 242, 255, 0.3), transparent);
-      transition: 0.5s;
+    .hobby-btn {
+      background: linear-gradient(to right, #a855f7, #00f2ff);
+      padding: 14px 24px;
+      border-radius: 50px;
+      color: #000;
+      font-weight: bold;
+      font-size: 1em;
+      border: none;
+      cursor: pointer;
+      box-shadow: 0 6px 15px rgba(168, 85, 247, 0.4);
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
     }
 
-    .hobby-box:hover::before {
-      left: 100%;
-    }
-
-    .hobby-box:hover {
+    .hobby-btn:hover {
       transform: translateY(-4px);
-      box-shadow: 0 0 25px #00f2ff77;
-    }
-
-    .hobby-box h3 {
-      font-size: 1.4em;
-      margin-bottom: 10px;
-      color: #00f2ff;
-    }
-
-    .hobby-box p {
-      color: #ccc;
-      font-size: 0.95em;
-      line-height: 1.5;
-    }
-
-    .sideline {
-      position: absolute;
-      left: 0;
-      top: 0;
-      width: 4px;
-      height: 100%;
-      background: linear-gradient(to bottom, #a855f7, #00f2ff);
-    }
-
-    .chess-card {
-      text-align: center;
-      background: rgba(0, 0, 0, 0.5);
-      border: 2px solid #00f2ff;
-      border-radius: 16px;
-      padding: 20px;
-      margin-top: 40px;
-      backdrop-filter: blur(12px);
-      box-shadow: 0 0 15px #00f2ff66;
-    }
-
-    .chess-card h3 {
-      color: #00f2ff;
-      margin-bottom: 10px;
-    }
-
-    .chess-link {
-      margin-top: 15px;
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      padding: 8px 16px;
-      border: 1px solid #a855f7;
-      color: #a855f7;
-      background: rgba(168, 85, 247, 0.08);
-      text-decoration: none;
-      border-radius: 40px;
-      transition: 0.3s ease;
-    }
-
-    .chess-link:hover {
-      background: rgba(168, 85, 247, 0.2);
-      color: #fff;
-      border-color: #fff;
-    }
-
-    .arrow-icon {
-      width: 16px;
-      height: 16px;
-      stroke: currentColor;
-      stroke-width: 2;
+      box-shadow: 0 10px 25px rgba(0, 242, 255, 0.5);
     }
   </style>
 </head>
 <body>
 
-<!-- ========== HEADER START ========== -->
-<header class="site-header">
-  <div class="logo">Kinsu</div>
-  <div style="display: flex; align-items: center; gap: 24px;">
-    <!-- Top Nav Menu -->
-    <nav class="top-nav">
-      <a href="https://github.com/pyKinsu" target="_blank"><i class="fab fa-github"></i> Follow Me</a>
-      <a href="https://github.com/pyKinsu/MyPortFolio/stargazers" target="_blank"><i class="fas fa-star"></i> Give Star</a>
-      <a href="https://github.com/pyKinsu/MyPortFolio/fork" target="_blank"><i class="fas fa-code-branch"></i> Fork Repo</a>
-      <a href="/pages/Contact"><i class="fas fa-paper-plane"></i> Contact</a>
+  <!-- Vertical Line -->
+  <div class="vertical-line"></div>
+
+  <!-- Header -->
+  <header class="site-header">
+    <div class="logo">Kinsu</div>
+    <div class="header-right">
+      <nav class="top-nav">
+        <a href="https://github.com/pyKinsu" target="_blank"><i class="fab fa-github"></i> Follow Me</a>
+        <a href="https://github.com/pyKinsu/MyPortFolio/stargazers" target="_blank"><i class="fas fa-star"></i> Give Star</a>
+        <a href="https://github.com/pyKinsu/MyPortFolio/fork" target="_blank"><i class="fas fa-code-branch"></i> Fork Repo</a>
+        <a href="/pages/Contact"><i class="fas fa-paper-plane"></i> Contact</a>
+      </nav>
+      <a href="https://github.com/pyKinsu" target="_blank" class="gh-icon"><i class="fab fa-github"></i></a>
+      <button class="menu-toggle" onclick="document.querySelector('.top-nav').classList.toggle('active')">
+        <i class="fas fa-bars"></i>
+      </button>
+    </div>
+  </header>
+
+  <!-- Hobbies Section -->
+  <main class="hobbies-section">
+    <h2 data-aos="fade-up">My Hobbies</h2>
+    <div class="hobby-list" data-aos="fade-up">
+      <button class="hobby-btn">Playing Chess</button>
+      <button class="hobby-btn">Learning Programming</button>
+      <button class="hobby-btn">Creating Telegram Bots</button>
+      <button class="hobby-btn">Exploring Tech Projects</button>
+      <button class="hobby-btn">Designing Cool UIs</button>
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <nav class="footer-nav">
+      <a href="/" class="nav-btn"><i class="fas fa-home"></i><span>Home</span></a>
+      <a href="/pages/Project/" class="nav-btn"><i class="fas fa-code"></i><span>Projects</span></a>
+      <a href="/pages/Contact/" class="nav-btn"><i class="fas fa-envelope"></i><span>Contact</span></a>
+      <a href="/pages/Skills/" class="nav-btn"><i class="fas fa-brain"></i><span>Skills</span></a>
     </nav>
-    
-    <!-- GitHub Icon & Menu Toggle -->
-    <a href="https://github.com/pyKinsu" target="_blank" style="font-size: 1.4em; color: white;"><i class="fab fa-github"></i></a>
-    <button class="menu-toggle" id="menuToggleBtn">
-      <i class="fas fa-bars"></i>
-    </button>
-  </div>
-</header>
-<!-- ========== HEADER END ========== -->
+  </footer>
 
-<!-- ========== MAIN CONTENT START ========== -->
-<main class="hobbies-page">
-  <div class="sideline"></div>
-  <h2 data-aos="zoom-in">My Hobbies</h2>
+  <!-- Scripts -->
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script>
+    AOS.init({ duration: 1000, once: true });
 
-  <div class="hobby-box" data-aos="fade-up">
-    <h3>♟️ Playing Chess</h3>
-    <p>Chess is not just a game—it's a mental workout. I enjoy strategic thinking and sharpening my focus through regular chess matches.</p>
-  </div>
-
-  <div class="hobby-box" data-aos="fade-up" data-aos-delay="100">
-    <h3>🤖 Building Telegram Bots</h3>
-    <p>I build bots that automate tasks, fetch media, and improve productivity. I’ve made filter bots, downloaders, and more!</p>
-  </div>
-
-  <div class="hobby-box" data-aos="fade-up" data-aos-delay="200">
-    <h3>💻 Exploring New Tech</h3>
-    <p>I'm constantly learning about AI tools, open-source GitHub projects, and the latest advancements in web and bot development.</p>
-  </div>
-
-  <div class="chess-card" data-aos="zoom-in-up" data-aos-delay="300">
-    <h3>♟️ Play Chess With Me</h3>
-    <p>Let’s challenge each other on <strong>chess.com</strong>!</p>
-    <a class="chess-link" href="https://www.chess.com/member/pykinsu" target="_blank">
-      @pykinsu
-      <svg class="arrow-icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 10">
-        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" d="M1 5h12m0 0L9 1m4 4L9 9"/>
-      </svg>
-    </a>
-  </div>
-</main>
-<!-- ========== MAIN CONTENT END ========== -->
-
-<!-- ========== FOOTER START ========== -->
-<footer class="site-footer">
-  <nav class="footer-nav">
-    <a href="/" class="nav-btn"><i class="fas fa-home"></i><span>Home</span></a>
-    <a href="/pages/Projects" class="nav-btn"><i class="fas fa-code"></i><span>Projects</span></a>
-    <a href="/pages/Contact" class="nav-btn"><i class="fas fa-envelope"></i><span>Contact</span></a>
-    <a href="/Blogs/" class="nav-btn"><i class="fas fa-blog"></i><span>Blogs</span></a>
-  </nav>
-</footer>
-<!-- ========== FOOTER END ========== -->
-
-<!-- AOS Animation Init -->
-<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-<script>AOS.init({ duration: 1000, once: true });</script>
-
-<!-- ========== MOBILE MENU SCRIPT ========== -->
-<script>
-  // Mobile menu toggle elements
-  const menuBtn = document.getElementById('menuToggleBtn');
-  const navMenu = document.querySelector('.top-nav');
-
-  // Toggle nav visibility
-  menuBtn.addEventListener('click', function (e) {
-    e.stopPropagation();
-    navMenu.classList.toggle('active');
-  });
-
-  // Close menu on link click
-  navMenu.querySelectorAll('a').forEach(link => {
-    link.addEventListener('click', () => {
-      navMenu.classList.remove('active');
+    const nav = document.querySelector('.top-nav');
+    const toggleBtn = document.querySelector('.menu-toggle');
+    document.addEventListener('click', e => {
+      if (!nav.contains(e.target) && !toggleBtn.contains(e.target)) {
+        nav.classList.remove('active');
+      }
     });
-  });
-
-  // Tap outside to close menu
-  document.addEventListener('click', function (e) {
-    if (!navMenu.contains(e.target) && !menuBtn.contains(e.target)) {
-      navMenu.classList.remove('active');
-    }
-  });
-</script>
-<!-- ========== SCRIPT END ========== -->
-
+    document.querySelectorAll('.top-nav a').forEach(link => {
+      link.addEventListener('click', () => nav.classList.remove('active'));
+    });
+  </script>
 </body>
 </html>

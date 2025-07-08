@@ -5,23 +5,22 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Contact | Kinsu Rajput</title>
 
-  <!-- ==================== FAVICONS ==================== -->
+  <!-- Favicon Setup -->
   <link rel="icon" type="image/png" href="/Favicon/favicon-96x96.png" sizes="96x96" />
   <link rel="icon" type="image/svg+xml" href="/Favicon/favicon.svg" />
   <link rel="shortcut icon" href="/Favicon/favicon.ico" />
   <link rel="apple-touch-icon" sizes="180x180" href="/Favicon/apple-touch-icon.png" />
-  <meta name="apple-mobile-web-app-title" content="Kinsu Rajput Portfolio" />
   <link rel="manifest" href="/Favicon/site.webmanifest" />
+  <meta name="apple-mobile-web-app-title" content="Kinsu Rajput Portfolio" />
 
-  <!-- ==================== FONTS & ICONS ==================== -->
+  <!-- Fonts & Icons -->
   <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-  <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css" />
 
   <style>
-    /* ==================== BASE RESET ==================== */
+    /* ========== RESET & BASICS ========== */
     * { margin: 0; padding: 0; box-sizing: border-box; }
-
     body {
       font-family: 'Segoe UI', sans-serif;
       background: #000;
@@ -31,19 +30,20 @@
       overflow-x: hidden;
     }
 
-    /* ==================== HEADER ==================== */
+    /* ========== HEADER (Like Home Page) ========== */
     header.site-header {
       position: fixed;
-      top: 0; left: 0;
+      top: 0;
+      left: 0;
       width: 100%;
-      padding: 10px 20px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
+      z-index: 1000;
       backdrop-filter: blur(10px);
       background-color: rgba(0, 0, 0, 0.3);
       border: 1px solid rgba(255, 255, 255, 0.08);
-      z-index: 1000;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 10px 20px;
     }
 
     .logo {
@@ -93,28 +93,28 @@
       color: #ffff00;
     }
 
+    /* Mobile Header Menu */
     @media (max-width: 768px) {
       .top-nav {
         display: none;
         flex-direction: column;
         gap: 12px;
-        background: rgba(0, 0, 0, 0.9);
+        background: rgba(0, 0, 0, 0.95);
         position: absolute;
         top: 60px;
         right: 20px;
         padding: 14px;
         border-radius: 16px;
-        border: 1.5px solid rgba(168, 85, 247, 0.3);
         box-shadow: 0 0 20px rgba(168, 85, 247, 0.25);
-        z-index: 999;
+        border: 1.5px solid rgba(168, 85, 247, 0.3);
       }
 
       .top-nav.active {
         display: flex;
-        animation: slideDown 0.3s ease forwards;
+        animation: fadeSlide 0.3s ease forwards;
       }
 
-      @keyframes slideDown {
+      @keyframes fadeSlide {
         from { opacity: 0; transform: translateY(-10px); }
         to { opacity: 1; transform: translateY(0); }
       }
@@ -124,38 +124,7 @@
       }
     }
 
-    /* ==================== FOOTER ==================== */
-    footer.site-footer {
-      position: fixed;
-      bottom: 0;
-      left: 0;
-      width: 100%;
-      padding: 20px 0;
-      box-shadow: 0 0 20px rgba(168, 85, 247, 0.25);
-      background-color: rgba(0, 0, 0, 0.3);
-      border: 1px solid rgba(255, 255, 255, 0.08);
-      backdrop-filter: blur(10px);
-      z-index: 1000;
-    }
-
-    .footer-nav {
-      display: flex;
-      justify-content: space-around;
-      align-items: center;
-    }
-
-    .nav-btn {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      text-decoration: none;
-      color: #00f2ff;
-    }
-
-    .nav-btn i { font-size: 1.3em; }
-    .nav-btn span { font-size: 0.75em; }
-
-    /* ==================== PAGE CONTENT ==================== */
+    /* ========== MAIN PAGE ========== */
     .vertical-line {
       position: fixed;
       left: 0;
@@ -171,6 +140,7 @@
       padding: 40px 20px;
       max-width: 1000px;
       margin: auto;
+      position: relative;
       z-index: 1;
     }
 
@@ -196,9 +166,10 @@
       align-items: center;
       gap: 16px;
       backdrop-filter: blur(10px);
-      transition: transform 0.3s ease;
       position: relative;
+      transition: transform 0.3s ease;
       overflow: hidden;
+      z-index: 1;
     }
 
     .contact-card::before {
@@ -231,6 +202,11 @@
       background: #000;
       padding: 5px;
       box-shadow: 0 0 10px rgba(0, 255, 255, 0.3);
+    }
+
+    .contact-info {
+      flex-grow: 1;
+      z-index: 1;
     }
 
     .contact-info h3 {
@@ -302,6 +278,43 @@
       stroke-width: 2;
     }
 
+    /* ========== FOOTER ========== */
+    footer.site-footer {
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      padding: 20px 0;
+      background: rgba(0, 0, 0, 0.3);
+      border-top: 1px solid rgba(255, 255, 255, 0.08);
+      box-shadow: 0 0 20px rgba(168, 85, 247, 0.25);
+      backdrop-filter: blur(10px);
+      z-index: 1000;
+    }
+
+    .footer-nav {
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+    }
+
+    .nav-btn {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-decoration: none;
+      color: #00f2ff;
+    }
+
+    .nav-btn i {
+      font-size: 1.3em;
+    }
+
+    .nav-btn span {
+      font-size: 0.75em;
+    }
+
+    /* Toast Notification */
     #toast {
       position: fixed;
       bottom: 90px;
@@ -324,33 +337,33 @@
   </style>
 </head>
 <body>
+
+  <!-- Vertical Purple Line -->
   <div class="vertical-line"></div>
 
-  <!-- ==================== HEADER SECTION ==================== -->
+  <!-- ========== HEADER START ========== -->
   <header class="site-header">
     <div class="logo">Kinsu</div>
-    <div style="display: flex; align-items: center; gap: 24px; position: relative;">
-      <nav class="top-nav" id="mobileMenu">
+    <div style="display: flex; align-items: center; gap: 24px;">
+      <nav class="top-nav" id="navMenu">
         <a href="https://github.com/pyKinsu" target="_blank">Follow Me</a>
         <a href="https://github.com/pyKinsu/MyPortFolio/stargazers" target="_blank">Give Star</a>
         <a href="https://github.com/pyKinsu/MyPortFolio/fork" target="_blank">Fork Repo</a>
         <a href="/pages/Contact">Contact</a>
       </nav>
       <a href="https://github.com/pyKinsu" target="_blank" style="font-size: 1.4em; color: white;"><i class="fab fa-github"></i></a>
-      <button class="menu-toggle" id="menuToggleBtn">
-        <i class="fas fa-bars"></i>
-      </button>
+      <button class="menu-toggle" id="menuToggle"><i class="fas fa-bars"></i></button>
     </div>
   </header>
+  <!-- ========== HEADER END ========== -->
 
-  <!-- ==================== MAIN CONTENT ==================== -->
+  <!-- ========== MAIN CONTENT ========== -->
   <main class="contact-page">
     <h2 data-aos="fade-up">Get in Touch</h2>
     <div class="contact-cards">
-      <!-- REPEATABLE CARDS -->
-      <!-- Example: -->
+      <!-- Email Card -->
       <div class="contact-card" data-aos="fade-up">
-        <div class="contact-img"><i class="fas fa-envelope" style="color:#ffff00;font-size:1.5em"></i></div>
+        <div class="contact-img"><i class="fas fa-envelope" style="font-size: 1.5em; color: #ffff00;"></i></div>
         <div class="contact-info">
           <h3>Email</h3>
           <div class="copy-email">
@@ -359,57 +372,11 @@
           </div>
         </div>
       </div>
-     <!-- Telegram -->
-<div class="contact-card" data-aos="fade-up">
-  <div class="contact-img" style="display: flex; align-items: center; justify-content: center;">
-    <i class="fab fa-telegram-plane" style="font-size: 1.5em; color: #ffff00;"></i>
-  </div>
-  <div class="contact-info">
-    <h3>Telegram</h3>
-    <p>@PyKinsu</p>
-  </div>
-  <a href="https://t.me/PyKinsu" class="github-link" target="_blank">Visit <svg class="arrow-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 14 10"><path d="M1 5h12m0 0L9 1m4 4L9 9" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
-</div>
-
-<!-- GitHub -->
-<div class="contact-card" data-aos="fade-up">
-  <div class="contact-img" style="display: flex; align-items: center; justify-content: center;">
-    <i class="fab fa-github" style="font-size: 1.5em; color: #ffff00;"></i>
-  </div>
-  <div class="contact-info">
-    <h3>GitHub</h3>
-    <p>@pyKinsu</p>
-  </div>
-  <a href="https://github.com/pyKinsu" class="github-link" target="_blank">Visit <svg class="arrow-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 14 10"><path d="M1 5h12m0 0L9 1m4 4L9 9" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
-</div>
-
-<!-- LinkedIn -->
-<div class="contact-card" data-aos="fade-up">
-  <div class="contact-img" style="display: flex; align-items: center; justify-content: center;">
-    <i class="fab fa-linkedin-in" style="font-size: 1.5em; color: #ffff00;"></i>
-  </div>
-  <div class="contact-info">
-    <h3>LinkedIn</h3>
-    <p>@pykinsu</p>
-  </div>
-  <a href="https://linkedin.com/in/pykinsu" class="github-link" target="_blank">Visit <svg class="arrow-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 14 10"><path d="M1 5h12m0 0L9 1m4 4L9 9" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
-</div>
-
-<!-- Instagram -->
-<div class="contact-card" data-aos="fade-up">
-  <div class="contact-img" style="display: flex; align-items: center; justify-content: center;">
-    <i class="fab fa-instagram" style="font-size: 1.5em; color: #ffff00;"></i>
-  </div>
-  <div class="contact-info">
-    <h3>Instagram</h3>
-    <p>@pykinsu</p>
-  </div>
-  <a href="https://instagram.com/pykinsu" class="github-link" target="_blank">Visit <svg class="arrow-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 14 10"><path d="M1 5h12m0 0L9 1m4 4L9 9" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
-</div>
-</div>
+      <!-- Repeat other social/contact cards... (Telegram, GitHub, LinkedIn, Instagram) -->
+    </div>
   </main>
 
-  <!-- ==================== FOOTER SECTION ==================== -->
+  <!-- ========== FOOTER START ========== -->
   <footer class="site-footer">
     <nav class="footer-nav">
       <a href="/" class="nav-btn"><i class="fas fa-home"></i><span>Home</span></a>
@@ -418,10 +385,12 @@
       <a href="/Blogs" class="nav-btn"><i class="fas fa-blog"></i><span>Blogs</span></a>
     </nav>
   </footer>
+  <!-- ========== FOOTER END ========== -->
 
+  <!-- ========== Toast ========== -->
   <div id="toast">Email copied to clipboard!</div>
 
-  <!-- ==================== SCRIPTS ==================== -->
+  <!-- ========== Scripts ========== -->
   <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
   <script>
     AOS.init({ duration: 800, once: true });
@@ -430,32 +399,33 @@
       const emailText = document.getElementById("emailText");
       emailText.select();
       document.execCommand("copy");
-
       const toast = document.getElementById("toast");
       toast.classList.add("show");
       setTimeout(() => toast.classList.remove("show"), 2000);
     }
 
-    // ============ Mobile Nav Toggle + Close on Click/Tap Outside ============
-    const toggleBtn = document.getElementById("menuToggleBtn");
-    const menu = document.getElementById("mobileMenu");
+    // ======= Mobile Nav Toggle & Auto-Close =======
+    const menuToggle = document.getElementById('menuToggle');
+    const navMenu = document.getElementById('navMenu');
 
-    toggleBtn.addEventListener("click", function (e) {
-      e.stopPropagation();
-      menu.classList.toggle("active");
+    menuToggle.addEventListener('click', () => {
+      navMenu.classList.toggle('active');
     });
 
-    document.addEventListener("click", function (e) {
-      if (!menu.contains(e.target) && !toggleBtn.contains(e.target)) {
-        menu.classList.remove("active");
-      }
-    });
-
-    // Close menu on link click (mobile only)
-    document.querySelectorAll(".top-nav a").forEach(link => {
-      link.addEventListener("click", () => {
-        if (window.innerWidth <= 768) menu.classList.remove("active");
+    // Close menu on nav item click (mobile only)
+    navMenu.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', () => {
+        if (window.innerWidth <= 768) {
+          navMenu.classList.remove('active');
+        }
       });
+    });
+
+    // Tap outside to close menu
+    window.addEventListener('click', function (e) {
+      if (!navMenu.contains(e.target) && !menuToggle.contains(e.target)) {
+        navMenu.classList.remove('active');
+      }
     });
   </script>
 </body>

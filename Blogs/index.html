@@ -4,11 +4,21 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Blogs | Kinsu Rajput</title>
-  <link rel="stylesheet" href="/css/style.css" />
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
+
+  <!-- ========== FAVICONS ========== -->
+  <link rel="icon" type="image/png" href="/Favicon/favicon-96x96.png" sizes="96x96" />
+  <link rel="icon" type="image/svg+xml" href="/Favicon/favicon.svg" />
+  <link rel="shortcut icon" href="/Favicon/favicon.ico" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/Favicon/apple-touch-icon.png" />
+  <link rel="manifest" href="/Favicon/site.webmanifest" />
+  <meta name="apple-mobile-web-app-title" content="Kinsu Rajput Portfolio" />
+
+  <!-- ========== FONTS & ICONS ========== -->
   <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet"/>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
   <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css"/>
+
+  <!-- ========== MAIN STYLE ========== -->
   <style>
     body {
       margin: 0;
@@ -28,7 +38,8 @@
     /* HEADER */
     header.site-header {
       position: fixed;
-      top: 0; left: 0;
+      top: 0;
+      left: 0;
       width: 100%;
       z-index: 1000;
       backdrop-filter: blur(10px);
@@ -117,14 +128,6 @@
       margin-top: 50px;
     }
 
-    .blogs-coming img {
-      max-width: 300px;
-      margin: 20px auto;
-      display: block;
-      border-radius: 16px;
-      box-shadow: 0 0 20px rgba(255, 255, 255, 0.2);
-    }
-
     .blogs-coming h1 {
       font-family: 'Pacifico', cursive;
       font-size: 2.5rem;
@@ -208,7 +211,7 @@
     </nav>
   </footer>
 
-  <!-- SCRIPTS -->
+  <!-- SCRIPT -->
   <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
   <script>
     AOS.init({ duration: 1000, once: true });

@@ -5,35 +5,25 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Projects | Kinsu Rajput</title>
 
-  <!-- Favicons -->
+  <!-- Favicon -->
   <link rel="icon" type="image/png" href="/Favicon/favicon-96x96.png" sizes="96x96" />
-  <link rel="icon" type="image/svg+xml" href="/Favicon/favicon.svg" />
-  <link rel="shortcut icon" href="/Favicon/favicon.ico" />
-  <link rel="apple-touch-icon" sizes="180x180" href="/Favicon/apple-touch-icon.png" />
-  <link rel="manifest" href="/Favicon/site.webmanifest" />
-
-  <!-- Fonts & Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
   <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-
-  <!-- AOS Animation -->
   <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css"/>
-
-  <!-- Common CSS for Header/Footer/Button -->
   <link rel="stylesheet" href="/css/stylus.css" />
 
-  <!-- Page-specific Styles -->
+  <!-- Page Styles -->
   <style>
     body {
+      font-family: 'Segoe UI', sans-serif;
       background: #000;
       color: #fff;
-      font-family: 'Segoe UI', sans-serif;
       padding-top: 80px;
-      padding-bottom: 100px;
+      padding-bottom: 80px;
       overflow-x: hidden;
     }
 
-    main.projects-page {
+    main.project-section {
       max-width: 1000px;
       margin: auto;
       padding: 60px 20px;
@@ -41,11 +31,11 @@
       z-index: 1;
     }
 
-    .projects-page h2 {
+    .project-section h2 {
       text-align: center;
       color: #00f2ff;
-      font-size: 2.2em;
       margin-bottom: 40px;
+      font-size: 2em;
     }
 
     .project-grid {
@@ -59,105 +49,182 @@
       border: 1px solid rgba(255, 255, 255, 0.08);
       border-radius: 16px;
       padding: 20px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
       backdrop-filter: blur(10px);
       transition: transform 0.3s ease;
       position: relative;
       overflow: hidden;
     }
 
+    .project-card::before {
+      content: "";
+      position: absolute;
+      width: 150%;
+      height: 200%;
+      background: linear-gradient(120deg, #a855f7 0%, #00f2ff 100%);
+      top: -50%;
+      left: -50%;
+      animation: slideGlow 4s linear infinite;
+      opacity: 0.06;
+      z-index: 0;
+    }
+
+    @keyframes slideGlow {
+      0% { transform: translateX(-100%); }
+      100% { transform: translateX(100%); }
+    }
+
     .project-card:hover {
       transform: translateY(-6px);
-      box-shadow: 0 0 18px rgba(0, 242, 255, 0.3);
+      box-shadow: 0 0 18px rgba(0, 242, 255, 0.4);
     }
 
-    .project-card h3 {
-      font-size: 1.2em;
+    .project-title {
+      font-size: 1.3em;
       color: #ffff00;
-      margin-bottom: 12px;
+      margin-bottom: 8px;
+      z-index: 1;
     }
 
-    .project-card p {
-      font-size: 0.9em;
-      color: #ccc;
-      margin-bottom: 14px;
-    }
-
-    .project-card .status {
+    .project-status {
+      font-size: 0.85em;
+      background: #a855f7;
+      color: #000;
       display: inline-block;
-      background: rgba(168, 85, 247, 0.2);
+      padding: 4px 12px;
+      border-radius: 20px;
+      font-weight: bold;
+      margin-bottom: 14px;
+      z-index: 1;
+    }
+
+    .project-desc {
+      font-size: 0.95em;
+      line-height: 1.6;
+      color: #ccc;
+      z-index: 1;
+    }
+
+    .github-link {
+      margin-top: 16px;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: rgba(168, 85, 247, 0.08);
+      border: 1px solid #a855f7;
       color: #a855f7;
-      font-size: 0.75em;
-      padding: 4px 10px;
-      border-radius: 12px;
-      margin-bottom: 10px;
+      text-decoration: none;
+      padding: 8px 16px;
+      border-radius: 50px;
+      transition: all 0.3s ease;
+      font-weight: 500;
+      z-index: 1;
+    }
+
+    .github-link:hover {
+      background: rgba(168, 85, 247, 0.2);
+      color: #fff;
+      border-color: #fff;
+    }
+
+    .arrow-icon {
+      width: 16px;
+      height: 16px;
+      stroke: currentColor;
+      stroke-width: 2;
     }
   </style>
 </head>
 <body>
 
-  <!-- Vertical Line -->
-  <div class="vertical-line"></div>
+<!-- Vertical Line for Style -->
+<div class="vertical-line"></div>
 
-  <!-- Header (from stylus.css) -->
-  <header class="site-header">
-    <div class="logo">Kinsu</div>
-    <div class="header-right">
-      <nav class="top-nav">
-        <a href="https://github.com/pyKinsu" target="_blank"><i class="fab fa-github"></i> Follow Me</a>
-        <a href="https://github.com/pyKinsu/MyPortFolio/stargazers" target="_blank"><i class="fas fa-star"></i> Give Star</a>
-        <a href="https://github.com/pyKinsu/MyPortFolio/fork" target="_blank"><i class="fas fa-code-branch"></i> Fork Repo</a>
-        <a href="/pages/Contact"><i class="fas fa-paper-plane"></i> Contact</a>
-      </nav>
-      <a href="https://github.com/pyKinsu" target="_blank" class="gh-icon"><i class="fab fa-github"></i></a>
-      <button class="menu-toggle" onclick="document.querySelector('.top-nav').classList.toggle('active')">
-        <i class="fas fa-bars"></i>
-      </button>
-    </div>
-  </header>
-
-  <!-- Projects Section -->
-  <main class="projects-page">
-    <h2 data-aos="fade-up">My Projects</h2>
-    <div class="project-grid">
-
-      <!-- Project Card 1 -->
-      <div class="project-card" data-aos="fade-up">
-        <span class="status">Completed</span>
-        <h3>Auto Filter Bot</h3>
-        <p>A powerful Telegram bot that auto-filters and manages media based on queries.</p>
-        <a class="github-link" href="https://github.com/pyKinsu/AutoFilterBot" target="_blank">
-          View Code
-          <svg class="arrow-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 14 10">
-            <path d="M1 5h12m0 0L9 1m4 4L9 9" stroke-linecap="round" stroke-linejoin="round"/>
-          </svg>
-        </a>
-      </div>
-
-      <!-- Project Card 2 -->
-      <div class="project-card" data-aos="fade-up">
-        <span class="status">Ongoing</span>
-        <h3>All Video Downloader</h3>
-        <p>Telegram bot to download videos from multiple platforms instantly.</p>
-        <a class="github-link" href="https://github.com/pyKinsu/AllVideoDownloader" target="_blank">
-          View Code
-          <svg class="arrow-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 14 10">
-            <path d="M1 5h12m0 0L9 1m4 4L9 9" stroke-linecap="round" stroke-linejoin="round"/>
-          </svg>
-        </a>
-      </div>
-
-    </div>
-  </main>
-
-  <!-- Footer (from stylus.css) -->
-  <footer class="site-footer">
-    <nav class="footer-nav">
-      <a href="/" class="nav-btn"><i class="fas fa-home"></i><span>Home</span></a>
-      <a href="/pages/Project/" class="nav-btn"><i class="fas fa-code"></i><span>Projects</span></a>
-      <a href="/pages/Contact/" class="nav-btn"><i class="fas fa-envelope"></i><span>Contact</span></a>
-      <a href="/pages/Hobbies/" class="nav-btn"><i class="fas fa-heart"></i><span>Hobbies</span></a>
+<!-- Header -->
+<header class="site-header">
+  <div class="logo">Kinsu</div>
+  <div style="display: flex; align-items: center; gap: 24px;">
+    <nav class="top-nav" id="navMenu">
+      <a href="https://github.com/pyKinsu" target="_blank"><i class="fab fa-github"></i> Follow Me</a>
+      <a href="https://github.com/pyKinsu/MyPortFolio/stargazers" target="_blank"><i class="fas fa-star"></i> Give Star</a>
+      <a href="https://github.com/pyKinsu/MyPortFolio/fork" target="_blank"><i class="fas fa-code-branch"></i> Fork Repo</a>
+      <a href="/pages/Contact"><i class="fas fa-paper-plane"></i> Contact</a>
     </nav>
-  </footer>
+    <a href="https://github.com/pyKinsu" target="_blank" style="font-size: 1.4em; color: white;"><i class="fab fa-github"></i></a>
+    <button class="menu-toggle" id="menuToggle"><i class="fas fa-bars"></i></button>
+  </div>
+</header>
 
-  <!-- 🔵 Scripts -->
-  <script src="https://unpkg.com/aos@2
+<!-- Main Content -->
+<main class="project-section">
+  <h2 data-aos="fade-down">My Projects</h2>
+  <div class="project-grid">
+
+    <!-- Project 1 -->
+    <div class="project-card" data-aos="fade-up">
+      <div class="project-title">AutoFilter Bot</div>
+      <div class="project-status">Live</div>
+      <p class="project-desc">A Telegram bot to filter and serve files from channels. Built using Python and Pyrogram with MongoDB.</p>
+      <a href="https://github.com/pyKinsu/AutofilterBot" class="github-link" target="_blank">GitHub
+        <svg class="arrow-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 14 10">
+          <path d="M1 5h12m0 0L9 1m4 4L9 9" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </a>
+    </div>
+
+    <!-- Project 2 -->
+    <div class="project-card" data-aos="fade-up">
+      <div class="project-title">All Video Downloader</div>
+      <div class="project-status">Live</div>
+      <p class="project-desc">A powerful Telegram bot that can download videos from multiple platforms. Smart UI and fast performance.</p>
+      <a href="https://github.com/pyKinsu/AllVideoDownloader" class="github-link" target="_blank">GitHub
+        <svg class="arrow-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 14 10">
+          <path d="M1 5h12m0 0L9 1m4 4L9 9" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </a>
+    </div>
+
+    
+
+  </div>
+</main>
+
+<!-- Footer -->
+<footer class="site-footer">
+  <nav class="footer-nav">
+    <a href="/" class="nav-btn"><i class="fas fa-home"></i><span>Home</span></a>
+    <a href="/pages/Projects" class="nav-btn"><i class="fas fa-code"></i><span>Projects</span></a>
+    <a href="/pages/Contact" class="nav-btn"><i class="fas fa-envelope"></i><span>Contact</span></a>
+    <a href="/Blogs/" class="nav-btn"><i class="fas fa-blog"></i><span>Blogs</span></a>
+  </nav>
+</footer>
+
+<!-- ===== JS Scripts ===== -->
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script>
+  AOS.init({ duration: 1000, once: true });
+
+  const menuToggle = document.getElementById("menuToggle");
+  const navMenu = document.getElementById("navMenu");
+
+  menuToggle.addEventListener("click", () => {
+    navMenu.classList.toggle("active");
+  });
+
+  navMenu.querySelectorAll("a").forEach(link => {
+    link.addEventListener("click", () => {
+      navMenu.classList.remove("active");
+    });
+  });
+
+  document.addEventListener("click", (e) => {
+    if (!navMenu.contains(e.target) && !menuToggle.contains(e.target)) {
+      navMenu.classList.remove("active");
+    }
+  });
+</script>
+
+</body>
+</html>

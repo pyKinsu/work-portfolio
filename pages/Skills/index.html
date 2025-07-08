@@ -17,15 +17,11 @@
   <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
-  <!-- Custom Styles -->
-  <style>
-    /* ========= Base Reset ========= */
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
+  <!-- ✅ Central Common Styles -->
+  <link rel="stylesheet" href="/css/stylus.css" />
 
+  <!-- 🎯 Page-specific Styles -->
+  <style>
     body {
       font-family: 'Segoe UI', sans-serif;
       background: #000;
@@ -35,119 +31,6 @@
       overflow-x: hidden;
     }
 
-    /* ========= Vertical Line ========= */
-    .vertical-line {
-      position: fixed;
-      left: 0;
-      top: 0;
-      width: 4px;
-      height: 100%;
-      background: rgba(168, 85, 247, 0.6);
-      filter: blur(6px);
-      z-index: 0;
-    }
-
-    /* ========= Header ========= */
-    header.site-header {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      padding: 10px 20px;
-      background: rgba(0, 0, 0, 0.3);
-      backdrop-filter: blur(10px);
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      border-bottom: 1px solid rgba(255,255,255,0.1);
-      z-index: 1000;
-    }
-
-    .logo {
-      font-family: 'Pacifico', cursive;
-      font-size: 1.8em;
-      color: #00f2ff;
-    }
-
-    .top-nav {
-      display: flex;
-      gap: 20px;
-      transition: all 0.3s ease;
-    }
-
-    .top-nav a {
-      color: #ffff00;
-      text-decoration: none;
-      font-size: 1em;
-      padding: 8px 14px;
-      border-radius: 12px;
-      background: rgba(0, 0, 0, 0.8);
-      border: 1.5px solid #a855f7;
-      box-shadow: 0 0 8px rgba(168, 85, 247, 0.15);
-      transition: all 0.3s ease;
-    }
-
-    .top-nav a:hover {
-      background: #ffff00;
-      color: #000;
-      box-shadow: 0 0 12px rgba(0, 242, 255, 0.5);
-    }
-
-    .menu-toggle {
-      display: none;
-      font-size: 22px;
-      color: #00f2ff;
-      background: rgba(0, 0, 0, 0.8);
-      border: 1.5px solid #a855f7;
-      border-radius: 12px;
-      padding: 6px 10px;
-      backdrop-filter: blur(6px);
-      transition: all 0.3s ease;
-    }
-
-    .menu-toggle:hover {
-      background: #000;
-      color: #ffff00;
-    }
-
-    @media (max-width: 768px) {
-      .top-nav {
-        display: none;
-        flex-direction: column;
-        gap: 12px;
-        position: absolute;
-        top: 60px;
-        right: 20px;
-        padding: 14px;
-        background: rgba(0, 0, 0, 0.9);
-        border-radius: 16px;
-        border: 1.5px solid rgba(168, 85, 247, 0.3);
-        box-shadow: 0 0 20px rgba(168, 85, 247, 0.25);
-        animation: slideIn 0.3s ease forwards;
-        z-index: 999;
-      }
-
-      .top-nav.active {
-        display: flex;
-      }
-
-      .menu-toggle {
-        display: block;
-      }
-
-      @keyframes slideIn {
-        from {
-          opacity: 0;
-          transform: translateY(-10px);
-        }
-        to {
-          opacity: 1;
-          transform: translateY(0);
-        }
-      }
-    }
-
-    /* ========= Skills Section ========= */
     .skills-page {
       max-width: 1000px;
       margin: auto;
@@ -193,48 +76,6 @@
       from { width: 0; }
       to { width: var(--width); }
     }
-
-    /* ========= Footer ========= */
-    footer.site-footer {
-      position: fixed;
-      bottom: 0;
-      width: 100%;
-      background: rgba(0, 0, 0, 0.4);
-      backdrop-filter: blur(10px);
-      border-top: 1px solid rgba(255,255,255,0.1);
-      z-index: 999;
-      box-shadow: 0 0 20px rgba(168, 85, 247, 0.25);
-    }
-
-    .footer-nav {
-      display: flex;
-      justify-content: space-around;
-      align-items: center;
-      padding: 12px 0;
-    }
-
-    .nav-btn {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      text-decoration: none;
-      color: #00f2ff;
-      font-size: 0.9em;
-      transition: color 0.3s ease;
-    }
-
-    .nav-btn i {
-      font-size: 1.4em;
-      margin-bottom: 4px;
-    }
-
-    .nav-btn span {
-      font-size: 0.75em;
-    }
-
-    .nav-btn:hover {
-      color: #fff;
-    }
   </style>
 </head>
 <body>
@@ -247,10 +88,10 @@
     <div class="logo">Kinsu</div>
     <div style="display: flex; align-items: center; gap: 20px;">
       <nav class="top-nav">
-        <a href="https://github.com/pyKinsu" target="_blank"><i class="fab fa-github"></i> Follow Me</a>
-        <a href="https://github.com/pyKinsu/MyPortFolio/stargazers" target="_blank"><i class="fas fa-star"></i> Give Star</a>
-        <a href="https://github.com/pyKinsu/MyPortFolio/fork" target="_blank"><i class="fas fa-code-branch"></i> Fork Repo</a>
-        <a href="/pages/Contact"><i class="fas fa-paper-plane"></i> Contact</a>
+        <a href="https://github.com/pyKinsu" target="_blank" class="github-btn"><i class="fab fa-github"></i> Follow Me</a>
+        <a href="https://github.com/pyKinsu/MyPortFolio/stargazers" target="_blank" class="github-btn"><i class="fas fa-star"></i> Give Star</a>
+        <a href="https://github.com/pyKinsu/MyPortFolio/fork" target="_blank" class="github-btn"><i class="fas fa-code-branch"></i> Fork Repo</a>
+        <a href="/pages/Contact" class="github-btn"><i class="fas fa-paper-plane"></i> Contact</a>
       </nav>
       <a href="https://github.com/pyKinsu" target="_blank" style="font-size: 1.4em; color: white;"><i class="fab fa-github"></i></a>
       <button class="menu-toggle" onclick="document.querySelector('.top-nav').classList.toggle('active')">
@@ -290,7 +131,7 @@
     </nav>
   </footer>
 
-  <!-- 🔵 Script for Menu Auto-Close -->
+  <!-- 🔵 Auto-Close Mobile Menu Script -->
   <script>
     const toggleBtn = document.querySelector('.menu-toggle');
     const nav = document.querySelector('.top-nav');

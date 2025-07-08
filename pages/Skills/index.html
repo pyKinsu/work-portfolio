@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Skills | Kinsu Rajput</title>
 
-  <!-- ======================= FAVICONS ======================= -->
+  <!-- Favicons -->
   <link rel="icon" type="image/png" href="/Favicon/favicon-96x96.png" sizes="96x96" />
   <link rel="icon" type="image/svg+xml" href="/Favicon/favicon.svg" />
   <link rel="shortcut icon" href="/Favicon/favicon.ico" />
@@ -13,16 +13,13 @@
   <meta name="apple-mobile-web-app-title" content="Kinsu Rajput Portfolio" />
   <link rel="manifest" href="/Favicon/site.webmanifest" />
 
-  <!-- ======================= CSS & FONTS ======================= -->
-  <link rel="stylesheet" href="/css/style.css">
-  <link rel="stylesheet" href="/css/loader.css">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <!-- Fonts & Icons -->
   <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
-  <!-- ======================= INLINE STYLES ======================= -->
+  <!-- Custom Styles -->
   <style>
-    /* ==== Global Reset ==== */
+    /* ========= Base Reset ========= */
     * {
       margin: 0;
       padding: 0;
@@ -35,35 +32,41 @@
       color: #fff;
       padding-top: 80px;
       padding-bottom: 100px;
+      overflow-x: hidden;
     }
 
-    /* ==== Header/NavBar ==== */
-    .site-header {
+    /* ========= Vertical Line ========= */
+    .vertical-line {
+      position: fixed;
+      left: 0;
+      top: 0;
+      width: 4px;
+      height: 100%;
+      background: rgba(168, 85, 247, 0.6);
+      filter: blur(6px);
+      z-index: 0;
+    }
+
+    /* ========= Header ========= */
+    header.site-header {
       position: fixed;
       top: 0;
+      left: 0;
       width: 100%;
       padding: 10px 20px;
-      background: rgba(0, 0, 0, 0.4);
+      background: rgba(0, 0, 0, 0.3);
       backdrop-filter: blur(10px);
       display: flex;
       justify-content: space-between;
       align-items: center;
-      z-index: 999;
       border-bottom: 1px solid rgba(255,255,255,0.1);
+      z-index: 1000;
     }
 
     .logo {
       font-family: 'Pacifico', cursive;
       font-size: 1.8em;
-      color: #00ffff;
-    }
-
-    .menu-container {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-      position: relative;
-      width: auto;
+      color: #00f2ff;
     }
 
     .top-nav {
@@ -85,15 +88,15 @@
     }
 
     .top-nav a:hover {
-      background: #000;
+      background: #ffff00;
       color: #000;
       box-shadow: 0 0 12px rgba(0, 242, 255, 0.5);
     }
 
     .menu-toggle {
       display: none;
-      font-size: 24px;
-      color: #ffff00;
+      font-size: 22px;
+      color: #00f2ff;
       background: rgba(0, 0, 0, 0.8);
       border: 1.5px solid #a855f7;
       border-radius: 12px;
@@ -112,52 +115,46 @@
         display: none;
         flex-direction: column;
         gap: 12px;
-        background: rgba(0, 0, 0, 0.95);
         position: absolute;
         top: 60px;
-        right: 0;
-        min-width: 210px;
+        right: 20px;
         padding: 14px;
+        background: rgba(0, 0, 0, 0.9);
         border-radius: 16px;
-        box-shadow: 0 0 20px rgba(168, 85, 247, 0.25);
         border: 1.5px solid rgba(168, 85, 247, 0.3);
+        box-shadow: 0 0 20px rgba(168, 85, 247, 0.25);
+        animation: slideIn 0.3s ease forwards;
         z-index: 999;
-        opacity: 0;
-        transform: translateY(-20px);
-        pointer-events: none;
-        transition: all 0.3s ease;
       }
 
       .top-nav.active {
         display: flex;
-        opacity: 1;
-        transform: translateY(0);
-        pointer-events: auto;
       }
 
       .menu-toggle {
         display: block;
       }
+
+      @keyframes slideIn {
+        from {
+          opacity: 0;
+          transform: translateY(-10px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
     }
 
-    /* ==== Vertical Purple Sideline ==== */
-    .vertical-line {
-      position: fixed;
-      left: 0;
-      top: 0;
-      width: 4px;
-      height: 100%;
-      background: rgba(168, 85, 247, 0.6);
-      filter: blur(6px);
-      z-index: 0;
-    }
-
-    /* ==== Skills Section ==== */
+    /* ========= Skills Section ========= */
     .skills-page {
       max-width: 1000px;
       margin: auto;
       padding: 60px 20px;
       text-align: center;
+      z-index: 1;
+      position: relative;
     }
 
     .skills-page h2 {
@@ -197,8 +194,8 @@
       to { width: var(--width); }
     }
 
-    /* ==== Footer (Same as Home) ==== */
-    .site-footer {
+    /* ========= Footer ========= */
+    footer.site-footer {
       position: fixed;
       bottom: 0;
       width: 100%;
@@ -242,10 +239,13 @@
 </head>
 <body>
 
-  <!-- ========== HEADER ========== -->
+  <!-- 🔵 Vertical Line -->
+  <div class="vertical-line"></div>
+
+  <!-- 🔵 Header -->
   <header class="site-header">
     <div class="logo">Kinsu</div>
-    <div class="menu-container">
+    <div style="display: flex; align-items: center; gap: 20px;">
       <nav class="top-nav">
         <a href="https://github.com/pyKinsu" target="_blank"><i class="fab fa-github"></i> Follow Me</a>
         <a href="https://github.com/pyKinsu/MyPortFolio/stargazers" target="_blank"><i class="fas fa-star"></i> Give Star</a>
@@ -253,44 +253,34 @@
         <a href="/pages/Contact"><i class="fas fa-paper-plane"></i> Contact</a>
       </nav>
       <a href="https://github.com/pyKinsu" target="_blank" style="font-size: 1.4em; color: white;"><i class="fab fa-github"></i></a>
-      <button class="menu-toggle"><i class="fas fa-bars"></i></button>
+      <button class="menu-toggle" onclick="document.querySelector('.top-nav').classList.toggle('active')">
+        <i class="fas fa-bars"></i>
+      </button>
     </div>
   </header>
 
-  <!-- ========== MAIN: SKILLS SECTION ========== -->
+  <!-- 🔵 Skills Section -->
   <main class="skills-page">
     <h2>My Skills</h2>
-
     <div class="skill">
       <div class="skill-title">Python</div>
-      <div class="skill-bar">
-        <div class="skill-bar-fill" style="--width: 70%;"></div>
-      </div>
+      <div class="skill-bar"><div class="skill-bar-fill" style="--width: 70%;"></div></div>
     </div>
-
     <div class="skill">
       <div class="skill-title">HTML</div>
-      <div class="skill-bar">
-        <div class="skill-bar-fill" style="--width: 80%;"></div>
-      </div>
+      <div class="skill-bar"><div class="skill-bar-fill" style="--width: 80%;"></div></div>
     </div>
-
     <div class="skill">
       <div class="skill-title">CSS</div>
-      <div class="skill-bar">
-        <div class="skill-bar-fill" style="--width: 75%;"></div>
-      </div>
+      <div class="skill-bar"><div class="skill-bar-fill" style="--width: 75%;"></div></div>
     </div>
-
     <div class="skill">
       <div class="skill-title">Telegram Bots</div>
-      <div class="skill-bar">
-        <div class="skill-bar-fill" style="--width: 85%;"></div>
-      </div>
+      <div class="skill-bar"><div class="skill-bar-fill" style="--width: 85%;"></div></div>
     </div>
   </main>
 
-  <!-- ========== FOOTER ========== -->
+  <!-- 🔵 Footer -->
   <footer class="site-footer">
     <nav class="footer-nav">
       <a href="/" class="nav-btn"><i class="fas fa-home"></i><span>Home</span></a>
@@ -300,17 +290,13 @@
     </nav>
   </footer>
 
-  <!-- ========== SCRIPT ========== -->
+  <!-- 🔵 Script for Menu Auto-Close -->
   <script>
     const toggleBtn = document.querySelector('.menu-toggle');
     const nav = document.querySelector('.top-nav');
 
-    toggleBtn.addEventListener('click', () => {
-      nav.classList.toggle('active');
-    });
-
-    document.addEventListener('click', (e) => {
-      if (!nav.contains(e.target) && !toggleBtn.contains(e.target)) {
+    document.addEventListener('click', function (e) {
+      if (!toggleBtn.contains(e.target) && !nav.contains(e.target)) {
         nav.classList.remove('active');
       }
     });

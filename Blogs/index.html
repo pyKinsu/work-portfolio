@@ -5,34 +5,21 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Blogs | Kinsu Rajput</title>
 
-  <!-- ========== FAVICONS ========== -->
+  <!-- ===== Favicon ===== -->
   <link rel="icon" type="image/png" href="/Favicon/favicon-96x96.png" sizes="96x96" />
-  <link rel="icon" type="image/svg+xml" href="/Favicon/favicon.svg" />
-  <link rel="shortcut icon" href="/Favicon/favicon.ico" />
-  <link rel="apple-touch-icon" sizes="180x180" href="/Favicon/apple-touch-icon.png" />
-  <link rel="manifest" href="/Favicon/site.webmanifest" />
-  <meta name="apple-mobile-web-app-title" content="Kinsu Rajput Portfolio" />
-
-  <!-- ========== FONTS & ICONS ========== -->
-  <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet"/>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css"/>
 
-  <!-- ========== MAIN STYLE ========== -->
+  <!-- ===== Page Styles ===== -->
   <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
     body {
-      margin: 0;
       font-family: 'Orbitron', sans-serif;
       background: #000;
       color: #fff;
       padding-top: 80px;
       padding-bottom: 80px;
-    }
-
-    .logo {
-      font-family: 'Pacifico', cursive;
-      font-size: 1.8em;
-      color: #00f2ff;
     }
 
     /* HEADER */
@@ -41,14 +28,20 @@
       top: 0;
       left: 0;
       width: 100%;
-      z-index: 1000;
       backdrop-filter: blur(10px);
       background-color: rgba(0, 0, 0, 0.3);
       border: 1px solid rgba(255, 255, 255, 0.08);
+      z-index: 1000;
+      padding: 10px 20px;
       display: flex;
       justify-content: space-between;
       align-items: center;
-      padding: 10px 20px;
+    }
+
+    .logo {
+      font-family: 'Pacifico', cursive;
+      font-size: 1.8em;
+      color: #00f2ff;
     }
 
     .top-nav {
@@ -70,7 +63,7 @@
     }
 
     .top-nav a:hover {
-      background: #ffff00;
+      background: #000;
       color: #000;
       box-shadow: 0 0 12px rgba(0, 242, 255, 0.5);
     }
@@ -78,7 +71,7 @@
     .menu-toggle {
       display: none;
       font-size: 24px;
-      color: #00f2ff;
+      color: #ffff00;
       background: rgba(0, 0, 0, 0.8);
       border: 1.5px solid #a855f7;
       border-radius: 12px;
@@ -96,20 +89,20 @@
       .top-nav {
         display: none;
         flex-direction: column;
+        gap: 12px;
+        background: rgba(0, 0, 0, 0.95);
         position: absolute;
         top: 60px;
         right: 20px;
-        background: rgba(0, 0, 0, 0.95);
         padding: 14px;
         border-radius: 16px;
-        gap: 12px;
         box-shadow: 0 0 20px rgba(168, 85, 247, 0.25);
         border: 1.5px solid rgba(168, 85, 247, 0.3);
       }
 
       .top-nav.active {
         display: flex;
-        animation: fadeIn 0.3s ease-in-out forwards;
+        animation: fadeIn 0.3s ease forwards;
       }
 
       @keyframes fadeIn {
@@ -122,6 +115,7 @@
       }
     }
 
+    /* BLOG SECTION */
     .blogs-coming {
       text-align: center;
       padding: 60px 20px;
@@ -140,9 +134,11 @@
       margin-top: 30px;
     }
 
+    /* FOOTER */
     footer.site-footer {
       position: fixed;
       bottom: 0;
+      left: 0;
       width: 100%;
       padding: 15px 0;
       background: rgba(0, 0, 0, 0.3);
@@ -179,61 +175,60 @@
 </head>
 <body>
 
-  <!-- HEADER -->
-  <header class="site-header">
-    <div class="logo">Kinsu</div>
-    <div style="display: flex; align-items: center; gap: 24px;">
-      <nav class="top-nav" id="navMenu">
-        <a href="https://github.com/pyKinsu" target="_blank"><i class="fab fa-github"></i> Follow Me</a>
-        <a href="https://github.com/pyKinsu/MyPortFolio/stargazers" target="_blank"><i class="fas fa-star"></i> Give Star</a>
-        <a href="https://github.com/pyKinsu/MyPortFolio/fork" target="_blank"><i class="fas fa-code-branch"></i> Fork Repo</a>
-        <a href="/pages/Contact"><i class="fas fa-paper-plane"></i> Contact</a>
-      </nav>
-      <a href="https://github.com/pyKinsu" target="_blank" style="font-size: 1.4em; color: white;"><i class="fab fa-github"></i></a>
-      <button class="menu-toggle" id="menuToggle">
-        <i class="fas fa-bars"></i>
-      </button>
-    </div>
-  </header>
-
-  <!-- MAIN -->
-  <section class="blogs-coming" data-aos="zoom-in">
-    <h1>Coming Soon</h1>
-  </section>
-
-  <!-- FOOTER -->
-  <footer class="site-footer">
-    <nav class="footer-nav">
-      <a href="/" class="nav-btn"><i class="fas fa-home"></i><span>Home</span></a>
-      <a href="/pages/Projects" class="nav-btn"><i class="fas fa-code"></i><span>Projects</span></a>
-      <a href="/pages/Contact" class="nav-btn"><i class="fas fa-envelope"></i><span>Contact</span></a>
-      <a href="/Blogs" class="nav-btn"><i class="fas fa-blog"></i><span>Blogs</span></a>
+<!-- HEADER -->
+<header class="site-header">
+  <div class="logo">Kinsu</div>
+  <div style="display: flex; align-items: center; gap: 24px;">
+    <nav class="top-nav" id="navMenu">
+      <a href="https://github.com/pyKinsu" target="_blank"><i class="fab fa-github"></i> Follow Me</a>
+      <a href="https://github.com/pyKinsu/MyPortFolio/stargazers" target="_blank"><i class="fas fa-star"></i> Give Star</a>
+      <a href="https://github.com/pyKinsu/MyPortFolio/fork" target="_blank"><i class="fas fa-code-branch"></i> Fork Repo</a>
+      <a href="/pages/Contact"><i class="fas fa-paper-plane"></i> Contact</a>
     </nav>
-  </footer>
+    <a href="https://github.com/pyKinsu" target="_blank" style="font-size: 1.4em; color: white;"><i class="fab fa-github"></i></a>
+    <button class="menu-toggle" id="menuToggle"><i class="fas fa-bars"></i></button>
+  </div>
+</header>
 
-  <!-- SCRIPT -->
-  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-  <script>
-    AOS.init({ duration: 1000, once: true });
+<!-- MAIN CONTENT -->
+<section class="blogs-coming" data-aos="zoom-in">
+  <h1>Coming Soon</h1>
+</section>
 
-    const menuToggle = document.getElementById("menuToggle");
-    const navMenu = document.getElementById("navMenu");
+<!-- FOOTER -->
+<footer class="site-footer">
+  <nav class="footer-nav">
+    <a href="/" class="nav-btn"><i class="fas fa-home"></i><span>Home</span></a>
+    <a href="/pages/Projects" class="nav-btn"><i class="fas fa-code"></i><span>Projects</span></a>
+    <a href="/pages/Contact" class="nav-btn"><i class="fas fa-envelope"></i><span>Contact</span></a>
+    <a href="/Blogs/" class="nav-btn"><i class="fas fa-blog"></i><span>Blogs</span></a>
+  </nav>
+</footer>
 
-    menuToggle.addEventListener("click", () => {
-      navMenu.classList.toggle("active");
+<!-- JS Scripts -->
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script>
+  AOS.init({ duration: 1000, once: true });
+
+  const menuToggle = document.getElementById("menuToggle");
+  const navMenu = document.getElementById("navMenu");
+
+  menuToggle.addEventListener("click", () => {
+    navMenu.classList.toggle("active");
+  });
+
+  navMenu.querySelectorAll("a").forEach(link => {
+    link.addEventListener("click", () => {
+      navMenu.classList.remove("active");
     });
+  });
 
-    navMenu.querySelectorAll("a").forEach(link => {
-      link.addEventListener("click", () => {
-        if (window.innerWidth <= 768) navMenu.classList.remove("active");
-      });
-    });
+  document.addEventListener("click", (e) => {
+    if (!navMenu.contains(e.target) && !menuToggle.contains(e.target)) {
+      navMenu.classList.remove("active");
+    }
+  });
+</script>
 
-    window.addEventListener("click", e => {
-      if (!navMenu.contains(e.target) && !menuToggle.contains(e.target)) {
-        navMenu.classList.remove("active");
-      }
-    });
-  </script>
 </body>
 </html>

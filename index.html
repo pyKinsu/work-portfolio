@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Kinsu Rajput | Portfolio</title>
 
-  <!-- SEO Meta -->
+  <!-- ===== SEO Meta Tags ===== -->
   <meta name="title" content="Kinsu Rajput | Developer Portfolio">
   <meta name="description" content="Kinsu Rajput - BCA student, Python & C developer, Telegram bot creator. Explore my portfolio, projects, and contact info.">
   <meta name="keywords" content="Kinsu Rajput, pyKinsu, Telegram bots, Python developer, GitHub, Portfolio, Bihar, BCA Student, HTML CSS">
@@ -17,24 +17,22 @@
   <meta property="og:url" content="https://pykinsu.github.io/MyPortFolio/">
   <meta name="robots" content="index, follow"/>
 
-  <!-- Favicons -->
+  <!-- ===== Favicon Setup ===== -->
   <link rel="icon" type="image/png" href="/Favicon/favicon-96x96.png" sizes="96x96" />
   <link rel="icon" type="image/svg+xml" href="/Favicon/favicon.svg" />
   <link rel="shortcut icon" href="/Favicon/favicon.ico" />
   <link rel="apple-touch-icon" sizes="180x180" href="/Favicon/apple-touch-icon.png" />
-  <meta name="apple-mobile-web-app-title" content="Kinsu Rajput Portfolio" />
   <link rel="manifest" href="/Favicon/site.webmanifest" />
 
-  <!-- Fonts & Icons -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <!-- ===== Fonts & Icons ===== -->
   <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
   <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css"/>
 
+  <!-- ===== Styles (CSS) START ===== -->
   <style>
-    /* RESET */
+    /* ===== RESET & BASICS ===== */
     * { margin: 0; padding: 0; box-sizing: border-box; }
-
     body {
       font-family: 'Orbitron', sans-serif;
       background: #000;
@@ -43,7 +41,7 @@
       padding-bottom: 80px;
     }
 
-    /* Header */
+    /* ===== HEADER SECTION ===== */
     header.site-header {
       position: fixed;
       top: 0;
@@ -111,7 +109,7 @@
         display: none;
         flex-direction: column;
         gap: 12px;
-        background: rgba(0, 0, 0, 0.9);
+        background: rgba(0, 0, 0, 0.95);
         position: absolute;
         top: 60px;
         right: 20px;
@@ -119,11 +117,16 @@
         border-radius: 16px;
         box-shadow: 0 0 20px rgba(168, 85, 247, 0.25);
         border: 1.5px solid rgba(168, 85, 247, 0.3);
-        z-index: 999;
       }
 
       .top-nav.active {
         display: flex;
+        animation: fadeIn 0.3s ease forwards;
+      }
+
+      @keyframes fadeIn {
+        from { opacity: 0; transform: translateY(-10px); }
+        to { opacity: 1; transform: translateY(0); }
       }
 
       .menu-toggle {
@@ -131,66 +134,7 @@
       }
     }
 
-    .vertical-line {
-      position: fixed;
-      left: 0;
-      top: 0;
-      width: 4px;
-      height: 100%;
-      background: rgba(168, 85, 247, 0.6);
-      filter: blur(6px);
-      z-index: 0;
-      
-      .menu-toggle {
-        display: block;
-      }
-
-      .hero-name {
-        font-size: 1.8rem;
-      }
-
-      .hero-title {
-        font-size: 0.9rem;
-      }
-    }
-
-    /* Footer */
-    footer.site-footer {
-      position: fixed;
-      bottom: 0;
-      left: 0;
-      width: 100%;
-      padding: 20px 0;
-      box-shadow: 0 0 20px rgba(168, 85, 247, 0.25);
-      background-color: rgba(0, 0, 0, 0.3);
-      backdrop-filter: blur(10px);
-      border-top: 1px solid rgba(255, 255, 255, 0.08);
-      z-index: 1000;
-    }
-
-    .footer-nav {
-      display: flex;
-      justify-content: space-around;
-      align-items: center;
-    }
-
-    .nav-btn {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      text-decoration: none;
-      color: #00f2ff;
-    }
-
-    .nav-btn i {
-      font-size: 1.3em;
-    }
-
-    .nav-btn span {
-      font-size: 0.75em;
-    }
-
-    /* Hero Section */
+    /* ===== HERO SECTION ===== */
     .hero {
       display: flex;
       justify-content: center;
@@ -207,7 +151,6 @@
       padding: 30px;
       max-width: 600px;
       text-align: center;
-      position: relative;
     }
 
     .hero-img {
@@ -236,11 +179,9 @@
     .hero-title {
       font-size: 1rem;
       color: #ccc;
-      max-width: 90%;
-      margin: auto;
     }
 
-    /* About Section */
+    /* ===== ABOUT SECTION ===== */
     .about {
       padding: 40px 20px;
       max-width: 900px;
@@ -261,11 +202,8 @@
       box-shadow: 0 0 15px #a855f73f;
       backdrop-filter: blur(10px);
       padding: 20px;
-      text-align: center;
-      font-size: 1rem;
-      line-height: 1.6;
       color: #ccc;
-      transition: all 0.3s ease;
+      text-align: center;
     }
 
     .glass-box:hover {
@@ -273,7 +211,7 @@
       box-shadow: 0 0 25px #a855f7a8;
     }
 
-    /* Projects Section */
+    /* ===== PROJECTS SECTION ===== */
     .projects {
       max-width: 900px;
       margin: auto;
@@ -319,7 +257,6 @@
       border: 1px solid #a855f7;
       border-radius: 20px;
       background: rgba(138, 43, 226, 0.1);
-      backdrop-filter: blur(4px);
     }
 
     .github-link {
@@ -349,7 +286,6 @@
       stroke-width: 2;
     }
 
-    /* Explore Buttons */
     .explore-projects {
       display: flex;
       justify-content: center;
@@ -369,37 +305,70 @@
       align-items: center;
       gap: 8px;
       transition: all 0.4s ease;
-      box-shadow: 0 0 10px rgba(168, 85, 247, 0.2);
     }
 
     .explore-projects a:hover {
       background: rgba(168, 85, 247, 0.2);
       color: #fff;
       border-color: #fff;
-      box-shadow: 0 0 20px rgba(168, 85, 247, 0.6);
+    }
+
+    /* ===== FOOTER SECTION ===== */
+    footer.site-footer {
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      padding: 20px 0;
+      box-shadow: 0 0 20px rgba(168, 85, 247, 0.25);
+      background-color: rgba(0, 0, 0, 0.3);
+      backdrop-filter: blur(10px);
+      border-top: 1px solid rgba(255, 255, 255, 0.08);
+      z-index: 1000;
+    }
+
+    .footer-nav {
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+    }
+
+    .nav-btn {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-decoration: none;
+      color: #00f2ff;
+    }
+
+    .nav-btn i {
+      font-size: 1.3em;
+    }
+
+    .nav-btn span {
+      font-size: 0.75em;
     }
   </style>
 </head>
 <body>
 
-<!-- Header -->
+<!-- ===== HEADER START ===== -->
 <header class="site-header">
-    <div class="logo">Kinsu</div>
-    <div style="display: flex; align-items: center; gap: 24px;">
-      <nav class="top-nav">
-        <a href="https://github.com/pyKinsu" target="_blank"><i class="fab fa-github"></i> Follow Me</a>
-        <a href="https://github.com/pyKinsu/MyPortFolio/stargazers" target="_blank"><i class="fas fa-star"></i> Give Star</a>
-        <a href="https://github.com/pyKinsu/MyPortFolio/fork" target="_blank"><i class="fas fa-code-branch"></i> Fork Repo</a>
-        <a href="/pages/Contact"><i class="fas fa-paper-plane"></i> Contact</a>
-      </nav>
-      <a href="https://github.com/pyKinsu" target="_blank" style="font-size: 1.4em; color: white;"><i class="fab fa-github"></i></a>
-      <button class="menu-toggle" onclick="document.querySelector('.top-nav').classList.toggle('active')">
-        <i class="fas fa-bars"></i>
-      </button>
-    </div>
-  </header>
+  <div class="logo">Kinsu</div>
+  <div style="display: flex; align-items: center; gap: 24px;">
+    <nav class="top-nav" id="navMenu">
+      <a href="https://github.com/pyKinsu" target="_blank"><i class="fab fa-github"></i> Follow Me</a>
+      <a href="https://github.com/pyKinsu/MyPortFolio/stargazers" target="_blank"><i class="fas fa-star"></i> Give Star</a>
+      <a href="https://github.com/pyKinsu/MyPortFolio/fork" target="_blank"><i class="fas fa-code-branch"></i> Fork Repo</a>
+      <a href="/pages/Contact"><i class="fas fa-paper-plane"></i> Contact</a>
+    </nav>
+    <a href="https://github.com/pyKinsu" target="_blank" style="font-size: 1.4em; color: white;"><i class="fab fa-github"></i></a>
+    <button class="menu-toggle" id="menuToggle"><i class="fas fa-bars"></i></button>
+  </div>
+</header>
+<!-- ===== HEADER END ===== -->
 
-<!-- Hero Section -->
+<!-- ===== HERO SECTION ===== -->
 <section class="hero" data-aos="zoom-in">
   <div class="hero-card">
     <img src="https://github.com/pykinsu.png" alt="Kinsu Rajput" class="hero-img" />
@@ -408,7 +377,7 @@
   </div>
 </section>
 
-<!-- About Section -->
+<!-- ===== ABOUT SECTION ===== -->
 <section class="about" data-aos="fade-up">
   <h2>About Me</h2>
   <div class="glass-box">
@@ -417,7 +386,7 @@
   </div>
 </section>
 
-<!-- Projects Section -->
+<!-- ===== PROJECTS SECTION ===== -->
 <section class="projects" data-aos="fade-up">
   <h2>Projects</h2>
 
@@ -470,7 +439,7 @@
   </div>
 </section>
 
-<!-- Footer -->
+<!-- ===== FOOTER START ===== -->
 <footer class="site-footer">
   <nav class="footer-nav">
     <a href="/" class="nav-btn"><i class="fas fa-home"></i><span>Home</span></a>
@@ -479,10 +448,36 @@
     <a href="/Blogs/" class="nav-btn"><i class="fas fa-blog"></i><span>Blogs</span></a>
   </nav>
 </footer>
+<!-- ===== FOOTER END ===== -->
 
-<!-- AOS -->
+<!-- ===== JS Scripts ===== -->
 <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 <script>AOS.init({ duration: 1000, once: true });</script>
+
+<!-- ===== Mobile Menu Script ===== -->
+<script>
+  const menuToggle = document.getElementById('menuToggle');
+  const navMenu = document.getElementById('navMenu');
+
+  // Open/Close toggle
+  menuToggle.addEventListener('click', () => {
+    navMenu.classList.toggle('active');
+  });
+
+  // Auto close on link click
+  navMenu.querySelectorAll('a').forEach(link => {
+    link.addEventListener('click', () => {
+      navMenu.classList.remove('active');
+    });
+  });
+
+  // Tap outside to close menu
+  document.addEventListener('click', (e) => {
+    if (!navMenu.contains(e.target) && !menuToggle.contains(e.target)) {
+      navMenu.classList.remove('active');
+    }
+  });
+</script>
 
 </body>
 </html>

@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Kinsu Rajput | Portfolio</title>
 
-  <!-- ===== SEO Meta Tags ===== -->
+  <!-- SEO Meta Tags -->
   <meta name="title" content="Kinsu Rajput | Developer Portfolio">
   <meta name="description" content="Kinsu Rajput - BCA student, Python & C developer, Telegram bot creator. Explore my portfolio, projects, and contact info.">
   <meta name="keywords" content="Kinsu Rajput, pyKinsu, Telegram bots, Python developer, GitHub, Portfolio, Bihar, BCA Student, HTML CSS">
@@ -17,21 +17,24 @@
   <meta property="og:url" content="https://pykinsu.github.io/MyPortFolio/">
   <meta name="robots" content="index, follow"/>
 
-  <!-- ===== Favicon Setup ===== -->
+  <!-- Favicon Setup -->
   <link rel="icon" type="image/png" href="/Favicon/favicon-96x96.png" sizes="96x96" />
   <link rel="icon" type="image/svg+xml" href="/Favicon/favicon.svg" />
   <link rel="shortcut icon" href="/Favicon/favicon.ico" />
   <link rel="apple-touch-icon" sizes="180x180" href="/Favicon/apple-touch-icon.png" />
   <link rel="manifest" href="/Favicon/site.webmanifest" />
 
-  <!-- ===== Fonts & Icons ===== -->
+  <!-- Fonts & Icons -->
   <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
   <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css"/>
 
-  <!-- ===== Styles (CSS) START ===== -->
+  <!-- Shared Stylus File for Header & Footer -->
+  <link rel="stylesheet" href="/css/stylus.css">
+
+  <!-- Page Specific Styles -->
   <style>
-    /* ===== RESET & BASICS ===== */
+    /* Reset & Basics */
     * { margin: 0; padding: 0; box-sizing: border-box; }
     body {
       font-family: 'Orbitron', sans-serif;
@@ -41,100 +44,7 @@
       padding-bottom: 80px;
     }
 
-    /* ===== HEADER SECTION ===== */
-    header.site-header {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      backdrop-filter: blur(10px);
-      background-color: rgba(0, 0, 0, 0.3);
-      border: 1px solid rgba(255, 255, 255, 0.08);
-      z-index: 1000;
-      padding: 10px 20px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-    }
-
-    .logo {
-      font-family: 'Pacifico', cursive;
-      font-size: 1.8em;
-      color: #00f2ff;
-    }
-
-    .top-nav {
-      display: flex;
-      gap: 20px;
-      transition: all 0.3s ease;
-    }
-
-    .top-nav a {
-      color: #ffff00;
-      text-decoration: none;
-      font-size: 1em;
-      padding: 8px 14px;
-      border-radius: 12px;
-      background: rgba(0, 0, 0, 0.8);
-      border: 1.5px solid #a855f7;
-      box-shadow: 0 0 8px rgba(168, 85, 247, 0.15);
-      transition: all 0.3s ease;
-    }
-
-    .top-nav a:hover {
-      background: #000;
-      color: #000;
-      box-shadow: 0 0 12px rgba(0, 242, 255, 0.5);
-    }
-
-    .menu-toggle {
-      display: none;
-      font-size: 24px;
-      color: #ffff00;
-      background: rgba(0, 0, 0, 0.8);
-      border: 1.5px solid #a855f7;
-      border-radius: 12px;
-      padding: 6px 10px;
-      backdrop-filter: blur(6px);
-      transition: all 0.3s ease;
-    }
-
-    .menu-toggle:hover {
-      background: #000;
-      color: #ffff00;
-    }
-
-    @media (max-width: 768px) {
-      .top-nav {
-        display: none;
-        flex-direction: column;
-        gap: 12px;
-        background: rgba(0, 0, 0, 0.95);
-        position: absolute;
-        top: 60px;
-        right: 20px;
-        padding: 14px;
-        border-radius: 16px;
-        box-shadow: 0 0 20px rgba(168, 85, 247, 0.25);
-        border: 1.5px solid rgba(168, 85, 247, 0.3);
-      }
-
-      .top-nav.active {
-        display: flex;
-        animation: fadeIn 0.3s ease forwards;
-      }
-
-      @keyframes fadeIn {
-        from { opacity: 0; transform: translateY(-10px); }
-        to { opacity: 1; transform: translateY(0); }
-      }
-
-      .menu-toggle {
-        display: block;
-      }
-    }
-
-    /* ===== HERO SECTION ===== */
+    /*  Hero Section  */
     .hero {
       display: flex;
       justify-content: center;
@@ -181,7 +91,7 @@
       color: #ccc;
     }
 
-    /* ===== ABOUT SECTION ===== */
+    /* About Section  */
     .about {
       padding: 40px 20px;
       max-width: 900px;
@@ -211,7 +121,7 @@
       box-shadow: 0 0 25px #a855f7a8;
     }
 
-    /* ===== PROJECTS SECTION ===== */
+    /* Projects Section  */
     .projects {
       max-width: 900px;
       margin: auto;
@@ -312,47 +222,11 @@
       color: #fff;
       border-color: #fff;
     }
-
-    /* ===== FOOTER SECTION ===== */
-    footer.site-footer {
-      position: fixed;
-      bottom: 0;
-      left: 0;
-      width: 100%;
-      padding: 20px 0;
-      box-shadow: 0 0 20px rgba(168, 85, 247, 0.25);
-      background-color: rgba(0, 0, 0, 0.3);
-      backdrop-filter: blur(10px);
-      border-top: 1px solid rgba(255, 255, 255, 0.08);
-      z-index: 1000;
-    }
-
-    .footer-nav {
-      display: flex;
-      justify-content: space-around;
-      align-items: center;
-    }
-
-    .nav-btn {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      text-decoration: none;
-      color: #00f2ff;
-    }
-
-    .nav-btn i {
-      font-size: 1.3em;
-    }
-
-    .nav-btn span {
-      font-size: 0.75em;
-    }
   </style>
 </head>
 <body>
 
-<!-- ===== HEADER START ===== -->
+<!-- Header Start  -->
 <header class="site-header">
   <div class="logo">Kinsu</div>
   <div style="display: flex; align-items: center; gap: 24px;">
@@ -366,9 +240,9 @@
     <button class="menu-toggle" id="menuToggle"><i class="fas fa-bars"></i></button>
   </div>
 </header>
-<!-- ===== HEADER END ===== -->
+<!-- Header End -->
 
-<!-- ===== HERO SECTION ===== -->
+<!-- Hero Section -->
 <section class="hero" data-aos="zoom-in">
   <div class="hero-card">
     <img src="https://github.com/pykinsu.png" alt="Kinsu Rajput" class="hero-img" />
@@ -377,7 +251,7 @@
   </div>
 </section>
 
-<!-- ===== ABOUT SECTION ===== -->
+<!-- About Section -->
 <section class="about" data-aos="fade-up">
   <h2>About Me</h2>
   <div class="glass-box">
@@ -386,7 +260,7 @@
   </div>
 </section>
 
-<!-- ===== PROJECTS SECTION ===== -->
+<!-- Projects Section -->
 <section class="projects" data-aos="fade-up">
   <h2>Projects</h2>
 
@@ -439,7 +313,7 @@
   </div>
 </section>
 
-<!-- ===== FOOTER START ===== -->
+<!-- Footer Start -->
 <footer class="site-footer">
   <nav class="footer-nav">
     <a href="/" class="nav-btn"><i class="fas fa-home"></i><span>Home</span></a>
@@ -448,13 +322,13 @@
     <a href="/Blogs/" class="nav-btn"><i class="fas fa-blog"></i><span>Blogs</span></a>
   </nav>
 </footer>
-<!-- ===== FOOTER END ===== -->
+<!-- FOOTER END -->
 
-<!-- ===== JS Scripts ===== -->
+<!-- JS Scripts -->
 <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 <script>AOS.init({ duration: 1000, once: true });</script>
 
-<!-- ===== Mobile Menu Script ===== -->
+<!-- Mobile Menu Script -->
 <script>
   const menuToggle = document.getElementById('menuToggle');
   const navMenu = document.getElementById('navMenu');

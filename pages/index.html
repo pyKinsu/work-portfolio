@@ -1,16 +1,30 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <!-- Essential Meta Tags -->
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>All Pages | Kinsu Rajput</title>
 
-  <!-- Favicons -->
+  <!-- SEO Meta Tags -->
+  <meta name="title" content="All Pages | Kinsu Rajput Portfolio">
+  <meta name="description" content="Explore all available pages of Kinsu Rajput’s developer portfolio — from skills and hobbies to contact and project showcase.">
+  <meta name="keywords" content="Kinsu Rajput, pyKinsu, Portfolio, Pages, Skills, Projects, Telegram Bot Developer, HTML CSS">
+  <meta name="author" content="Kinsu Rajput">
+  <meta name="robots" content="index, follow"/>
+
+  <!-- Open Graph / Facebook -->
+  <meta property="og:title" content="All Pages | Kinsu Rajput Portfolio">
+  <meta property="og:description" content="Explore all sections of the portfolio — skills, hobbies, projects, and more.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://kinsu.onrender.com/pages/">
+  <meta property="og:image" content="https://github.com/pyKinsu.png">
+
+  <!-- Favicon Setup -->
   <link rel="icon" type="image/png" href="/Favicon/favicon-96x96.png" sizes="96x96" />
   <link rel="icon" type="image/svg+xml" href="/Favicon/favicon.svg" />
   <link rel="shortcut icon" href="/Favicon/favicon.ico" />
   <link rel="apple-touch-icon" sizes="180x180" href="/Favicon/apple-touch-icon.png" />
-  <meta name="apple-mobile-web-app-title" content="Kinsu Rajput Portfolio" />
   <link rel="manifest" href="/Favicon/site.webmanifest" />
 
   <!-- Fonts & Icons -->
@@ -18,13 +32,13 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
   <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css"/>
 
-  <!-- Central Common Styles -->
+  <!-- Central CSS -->
   <link rel="stylesheet" href="/css/stylus.css" />
 
-  <!-- Page-specific Styles -->
+  <!-- Page-Specific Styling -->
   <style>
     body {
-      font-family: 'Segoe UI', sans-serif;
+      font-family: 'Orbitron', sans-serif;
       background: #000;
       color: #fff;
       padding-top: 80px;
@@ -36,8 +50,6 @@
       padding: 40px 20px;
       max-width: 1000px;
       margin: auto;
-      position: relative;
-      z-index: 1;
     }
 
     .index-page h2 {
@@ -65,7 +77,6 @@
       transition: transform 0.3s ease;
       position: relative;
       overflow: hidden;
-      z-index: 1;
     }
 
     .contact-card::before {
@@ -137,114 +148,117 @@
     }
   </style>
 </head>
+
 <body>
 
-  <!-- Vertical Line -->
-  <div class="vertical-line"></div>
-
-  <!-- Header -->
-  <header class="site-header">
-    <div class="logo">Kinsu</div>
-    <div style="display: flex; align-items: center; gap: 24px;">
-      <nav class="top-nav">
-        <a href="https://github.com/pyKinsu" target="_blank" class="github-btn"><i class="fab fa-github"></i> Follow Me</a>
-        <a href="https://github.com/pyKinsu/MyPortFolio/stargazers" target="_blank" class="github-btn"><i class="fas fa-star"></i> Give Star</a>
-        <a href="https://github.com/pyKinsu/MyPortFolio/fork" target="_blank" class="github-btn"><i class="fas fa-code-branch"></i> Fork Repo</a>
-        <a href="/pages/Contact" class="github-btn"><i class="fas fa-paper-plane"></i> Contact</a>
-      </nav>
-      <a href="https://github.com/pyKinsu" target="_blank" style="font-size: 1.4em; color: white;"><i class="fab fa-github"></i></a>
-      <button class="menu-toggle" onclick="document.querySelector('.top-nav').classList.toggle('active')">
-        <i class="fas fa-bars"></i>
-      </button>
-    </div>
-  </header>
-
-  <!-- Main Section -->
-  <main class="index-page">
-    <h2 data-aos="fade-up">Explore All Pages</h2>
-    <div class="contact-cards">
-
-      <!-- Cards -->
-      <div class="contact-card" data-aos="fade-up">
-        <div class="contact-img"><i class="fas fa-home"></i></div>
-        <div class="contact-info"><h3>Home</h3></div>
-        <a href="/" class="github-link" target="_blank">Visit
-          <svg class="arrow-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 14 10">
-            <path d="M1 5h12m0 0L9 1m4 4L9 9" stroke-linecap="round" stroke-linejoin="round"/>
-          </svg>
-        </a>
-      </div>
-
-      <div class="contact-card" data-aos="fade-up">
-        <div class="contact-img"><i class="fas fa-code"></i></div>
-        <div class="contact-info"><h3>Skills</h3></div>
-        <a href="/pages/Skills/" class="github-link" target="_blank">Visit
-          <svg class="arrow-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 14 10">
-            <path d="M1 5h12m0 0L9 1m4 4L9 9" stroke-linecap="round" stroke-linejoin="round"/>
-          </svg>
-        </a>
-      </div>
-
-      <div class="contact-card" data-aos="fade-up">
-        <div class="contact-img"><i class="fas fa-heart"></i></div>
-        <div class="contact-info"><h3>Hobbies</h3></div>
-        <a href="/pages/Hobbies/" class="github-link" target="_blank">Visit
-          <svg class="arrow-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 14 10">
-            <path d="M1 5h12m0 0L9 1m4 4L9 9" stroke-linecap="round" stroke-linejoin="round"/>
-          </svg>
-        </a>
-      </div>
-
-      <div class="contact-card" data-aos="fade-up">
-        <div class="contact-img"><i class="fas fa-lightbulb"></i></div>
-        <div class="contact-info"><h3>Projects</h3></div>
-        <a href="/pages/Projects/" class="github-link" target="_blank">Visit
-          <svg class="arrow-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 14 10">
-            <path d="M1 5h12m0 0L9 1m4 4L9 9" stroke-linecap="round" stroke-linejoin="round"/>
-          </svg>
-        </a>
-      </div>
-
-      <div class="contact-card" data-aos="fade-up">
-        <div class="contact-img"><i class="fas fa-envelope"></i></div>
-        <div class="contact-info"><h3>Contact</h3></div>
-        <a href="/pages/Contact/" class="github-link" target="_blank">Visit
-          <svg class="arrow-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 14 10">
-            <path d="M1 5h12m0 0L9 1m4 4L9 9" stroke-linecap="round" stroke-linejoin="round"/>
-          </svg>
-        </a>
-      </div>
-
-    </div>
-  </main>
-
-  <!-- Footer -->
-  <footer class="site-footer">
-    <nav class="footer-nav">
-      <a href="/" class="nav-btn"><i class="fas fa-home"></i><span>Home</span></a>
-      <a href="/pages/Projects" class="nav-btn"><i class="fas fa-code"></i><span>Projects</span></a>
-      <a href="/pages/Contact" class="nav-btn"><i class="fas fa-envelope"></i><span>Contact</span></a>
-      <a href="/Blogs/" class="nav-btn"><i class="fas fa-blog"></i><span>Blogs</span></a>
+<!-- Header Start -->
+<header class="site-header">
+  <div class="logo">Kinsu</div>
+  <div style="display: flex; align-items: center; gap: 24px;">
+    <nav class="top-nav" id="navMenu">
+      <a href="https://github.com/pyKinsu" target="_blank"><i class="fab fa-github"></i> Follow Me</a>
+      <a href="https://github.com/pyKinsu/MyPortFolio/stargazers" target="_blank"><i class="fas fa-star"></i> Give Star</a>
+      <a href="https://github.com/pyKinsu/MyPortFolio/fork" target="_blank"><i class="fas fa-code-branch"></i> Fork Repo</a>
+      <a href="/pages/Contact"><i class="fas fa-paper-plane"></i> Contact</a>
     </nav>
-  </footer>
+    <a href="https://github.com/pyKinsu" target="_blank" style="font-size: 1.4em; color: white;"><i class="fab fa-github"></i></a>
+    <button class="menu-toggle" id="menuToggle"><i class="fas fa-bars"></i></button>
+  </div>
+</header>
 
-  <!-- AOS + Menu Script -->
-  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-  <script>
-    AOS.init({ duration: 1000, once: true });
+<!-- Main Section -->
+<main class="index-page">
+  <h2 data-aos="fade-up">Explore All Pages</h2>
+  <div class="contact-cards">
 
-    const nav = document.querySelector('.top-nav');
-    const toggle = document.querySelector('.menu-toggle');
+    <!-- Pages List -->
+    <div class="contact-card" data-aos="fade-up">
+      <div class="contact-img"><i class="fas fa-home"></i></div>
+      <div class="contact-info"><h3>Home</h3></div>
+      <a href="/" class="github-link" target="_blank">Visit
+        <svg class="arrow-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 14 10">
+          <path d="M1 5h12m0 0L9 1m4 4L9 9" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </a>
+    </div>
 
-    document.addEventListener('click', function(event) {
-      if (!nav.contains(event.target) && !toggle.contains(event.target)) {
-        nav.classList.remove('active');
-      }
+    <div class="contact-card" data-aos="fade-up">
+      <div class="contact-img"><i class="fas fa-code"></i></div>
+      <div class="contact-info"><h3>Skills</h3></div>
+      <a href="/pages/Skills/" class="github-link" target="_blank">Visit
+        <svg class="arrow-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 14 10">
+          <path d="M1 5h12m0 0L9 1m4 4L9 9" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </a>
+    </div>
+
+    <div class="contact-card" data-aos="fade-up">
+      <div class="contact-img"><i class="fas fa-heart"></i></div>
+      <div class="contact-info"><h3>Hobbies</h3></div>
+      <a href="/pages/Hobbies/" class="github-link" target="_blank">Visit
+        <svg class="arrow-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 14 10">
+          <path d="M1 5h12m0 0L9 1m4 4L9 9" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </a>
+    </div>
+
+    <div class="contact-card" data-aos="fade-up">
+      <div class="contact-img"><i class="fas fa-lightbulb"></i></div>
+      <div class="contact-info"><h3>Projects</h3></div>
+      <a href="/pages/Projects/" class="github-link" target="_blank">Visit
+        <svg class="arrow-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 14 10">
+          <path d="M1 5h12m0 0L9 1m4 4L9 9" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </a>
+    </div>
+
+    <div class="contact-card" data-aos="fade-up">
+      <div class="contact-img"><i class="fas fa-envelope"></i></div>
+      <div class="contact-info"><h3>Contact</h3></div>
+      <a href="/pages/Contact/" class="github-link" target="_blank">Visit
+        <svg class="arrow-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 14 10">
+          <path d="M1 5h12m0 0L9 1m4 4L9 9" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </a>
+    </div>
+
+  </div>
+</main>
+
+<!-- Footer -->
+<footer class="site-footer">
+  <nav class="footer-nav">
+    <a href="/" class="nav-btn"><i class="fas fa-home"></i><span>Home</span></a>
+    <a href="/pages/Projects" class="nav-btn"><i class="fas fa-code"></i><span>Projects</span></a>
+    <a href="/pages/Contact" class="nav-btn"><i class="fas fa-envelope"></i><span>Contact</span></a>
+    <a href="/Blogs/" class="nav-btn"><i class="fas fa-blog"></i><span>Blogs</span></a>
+  </nav>
+</footer>
+
+<!-- AOS Init & Mobile Menu Script -->
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script>
+  AOS.init({ duration: 1000, once: true });
+
+  const menuToggle = document.getElementById('menuToggle');
+  const navMenu = document.getElementById('navMenu');
+
+  menuToggle.addEventListener('click', () => {
+    navMenu.classList.toggle('active');
+  });
+
+  navMenu.querySelectorAll('a').forEach(link => {
+    link.addEventListener('click', () => {
+      navMenu.classList.remove('active');
     });
+  });
 
-    document.querySelectorAll('.top-nav a').forEach(link => {
-      link.addEventListener('click', () => nav.classList.remove('active'));
-    });
-  </script>
+  document.addEventListener('click', (e) => {
+    if (!navMenu.contains(e.target) && !menuToggle.contains(e.target)) {
+      navMenu.classList.remove('active');
+    }
+  });
+</script>
+
 </body>
 </html>

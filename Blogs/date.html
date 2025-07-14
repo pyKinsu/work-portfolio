@@ -3,29 +3,31 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Historical Dates | @pyKinsu</title>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
-
+  <title>Today in History | @pyKinsu</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
   <style>
+    :root {
+      --gradient-bg: radial-gradient(circle at top left, #0f0c29, #302b63, #24243e);
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
     body {
-      margin: 0;
       font-family: 'Segoe UI', sans-serif;
-      background: radial-gradient(circle at top left, #0f0c29, #302b63, #24243e);
+      background: var(--gradient-bg);
       color: #fff;
-      padding-top: 100px;
+      padding-top: 80px;
+      padding-bottom: 80px;
+      overflow-x: hidden;
     }
 
     header.site-header {
       position: fixed;
-      top: 0;
-      width: 100%;
-      background: rgba(0,0,0,0.3);
+      top: 0; left: 0; width: 100%;
+      padding: 10px 20px;
+      display: flex; justify-content: space-between; align-items: center;
       backdrop-filter: blur(10px);
-      padding: 15px 30px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      border-bottom: 1px solid rgba(255,255,255,0.1);
+      background-color: rgba(0, 0, 0, 0.3);
+      border: 1px solid rgba(255, 255, 255, 0.08);
       z-index: 1000;
     }
 
@@ -35,29 +37,23 @@
       color: #00f2ff;
     }
 
-    .search-bar {
+    .top-nav {
       display: flex;
-      gap: 10px;
-      align-items: center;
-      flex-wrap: wrap;
+      gap: 20px;
     }
 
-    select, input[type="number"] {
-      padding: 8px;
-      border-radius: 6px;
-      border: none;
+    .top-nav a {
+      color: #ffff00;
+      text-decoration: none;
       font-size: 1em;
+      padding: 8px 14px;
+      border-radius: 12px;
+      background: rgba(0, 0, 0, 0.8);
+      border: 1.5px solid #a855f7;
+      box-shadow: 0 0 8px rgba(168, 85, 247, 0.15);
     }
 
-    button.search-btn {
-      padding: 8px 16px;
-      background: #00f2ff;
-      color: black;
-      font-weight: bold;
-      border-radius: 6px;
-      border: none;
-      cursor: pointer;
-    }
+    .menu-toggle { display: none; }
 
     .section {
       max-width: 960px;
@@ -73,113 +69,172 @@
       padding: 20px;
       margin-bottom: 20px;
       box-shadow: 0 0 12px rgba(0, 242, 255, 0.1);
-      transition: all 0.4s ease;
+      min-height: 130px;
+      transition: opacity 0.5s ease;
     }
 
     .card h2 {
-      font-size: 1.3em;
+      font-size: 1.2em;
       color: #00f2ff;
+      display: flex;
+      align-items: center;
+      gap: 10px;
       margin-bottom: 10px;
+    }
+
+    .card p {
+      font-size: 1em;
+      line-height: 1.6;
+    }
+
+    .card img.icon {
+      width: 24px;
+      height: 24px;
+    }
+
+    .search-bar {
+      margin: 20px 0;
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+      align-items: center;
+    }
+
+    select, input[type="number"] {
+      padding: 8px 12px;
+      border-radius: 8px;
+      border: none;
+      background: rgba(255,255,255,0.1);
+      color: #fff;
+      font-size: 1em;
+    }
+
+    .search-btn {
+      padding: 10px 16px;
+      background: #00f2ff;
+      color: #000;
+      font-weight: bold;
+      border-radius: 8px;
+      border: none;
+      cursor: pointer;
     }
 
     .toast {
       position: fixed;
-      top: 20px;
-      right: 20px;
+      bottom: 20px;
+      left: 50%;
+      transform: translateX(-50%);
       background: #00f2ff;
       color: #000;
-      padding: 12px 18px;
+      padding: 12px 20px;
       border-radius: 8px;
       font-weight: bold;
       display: none;
       z-index: 9999;
-      box-shadow: 0 0 12px rgba(0,0,0,0.3);
+    }
+
+    footer.site-footer {
+      position: fixed;
+      bottom: 0; left: 0;
+      width: 100%;
+      background: rgba(0, 0, 0, 0.3);
+      backdrop-filter: blur(10px);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      padding: 20px 0;
+      text-align: center;
+      color: #00f2ff;
     }
   </style>
 </head>
 <body>
+  <!-- Header -->
   <header class="site-header">
     <div class="logo">Historical Dates</div>
-    <div class="search-bar">
-      <select id="monthSelect">
-        <option value="1">January</option>
-        <option value="2">February</option>
-        <option value="3">March</option>
-        <option value="4">April</option>
-        <option value="5">May</option>
-        <option value="6">June</option>
-        <option value="7">July</option>
-        <option value="8">August</option>
-        <option value="9">September</option>
-        <option value="10">October</option>
-        <option value="11">November</option>
-        <option value="12">December</option>
-      </select>
-
-      <select id="daySelect">
-        <!-- Generated via JS -->
-      </select>
-
-      <input type="number" id="yearInput" placeholder="Year (optional)" />
-      <button class="search-btn" onclick="searchDate()">Search</button>
-    </div>
+    <nav class="top-nav" id="navMenu">
+      <a href="https://github.com/pyKinsu" target="_blank"><i class="fab fa-github"></i> Follow Me</a>
+      <a href="https://github.com/pyKinsu/Historical-Dates/stargazers" target="_blank"><i class="fas fa-star"></i> Give Star</a>
+      <a href="https://github.com/pyKinsu/Historical-Dates/fork" target="_blank"><i class="fas fa-code-branch"></i> Fork Repo</a>
+      <a href="https://kinsu.onrender.com/pages/Contact"><i class="fas fa-paper-plane"></i> Contact</a>
+    </nav>
   </header>
 
-  <div class="toast" id="toast">🔍 Searching date...</div>
-
+  <!-- Content -->
   <div class="section">
-    <div class="card" id="eventCard"><h2>Event</h2><p>Loading...</p></div>
-    <div class="card" id="birthCard"><h2>Birth</h2><p>Loading...</p></div>
-    <div class="card" id="deathCard"><h2>Death</h2><p>Loading...</p></div>
+    <div class="search-bar">
+      <select id="month">
+        <option value="">Month</option>
+        ${[...Array(12).keys()].map(i => `<option value="${i+1}">${i+1}</option>`).join('')}
+      </select>
+      <select id="day">
+        <option value="">Day</option>
+        ${[...Array(31).keys()].map(i => `<option value="${i+1}">${i+1}</option>`).join('')}
+      </select>
+      <input type="number" id="year" placeholder="Year (optional)" min="0" />
+      <button class="search-btn" onclick="searchByDate()">🔍 Search</button>
+    </div>
+
+    <div class="card" id="eventCard">
+      <h2><img class="icon" src="https://img.icons8.com/?size=100&id=r0bR0EYcefHL&format=png" alt="Event" /> Event</h2>
+      <p>Loading...</p>
+    </div>
+    <div class="card" id="birthCard">
+      <h2><img class="icon" src="https://img.icons8.com/?size=100&id=uzUH0IG11cvd&format=png" alt="Birth" /> Birth</h2>
+      <p>Loading...</p>
+    </div>
+    <div class="card" id="deathCard">
+      <h2><img class="icon" src="https://img.icons8.com/?size=100&id=8s9ljrIulWCD&format=png" alt="Death" /> Death</h2>
+      <p>Loading...</p>
+    </div>
   </div>
 
+  <div class="toast" id="toast">Searching...</div>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    © 2025 Historical Dates by Kinsu
+  </footer>
+
+  <!-- Script -->
   <script>
-    function populateDays() {
-      const daySelect = document.getElementById("daySelect");
-      daySelect.innerHTML = "";
-      for (let i = 1; i <= 31; i++) {
-        const option = document.createElement("option");
-        option.value = i;
-        option.textContent = i;
-        daySelect.appendChild(option);
-      }
+    async function loadTodayHistory() {
+      const res = await fetch('/date');
+      const data = await res.json();
+      showHistory(data.data);
     }
 
-    function showToast(message) {
+    function showToast(msg) {
       const toast = document.getElementById('toast');
-      toast.innerText = message;
+      toast.textContent = msg;
       toast.style.display = 'block';
-      setTimeout(() => toast.style.display = 'none', 2500);
+      setTimeout(() => toast.style.display = 'none', 2000);
     }
 
-    async function fetchHistory(month, day) {
+    function showHistory(data, year = null) {
+      const filterByYear = (arr) => year ? arr.find(i => i.year == year) || arr[0] : arr[Math.floor(Math.random() * arr.length)];
+
+      document.querySelector('#eventCard p').innerText = filterByYear(data.Events)?.text || 'No events';
+      document.querySelector('#birthCard p').innerText = filterByYear(data.Births)?.text || 'No births';
+      document.querySelector('#deathCard p').innerText = filterByYear(data.Deaths)?.text || 'No deaths';
+    }
+
+    async function searchByDate() {
+      const month = document.getElementById('month').value;
+      const day = document.getElementById('day').value;
+      const year = document.getElementById('year').value;
+
+      if (!month || !day) return showToast('Please select both month and day');
+
+      showToast('Fetching...');
       try {
-        showToast("🔍 Searching historical data...");
         const res = await fetch(`/date/${month}/${day}`);
         const data = await res.json();
-
-        document.getElementById('eventCard').querySelector('p').innerText = data.data.Events[0]?.text || "No data";
-        document.getElementById('birthCard').querySelector('p').innerText = data.data.Births[0]?.text || "No data";
-        document.getElementById('deathCard').querySelector('p').innerText = data.data.Deaths[0]?.text || "No data";
+        showHistory(data.data, year);
       } catch (e) {
-        console.error("Failed:", e);
-        showToast("❌ Failed to fetch data.");
+        showToast('Error loading data');
       }
     }
 
-    function searchDate() {
-      const month = document.getElementById('monthSelect').value;
-      const day = document.getElementById('daySelect').value;
-      fetchHistory(month, day);
-    }
-
-    window.onload = () => {
-      populateDays();
-      const now = new Date();
-      document.getElementById('monthSelect').value = now.getMonth() + 1;
-      document.getElementById('daySelect').value = now.getDate();
-      fetchHistory(now.getMonth() + 1, now.getDate());
-    };
+    loadTodayHistory();
   </script>
 </body>
 </html>

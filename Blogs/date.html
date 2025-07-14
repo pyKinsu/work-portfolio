@@ -5,15 +5,12 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Today in History | @pyKinsu</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
-  <style>
-    :root {
-      --gradient-bg: radial-gradient(circle at top left, #0f0c29, #302b63, #24243e);
-    }
 
+  <style>
     * { margin: 0; padding: 0; box-sizing: border-box; }
     body {
       font-family: 'Segoe UI', sans-serif;
-      background: var(--gradient-bg);
+      background: radial-gradient(circle at top left, #0f0c29, #302b63, #24243e);
       color: #fff;
       padding-top: 80px;
       padding-bottom: 80px;
@@ -21,8 +18,7 @@
     }
 
     header.site-header {
-      position: fixed;
-      top: 0; left: 0; width: 100%;
+      position: fixed; top: 0; left: 0; width: 100%;
       padding: 10px 20px;
       display: flex; justify-content: space-between; align-items: center;
       backdrop-filter: blur(10px);
@@ -38,8 +34,7 @@
     }
 
     .top-nav {
-      display: flex;
-      gap: 20px;
+      display: flex; gap: 20px;
     }
 
     .top-nav a {
@@ -51,9 +46,39 @@
       background: rgba(0, 0, 0, 0.8);
       border: 1.5px solid #a855f7;
       box-shadow: 0 0 8px rgba(168, 85, 247, 0.15);
+      transition: all 0.3s ease;
     }
 
-    .menu-toggle { display: none; }
+    .top-nav a:hover {
+      background: #000;
+      color: #000;
+      box-shadow: 0 0 12px rgba(0, 242, 255, 0.5);
+    }
+
+    .menu-toggle {
+      display: none;
+      font-size: 24px;
+      color: #ffff00;
+      background: rgba(0, 0, 0, 0.8);
+      border: 1.5px solid #a855f7;
+      border-radius: 12px;
+      padding: 6px 10px;
+    }
+
+    @media (max-width: 768px) {
+      .menu-toggle { display: block; }
+      .top-nav {
+        display: none; flex-direction: column; gap: 12px;
+        background: rgba(0, 0, 0, 0.9);
+        position: absolute; top: 60px; right: 20px;
+        padding: 14px;
+        border-radius: 16px;
+        border: 1.5px solid rgba(168, 85, 247, 0.3);
+        box-shadow: 0 0 20px rgba(168, 85, 247, 0.25);
+        z-index: 999;
+      }
+      .top-nav.active { display: flex; }
+    }
 
     .section {
       max-width: 960px;
@@ -76,61 +101,89 @@
     .card h2 {
       font-size: 1.2em;
       color: #00f2ff;
-      display: flex;
-      align-items: center;
-      gap: 10px;
+      display: flex; align-items: center; gap: 10px;
       margin-bottom: 10px;
     }
 
-    .card p {
-      font-size: 1em;
-      line-height: 1.6;
+    .card p { font-size: 1em; line-height: 1.6; }
+    .card img.icon { width: 24px; height: 24px; }
+
+    .api-usage {
+      margin-top: 50px;
+      background: rgba(0, 0, 0, 0.4);
+      padding: 30px;
+      border-radius: 14px;
+      box-shadow: 0 0 15px rgba(0, 242, 255, 0.1);
     }
 
-    .card img.icon {
-      width: 24px;
-      height: 24px;
+    .api-usage h3 {
+      font-size: 1.4em;
+      color: #ffff00;
+      margin-bottom: 20px;
+      text-shadow: 0 0 5px rgba(255, 255, 0, 0.4);
     }
+
+    .api-usage p {
+      font-size: 1em;
+      margin-bottom: 10px;
+      color: #ccc;
+    }
+
+    .api-usage strong { color: #0ff; }
+    .api-usage code {
+      background: #111;
+      padding: 3px 6px;
+      border-radius: 6px;
+      color: #0ff;
+      font-family: monospace;
+    }
+
+    .try-button {
+      margin-top: 18px;
+      padding: 10px 18px;
+      background: #00f2ff;
+      color: #000;
+      font-weight: bold;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: background 0.3s ease;
+    }
+
+    .try-button:hover { background: #0ff; }
 
     .search-bar {
-      margin: 20px 0;
       display: flex;
-      gap: 10px;
       flex-wrap: wrap;
+      gap: 10px;
+      margin-bottom: 30px;
       align-items: center;
     }
 
-    select, input[type="number"] {
-      padding: 8px 12px;
+    .search-bar select,
+    .search-bar input,
+    .search-bar button {
+      padding: 10px;
+      font-size: 1em;
       border-radius: 8px;
       border: none;
-      background: rgba(255,255,255,0.1);
-      color: #fff;
-      font-size: 1em;
+      outline: none;
     }
 
-    .search-btn {
-      padding: 10px 16px;
+    .search-bar select, .search-bar input {
+      flex: 1;
+      min-width: 120px;
+    }
+
+    .search-bar button {
       background: #00f2ff;
       color: #000;
       font-weight: bold;
-      border-radius: 8px;
-      border: none;
       cursor: pointer;
     }
 
-    .toast {
-      position: fixed;
-      bottom: 20px;
-      left: 50%;
-      transform: translateX(-50%);
-      background: #00f2ff;
-      color: #000;
-      padding: 12px 20px;
-      border-radius: 8px;
-      font-weight: bold;
-      display: none;
-      z-index: 9999;
+    .search-bar button:hover {
+      background: #0ff;
     }
 
     footer.site-footer {
@@ -147,32 +200,37 @@
   </style>
 </head>
 <body>
-  <!-- Header -->
   <header class="site-header">
     <div class="logo">Historical Dates</div>
-    <nav class="top-nav" id="navMenu">
-      <a href="https://github.com/pyKinsu" target="_blank"><i class="fab fa-github"></i> Follow Me</a>
-      <a href="https://github.com/pyKinsu/Historical-Dates/stargazers" target="_blank"><i class="fas fa-star"></i> Give Star</a>
-      <a href="https://github.com/pyKinsu/Historical-Dates/fork" target="_blank"><i class="fas fa-code-branch"></i> Fork Repo</a>
-      <a href="https://kinsu.onrender.com/pages/Contact"><i class="fas fa-paper-plane"></i> Contact</a>
-    </nav>
+    <div style="display: flex; align-items: center; gap: 24px;">
+      <nav class="top-nav" id="navMenu">
+        <a href="https://github.com/pyKinsu" target="_blank"><i class="fab fa-github"></i> Follow Me</a>
+        <a href="https://github.com/pyKinsu/Historical-Dates/stargazers" target="_blank"><i class="fas fa-star"></i> Star</a>
+        <a href="https://github.com/pyKinsu/Historical-Dates/fork" target="_blank"><i class="fas fa-code-branch"></i> Fork</a>
+        <a href="https://kinsu.onrender.com/pages/Contact"><i class="fas fa-paper-plane"></i> Contact</a>
+      </nav>
+      <button class="menu-toggle" id="menuToggle"><i class="fas fa-bars"></i></button>
+    </div>
   </header>
 
-  <!-- Content -->
   <div class="section">
+    <!-- Search -->
     <div class="search-bar">
       <select id="month">
-        <option value="">Month</option>
-        ${[...Array(12).keys()].map(i => `<option value="${i+1}">${i+1}</option>`).join('')}
+        <option value="1">January</option><option value="2">February</option>
+        <option value="3">March</option><option value="4">April</option>
+        <option value="5">May</option><option value="6">June</option>
+        <option value="7">July</option><option value="8">August</option>
+        <option value="9">September</option><option value="10">October</option>
+        <option value="11">November</option><option value="12">December</option>
       </select>
       <select id="day">
-        <option value="">Day</option>
-        ${[...Array(31).keys()].map(i => `<option value="${i+1}">${i+1}</option>`).join('')}
+        ${[...Array(31)].map((_, i) => `<option value="${i + 1}">${i + 1}</option>`).join('')}
       </select>
-      <input type="number" id="year" placeholder="Year (optional)" min="0" />
-      <button class="search-btn" onclick="searchByDate()">🔍 Search</button>
+      <button onclick="searchDate()">Search</button>
     </div>
 
+    <!-- Cards -->
     <div class="card" id="eventCard">
       <h2><img class="icon" src="https://img.icons8.com/?size=100&id=r0bR0EYcefHL&format=png" alt="Event" /> Event</h2>
       <p>Loading...</p>
@@ -185,52 +243,71 @@
       <h2><img class="icon" src="https://img.icons8.com/?size=100&id=8s9ljrIulWCD&format=png" alt="Death" /> Death</h2>
       <p>Loading...</p>
     </div>
+
+    <!-- API Usage -->
+    <div class="api-usage">
+      <h3>🚀 API Usage</h3>
+      <p>📅 Get today’s data: <code>/date</code></p>
+      <p>📆 Data for any date: <code>/date/month/day</code></p>
+      <p>🧠 Includes: <strong>Events</strong>, <strong>Births</strong>, <strong>Deaths</strong></p>
+      <button class="try-button" onclick="window.location.href='/demo'">▶️ Try It Now</button>
+    </div>
   </div>
 
-  <div class="toast" id="toast">Searching...</div>
+  <footer class="site-footer">© 2025 Historical Dates by Kinsu</footer>
 
-  <!-- Footer -->
-  <footer class="site-footer">
-    © 2025 Historical Dates by Kinsu
-  </footer>
-
-  <!-- Script -->
   <script>
+    document.getElementById('menuToggle').addEventListener('click', () => {
+      document.getElementById('navMenu').classList.toggle('active');
+    });
+
     async function loadTodayHistory() {
-      const res = await fetch('/date');
-      const data = await res.json();
-      showHistory(data.data);
-    }
-
-    function showToast(msg) {
-      const toast = document.getElementById('toast');
-      toast.textContent = msg;
-      toast.style.display = 'block';
-      setTimeout(() => toast.style.display = 'none', 2000);
-    }
-
-    function showHistory(data, year = null) {
-      const filterByYear = (arr) => year ? arr.find(i => i.year == year) || arr[0] : arr[Math.floor(Math.random() * arr.length)];
-
-      document.querySelector('#eventCard p').innerText = filterByYear(data.Events)?.text || 'No events';
-      document.querySelector('#birthCard p').innerText = filterByYear(data.Births)?.text || 'No births';
-      document.querySelector('#deathCard p').innerText = filterByYear(data.Deaths)?.text || 'No deaths';
-    }
-
-    async function searchByDate() {
-      const month = document.getElementById('month').value;
-      const day = document.getElementById('day').value;
-      const year = document.getElementById('year').value;
-
-      if (!month || !day) return showToast('Please select both month and day');
-
-      showToast('Fetching...');
       try {
-        const res = await fetch(`/date/${month}/${day}`);
+        const res = await fetch('/date');
         const data = await res.json();
-        showHistory(data.data, year);
+        const events = data.data.Events;
+        const births = data.data.Births;
+        const deaths = data.data.Deaths;
+
+        let eventIndex = 0, birthIndex = 0, deathIndex = 0;
+
+        function updateCard(id, list, index) {
+          document.getElementById(id).querySelector("p").innerText = list[index].text;
+        }
+
+        updateCard('eventCard', events, eventIndex);
+        updateCard('birthCard', births, birthIndex);
+        updateCard('deathCard', deaths, deathIndex);
+
+        setInterval(() => {
+          eventIndex = (eventIndex + 1) % events.length;
+          updateCard('eventCard', events, eventIndex);
+        }, 4000);
+        setInterval(() => {
+          birthIndex = (birthIndex + 1) % births.length;
+          updateCard('birthCard', births, birthIndex);
+        }, 5000);
+        setInterval(() => {
+          deathIndex = (deathIndex + 1) % deaths.length;
+          updateCard('deathCard', deaths, deathIndex);
+        }, 6000);
       } catch (e) {
-        showToast('Error loading data');
+        document.querySelectorAll('.card p').forEach(p => p.innerText = "Error loading data.");
+        console.error("API error", e);
+      }
+    }
+
+    async function searchDate() {
+      const m = document.getElementById('month').value;
+      const d = document.getElementById('day').value;
+      try {
+        const res = await fetch(`/date/${m}/${d}`);
+        const data = await res.json();
+        document.getElementById('eventCard').querySelector("p").innerText = data.data.Events[0]?.text || "No event found.";
+        document.getElementById('birthCard').querySelector("p").innerText = data.data.Births[0]?.text || "No birth found.";
+        document.getElementById('deathCard').querySelector("p").innerText = data.data.Deaths[0]?.text || "No death found.";
+      } catch (err) {
+        alert("Failed to fetch date. Please try again.");
       }
     }
 

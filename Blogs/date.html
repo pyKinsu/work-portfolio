@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Historical Dates | @pyKinsu</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
+
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background: radial-gradient(circle at top left, #0f0c29, #302b63, #24243e);
+      color: #fff;
+      padding-top: 100px;
+    }
+
+    header.site-header {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      background: rgba(0,0,0,0.3);
+      backdrop-filter: blur(10px);
+      padding: 15px 30px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 1px solid rgba(255,255,255,0.1);
+      z-index: 1000;
+    }
+
+    .logo {
+      font-family: 'Pacifico', cursive;
+      font-size: 1.8em;
+      color: #00f2ff;
+    }
+
+    .search-bar {
+      display: flex;
+      gap: 10px;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+
+    select, input[type="number"] {
+      padding: 8px;
+      border-radius: 6px;
+      border: none;
+      font-size: 1em;
+    }
+
+    button.search-btn {
+      padding: 8px 16px;
+      background: #00f2ff;
+      color: black;
+      font-weight: bold;
+      border-radius: 6px;
+      border: none;
+      cursor: pointer;
+    }
+
+    .section {
+      max-width: 960px;
+      margin: 0 auto;
+      padding: 30px 20px;
+    }
+
+    .card {
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      backdrop-filter: blur(6px);
+      border-radius: 14px;
+      padding: 20px;
+      margin-bottom: 20px;
+      box-shadow: 0 0 12px rgba(0, 242, 255, 0.1);
+      transition: all 0.4s ease;
+    }
+
+    .card h2 {
+      font-size: 1.3em;
+      color: #00f2ff;
+      margin-bottom: 10px;
+    }
+
+    .toast {
+      position: fixed;
+      top: 20px;
+      right: 20px;
+      background: #00f2ff;
+      color: #000;
+      padding: 12px 18px;
+      border-radius: 8px;
+      font-weight: bold;
+      display: none;
+      z-index: 9999;
+      box-shadow: 0 0 12px rgba(0,0,0,0.3);
+    }
+  </style>
+</head>
+<body>
+  <header class="site-header">
+    <div class="logo">Historical Dates</div>
+    <div class="search-bar">
+      <select id="monthSelect">
+        <option value="1">January</option>
+        <option value="2">February</option>
+        <option value="3">March</option>
+        <option value="4">April</option>
+        <option value="5">May</option>
+        <option value="6">June</option>
+        <option value="7">July</option>
+        <option value="8">August</option>
+        <option value="9">September</option>
+        <option value="10">October</option>
+        <option value="11">November</option>
+        <option value="12">December</option>
+      </select>
+
+      <select id="daySelect">
+        <!-- Generated via JS -->
+      </select>
+
+      <input type="number" id="yearInput" placeholder="Year (optional)" />
+      <button class="search-btn" onclick="searchDate()">Search</button>
+    </div>
+  </header>
+
+  <div class="toast" id="toast">🔍 Searching date...</div>
+
+  <div class="section">
+    <div class="card" id="eventCard"><h2>Event</h2><p>Loading...</p></div>
+    <div class="card" id="birthCard"><h2>Birth</h2><p>Loading...</p></div>
+    <div class="card" id="deathCard"><h2>Death</h2><p>Loading...</p></div>
+  </div>
+
+  <script>
+    function populateDays() {
+      const daySelect = document.getElementById("daySelect");
+      daySelect.innerHTML = "";
+      for (let i = 1; i <= 31; i++) {
+        const option = document.createElement("option");
+        option.value = i;
+        option.textContent = i;
+        daySelect.appendChild(option);
+      }
+    }
+
+    function showToast(message) {
+      const toast = document.getElementById('toast');
+      toast.innerText = message;
+      toast.style.display = 'block';
+      setTimeout(() => toast.style.display = 'none', 2500);
+    }
+
+    async function fetchHistory(month, day) {
+      try {
+        showToast("🔍 Searching historical data...");
+        const res = await fetch(`/date/${month}/${day}`);
+        const data = await res.json();
+
+        document.getElementById('eventCard').querySelector('p').innerText = data.data.Events[0]?.text || "No data";
+        document.getElementById('birthCard').querySelector('p').innerText = data.data.Births[0]?.text || "No data";
+        document.getElementById('deathCard').querySelector('p').innerText = data.data.Deaths[0]?.text || "No data";
+      } catch (e) {
+        console.error("Failed:", e);
+        showToast("❌ Failed to fetch data.");
+      }
+    }
+
+    function searchDate() {
+      const month = document.getElementById('monthSelect').value;
+      const day = document.getElementById('daySelect').value;
+      fetchHistory(month, day);
+    }
+
+    window.onload = () => {
+      populateDays();
+      const now = new Date();
+      document.getElementById('monthSelect').value = now.getMonth() + 1;
+      document.getElementById('daySelect').value = now.getDate();
+      fetchHistory(now.getMonth() + 1, now.getDate());
+    };
+  </script>
+</body>
+</html>

@@ -1,6 +1,1 @@
-### My First Html Project 
-
-> 🖊️**Note** ᴛʜɪꜱ ɪꜱ ᴍʏ ꜰɪʀꜱᴛ ᴘʀᴏᴊᴇᴄᴛ ᴀꜰᴛᴇʀ ʟᴇᴀʀɴɪɴɢ ʜᴛᴍʟ ɪ ʜᴀᴠᴇ ʟᴇᴀʀɴ ʜᴛᴍʟ ꜰʀᴏᴍ ᴀᴘɴᴀ ᴄᴏʟʟᴇɢᴇ ɪ ᴅᴏɴ'ᴛ ʜᴏᴡ ᴍᴜᴄʜ ɪ ᴋɴᴏᴡ ʙᴜᴛ ɪ ᴡɪʟʟ ᴛʀʏ ᴛᴏ ɢɪᴠᴇ ᴍʏ ʙᴇꜱᴛ ɪɴ ᴛʜɪꜱ ᴘʀᴏᴊᴇᴄᴛ ᴀɴᴅ ɪᴛ'ꜱ ɢᴏɴɴᴀ ʟᴏɴɢ ʟᴀꜱᴛɪɴɢ ᴘʀᴏᴊᴇᴄᴛ ꜱᴏ ʟᴇᴛꜱ ɢᴏ.
-
-
-<a href="https://pykinsu.github.io/MyPortFolio/"> Tap To Go</a>
+## It's Workspace For My Repositories Here I Do Practices And Try Codes its only for me 😉.
